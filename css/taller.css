@@ -82,21 +82,39 @@ table thead {
   font-family: Arial, 'Open Sans', sans-serif;
   font-size: 0.875em; 
 }
+/* inputs */
+input.form-text {
+  -webkit-box-shadow: inset 0px 0px 0px 2px #ccc;
+  color: #ccc;
+  padding: 0.5em 0.5em;
+  border-radius: 3px;
+  border: none;
+}
 
+.input-group {
+  margin: 2px 0;
+}
+.input-group .btn {
+  margin-left: -10px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 /* buttons */
 .btn {
-  padding: 0.5em 2em;
+  padding: 0.5em 1em;
   color: white;
   border-radius: 3px;
   display: inline-block;
   margin: 2px 0;
-  fill: currentColor;
+  border: none;
 }
 .btn-g {
   padding: 1em 2em;
 }
 .btn-alt {
-  border: 2px solid #D8D6D6;
+  -webkit-box-shadow: inset 0px 0px 0px 2px #ccc;
   color: #ccc;
 }
 
