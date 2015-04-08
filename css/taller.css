@@ -71,6 +71,15 @@ hr {
   content: "";
 }
 
+.rotate-left {
+  -webkit-transform: rotate(-90deg)
+}
+.rotate-right {
+  -webkit-transform: rotate(90deg)
+}
+.mirror {
+  -webkit-transform: rotateY(180deg)
+}
 /* table */
 
 table {
