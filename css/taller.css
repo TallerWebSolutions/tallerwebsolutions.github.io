@@ -71,6 +71,7 @@ hr {
   content: "";
 }
 
+
 .rotate-left {
   -webkit-transform: rotate(-90deg)
 }
@@ -80,6 +81,7 @@ hr {
 .mirror {
   -webkit-transform: rotateY(180deg)
 }
+
 /* table */
 
 table {
@@ -91,6 +93,33 @@ table thead {
   font-family: Arial, 'Open Sans', sans-serif;
   font-size: 0.875em; 
 }
+
+/* form */
+label {
+  font-weight: bold;
+}
+.form-group {
+  margin: 2px 0;
+}
+
+form.horizontal label { 
+  width: 30%;
+  text-align: right;
+  display: inline-block;
+}
+form.horizontal input.form-text,
+form.horizontal select { 
+  width: 65%;
+  display: inline;
+  line-height: normal;
+}
+form.horizontal .form-actions {
+  text-align: right;
+  width: 95%;
+  margin-left: 4px;
+}
+
+
 /* inputs */
 input.form-text {
   -webkit-box-shadow: inset 0px 0px 0px 2px #ccc;
@@ -98,6 +127,9 @@ input.form-text {
   padding: 0.5em 0.5em;
   border-radius: 3px;
   border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .input-group {
@@ -110,6 +142,13 @@ input.form-text {
   margin-top: 0;
   margin-bottom: 0;
 }
+select {
+  -webkit-appearance: none;
+  padding: 0.5em 0.5em;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0px 0px 0px 2px #ccc;
+  border: none;
+}
 /* buttons */
 .btn {
   padding: 0.5em 1em;
@@ -118,6 +157,7 @@ input.form-text {
   display: inline-block;
   margin: 2px 0;
   border: none;
+  cursor: pointer;
 }
 .btn-g {
   padding: 1em 2em;
@@ -125,12 +165,13 @@ input.form-text {
 .btn-alt {
   -webkit-box-shadow: inset 0px 0px 0px 2px #ccc;
   color: #ccc;
+  background: white;
 }
 
 .btn-arrow {
   border-radius: 0px;
   -webkit-clip-path: polygon(0 0, 93% 0, 100% 50%, 93% 100%, 0 100%);
-  padding-right: 3em
+  padding-right: 2.1em
 }
 
 /* colors */
@@ -239,6 +280,21 @@ input.form-text {
 .c-53-bg {
   background-color: white;
 }
+
+
+a.c-11-bg:hover, input.c-11-bg:hover {
+  background-color: #D6EBBB;
+}
+a.c-21-bg:hover, input.c-21-bg:hover {
+  background-color: #571A18;
+}
+a.c-31-bg:hover, input.c-31-bg:hover {
+  background-color: #903C13;
+}
+a.c-41-bg:hover, input.c-31-bg:hover {
+  background-color: #2B2B32;
+}
+
 
 /* Sprites */
 .arrow-icon {
