@@ -1,8 +1,8 @@
 html {
   color: #444;
   font-size: 1em;
-  line-height: 1.56;
-  font-family: 'Merriweather', serif;
+  line-height: 1.675;
+  font-family: 'Roboto Slab', serif;
   -webkit-font-smoothing: antialiased;
 }
 body {
@@ -97,6 +97,7 @@ table thead {
 /* form */
 label {
   font-weight: bold;
+  text-transform: uppercase;
 }
 .form-group {
   margin: 2px 0;
@@ -141,6 +142,7 @@ input.form-text {
   border-bottom-left-radius: 0px;
   margin-top: 0;
   margin-bottom: 0;
+  vertical-align: bottom;
 }
 select {
   -webkit-appearance: none;
@@ -151,16 +153,19 @@ select {
 }
 /* buttons */
 .btn {
-  padding: 0.5em 1em;
+  padding: 1.2em 1.7em;
   color: white;
   border-radius: 3px;
   display: inline-block;
   margin: 2px 0;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
+  font-size: 10px;
 }
 .btn-g {
-  padding: 1em 2em;
+  padding: 1.2em 2.1em;
+  font-size: 15px;
 }
 .btn-alt {
   -webkit-box-shadow: inset 0px 0px 0px 2px #ccc;
@@ -171,7 +176,9 @@ select {
 .btn-arrow {
   border-radius: 0px;
   -webkit-clip-path: polygon(0 0, 93% 0, 100% 50%, 93% 100%, 0 100%);
-  padding-right: 2.1em
+  padding: 0.25em 2.1em 0.25em 1.5em;
+  font-size: 19px;
+  text-transform: none;
 }
 
 /* colors */
