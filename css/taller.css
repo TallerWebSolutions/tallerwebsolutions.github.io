@@ -29,6 +29,7 @@ h4 {
 h5 {
   font-family: 'Merriweather', serif;
   font-weight: bold;
+  margin: 2.1em 0 0;
 }
 h6 {
   font-family: Arial, 'Open Sans', sans-serif;
@@ -44,7 +45,7 @@ hr {
 /* Structure */
 
 .container {
-  padding: 0px 20px;
+  margin: 0px 20px;
 }
 
 .pull.left {
@@ -69,6 +70,9 @@ hr {
   display: block;
   clear: both;
   content: "";
+}
+img {
+  max-width: 100%;
 }
 
 
