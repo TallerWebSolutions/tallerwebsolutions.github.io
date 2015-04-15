@@ -35,3 +35,17 @@ img {
 .tcenter {
   text-align: center;
 }
+
+
+@media screen and (max-width: 530px) {
+  .halfsize {
+    width: 100%;
+  }
+  .no-mobile {
+    display: none;
+  }
+  .halfsize.pull.left,
+  .halfsize.pull.right {
+    padding: 20px;
+  }
+}
