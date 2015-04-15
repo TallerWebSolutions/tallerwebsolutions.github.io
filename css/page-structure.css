@@ -1,6 +1,6 @@
 .container {
   background: #dbdbdb;
-  margin: 20px;
+  border: 20px solid white;
   padding: 20px;
 }
 .pull.left {
