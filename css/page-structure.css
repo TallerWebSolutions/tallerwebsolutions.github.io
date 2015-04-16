@@ -1,15 +1,17 @@
+.container, .case, .product {
+  margin: 20px;
+  padding: 20px;
+}
+
 .container {
   background: #dbdbdb;
-  margin: 20px;
-  padding: 20px;
 }
-
 .case {
   background: #eff4f8;
-  padding: 20px;
-  margin: 20px;
 }
-
+.product {
+  background: #f7e9e9;
+}
 
 
 .pull.left {
