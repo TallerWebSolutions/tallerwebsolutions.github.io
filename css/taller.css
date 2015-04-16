@@ -46,7 +46,7 @@ hr {
 /* Structure */
 
 .container {
-  margin: 0px 20px;
+  padding: 20px;
 }
 
 .pull.left {
@@ -75,7 +75,12 @@ hr {
 img {
   max-width: 100%;
 }
-
+.tcenter {
+  text-align: center;
+}
+.tright {
+  text-align: right;
+}
 
 .rotate-left {
   -webkit-transform: rotate(-90deg)
