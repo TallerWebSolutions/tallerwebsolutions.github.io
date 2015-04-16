@@ -46,7 +46,9 @@ img {
 .tcenter {
   text-align: center;
 }
-
+.hidden {
+  opacity: 0.3;
+}
 
 @media screen and (max-width: 530px) {
   .halfsize {
