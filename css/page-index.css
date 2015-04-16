@@ -1,3 +1,15 @@
 .cases {
   padding: 20px;
 }
+.cta h3 {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.cta .btn {
+  margin: 30px 0px 0px 30px;
+}
+#clients {
+  text-align: center;
+  opacity: 0.5;
+}

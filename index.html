@@ -20,6 +20,24 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body class="c-50-bg">
+      <!-- Sprites -->
+      <svg style="display:none;">
+        <symbol id="arrow-icon" viewBox="0 0 16 14">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+              <g id="Atomic-Responsive-Style-Guide" sketch:type="MSArtboardGroup" transform="translate(-410.000000, -1420.000000)" stroke="currentColor" stroke-width="2">
+                  <g id="Group" sketch:type="MSLayerGroup" transform="translate(69.000000, 1404.000000)">
+                      <g id="Laranja" transform="translate(3.000000, 1.000000)" sketch:type="MSShapeGroup">
+                          <g id="Path-94-+-Line-4" transform="translate(339.446921, 16.000000)">
+                              <path d="M8.63549151,0.302030203 L13.3645085,5.03104719 L8.69758589,9.6979698" id="Path-94"></path>
+                              <path d="M11,5 L0,5" id="Line" stroke-linecap="square"></path>
+                          </g>
+                      </g>
+                  </g>
+              </g>
+          </g>
+        </symbol>
+      </svg>
+      
       <header>
         <!-- fixed header that start hidden on top of the page -->
         <div>
@@ -72,7 +90,7 @@
               <li>Sass                      </li>
               <li>Compass                   </li>
             </ul>
-            <a href="" class="btn c-21-bg">Mais detalhes sobre o projeto</a>
+            <a href="" class="btn c-21-bg">Mais detalhes sobre o projeto <svg class="arrow-icon"><use xlink:href="#arrow-icon"></use><svg></a>
           </div>
           
           <div class="smaller-cases hidden">
@@ -89,9 +107,9 @@
           </div>
         </div>
       
-        <div class="cta">
+        <div class="cta clearfix">
           <h3>Nós estamos preparados para os mais variados desafios tecnológicos.</h3>
-          <button>Faça seu projeto com a Taller</button>
+          <button class="btn btn-arrow c-21-bg">Faça seu projeto com a Taller <svg class="arrow-icon"><use xlink:href="#arrow-icon"></use><svg></button>
         </div>
 
         <div id="clients">
@@ -105,7 +123,7 @@
       
       
       <div class="container">
-        <h3>O que oferecemos</h3>
+        <h2>O que oferecemos</h2>
         
         <div id="eltracker" class="product">
           <h4><img src="http://placehold.it/200x100" alt="El tracker" title="El tracker"></h4>
