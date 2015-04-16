@@ -1,3 +1,6 @@
+#cases .content {
+  border: 1px solid #D8D6D6;
+}
 .cases {
   padding: 20px;
 }
@@ -12,4 +15,5 @@
 #clients {
   text-align: center;
   opacity: 0.5;
+  padding-bottom: 20px;
 }
