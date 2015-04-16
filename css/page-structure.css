@@ -1,8 +1,17 @@
 .container {
   background: #dbdbdb;
-  border: 20px solid white;
+  margin: 20px;
   padding: 20px;
 }
+
+.case {
+  background: #eff4f8;
+  padding: 20px;
+  margin: 20px;
+}
+
+
+
 .pull.left {
   float: left;
 }
