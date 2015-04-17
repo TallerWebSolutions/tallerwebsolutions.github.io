@@ -1,7 +1,28 @@
 h2 {
   text-align: center;
 }
+.no-margin {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.side-by-side {
+  overflow: hidden;
+}
+.side-by-side > div{
+  width: 50%;
+  float: left;
+  text-align: center;
+  padding: 0 20px 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
+#hero {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 #cases .content {
   border: 1px solid #D8D6D6;
 }
@@ -43,20 +64,6 @@ h2 {
 }
 #products {
   padding-bottom: 0;
-}
-.side-by-side {
-  overflow: hidden;
-  margin-left: -20px;
-  margin-right: -20px;
-}
-.side-by-side > div{
-  width: 50%;
-  float: left;
-  text-align: center;
-  padding: 0 20px 20px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 .product.service ul,

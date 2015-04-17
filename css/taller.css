@@ -130,9 +130,13 @@ input.form-text {
   padding: 0.5em 0.5em;
   border-radius: 3px;
   border: none;
+  color: #2B2B32;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+input.form-text:focus {
+  outline: none;
 }
 
 .input-group {
@@ -145,7 +149,8 @@ input.form-text {
   margin-top: 0;
   margin-bottom: 0;
   vertical-align: bottom;
-  padding: 0.64em 0.8em;
+  padding: 0.81em 1em;
+  line-height: normal;
 }
 select {
   -webkit-appearance: none;
