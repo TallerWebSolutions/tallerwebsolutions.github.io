@@ -49,12 +49,18 @@ h2 {
 }
 #eltracker {
   position: relative;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
+
+#eltracker > .content {
+  padding-right: 50%;
+}
+
 #eltracker > img {
   position: absolute;
   bottom: 0;
   right: 20px;
+  max-height: 100%;
   max-width: 50%;
 }
 #products {
