@@ -145,6 +145,7 @@ input.form-text {
   margin-top: 0;
   margin-bottom: 0;
   vertical-align: bottom;
+  padding: 0.64em 0.8em;
 }
 select {
   -webkit-appearance: none;

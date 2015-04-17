@@ -8,6 +8,16 @@ h2 {
 .cases {
   padding: 20px;
 }
+
+.cases > .case {
+  padding-right: 330px;
+  position: relative;
+}
+.cases > .case > img {
+  position: absolute;
+  right: 20px;
+  top: -110px;
+}
 .cta h3 {
   width: 50%;
   float: left;
