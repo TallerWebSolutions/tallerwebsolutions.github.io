@@ -33,13 +33,14 @@ h2 {
 }
 
 .cases > .case {
-  padding-right: 330px;
+  padding-right: 50%;
   position: relative;
 }
 .cases > .case > img {
   position: absolute;
   right: 20px;
-  top: -110px;
+  bottom: 40px;
+  max-width: 40%;
 }
 .cta .btn {
   margin-top: 40px;
