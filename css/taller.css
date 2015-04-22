@@ -41,6 +41,10 @@ hr {
   padding: 20px;
   margin: 0 auto;
 }
+.container > .limiter {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 .pull.left {
   float: left;
