@@ -372,11 +372,12 @@ header {
   text-align: center;
 }
 #ankle .input-group {
-  margin-top: 10px;
+  margin-top: 12px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 760px) {
   #ankle .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 }
 
