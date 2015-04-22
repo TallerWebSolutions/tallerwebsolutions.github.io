@@ -12,8 +12,6 @@ h2 {
   .side-by-side > div {
     width: 50%;
     float: left;
-    text-align: center;
-    padding: 0 20px 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -35,44 +33,72 @@ h2 {
   padding: 20px;
 }
 
-.cases > .case {
-  padding-right: 50%;
-  position: relative;
+/* CASES */
+@media screen and (min-width: 760px) {
+  .cases > .case {
+    padding-right: 50%;
+    position: relative;
+  }
+  .cases > .case > img {
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+    max-width: 40%;
+  }
 }
-.cases > .case > img {
-  position: absolute;
-  right: 20px;
-  bottom: 40px;
-  max-width: 40%;
+
+/* CTA */
+.cta {
+  text-align: center;
 }
-.cta .btn {
-  margin-top: 40px;
+.cta > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+@media screen and (min-width: 760px) {
+  .cta .btn {
+    margin-top: 40px;
+  }
 }
 #clients {
   text-align: center;
   opacity: 0.5;
   padding-bottom: 20px;
 }
+
+/* PRODUCTS */
+#products.container {
+  padding-bottom: 0;
+}
 #eltracker {
   position: relative;
   margin-bottom: 20px;
+  text-align: center;
 }
-
-#eltracker > .content {
-  padding-right: 50%;
-}
-
 #eltracker > img {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
-  max-height: 100%;
-  max-width: 50%;
+  display: none;
 }
-#products {
-  padding-bottom: 0;
+@media screen and (min-width: 760px) {
+  #eltracker > .content {
+    padding-right: 57%;
+    text-align: left;
+  }
+  #eltracker > img {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    max-height: 100%;
+    max-width: 50%;
+  }
 }
-
+.side-by-side .product {
+  text-align: center;
+  padding: 0 20px 25px;
+  overflow: hidden;
+}
 .product.service ul,
 .product.content ul {
   padding: 0;
