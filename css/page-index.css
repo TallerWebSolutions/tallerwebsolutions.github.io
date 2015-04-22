@@ -22,9 +22,9 @@ h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background-image: url('img/fundo_hero.jpg');
+  background-image: url('../img/fundo_hero.jpg');
   background-size: cover;
-  padding: 0 20px;
+  padding: 20px 20px 0px;
 }
 #cases .content {
   border: 1px solid #D8D6D6;
@@ -42,8 +42,8 @@ h2 {
   .cases > .case > img {
     position: absolute;
     right: 20px;
-    bottom: 40px;
-    max-width: 40%;
+    bottom: 20px;
+    max-width: 50%;
   }
 }
 
