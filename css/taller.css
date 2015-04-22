@@ -371,6 +371,14 @@ header {
 #ankle {
   text-align: center;
 }
+#ankle .input-group {
+  margin-top: 10px;
+}
+@media screen and (min-width: 760px) {
+  #ankle .input-group {
+    margin-bottom: 20px;
+  }
+}
 
 /* FOOTER */
 #footer {

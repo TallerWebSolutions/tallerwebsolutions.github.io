@@ -25,6 +25,7 @@ h2 {
   background-image: url('../img/fundo_hero.jpg');
   background-size: cover;
   padding: 20px 20px 0px;
+  background-position: center center;
 }
 #cases .content {
   border: 1px solid #D8D6D6;
