@@ -1,0 +1,26 @@
+{
+  "name": "site-taller",
+  "version": "1.0.0",
+  "description": "Taller WebSite",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TallerWebSolutions/site-taller.git"
+  },
+  "keywords": [
+    "taller",
+    "website"
+  ],
+  "author": "Taller WebSolutions",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TallerWebSolutions/site-taller/issues"
+  },
+  "homepage": "https://github.com/TallerWebSolutions/site-taller#readme"
+}
