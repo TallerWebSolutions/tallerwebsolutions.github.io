@@ -1,0 +1,15 @@
+/**
+ * Theme based styles
+ */
+
+@each $theme-name, $theme in $color-themes
+  %theme-#{$theme-name}
+    background-color: map-get($theme, color-background)
+    color: map-get($theme, color-text)
+
+    a
+      color: map-get($theme, color-link)
+
+    > header
+      h2
+        border-bottom-color: map-get($theme, color-link)

@@ -1,0 +1,49 @@
+/**
+ * Default element styles.
+ */
+
+body
+  > header,
+  > section,
+  > footer
+    position: relative
+    padding: 3rem 10%
+
+    > main
+      > article
+        > header
+          > p
+            font-size: 1.25em
+            font-style: italic
+            color: $color-grey
+
+      h3
+        font-size: 1.25em
+
+
+header,
+section,
+footer
+  position: relative
+
+  > header
+    text-align: center
+    margin-bottom: 3rem
+
+    h2
+      display: inline-block
+      padding: 0.75em
+      font-size: 0.75rem
+      text-transform: uppercase
+      font-family: $font-sans
+      border-bottom: 2px solid $color-primary
+
+@import "sections/heading"
+@import "sections/who"
+@import "sections/cases"
+@import "sections/products"
+@import "sections/call-to-action"
+@import "sections/newsletter"
+
+#section-footer
+  @extend %theme-dark

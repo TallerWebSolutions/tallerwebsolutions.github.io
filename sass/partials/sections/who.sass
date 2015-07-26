@@ -1,0 +1,32 @@
+/**
+ * Who section styles.
+ */
+
+#section-who
+  @extend %theme-light
+  @extend %clearfix
+
+  > aside,
+  > main,
+  > footer
+    @extend %col-md-6
+
+  > main,
+  > footer
+    @extend %col-md-pull-6
+    padding-right: 100px
+
+  > aside
+    @extend %col-md-push-6
+
+  > main
+    color: $color-grey
+    font-size: 1.25em
+
+  > footer
+    a
+      display: block
+      margin-top: 1em
+      padding: 1em 1em 1.25em
+      border: 1px solid $color-grey-light
+      font-weight: bold

@@ -1,0 +1,32 @@
+/**
+ * Heading section styles.
+ */
+
+#section-heading
+  @extend %theme-dark
+  margin-bottom: 45vh
+
+  &:after
+    content: ""
+    position: absolute
+    top: 100%
+    height: 45vh
+    left: 0
+    right: 0
+    background-image: url("../img/header-background.jpg")
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+    box-shadow: inset 0 0px 10vh rgba(0, 0, 0, 0.5)
+
+  a[href="#section-who"]
+    @extend %button-circle-primary
+    @extend %taller-icon-arrow-down
+    position: absolute
+    bottom: 0
+    right: 20%
+    z-index: 1
+    -webkit-transform: translate3d(-50%, 50%, 0)
+
+#section-hero
+  @extend %remarkable

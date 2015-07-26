@@ -1,0 +1,34 @@
+/**
+ * Taller icon styles
+ */
+
+%taller-icon:before
+  font-family: "Taller Icon" !important
+  font-style: normal !important
+  font-weight: normal !important
+  font-variant: normal !important
+  text-transform: none !important
+  speak: none
+  line-height: 1
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+%taller-icon-arrow-down
+  @extend %taller-icon
+  &:before
+    content: "b"
+
+%taller-icon-dot
+  @extend %taller-icon
+  &:before
+    content: "c"
+
+%taller-icon-icon-taller
+  @extend %taller-icon
+  &:before
+    content: "d"
+
+%taller-icon-arrow-right
+  @extend %taller-icon
+  &:before
+    content: "a"

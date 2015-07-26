@@ -1,0 +1,26 @@
+/**
+ * Call-to-action section styles.
+ */
+
+#section-call-to-action
+  @extend %theme-light
+  @extend %clearfix
+  background-image: linear-gradient(to left, $color-grey-lighten 50%, white 50%)
+  background-size: 100% 100%
+  background-position: 0 0, 0 100%, 0 0
+  background-repeat: no-repeat
+
+  #section-services,
+  #section-blog
+    @extend %col-md-6
+    text-align: center
+
+    p
+      font-style: italic
+
+    ul
+      margin: 2em 0
+      padding: 0
+      list-style: none
+      font-weight: bold
+

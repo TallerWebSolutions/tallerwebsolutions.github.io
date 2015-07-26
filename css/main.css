@@ -1,279 +1,439 @@
-/*! HTML5 Boilerplate v5.1.0 | MIT License | https://html5boilerplate.com/ */
-
 /*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
+ * Libraries
  */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
+/**
+ * Main libraries loader.
+ */
+@import url(../bower_components/normalize-css/normalize.css);
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-}
+  box-sizing: border-box; }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+/*------------------------------------------------------------------------------
+ * Color Definitions
+ *------------------------------------------------------------------------------
+ * Use this file to set color variables & functions.
  *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
+ * Before starting to define your color variables, I'll advice you: colors (
+ * maybe more then other kind of variables in Sass) can get really trick and
+ * messed up after some time, mostly because then tend to change a lot during
+ * development. To help you make better decisions, I would advice you to read
+ * the followng articles:
+ *
+ * - http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/
+ * - http://sachagreif.com/sass-color-variables/
  */
+/**
+ * Declarative.
+ */
+/**
+ * Descritive.
+ */
+/**
+ * Functional
+ */
+/*------------------------------------------------------------------------------
+ * Typography Definitions
+ *------------------------------------------------------------------------------
+ * Use this file to set typography variables & functions.
+ *
+ * Althought this might seem like the place for it, this is not the place for
+ * defining custom font sources. To keep this file a non-emitting partial, you
+ * you should only set here the font-related variables, such as font sizes,
+ * font weights, font families, etc.
+ */
+/*------------------------------------------------------------------------------
+ * Media Definitions
+ *------------------------------------------------------------------------------
+ * Use this file to set breakpoint variables & functions.
+ */
+/*------------------------------------------------------------------------------
+ * Grid Definitions
+ *------------------------------------------------------------------------------
+ */
+/*!
+ * bootstrap-grid v1.1.0
+ * Copyright 2015 Santeri Hiltunen
+ * Licensed under MIT (https://github.com/Hilzu/bootstrap-grid/blob/master/LICENSE)
+ */
+@-ms-viewport {
+  width: device-width; }
 
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+#section-who:before,
+#section-cases > aside:before,
+#section-call-to-action:before,
+#section-who:after,
+#section-cases > aside:after,
+#section-call-to-action:after,
+#section-cases > main > article:before,
+#section-products > main > article:before,
+#section-cases > main > article:after, #section-products > main > article:after {
+  content: " ";
+  display: table; }
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+#section-who:after,
+#section-cases > aside:after,
+#section-call-to-action:after,
+#section-cases > main > article:after, #section-products > main > article:after {
+  clear: both; }
+
+#section-cases > main > article, #section-products > main > article {
+  margin-left: -15px;
+  margin-right: -15px; }
+
+#section-cases > main > article > main,
+#section-cases > main > article > footer, #section-who > aside,
+#section-who > main,
+#section-who > footer, #section-cases > aside > p,
+#section-cases > aside > a, #section-products > main > article > main,
+#section-products > main > article > aside, #section-call-to-action #section-services,
+#section-call-to-action #section-blog, #section-cases > main > article > aside {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+@media (min-width: 992px) {
+  #section-cases > main > article > main,
+  #section-cases > main > article > footer, #section-who > aside,
+  #section-who > main,
+  #section-who > footer, #section-cases > aside > p,
+  #section-cases > aside > a, #section-products > main > article > main,
+  #section-products > main > article > aside, #section-call-to-action #section-services,
+  #section-call-to-action #section-blog, #section-cases > main > article > aside {
+    float: left; }
+  #section-cases > main > article > aside {
+    width: 58.33333333%; }
+  #section-who > aside,
+  #section-who > main,
+  #section-who > footer, #section-cases > aside > p,
+  #section-cases > aside > a, #section-products > main > article > main,
+  #section-products > main > article > aside, #section-call-to-action #section-services,
+  #section-call-to-action #section-blog {
+    width: 50%; }
+  #section-cases > main > article > main,
+  #section-cases > main > article > footer {
+    width: 41.66666667%; }
+  #section-who > main,
+  #section-who > footer {
+    right: 50%; }
+  #section-cases > main > article > aside {
+    right: 41.66666667%; }
+  #section-cases > main > article > main,
+  #section-cases > main > article > footer {
+    left: 58.33333333%; }
+  #section-who > aside {
+    left: 50%; } }
+
+/**
+ * Taller icon styles
+ */
+#section-heading a[href="#section-who"]:before {
+  font-family: "Taller Icon" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+#section-heading a[href="#section-who"]:before {
+  content: "b"; }
+
+/**
+ * Remarkable component for jumbotron-link styles
+ */
+#section-hero {
+  font-size: 2.25rem;
+  font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif; }
+
+/**
+ * Button components
+ */
+#section-heading a[href="#section-who"] {
+  text-indent: -9999px;
+  display: inline-block;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%; }
+
+#section-heading a[href="#section-who"] {
+  background-color: #E02438; }
+
+button, #section-cases > main > article .read-more, #section-products > main > article .read-more, input[type="text"] {
+  border: 0.2em solid;
+  border-radius: 4px;
+  padding: 0.35em 1.25em;
+  text-transform: uppercase;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: bold;
+  font-size: 0.75em;
+  line-height: 2em; }
+
+button, #section-cases > main > article .read-more, #section-products > main > article .read-more {
+  text-decoration: none;
+  display: inline-block; }
+
+button {
+  border: 0.2em solid #E02438;
+  background-color: #E02438;
+  color: white; }
+
+/**
+ * Text components
+ */
+#section-cases > main > article > header p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 35em; }
 
 /*
- * A better looking default horizontal rule
+ * Outputing vendors
  */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
 /*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
+ * Partials
  */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
+/**
+ * Theme based styles
  */
+#section-heading, #section-newsletter, #section-footer {
+  background-color: #29292f;
+  color: white; }
+  #section-heading a, #section-newsletter a, #section-footer a {
+    color: #E02438; }
+  #section-heading > header h2, #section-newsletter > header h2, #section-footer > header h2 {
+    border-bottom-color: #E02438; }
 
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
+#section-who, #section-cases, #section-products, #section-call-to-action {
+  background-color: white;
+  color: #2B2B32; }
+  #section-who a, #section-cases a, #section-products a, #section-call-to-action a {
+    color: #BC3144; }
+  #section-who > header h2, #section-cases > header h2, #section-products > header h2, #section-call-to-action > header h2 {
+    border-bottom-color: #BC3144; }
 
-/*
- * Allow only vertical resizing of textareas.
+/**
+ * Default element styles.
  */
+html {
+  font-size: 20px; }
 
-textarea {
-    resize: vertical;
-}
+body {
+  font-family: "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+  line-height: 1.5em; }
 
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
+p {
+  font-size: 1em;
+  line-height: 1.35em; }
 
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin-bottom: 0; }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+h4 {
+  font-size: 1.25rem; }
 
+ol, ul {
+  padding-left: 1.25em;
+  line-height: 1.85em; }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers:
+/**
+ * Default element styles.
  */
+body > header,
+body > section,
+body > footer {
+  position: relative;
+  padding: 3rem 10%; }
+  body > header > main > article > header > p,
+  body > section > main > article > header > p,
+  body > footer > main > article > header > p {
+    font-size: 1.25em;
+    font-style: italic;
+    color: #666666; }
+  body > header > main h3,
+  body > section > main h3,
+  body > footer > main h3 {
+    font-size: 1.25em; }
 
-.hidden {
-    display: none !important;
-}
+header,
+section,
+footer {
+  position: relative; }
+  header > header,
+  section > header,
+  footer > header {
+    text-align: center;
+    margin-bottom: 3rem; }
+    header > header h2,
+    section > header h2,
+    footer > header h2 {
+      display: inline-block;
+      padding: 0.75em;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      border-bottom: 2px solid #E02438; }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+/**
+ * Heading section styles.
  */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
+#section-heading {
+  margin-bottom: 45vh; }
+  #section-heading:after {
+    content: "";
     position: absolute;
-    width: 1px;
-}
+    top: 100%;
+    height: 45vh;
+    left: 0;
+    right: 0;
+    background-image: url("../img/header-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: inset 0 0px 10vh rgba(0, 0, 0, 0.5); }
+  #section-heading a[href="#section-who"] {
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    z-index: 1;
+    -webkit-transform: translate3d(-50%, 50%, 0); }
 
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
+/**
+ * Who section styles.
  */
+#section-who > main,
+#section-who > footer {
+  padding-right: 100px; }
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
+#section-who > main {
+  color: #666666;
+  font-size: 1.25em; }
 
-/*
- * Hide visually and from screen readers, but maintain layout
+#section-who > footer a {
+  display: block;
+  margin-top: 1em;
+  padding: 1em 1em 1.25em;
+  border: 1px solid #CCCCCC;
+  font-weight: bold; }
+
+/**
+ * Cases section styles.
  */
+#section-cases {
+  background-color: #F9F9F9; }
+  #section-cases > main > article > header {
+    text-align: center; }
+  #section-cases > main > article > aside img {
+    width: 100%; }
+    @media (min-width: 992px) {
+      #section-cases > main > article > aside img {
+        margin-left: -3vw; } }
+  #section-cases > aside {
+    margin: 3em 0 2em 10%;
+    margin-left: 10%;
+    border: 3px dashed #CCC;
+    border-width: 3px 0;
+    padding: 2em 0;
+    color: #666666;
+    font-size: 1.25em; }
+    #section-cases > aside > p,
+    #section-cases > aside > a {
+      margin: 0; }
+  #section-cases > footer {
+    text-align: center; }
 
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
+/**
+ * Products section styles.
  */
+#section-products {
+  padding-bottom: 8rem;
+  background: url("/img/el-tracker-background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom; }
 
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
+/**
+ * Call-to-action section styles.
+ */
+#section-call-to-action {
+  background-image: linear-gradient(to left, #E7E7E7 50%, white 50%);
+  background-size: 100% 100%;
+  background-position: 0 0, 0 100%, 0 0;
+  background-repeat: no-repeat; }
+  #section-call-to-action #section-services,
+  #section-call-to-action #section-blog {
+    text-align: center; }
+    #section-call-to-action #section-services p,
+    #section-call-to-action #section-blog p {
+      font-style: italic; }
+    #section-call-to-action #section-services ul,
+    #section-call-to-action #section-blog ul {
+      margin: 2em 0;
+      padding: 0;
+      list-style: none;
+      font-weight: bold; }
 
-.clearfix:after {
-    clear: both;
-}
+/**
+ * Newsletter section styles.
+ */
+#section-newsletter {
+  padding: 6rem 10% 6.5rem;
+  background: url("/img/newsletter-background.jpg");
+  background-size: cover;
+  box-shadow: inset 0 0px 10vh rgba(0, 0, 0, 0.5);
+  text-align: center; }
+  #section-newsletter input {
+    width: 17em; }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+/**
+ * Font familities loading.
+ */
+@font-face {
+  font-family: 'aleo';
+  src: url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.eot");
+  src: url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.woff") format("woff"), url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.ttf") format("truetype"), url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.svg#aleobold") format("svg");
+  font-weight: 500;
+  font-style: normal; }
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
+@font-face {
+  font-family: 'aleo';
+  src: url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.eot");
+  src: url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.woff") format("woff"), url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.ttf") format("truetype"), url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.svg#aleoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
+@font-face {
+  font-family: 'aleo';
+  src: url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.eot");
+  src: url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.woff") format("woff"), url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.ttf") format("truetype"), url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.svg#aleoitalic") format("svg");
+  font-weight: normal;
+  font-style: italic; }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+@font-face {
+  font-family: 'aleo';
+  src: url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.eot");
+  src: url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.woff") format("woff"), url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.ttf") format("truetype"), url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.svg#aleobolditalic") format("svg");
+  font-weight: 500;
+  font-style: italic; }
 
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+@font-face {
+  font-family: "Taller Icons";
+  src: url("/fonts/taller-icons.eot");
+  src: url("/fonts/taller-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/taller-icons.woff") format("woff"), url("/fonts/taller-icons.ttf") format("truetype"), url("/fonts/taller-icons.svg#taller-icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
+/**
+ * Form element styles.
+ */
+input[type="text"] {
+  border-width: 2px;
+  background-color: transparent;
+  outline: none; }

@@ -1,0 +1,22 @@
+/**
+ * Products section styles.
+ */
+
+#section-products
+  @extend %theme-light
+  padding-bottom: 8rem
+  background: url("/img/el-tracker-background.png")
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center bottom
+
+  > main
+    > article
+      @extend %row
+
+      > main,
+      > aside
+        @extend %col-md-6
+
+      .read-more
+        @extend %button-outline

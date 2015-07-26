@@ -1,0 +1,56 @@
+/*------------------------------------------------------------------------------
+ * Color Definitions
+ *------------------------------------------------------------------------------
+ * Use this file to set color variables & functions.
+ *
+ * Before starting to define your color variables, I'll advice you: colors (
+ * maybe more then other kind of variables in Sass) can get really trick and
+ * messed up after some time, mostly because then tend to change a lot during
+ * development. To help you make better decisions, I would advice you to read
+ * the followng articles:
+ *
+ * - http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/
+ * - http://sachagreif.com/sass-color-variables/
+ */
+
+/**
+ * Declarative.
+ */
+
+$color-grey          : #666666;
+$color-grey-light    : #CCCCCC;
+$color-grey-lighten  : #E7E7E7;
+$color-grey-lightest : #F9F9F9;
+$color-jaguar        : #29292f;
+$color-crimson       : #E02438;
+$color-crambery      : #BC3144;
+$color-bastile       : #2B2C30;
+$color-valhalla      : #2B2B32;
+
+
+/**
+ * Descritive.
+ */
+
+
+$color-primary: $color-crimson;
+// $color-vine-light: $color-sandrift
+
+
+/**
+ * Functional
+ */
+
+$color-themes: (
+  dark: (
+    color-text: white,
+    color-background: $color-jaguar,
+    color-link: $color-primary
+  ),
+
+  light: (
+    color-text: $color-valhalla,
+    color-background: white,
+    color-link: $color-crambery
+  )
+);

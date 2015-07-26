@@ -1,0 +1,52 @@
+/**
+ * Cases section styles.
+ */
+
+#section-cases
+  @extend %theme-light
+  background-color: $color-grey-lightest
+
+  > main > article
+    @extend %row
+
+    > header
+      text-align: center
+
+      p
+        @extend %readable
+
+    > main,
+    > footer
+      @extend %col-md-5
+      @extend %col-md-push-7
+
+    > aside
+      @extend %col-md-7
+      @extend %col-md-pull-5
+
+      img
+        width: 100%
+
+        +breakpoint($breakpoint-min-md)
+          margin-left: -3vw
+
+    .read-more
+      @extend %button-outline
+
+  > aside
+    @extend %clearfix
+    margin: 3em 0 2em 10%
+    margin-left: 10%
+    border: 3px dashed #CCC
+    border-width: 3px 0
+    padding: 2em 0
+    color: $color-grey
+    font-size: 1.25em
+
+    > p,
+    > a
+      @extend %col-md-6
+      margin: 0
+
+  > footer
+    text-align: center
