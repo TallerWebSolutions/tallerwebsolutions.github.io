@@ -207,7 +207,7 @@ nav > aside, #section-cases > main > article > main,
 #section-footer h2 {
   border-radius: .35rem; }
 
-button, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-footer > aside a, input[type="text"] {
+button, #section-call-to-action #section-services > main > article > a, #section-footer > aside a, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-call-to-action #section-blog > main > article > a, input[type="text"] {
   border: 0.2em solid;
   border-radius: 4px;
   padding: 0.35em 1.25em;
@@ -217,7 +217,7 @@ button, #section-cases > main > article .read-more, #section-products > main > a
   font-size: 0.75em;
   line-height: 2em; }
 
-button, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-footer > aside a {
+button, #section-call-to-action #section-services > main > article > a, #section-footer > aside a, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-call-to-action #section-blog > main > article > a {
   text-decoration: none;
   display: inline-block; }
 
@@ -225,6 +225,15 @@ button {
   border: 0.2em solid #E02438;
   background-color: #E02438;
   color: white; }
+
+#section-call-to-action #section-services > main > article > a {
+  color: white;
+  background-color: #E02438; }
+
+#section-footer > aside a {
+  margin-top: 1rem; }
+  #section-footer > aside a:after {
+    margin-left: 1.2em; }
 
 /**
  * Text components
@@ -412,10 +421,13 @@ footer > header {
 
 #section-who > footer a {
   display: block;
-  margin-top: 1em;
-  padding: 1em 1em 1.25em;
-  border: 1px solid #CCCCCC;
-  font-weight: bold; }
+  margin-top: 0.5em;
+  border: none;
+  padding: 0;
+  font-weight: bold;
+  font-family: Alegreya;
+  font-style: italic;
+  font-size: 1.1em; }
 
 /**
  * Cases section styles.
@@ -538,11 +550,6 @@ footer > header {
       margin: 0; }
     #section-footer > main ul li a {
       text-decoration: none; }
-
-#section-footer > aside a {
-  margin-top: 1rem; }
-  #section-footer > aside a:after {
-    margin-left: 1.2em; }
 
 /**
  * Font familities loading.

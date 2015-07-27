@@ -57,3 +57,16 @@
 
 %button-outline
   @extend %button
+
+%button-outline-fulfiled
+  @extend %button-outline
+  color: white
+  background-color: $color-primary
+
+%button-outline-arrow
+  @extend %button-outline
+  @extend %taller-icon-after-arrow-right
+  &:after
+    margin-left: 1.2em
+
+  margin-top:1rem
