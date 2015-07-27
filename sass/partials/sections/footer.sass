@@ -1,0 +1,41 @@
+/**
+ * Footer section styles.
+ */
+
+#section-footer
+  @extend %theme-dark
+  @extend %clearfix
+
+  > main,
+  > aside
+    @extend %col-md-6
+    h3
+      color: $color-grey
+    font-size: .8em
+
+  > main
+    p
+     a
+      %in-text-link
+    ul
+      padding: 0
+      li
+        list-style: none
+        display: inline-block
+        padding: .2rem
+        &:before
+          content: ""
+          border-left: 1px solid white
+          margin-right: .4rem
+        &:first-child:before
+          border: none
+          padding: 0
+          margin: 0
+        a
+          text-decoration: none
+
+  > aside
+    a
+      @extend %button-outline
+      @extend %taller-icon-arrow-down
+      margin-top:1rem

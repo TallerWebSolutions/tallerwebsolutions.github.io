@@ -63,21 +63,27 @@ html {
 @-ms-viewport {
   width: device-width; }
 
+nav:before,
 #section-who:before,
 #section-cases > aside:before,
 #section-call-to-action:before,
+#section-footer:before,
+nav:after,
 #section-who:after,
 #section-cases > aside:after,
 #section-call-to-action:after,
+#section-footer:after,
 #section-cases > main > article:before,
 #section-products > main > article:before,
 #section-cases > main > article:after, #section-products > main > article:after {
   content: " ";
   display: table; }
 
+nav:after,
 #section-who:after,
 #section-cases > aside:after,
 #section-call-to-action:after,
+#section-footer:after,
 #section-cases > main > article:after, #section-products > main > article:after {
   clear: both; }
 
@@ -85,27 +91,31 @@ html {
   margin-left: -15px;
   margin-right: -15px; }
 
-#section-cases > main > article > main,
+nav > aside, #section-cases > main > article > main,
 #section-cases > main > article > footer, #section-who > aside,
 #section-who > main,
 #section-who > footer, #section-cases > aside > p,
 #section-cases > aside > a, #section-products > main > article > main,
 #section-products > main > article > aside, #section-call-to-action #section-services,
-#section-call-to-action #section-blog, #section-cases > main > article > aside {
+#section-call-to-action #section-blog, #section-footer > main,
+#section-footer > aside, #section-cases > main > article > aside, nav > main {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
 @media (min-width: 992px) {
-  #section-cases > main > article > main,
+  nav > aside, #section-cases > main > article > main,
   #section-cases > main > article > footer, #section-who > aside,
   #section-who > main,
   #section-who > footer, #section-cases > aside > p,
   #section-cases > aside > a, #section-products > main > article > main,
   #section-products > main > article > aside, #section-call-to-action #section-services,
-  #section-call-to-action #section-blog, #section-cases > main > article > aside {
+  #section-call-to-action #section-blog, #section-footer > main,
+  #section-footer > aside, #section-cases > main > article > aside, nav > main {
     float: left; }
+  nav > main {
+    width: 66.66666667%; }
   #section-cases > main > article > aside {
     width: 58.33333333%; }
   #section-who > aside,
@@ -113,11 +123,14 @@ html {
   #section-who > footer, #section-cases > aside > p,
   #section-cases > aside > a, #section-products > main > article > main,
   #section-products > main > article > aside, #section-call-to-action #section-services,
-  #section-call-to-action #section-blog {
+  #section-call-to-action #section-blog, #section-footer > main,
+  #section-footer > aside {
     width: 50%; }
   #section-cases > main > article > main,
   #section-cases > main > article > footer {
     width: 41.66666667%; }
+  nav > aside {
+    width: 25%; }
   #section-who > main,
   #section-who > footer {
     right: 50%; }
@@ -132,7 +145,7 @@ html {
 /**
  * Taller icon styles
  */
-#section-heading a[href="#section-who"]:before {
+#section-heading a[href="#section-who"]:before, #section-footer > aside a:before {
   font-family: "Taller Icon" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -143,7 +156,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-#section-heading a[href="#section-who"]:before {
+#section-heading a[href="#section-who"]:before, #section-footer > aside a:before {
   content: "b"; }
 
 /**
@@ -166,7 +179,7 @@ html {
 #section-heading a[href="#section-who"] {
   background-color: #E02438; }
 
-button, #section-cases > main > article .read-more, #section-products > main > article .read-more, input[type="text"] {
+button, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-footer > aside a, input[type="text"] {
   border: 0.2em solid;
   border-radius: 4px;
   padding: 0.35em 1.25em;
@@ -176,7 +189,7 @@ button, #section-cases > main > article .read-more, #section-products > main > a
   font-size: 0.75em;
   line-height: 2em; }
 
-button, #section-cases > main > article .read-more, #section-products > main > article .read-more {
+button, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-footer > aside a {
   text-decoration: none;
   display: inline-block; }
 
@@ -193,6 +206,9 @@ button {
   margin-right: auto;
   max-width: 35em; }
 
+/**
+ * Link components
+ */
 /*
  * Outputing vendors
  */
@@ -242,6 +258,26 @@ h4 {
 ol, ul {
   padding-left: 1.25em;
   line-height: 1.85em; }
+
+nav a {
+  color: white !important;
+  text-decoration: none;
+  border-bottom: 2px solid #BC3144; }
+
+nav > main ul {
+  text-align: right; }
+
+nav > main li {
+  display: inline;
+  list-style: none;
+  padding: 1rem; }
+  nav > main li:nth-child {
+    padding-left: 1.2em; }
+    nav > main li:nth-child:after {
+      content: "a";
+      font-family: "Taller Icons";
+      position: relative;
+      height: 10px; }
 
 /**
  * Default element styles.
@@ -348,13 +384,17 @@ footer {
       margin: 0; }
   #section-cases > footer {
     text-align: center; }
+    #section-cases > footer ul li {
+      list-style: none;
+      display: inline;
+      padding: 1rem; }
 
 /**
  * Products section styles.
  */
 #section-products {
   padding-bottom: 8rem;
-  background: url("/img/el-tracker-background.png");
+  background: url("../img/el-tracker-background.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center bottom; }
@@ -385,12 +425,42 @@ footer {
  */
 #section-newsletter {
   padding: 6rem 10% 6.5rem;
-  background: url("/img/newsletter-background.jpg");
+  background: url("../img/newsletter-background.jpg");
   background-size: cover;
   box-shadow: inset 0 0px 10vh rgba(0, 0, 0, 0.5);
   text-align: center; }
   #section-newsletter input {
     width: 17em; }
+
+/**
+ * Footer section styles.
+ */
+#section-footer > main,
+#section-footer > aside {
+  font-size: .8em; }
+  #section-footer > main h3,
+  #section-footer > aside h3 {
+    color: #666666; }
+
+#section-footer > main ul {
+  padding: 0; }
+  #section-footer > main ul li {
+    list-style: none;
+    display: inline-block;
+    padding: .2rem; }
+    #section-footer > main ul li:before {
+      content: "";
+      border-left: 1px solid white;
+      margin-right: .4rem; }
+    #section-footer > main ul li:first-child:before {
+      border: none;
+      padding: 0;
+      margin: 0; }
+    #section-footer > main ul li a {
+      text-decoration: none; }
+
+#section-footer > aside a {
+  margin-top: 1rem; }
 
 /**
  * Font familities loading.

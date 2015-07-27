@@ -1,0 +1,23 @@
+nav
+  @extend %clearfix
+  a
+    color: white !important
+    text-decoration: none
+    border-bottom: 2px solid $color-primary-dark
+  > aside
+    @extend %col-md-3
+  > main
+    @extend %col-md-8
+    ul
+      text-align: right
+    li
+      display: inline
+      list-style: none
+      padding: 1rem
+      &:nth-child
+        padding-left: 1.2em
+        &:after
+          content: "a"
+          font-family: "Taller Icons"
+          position: relative
+          height: 10px
