@@ -9,14 +9,21 @@
   background-size: contain
   background-repeat: no-repeat
   background-position: center bottom
+  text-align: center
 
-  > main
-    > article
-      @extend %row
+  .read-more
+    @extend %button-outline
 
-      > main,
-      > aside
-        @extend %col-md-6
+  +breakpoint($breakpoint-min-md)
+    text-align: left
+    > main
+      > article
+        @extend %row
 
-      .read-more
-        @extend %button-outline
+        > main,
+        > aside
+          @extend %col-md-6
+
+  +breakpoint($breakpoint-max-lg)
+    aside
+      display: none

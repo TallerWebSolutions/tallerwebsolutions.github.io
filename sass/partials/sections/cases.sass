@@ -6,6 +6,9 @@
   @extend %theme-light
   background-color: $color-grey-lightest
 
+  +breakpoint($breakpoint-max-sm)
+    text-align: center
+
   > main > article
     @extend %row
 
@@ -15,14 +18,29 @@
       p
         @extend %readable
 
+    > main
+      p, ul
+        color: $color-grey
+        margin-top: 0.5em
+        font-size: 0.9em
+        line-height: 1.75em
+
+      ul
+        list-style: none
+        padding: 0
+
+        li
+          display: inline
+
+          &:not(:last-child):after
+            content: ","
+
     > main,
     > footer
       @extend %col-md-5
-      @extend %col-md-push-7
 
     > aside
       @extend %col-md-7
-      @extend %col-md-pull-5
 
       img
         width: 100%
@@ -32,21 +50,36 @@
 
     .read-more
       @extend %button-outline
+      margin-top: 2em
 
   > aside
     @extend %clearfix
     margin: 3em 0 2em 10%
-    margin-left: 10%
     border: 3px dashed #CCC
     border-width: 3px 0
     padding: 2em 0
     color: $color-grey
     font-size: 1.25em
 
-    > p,
-    > a
-      @extend %col-md-6
+    +breakpoint($breakpoint-max-sm)
+      margin-left: 0
+
+    > p
       margin: 0
+
+      +breakpoint($breakpoint-min-md)
+        @extend %col-md-6
+
+    .call-to-action
+      @extend %button-outline-fulfiled-arrow
+      margin: 0 15px 0 0
+      width: auto
+
+      +breakpoint($breakpoint-max-sm)
+        margin-top: 2em
+
+      +breakpoint($breakpoint-min-md)
+        float: right
 
   > footer
     text-align: center

@@ -91,37 +91,32 @@ nav:after,
   margin-left: -15px;
   margin-right: -15px; }
 
-nav > aside, #section-cases > main > article > main,
+#section-cases > main > article > main,
 #section-cases > main > article > footer, #section-who > aside,
 #section-who > main,
-#section-who > footer, #section-cases > aside > p,
-#section-cases > aside > a, #section-products > main > article > main,
+#section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
 #section-products > main > article > aside, #section-call-to-action #section-services,
 #section-call-to-action #section-blog, #section-footer > main,
-#section-footer > aside, #section-cases > main > article > aside, nav > main {
+#section-footer > aside, #section-cases > main > article > aside {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
 @media (min-width: 992px) {
-  nav > aside, #section-cases > main > article > main,
+  #section-cases > main > article > main,
   #section-cases > main > article > footer, #section-who > aside,
   #section-who > main,
-  #section-who > footer, #section-cases > aside > p,
-  #section-cases > aside > a, #section-products > main > article > main,
+  #section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
   #section-products > main > article > aside, #section-call-to-action #section-services,
   #section-call-to-action #section-blog, #section-footer > main,
-  #section-footer > aside, #section-cases > main > article > aside, nav > main {
+  #section-footer > aside, #section-cases > main > article > aside {
     float: left; }
-  nav > main {
-    width: 66.66666667%; }
   #section-cases > main > article > aside {
     width: 58.33333333%; }
   #section-who > aside,
   #section-who > main,
-  #section-who > footer, #section-cases > aside > p,
-  #section-cases > aside > a, #section-products > main > article > main,
+  #section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
   #section-products > main > article > aside, #section-call-to-action #section-services,
   #section-call-to-action #section-blog, #section-footer > main,
   #section-footer > aside {
@@ -129,16 +124,9 @@ nav > aside, #section-cases > main > article > main,
   #section-cases > main > article > main,
   #section-cases > main > article > footer {
     width: 41.66666667%; }
-  nav > aside {
-    width: 25%; }
   #section-who > main,
   #section-who > footer {
     right: 50%; }
-  #section-cases > main > article > aside {
-    right: 41.66666667%; }
-  #section-cases > main > article > main,
-  #section-cases > main > article > footer {
-    left: 58.33333333%; }
   #section-who > aside {
     left: 50%; } }
 
@@ -162,7 +150,7 @@ nav > aside, #section-cases > main > article > main,
 #section-heading nav h2:before, #section-footer h2:before {
   content: "d"; }
 
-#section-footer > aside a:after {
+#section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after, #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
   font-family: "Taller Icons" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -173,7 +161,7 @@ nav > aside, #section-cases > main > article > main,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-#section-footer > aside a:after {
+#section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after, #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
   content: "a"; }
 
 /**
@@ -207,7 +195,7 @@ nav > aside, #section-cases > main > article > main,
 #section-footer h2 {
   border-radius: .35rem; }
 
-button, #section-call-to-action #section-services > main > article > a, #section-footer > aside a, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-call-to-action #section-blog > main > article > a, input[type="text"] {
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, button, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a, #section-cases > main > article .read-more, #section-products .read-more, input[type="text"] {
   border: 0.2em solid;
   border-radius: 4px;
   padding: 0.35em 1.25em;
@@ -217,22 +205,27 @@ button, #section-call-to-action #section-services > main > article > a, #section
   font-size: 0.75em;
   line-height: 2em; }
 
-button, #section-call-to-action #section-services > main > article > a, #section-footer > aside a, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-call-to-action #section-blog > main > article > a {
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, button, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a, #section-cases > main > article .read-more, #section-products .read-more {
   text-decoration: none;
   display: inline-block; }
 
-button {
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, button {
   border: 0.2em solid #E02438;
   background-color: #E02438;
   color: white; }
 
-#section-call-to-action #section-services > main > article > a {
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a {
   color: white;
   background-color: #E02438; }
 
-#section-footer > aside a {
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a {
   margin-top: 1rem; }
-  #section-footer > aside a:after {
+  #section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after {
+    margin-left: 1.2em; }
+
+#section-call-to-action #section-blog > main > article > a, #section-footer > aside a {
+  margin-top: 1rem; }
+  #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
     margin-left: 1.2em; }
 
 /**
@@ -299,7 +292,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0; }
 
 h4 {
-  font-size: 1.25rem; }
+  font-size: 1em; }
 
 ol, ul {
   padding-left: 1.25em;
@@ -316,20 +309,25 @@ nav a {
   text-decoration: none;
   border-bottom: 2px solid #BC3144; }
 
-nav > main ul {
-  text-align: right; }
+nav > aside {
+  float: left; }
 
-nav > main li {
-  display: inline;
-  list-style: none;
-  padding: 1rem; }
-  nav > main li:nth-child {
-    padding-left: 1.2em; }
-    nav > main li:nth-child:after {
-      content: "a";
-      font-family: "Taller Icons";
-      position: relative;
-      height: 10px; }
+nav > main {
+  float: right;
+  margin-right: 15px; }
+  nav > main ul {
+    text-align: right; }
+  nav > main li {
+    display: inline;
+    list-style: none;
+    padding: 1rem; }
+    nav > main li:nth-child {
+      padding-left: 1.2em; }
+      nav > main li:nth-child:after {
+        content: "a";
+        font-family: "Taller Icons";
+        position: relative;
+        height: 10px; }
 
 /**
  * Default element styles.
@@ -434,24 +432,51 @@ footer > header {
  */
 #section-cases {
   background-color: #F9F9F9; }
+  @media (max-width: 991px) {
+    #section-cases {
+      text-align: center; } }
   #section-cases > main > article > header {
     text-align: center; }
+  #section-cases > main > article > main p, #section-cases > main > article > main ul {
+    color: #666666;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    line-height: 1.75em; }
+  #section-cases > main > article > main ul {
+    list-style: none;
+    padding: 0; }
+    #section-cases > main > article > main ul li {
+      display: inline; }
+      #section-cases > main > article > main ul li:not(:last-child):after {
+        content: ","; }
   #section-cases > main > article > aside img {
     width: 100%; }
     @media (min-width: 992px) {
       #section-cases > main > article > aside img {
         margin-left: -3vw; } }
+  #section-cases > main > article .read-more {
+    margin-top: 2em; }
   #section-cases > aside {
     margin: 3em 0 2em 10%;
-    margin-left: 10%;
     border: 3px dashed #CCC;
     border-width: 3px 0;
     padding: 2em 0;
     color: #666666;
     font-size: 1.25em; }
-    #section-cases > aside > p,
-    #section-cases > aside > a {
+    @media (max-width: 991px) {
+      #section-cases > aside {
+        margin-left: 0; } }
+    #section-cases > aside > p {
       margin: 0; }
+    #section-cases > aside .call-to-action {
+      margin: 0 15px 0 0;
+      width: auto; }
+      @media (max-width: 991px) {
+        #section-cases > aside .call-to-action {
+          margin-top: 2em; } }
+      @media (min-width: 992px) {
+        #section-cases > aside .call-to-action {
+          float: right; } }
   #section-cases > footer {
     text-align: center; }
     #section-cases > footer ul li {
@@ -467,29 +492,52 @@ footer > header {
   background: url("../img/el-tracker-background.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center bottom; }
+  background-position: center bottom;
+  text-align: center; }
+  @media (min-width: 992px) {
+    #section-products {
+      text-align: left; } }
+  @media (min-width: 0) {
+    #section-products aside {
+      display: none; } }
 
 /**
  * Call-to-action section styles.
  */
-#section-call-to-action {
-  background-image: linear-gradient(to left, #E7E7E7 50%, white 50%);
-  background-size: 100% 100%;
-  background-position: 0 0, 0 100%, 0 0;
-  background-repeat: no-repeat; }
-  #section-call-to-action #section-services,
-  #section-call-to-action #section-blog {
-    text-align: center; }
-    #section-call-to-action #section-services p,
-    #section-call-to-action #section-blog p {
-      font-style: italic; }
-    #section-call-to-action #section-services ul,
-    #section-call-to-action #section-blog ul {
-      margin: 2em 0;
-      padding: 0;
-      list-style: none;
-      font-weight: bold;
-      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+@media (min-width: 992px) {
+  #section-call-to-action {
+    background-image: linear-gradient(to left, #E7E7E7 50%, white 50%);
+    background-size: 100% 100%;
+    background-position: 0 0, 0 100%, 0 0;
+    background-repeat: no-repeat; } }
+
+@media (max-width: 991px) {
+  #section-call-to-action {
+    padding: 0; } }
+
+#section-call-to-action #section-services {
+  background-color: white; }
+
+#section-call-to-action #section-blog {
+  background-color: #E7E7E7; }
+
+#section-call-to-action #section-services,
+#section-call-to-action #section-blog {
+  text-align: center; }
+  #section-call-to-action #section-services p,
+  #section-call-to-action #section-blog p {
+    font-style: italic; }
+  #section-call-to-action #section-services ul,
+  #section-call-to-action #section-blog ul {
+    margin: 2em 0;
+    padding: 0;
+    list-style: none;
+    font-weight: bold;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  @media (max-width: 991px) {
+    #section-call-to-action #section-services,
+    #section-call-to-action #section-blog {
+      padding: 3rem 0; } }
 
 /**
  * Newsletter section styles.

@@ -5,10 +5,21 @@
 #section-call-to-action
   @extend %theme-light
   @extend %clearfix
-  background-image: linear-gradient(to left, $color-grey-lighten 50%, white 50%)
-  background-size: 100% 100%
-  background-position: 0 0, 0 100%, 0 0
-  background-repeat: no-repeat
+
+  +breakpoint($breakpoint-min-md)
+    background-image: linear-gradient(to left, $color-grey-lighten 50%, white 50%)
+    background-size: 100% 100%
+    background-position: 0 0, 0 100%, 0 0
+    background-repeat: no-repeat
+
+  +breakpoint($breakpoint-max-sm)
+    padding: 0
+
+  #section-services
+    background-color: white
+
+  #section-blog
+    background-color: $color-grey-lighten
 
   #section-services,
   #section-blog
@@ -25,10 +36,13 @@
       font-weight: bold
       font-family: $font-sans
 
+    +breakpoint($breakpoint-max-sm)
+      padding: 3rem 0
+
   #section-services
     > main > article > a
-      @extend %button-outline-fulfiled
+      @extend %button-outline-fulfiled-arrow
 
   #section-blog
     > main > article > a
-      @extend %button-outline
+      @extend %button-outline-arrow
