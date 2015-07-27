@@ -146,7 +146,7 @@ nav > aside, #section-cases > main > article > main,
  * Taller icon styles
  */
 #section-heading a[href="#section-who"]:before, #section-footer > aside a:before {
-  font-family: "Taller Icon" !important;
+  font-family: "Taller Icons" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -170,14 +170,20 @@ nav > aside, #section-cases > main > article > main,
  * Button components
  */
 #section-heading a[href="#section-who"] {
-  text-indent: -9999px;
   display: inline-block;
   height: 3.5rem;
   width: 3.5rem;
-  border-radius: 50%; }
+  border-radius: 50%;
+  font-size: 0;
+  text-decoration: none;
+  text-align: center; }
+  #section-heading a[href="#section-who"]:before {
+    font-size: 2rem;
+    line-height: 3.7rem; }
 
 #section-heading a[href="#section-who"] {
-  background-color: #E02438; }
+  background-color: #E02438;
+  color: white; }
 
 button, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-footer > aside a, input[type="text"] {
   border: 0.2em solid;
@@ -298,24 +304,20 @@ body > footer {
   body > footer > main h3 {
     font-size: 1.25em; }
 
-header,
-section,
-footer {
-  position: relative; }
-  header > header,
-  section > header,
-  footer > header {
-    text-align: center;
-    margin-bottom: 3rem; }
-    header > header h2,
-    section > header h2,
-    footer > header h2 {
-      display: inline-block;
-      padding: 0.75em;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-      border-bottom: 2px solid #E02438; }
+header > header,
+section > header,
+footer > header {
+  text-align: center;
+  margin-bottom: 3rem; }
+  header > header h2,
+  section > header h2,
+  footer > header h2 {
+    display: inline-block;
+    padding: 0.75em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    border-bottom: 2px solid #E02438; }
 
 /**
  * Heading section styles.
@@ -339,7 +341,8 @@ footer {
     bottom: 0;
     right: 20%;
     z-index: 1;
-    -webkit-transform: translate3d(-50%, 50%, 0); }
+    -webkit-transform: translate3d(-50%, 50%, 0);
+    transform: translate3d(-50%, 50%, 0); }
 
 /**
  * Who section styles.
@@ -418,7 +421,8 @@ footer {
       margin: 2em 0;
       padding: 0;
       list-style: none;
-      font-weight: bold; }
+      font-weight: bold;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 /**
  * Newsletter section styles.
@@ -467,36 +471,36 @@ footer {
  */
 @font-face {
   font-family: 'aleo';
-  src: url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.eot");
-  src: url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.woff") format("woff"), url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.ttf") format("truetype"), url("/fonts/aleo_bold_macroman/Aleo-Bold-webfont.svg#aleobold") format("svg");
+  src: url("../fonts/aleo_bold_macroman/Aleo-Bold-webfont.eot");
+  src: url("../fonts/aleo_bold_macroman/Aleo-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aleo_bold_macroman/Aleo-Bold-webfont.woff") format("woff"), url("../fonts/aleo_bold_macroman/Aleo-Bold-webfont.ttf") format("truetype"), url("../fonts/aleo_bold_macroman/Aleo-Bold-webfont.svg#aleobold") format("svg");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
   font-family: 'aleo';
-  src: url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.eot");
-  src: url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.woff") format("woff"), url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.ttf") format("truetype"), url("/fonts/aleo_regular_macroman/Aleo-Regular-webfont.svg#aleoregular") format("svg");
+  src: url("../fonts/aleo_regular_macroman/Aleo-Regular-webfont.eot");
+  src: url("../fonts/aleo_regular_macroman/Aleo-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aleo_regular_macroman/Aleo-Regular-webfont.woff") format("woff"), url("../fonts/aleo_regular_macroman/Aleo-Regular-webfont.ttf") format("truetype"), url("../fonts/aleo_regular_macroman/Aleo-Regular-webfont.svg#aleoregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'aleo';
-  src: url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.eot");
-  src: url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.woff") format("woff"), url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.ttf") format("truetype"), url("/fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.svg#aleoitalic") format("svg");
+  src: url("../fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.eot");
+  src: url("../fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.woff") format("woff"), url("../fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.ttf") format("truetype"), url("../fonts/aleo_regularitalic_macroman/Aleo-Italic-webfont.svg#aleoitalic") format("svg");
   font-weight: normal;
   font-style: italic; }
 
 @font-face {
   font-family: 'aleo';
-  src: url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.eot");
-  src: url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.woff") format("woff"), url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.ttf") format("truetype"), url("/fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.svg#aleobolditalic") format("svg");
+  src: url("../fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.eot");
+  src: url("../fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.woff") format("woff"), url("../fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.ttf") format("truetype"), url("../fonts/aleo_bolditalic_macroman/Aleo-BoldItalic-webfont.svg#aleobolditalic") format("svg");
   font-weight: 500;
   font-style: italic; }
 
 @font-face {
   font-family: "Taller Icons";
-  src: url("/fonts/taller-icons.eot");
-  src: url("/fonts/taller-icons.eot?#iefix") format("embedded-opentype"), url("/fonts/taller-icons.woff") format("woff"), url("/fonts/taller-icons.ttf") format("truetype"), url("/fonts/taller-icons.svg#taller-icons") format("svg");
+  src: url("../fonts/taller-icons/taller-icons.eot");
+  src: url("../fonts/taller-icons/taller-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/taller-icons/taller-icons.woff") format("woff"), url("../fonts/taller-icons/taller-icons.ttf") format("truetype"), url("../fonts/taller-icons/taller-icons.svg#taller-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
