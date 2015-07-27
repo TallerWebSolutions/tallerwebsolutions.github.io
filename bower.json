@@ -22,7 +22,8 @@
   "dependencies": {
     "neat": "~1.7.2",
     "jquery": "~2.1.4",
-    "normalize-css": "~3.0.3"
+    "normalize-css": "~3.0.3",
+    "jquery-smooth-scroll": "~1.5.5"
   },
   "devDependencies": {
     "susy": "~2.2.5",

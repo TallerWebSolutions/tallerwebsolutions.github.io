@@ -6,6 +6,28 @@
   @extend %theme-dark
   margin-bottom: 45vh
 
+  nav
+    aside
+      padding-left: 0
+
+    h2
+      font-size: 2em
+      font-style: italic
+      font-weight: normal
+      font-family: $font-remarkable
+      text-transform: lowercase
+      letter-spacing: 0.02em
+      margin: 0.2em 0 0
+
+      @extend %taller-icon-before-icon-taller
+      &:before
+        color: $color-primary
+        display: inline-block
+        margin-right: 0.05em
+        font-size: 1.5em
+        vertical-align: text-bottom
+        transform: translate3d(0%, -5%, 0px)
+
   &:after
     content: ""
     position: absolute
@@ -21,7 +43,7 @@
 
   a[href="#section-who"]
     @extend %button-circle-primary
-    @extend %taller-icon-arrow-down
+    @extend %taller-icon-before-arrow-down
     position: absolute
     bottom: 0
     right: 20%

@@ -2,23 +2,37 @@
  * Button components
  */
 
-%button-circle
+%button-polygon
   display: inline-block
   height: 3.5rem
   width: 3.5rem
-  border-radius: 50%
   font-size: 0
   text-decoration: none
   text-align: center
 
   &:before
-    font-size: 2rem
+    font-size: 1.6rem
     line-height: 3.7rem
+
+%button-polygon-primary
+  background-color: $color-primary
+  color: white
+
+%button-circle
+  @extend %button-polygon
+  border-radius: 50%
 
 %button-circle-primary
   @extend %button-circle
-  background-color: $color-primary
-  color: white
+  @extend %button-polygon-primary
+
+%button-square
+  @extend %button-polygon
+  border-radius: .35rem
+
+%button-square-primary
+  @extend %button-square
+  @extend %button-polygon-primary
 
 %box
   border: 0.2em solid

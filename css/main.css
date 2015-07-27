@@ -145,7 +145,7 @@ nav > aside, #section-cases > main > article > main,
 /**
  * Taller icon styles
  */
-#section-heading a[href="#section-who"]:before, #section-footer > aside a:before {
+#section-heading a[href="#section-who"]:before, #section-heading nav h2:before, #section-footer h2:before {
   font-family: "Taller Icons" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -156,8 +156,25 @@ nav > aside, #section-cases > main > article > main,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-#section-heading a[href="#section-who"]:before, #section-footer > aside a:before {
+#section-heading a[href="#section-who"]:before {
   content: "b"; }
+
+#section-heading nav h2:before, #section-footer h2:before {
+  content: "d"; }
+
+#section-footer > aside a:after {
+  font-family: "Taller Icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+#section-footer > aside a:after {
+  content: "a"; }
 
 /**
  * Remarkable component for jumbotron-link styles
@@ -169,21 +186,26 @@ nav > aside, #section-cases > main > article > main,
 /**
  * Button components
  */
-#section-heading a[href="#section-who"] {
+#section-heading a[href="#section-who"], #section-footer h2 {
   display: inline-block;
   height: 3.5rem;
   width: 3.5rem;
-  border-radius: 50%;
   font-size: 0;
   text-decoration: none;
   text-align: center; }
-  #section-heading a[href="#section-who"]:before {
-    font-size: 2rem;
+  #section-heading a[href="#section-who"]:before, #section-footer h2:before {
+    font-size: 1.6rem;
     line-height: 3.7rem; }
 
-#section-heading a[href="#section-who"] {
+#section-heading a[href="#section-who"], #section-footer h2 {
   background-color: #E02438;
   color: white; }
+
+#section-heading a[href="#section-who"] {
+  border-radius: 50%; }
+
+#section-footer h2 {
+  border-radius: .35rem; }
 
 button, #section-cases > main > article .read-more, #section-products > main > article .read-more, #section-footer > aside a, input[type="text"] {
   border: 0.2em solid;
@@ -215,6 +237,11 @@ button {
 /**
  * Link components
  */
+a[href^="tel:"] {
+  color: inherit !important;
+  text-decoration: none;
+  border-bottom: 2px solid; }
+
 /*
  * Outputing vendors
  */
@@ -231,6 +258,8 @@ button {
     color: #E02438; }
   #section-heading > header h2, #section-newsletter > header h2, #section-footer > header h2 {
     border-bottom-color: #E02438; }
+  #section-heading a[href^="tel:"], #section-newsletter a[href^="tel:"], #section-footer a[href^="tel:"] {
+    border-bottom-color: #E02438; }
 
 #section-who, #section-cases, #section-products, #section-call-to-action {
   background-color: white;
@@ -238,6 +267,8 @@ button {
   #section-who a, #section-cases a, #section-products a, #section-call-to-action a {
     color: #BC3144; }
   #section-who > header h2, #section-cases > header h2, #section-products > header h2, #section-call-to-action > header h2 {
+    border-bottom-color: #BC3144; }
+  #section-who a[href^="tel:"], #section-cases a[href^="tel:"], #section-products a[href^="tel:"], #section-call-to-action a[href^="tel:"] {
     border-bottom-color: #BC3144; }
 
 /**
@@ -264,6 +295,12 @@ h4 {
 ol, ul {
   padding-left: 1.25em;
   line-height: 1.85em; }
+
+a[href^="tel:"] {
+  border: none; }
+
+address {
+  font-style: inherit; }
 
 nav a {
   color: white !important;
@@ -324,6 +361,24 @@ footer > header {
  */
 #section-heading {
   margin-bottom: 45vh; }
+  #section-heading nav aside {
+    padding-left: 0; }
+  #section-heading nav h2 {
+    font-size: 2em;
+    font-style: italic;
+    font-weight: normal;
+    font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    margin: 0.2em 0 0; }
+    #section-heading nav h2:before {
+      color: #E02438;
+      display: inline-block;
+      margin-right: 0.05em;
+      font-size: 1.5em;
+      vertical-align: text-bottom;
+      -webkit-transform: translate3d(0%, -5%, 0px);
+      transform: translate3d(0%, -5%, 0px); }
   #section-heading:after {
     content: "";
     position: absolute;
@@ -439,6 +494,24 @@ footer > header {
 /**
  * Footer section styles.
  */
+#section-footer h2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0); }
+  #section-footer h2:before {
+    font-size: 2rem; }
+  #section-footer h2:after {
+    content: attr(data-title);
+    display: block;
+    font-size: 1.2rem;
+    font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+    font-style: italic;
+    font-weight: normal;
+    text-transform: lowercase;
+    letter-spacing: 0.1rem; }
+
 #section-footer > main,
 #section-footer > aside {
   font-size: .8em; }
@@ -446,16 +519,19 @@ footer > header {
   #section-footer > aside h3 {
     color: #666666; }
 
+#section-footer > main p a {
+  margin-right: .2em; }
+
 #section-footer > main ul {
   padding: 0; }
   #section-footer > main ul li {
     list-style: none;
     display: inline-block;
-    padding: .2rem; }
+    padding: .2em; }
     #section-footer > main ul li:before {
       content: "";
-      border-left: 1px solid white;
-      margin-right: .4rem; }
+      border-left: 1px solid #666666;
+      margin-right: .6em; }
     #section-footer > main ul li:first-child:before {
       border: none;
       padding: 0;
@@ -465,6 +541,8 @@ footer > header {
 
 #section-footer > aside a {
   margin-top: 1rem; }
+  #section-footer > aside a:after {
+    margin-left: 1.2em; }
 
 /**
  * Font familities loading.

@@ -6,6 +6,27 @@
   @extend %theme-dark
   @extend %clearfix
 
+  h2
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate3d(-50%, -50%, 0)
+
+    @extend %button-square-primary
+    @extend %taller-icon-before-icon-taller
+    &:before
+      font-size: 2rem
+
+    &:after
+      content: attr(data-title)
+      display: block
+      font-size: 1.2rem
+      font-family: $font-remarkable
+      font-style: italic
+      font-weight: normal
+      text-transform: lowercase
+      letter-spacing: 0.1rem
+
   > main,
   > aside
     @extend %col-md-6
@@ -17,16 +38,17 @@
     p
      a
       %in-text-link
+      margin-right: .2em
     ul
       padding: 0
       li
         list-style: none
         display: inline-block
-        padding: .2rem
+        padding: .2em
         &:before
           content: ""
-          border-left: 1px solid white
-          margin-right: .4rem
+          border-left: 1px solid $color-grey
+          margin-right: .6em
         &:first-child:before
           border: none
           padding: 0
@@ -37,5 +59,7 @@
   > aside
     a
       @extend %button-outline
-      @extend %taller-icon-arrow-down
+      @extend %taller-icon-after-arrow-right
+      &:after
+        margin-left: 1.2em
       margin-top:1rem

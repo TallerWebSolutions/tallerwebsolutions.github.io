@@ -2,7 +2,9 @@
  * Taller icon styles
  */
 
-%taller-icon:before
+$positions: (before, after)
+
+=taller-icon
   font-family: "Taller Icons" !important
   font-style: normal !important
   font-weight: normal !important
@@ -13,22 +15,26 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-%taller-icon-arrow-down
-  @extend %taller-icon
-  &:before
-    content: "b"
+@each $position in $positions
+  %taller-icon-#{$position}:#{$position}
+    +taller-icon
 
-%taller-icon-dot
-  @extend %taller-icon
-  &:before
-    content: "c"
+  %taller-icon-#{$position}-arrow-down
+    @extend %taller-icon-#{$position}
+    &:#{$position}
+      content: "b"
 
-%taller-icon-icon-taller
-  @extend %taller-icon
-  &:before
-    content: "d"
+  %taller-icon-#{$position}-dot
+    @extend %taller-icon-#{$position}
+    &:#{$position}
+      content: "c"
 
-%taller-icon-arrow-right
-  @extend %taller-icon
-  &:before
-    content: "a"
+  %taller-icon-#{$position}-icon-taller
+    @extend %taller-icon-#{$position}
+    &:#{$position}
+      content: "d"
+
+  %taller-icon-#{$position}-arrow-right
+    @extend %taller-icon-#{$position}
+    &:#{$position}
+      content: "a"
