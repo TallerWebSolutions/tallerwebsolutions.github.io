@@ -1,16 +1,41 @@
 
-var gulp = require('gulp')
+var Q = require('q')
+  , gulp = require('gulp')
   , sass = require('gulp-sass')
   , gutil = require('gulp-util')
   , buffer = require('vinyl-buffer')
+  , ignore = require('gulp-ignore')
+  , inject = require('gulp-inject')
   , rimraf = require('rimraf')
   , source = require('vinyl-source-stream')
   , sequence = require('run-sequence')
   , browserify = require('browserify')
   , autoprefixer = require('gulp-autoprefixer')
 
+  , dir = function (base) { return function (path) { return (base || './') + (path ? '/' + path : ''); } }
+
+  , srcDirBase = 'src'
+  , srcDir = dir(srcDirBase)
+  , distDirBase = 'dist'
+  , distDir = dir(distDirBase)
   , tmpDirBase = '.tmp'
-  , tmpDir = function (dir) { return tmpDirBase + (dir ? '/' + dir : ''); };
+  , tmpDir = dir(tmpDirBase);
+
+/**
+ * Make a copy of a file/glob to destiny.
+ */
+function copy(from, to) {
+  return gulp.src(from).pipe(gulp.dest(to));
+}
+
+/**
+ * Helper method to remove path.
+ */
+function remove(path) {
+  return Q.nfcall(rimraf, path).then(function () {
+    gutil.log('Removing', gutil.colors.cyan('\'' + path + '\''));
+  });
+}
 
 /**
  * Clean-up task.
