@@ -1,16 +1,17 @@
 
 var gulp = require('gulp')
+  , sequence = require('run-sequence')
   , browserSync = require('browser-sync')
 
-  , watchers = {
+  , watchMap = {
       'sass': './src/sass/**/*',
       'index': './src/index.html',
       'i18n': './src/i18n/**/*'
     }
-  , tasks = Object.keys(watchers)
-  , taskRunners = tasks.map(function (task) {
+  , tasks = Object.keys(watchMap)
+  , watchers = tasks.map(function (task) {
       return function () {
-        gulp.watch(watchers[task], [task]);
+        gulp.watch(watchMap[task], [task]);
       };
     });
 
@@ -20,15 +21,15 @@ var gulp = require('gulp')
  * Create watching tasks.
  */
 tasks.forEach(function (task, index) {
-  gulp.task('watch:' + task, [task], taskRunners[index]);
+  gulp.task('watch:' + task, [task], watchers[index]);
 });
 
 /**
- * Helper task to initiate all watchers.
+ * Helper task to initiate all watch maps.
  */
-gulp.task('watch', tasks, function () {
-  taskRunners.forEach(function (taskRunner) {
-    taskRunner();
+gulp.task('watch', ['build:tmp'], function () {
+  watchers.forEach(function (watcher) {
+    watcher();
   });
 });
 

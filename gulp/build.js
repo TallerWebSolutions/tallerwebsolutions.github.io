@@ -3,6 +3,7 @@ var gulp = require('gulp')
   , gutil = require('gulp-util')
   , sass = require('gulp-sass')
   , rimraf = require('rimraf')
+  , sequence = require('run-sequence')
   , autoprefixer = require('gulp-autoprefixer')
 
   , tmpDirBase = '.tmp'
@@ -63,4 +64,14 @@ gulp.task('i18n', ['index'], function () {
 
 });
 
-gulp.task('build', ['sass', 'index', 'i18n', 'fonts', 'images']);
+/**
+ * Build tmp directory.
+ */
+gulp.task('build:tmp', function (done) {
+  sequence('clean', ['sass', 'index', 'i18n', 'fonts', 'images'], done);
+});
+
+/**
+ * Main building task.
+ */
+gulp.task('build', ['build:tmp']);
