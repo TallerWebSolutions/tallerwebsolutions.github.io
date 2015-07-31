@@ -99,8 +99,41 @@ gulp.task('scripts', function () {
 /**
  * Creates main index.
  */
-gulp.task('index', ['sass'], function () {
-  return gulp.src('./src/index.html')
+gulp.task('index', copy.bind(null, './src/index.html', tmpDir()));
+
+/**
+ * Creates structure index.
+ */
+gulp.task('index:structure', function (done) {
+  sequence('clean:structure', ['index', 'sass:structure'], function () {
+    var structure = copy(tmpDir('**/*'), tmpDir('structure'))
+      , styles = structure.pipe(ignore.include(tmpDir('structure/css/structure.css')));
+
+    gulp.src(tmpDir('structure/index.html'))
+      .pipe(inject(styles, { relative: true }))
+      .pipe(gulp.dest(tmpDir('structure')))
+      .on('end', done);
+  });
+});
+
+/**
+ * Structure distribution task.
+ */
+gulp.task('dist:structure', ['index:structure'], function () {
+  return copy(tmpDir('structure/**/*'), distDir('structure'));
+});
+
+/**
+ * Main distribution task.
+ */
+gulp.task('dist', ['index', 'dist:structure'], function () {
+  var sources = gulp.src([
+    tmpDir('**/*.js'),
+    tmpDir('**/*.css'),
+  ], { read: false });
+
+  return gulp.src(tmpDir('index.html'))
+    .pipe(inject(sources), { relative: true })
     .pipe(gulp.dest(tmpDir()));
 });
 
@@ -115,7 +148,10 @@ gulp.task('i18n', ['index'], function () {
  * Build tmp directory.
  */
 gulp.task('build:tmp', function (done) {
-  sequence('clean', ['sass', 'index', 'i18n', 'fonts', 'images', 'scripts'], done);
+  var main = ['index', 'sass', 'scripts', 'fonts', 'images', 'i18n']
+    , structure = ['index:structure']
+
+  sequence('clean', main, structure, done);
 });
 
 /**
