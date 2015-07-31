@@ -1,5 +1,7 @@
 
 var gulp = require('gulp')
+  , browserSync = require('browser-sync')
+
   , watchers = {
       'sass': './src/sass/**/*',
       'index': './src/index.html',
@@ -28,4 +30,17 @@ gulp.task('watch', tasks, function () {
   taskRunners.forEach(function (taskRunner) {
     taskRunner();
   });
+});
+
+/**
+ * Main development task.
+ */
+gulp.task('dev', ['watch'], function () {
+  browserSync.init({
+    server: {
+      baseDir: '.tmp'
+    }
+  });
+
+  gulp.watch('.tmp/**/*').on('change', browserSync.reload);
 });
