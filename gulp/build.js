@@ -42,40 +42,39 @@ function remove(path) {
  * @todo : should also remove & checkout dist.
  */
 gulp.task('clean', function (done) {
-  rimraf(tmpDir(), function () {
-    gutil.log('Removing', gutil.colors.cyan('\'' + tmpDir() + '\''));
-    done();
-  });
+  remove(tmpDir()).then(done);
+});
+
+gulp.task('clean:structure', function (done) {
+  remove(tmpDir('structure/**/*')).then(done);
 });
 
 /**
- * Copy font files.
+ * Static non-processable assets.
  */
-gulp.task('fonts', function () {
-  return gulp.src('./src/fonts/**/*')
-    .pipe(gulp.dest(tmpDir('fonts')));
-});
+gulp.task('fonts', copy.bind(null, './src/fonts/**/*', tmpDir('fonts')));
+gulp.task('images', copy.bind(null, './src/images/**/*', tmpDir('images')));
 
 /**
- * Copy image files.
+ * Sass compiler generator.
  */
-gulp.task('images', function () {
-  return gulp.src('./src/images/**/*')
-    .pipe(gulp.dest(tmpDir('images')));
-});
+function sassCompile(entryPoint) {
+  return function () {
+    return gulp.src(entryPoint)
+      .pipe(sass.sync().on('error', sass.logError))
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      }))
+      .pipe(gulp.dest(tmpDir('css')));
+  };
+}
 
 /**
  * Compile Sass.
  */
-gulp.task('sass', function () {
-  return gulp.src('./src/sass/main.sass')
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(gulp.dest(tmpDir('css')));
-});
+gulp.task('sass', sassCompile('./src/sass/main.sass'));
+gulp.task('sass:structure', sassCompile('./src/sass/structure.scss'))
 
 /**
  * Bundle JavaScripts.
