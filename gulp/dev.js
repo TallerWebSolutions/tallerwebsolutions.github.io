@@ -4,25 +4,27 @@ var gulp = require('gulp')
   , browserSync = require('browser-sync')
 
   , watchMap = {
-      'index': './src/index.html',
-      'sass': './src/sass/**/*',
-      'scripts': './src/js/**/*',
-      'i18n': './src/i18n/**/*'
+      './src/index.html': ['index', 'index:structure'],
+      './src/sass/**/*' : 'sass',
+      './src/js/**/*'   : 'scripts',
+      './src/i18n/**/*' : 'i18n',
     }
-  , tasks = Object.keys(watchMap)
-  , watchers = tasks.map(function (task) {
+
+  , sources = Object.keys(watchMap)
+  , taskGroups = sources.map(function (source, index) {
+      return Array.isArray(watchMap[source]) ? watchMap[source] : [watchMap[source]];
+    })
+  , watchers = sources.map(function (source, index) {
       return function () {
-        gulp.watch(watchMap[task], [task]);
+        gulp.watch(sources, taskGroups[index]);
       };
     });
-
-
 
 /**
  * Create watching tasks.
  */
-tasks.forEach(function (task, index) {
-  gulp.task('watch:' + task, [task], watchers[index]);
+taskGroups.forEach(function (tasks, index) {
+  gulp.task('watch:' + tasks.join(':'), tasks, watchers[index]);
 });
 
 /**
