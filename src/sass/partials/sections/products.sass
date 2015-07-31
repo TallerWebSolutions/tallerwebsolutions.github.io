@@ -5,11 +5,14 @@
 #section-products
   @extend %theme-light
   padding-bottom: 8rem
-  background: url("//images/el-tracker-background.png")
+  background: url("/images/el-tracker-background.png")
   background-size: initial
   background-repeat: no-repeat
   background-position: center bottom
   text-align: center
+
+  +breakpoint($breakpoint-min-lg)
+    background-size: contain
 
   .read-more
     @extend %button-outline
