@@ -1,3 +1,4 @@
 # Vendor Packages
 bower_components/*
 node_modules/*
+.tmp/*
