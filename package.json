@@ -2,7 +2,7 @@
   "name": "site-taller",
   "version": "1.0.0",
   "description": "Taller WebSite",
-  "main": "index.js",
+  "main": "src/js/main.js",
   "directories": {
     "doc": "doc"
   },
@@ -36,12 +36,16 @@
     "bower": "^1.4.1",
     "breakpoint-sass": "^2.6.1",
     "browser-sync": "^2.8.1",
+    "browserify": "^11.0.1",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-connect": "^2.2.0",
     "gulp-inject": "^1.5.0",
     "jquery": "^2.1.4",
     "jquery-smooth-scroll": "^1.5.5",
     "rimraf": "^2.4.2",
-    "run-sequence": "^1.1.2"
+    "run-sequence": "^1.1.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
   }
 }

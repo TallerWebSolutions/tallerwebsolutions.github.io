@@ -1,9 +1,12 @@
 
 var gulp = require('gulp')
-  , gutil = require('gulp-util')
   , sass = require('gulp-sass')
+  , gutil = require('gulp-util')
+  , buffer = require('vinyl-buffer')
   , rimraf = require('rimraf')
+  , source = require('vinyl-source-stream')
   , sequence = require('run-sequence')
+  , browserify = require('browserify')
   , autoprefixer = require('gulp-autoprefixer')
 
   , tmpDirBase = '.tmp'
@@ -50,6 +53,26 @@ gulp.task('sass', function () {
 });
 
 /**
+ * Bundle JavaScripts.
+ */
+gulp.task('scripts', function () {
+  var browserified = browserify({
+    entries: './src/js/main.js',
+    debug: true
+  });
+
+  return browserified.bundle()
+    .pipe(source('taller.js'))
+    .pipe(buffer())
+    // .pipe(sourcemaps.init({loadMaps: true}))
+        // Add transformation tasks to the pipeline here.
+        // .pipe(uglify())
+        // .on('error', gutil.log)
+    // .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(tmpDir('js')));
+});
+
+/**
  * Creates main index.
  */
 gulp.task('index', ['sass'], function () {
@@ -68,7 +91,7 @@ gulp.task('i18n', ['index'], function () {
  * Build tmp directory.
  */
 gulp.task('build:tmp', function (done) {
-  sequence('clean', ['sass', 'index', 'i18n', 'fonts', 'images'], done);
+  sequence('clean', ['sass', 'index', 'i18n', 'fonts', 'images', 'scripts'], done);
 });
 
 /**

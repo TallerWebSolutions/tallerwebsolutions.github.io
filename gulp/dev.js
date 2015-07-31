@@ -4,8 +4,9 @@ var gulp = require('gulp')
   , browserSync = require('browser-sync')
 
   , watchMap = {
-      'sass': './src/sass/**/*',
       'index': './src/index.html',
+      'sass': './src/sass/**/*',
+      'scripts': './src/js/**/*',
       'i18n': './src/i18n/**/*'
     }
   , tasks = Object.keys(watchMap)

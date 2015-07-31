@@ -1,11 +1,13 @@
+/**
+ * @file Main Taller website script.
+ */
 
+var jQuery = $ = require('jquery');
 
-$(function () {
+// jQuery plugins.
+require('jquery-smooth-scroll');
 
-  // Instantiate smooth scroll on all links.
-  if ($.fn.smoothScroll) $('a[href^="#"]').smoothScroll({
-    easing: 'swing'
-  });
-
+// Instantiate smooth scroll on all links.
+if ($.fn.smoothScroll) $('a[href^="#"]').smoothScroll({
+  easing: 'swing'
 });
-
