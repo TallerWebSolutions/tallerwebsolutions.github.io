@@ -19,13 +19,24 @@ var Q = require('q')
   , distDirBase = 'dist'
   , distDir = dir(distDirBase)
   , tmpDirBase = '.tmp'
-  , tmpDir = dir(tmpDirBase);
+  , tmpDir = dir(tmpDirBase)
+
+  , wholeCopyIgnores = [tmpDir('structure')].map(function (source) {
+      return '!' + source;
+    });
 
 /**
  * Make a copy of a file/glob to destiny.
  */
 function copy(from, to) {
   return gulp.src(from).pipe(gulp.dest(to));
+}
+
+/**
+ * Helper to copy base structure.
+ */
+function copyBase(to) {
+  return copy([tmpDir('**/*')].concat(wholeCopyIgnores), to);
 }
 
 /**
@@ -106,13 +117,14 @@ gulp.task('index', copy.bind(null, './src/index.html', tmpDir()));
  */
 gulp.task('index:structure', function (done) {
   sequence('clean:structure', ['index', 'sass:structure'], function () {
-    var structure = copy(tmpDir('**/*'), tmpDir('structure'))
-      , styles = structure.pipe(ignore.include(tmpDir('structure/css/structure.css')));
+    copyBase(tmpDir('structure')).on('end', function () {
+      var injects = gulp.src(tmpDir('structure/css/structure.css'));
 
-    gulp.src(tmpDir('structure/index.html'))
-      .pipe(inject(styles, { relative: true }))
-      .pipe(gulp.dest(tmpDir('structure')))
-      .on('end', done);
+      gulp.src(tmpDir('structure/index.html'))
+        .pipe(inject(injects, { relative: true }))
+        .pipe(gulp.dest(tmpDir('structure')))
+        .on('end', done);
+    });
   });
 });
 
