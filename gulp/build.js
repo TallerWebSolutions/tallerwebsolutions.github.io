@@ -102,39 +102,13 @@ function cleaner(path) {
   };
 }
 
-/**
- * Helper method to execute command and show logs.
- */
-function execute(command, args) {
-
-  gutil.log('Execute:', gutil.colors.cyan('"' + command + ' ' + args.join(' ') + '"'));
-
-  var execution = spawn(command, args, {
-    cwd: absolutePath()
-  });
-
-  execution.stdout.on('data', function (data) {
-    gutil.log('Execute stdout:', gutil.colors.cyan('"' + data + '"'));
-  });
-
-  execution.stderr.on('data', function (data) {
-    gutil.log('Execute stderr:', gutil.colors.red('"' + data + '"'));
-  });
-
-  return execution;
-}
-
 gulp.task('clean', ['clean:tmp', 'clean:dist']);
 gulp.task('clean:tmp', cleaner(tmpDir()));
 gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
 gulp.task('clean:index', cleaner(tmpDir('index.html')));
 
 // Dist clean-up should always checkout dir.
-gulp.task('clean:dist', function (done) {
-  cleaner(distDir())(function () {
-    execute('git', ['checkout', 'dist']).on('close', done);
-  });
-});
+gulp.task('clean:dist', cleaner(distDir()));
 
 /**
  * Static non-processable assets.
