@@ -1,6 +1,7 @@
 
 var Q = require('q')
   , fs = require('fs')
+  , exec = require('child_process').exec
   , path = require('path')
   , gulp = require('gulp')
   , sass = require('gulp-sass')
@@ -96,19 +97,28 @@ function cleaner(path) {
   };
 }
 
-/**
- * Clean-up task.
- * @todo : should also remove & checkout dist.
- */
-gulp.task('clean', cleaner(tmpDir()));
-
-gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
-
-gulp.task('clean:dist', function (done) {
-
+gulp.task('clean', ['clean:tmp', 'clean:dist'], function () {
+  exec('git checkout dist', {
+    cwd: distDirBase
+  }, function (err, stdout, stderr) {
+    console.log([err, stdout, stderr]);
+  });
 });
 
+gulp.task('clean:tmp', cleaner(tmpDir()));
+gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
 gulp.task('clean:index', cleaner(tmpDir('index.html')));
+
+// Dist clean-up should always checkout dir.
+gulp.task('clean:dist', function (done) {
+  cleaner(distDir())(function () {
+    exec('git checkout dist', {
+      cwd: absolutePath()
+    }, function (err, stdout, stderr) {
+      done();
+    });
+  });
+});
 
 /**
  * Static non-processable assets.
@@ -231,7 +241,7 @@ gulp.task('build:tmp', [
  * Build dist directory.
  */
 gulp.task('build:dist', ['build:tmp'], function () {
-
+  copier(tmpDir(), distDir());
 });
 
 /**
