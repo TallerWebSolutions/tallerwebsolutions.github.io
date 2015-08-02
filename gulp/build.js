@@ -97,14 +97,7 @@ function cleaner(path) {
   };
 }
 
-gulp.task('clean', ['clean:tmp', 'clean:dist'], function () {
-  exec('git checkout dist', {
-    cwd: distDirBase
-  }, function (err, stdout, stderr) {
-    console.log([err, stdout, stderr]);
-  });
-});
-
+gulp.task('clean', ['clean:tmp', 'clean:dist']);
 gulp.task('clean:tmp', cleaner(tmpDir()));
 gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
 gulp.task('clean:index', cleaner(tmpDir('index.html')));
@@ -241,10 +234,12 @@ gulp.task('build:tmp', [
  * Build dist directory.
  */
 gulp.task('build:dist', ['build:tmp'], function () {
-  copier(tmpDir(), distDir());
+  return copier(tmpDir('**/*'), distDir())();
 });
 
 /**
  * Main building task.
  */
-gulp.task('build', ['build:dist']);
+gulp.task('build', function (done) {
+  sequence('clean', 'build:dist', done);
+});
