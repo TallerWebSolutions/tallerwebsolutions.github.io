@@ -47,6 +47,12 @@ var Q = require('q')
       return '!' + source;
     });
 
+
+/*
+ * Tasks Delcaration
+ * -----------------
+ */
+
 gulp.task('clean', ['clean:tmp', 'clean:dist']);
 gulp.task('clean:tmp', cleaner(tmpDir()));
 gulp.task('clean:dist', cleaner(distDir()));
@@ -73,14 +79,9 @@ gulp.task('index', copier('./src/index.html', tmpDir()));
 gulp.task('index:structure', ['index'], copier(tmpDir('index.html'), tmpDir('structure')));
 
 /**
- * Structure distribution task.
- */
-gulp.task('dist:structure', ['index:structure'], copier(tmpDir('structure/**/*'), distDir('structure')));
-
-/**
  * Main distribution task.
  */
-gulp.task('dist', ['index', 'dist:structure'], function () {
+gulp.task('dist', ['index'], function () {
   var sources = gulp.src([
     tmpDir('**/*.js'),
     tmpDir('**/*.css'),
