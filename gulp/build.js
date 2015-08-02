@@ -28,8 +28,6 @@ var Q = require('q')
 
   , srcDirBase = absolutePath('src')
   , srcDir = dir(srcDirBase)
-  , distDirBase = absolutePath('dist')
-  , distDir = dir(distDirBase)
   , tmpDirBase = absolutePath('.tmp')
   , tmpDir = dir(tmpDirBase)
 
@@ -57,9 +55,8 @@ var Q = require('q')
  * Clean-ups.
  */
 
-gulp.task('clean', ['clean:tmp', 'clean:dist']);
+gulp.task('clean', ['clean:tmp']);
 gulp.task('clean:tmp', cleaner(tmpDir()));
-gulp.task('clean:dist', cleaner(distDir()));
 gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
 gulp.task('clean:styleguide', cleaner(tmpDir('styleguide/**/*')));
 
@@ -178,12 +175,12 @@ gulp.task('deploy', function (done) {
   var args = yargs.default('message', false).alias('m', 'message').argv
     , message = args.message || 'Update website.';
 
-  fs.lstat(distDir(), function(err, stats) {
+  fs.lstat(tmpDir(), function(err, stats) {
 
     // Safeguard.
     if (err || !stats.isDirectory()) return done('You should run "gulp build" before trying to deploy.');
 
-    ghPages.publish(distDir(), {
+    ghPages.publish(tmpDir(), {
       branch: ghPageBranch
     }, done);
   });
