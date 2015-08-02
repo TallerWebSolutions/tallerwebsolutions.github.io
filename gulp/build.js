@@ -49,18 +49,11 @@ var Q = require('q')
 
 gulp.task('clean', ['clean:tmp', 'clean:dist']);
 gulp.task('clean:tmp', cleaner(tmpDir()));
-gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
-gulp.task('clean:index', cleaner(tmpDir('index.html')));
-
-// Dist clean-up should always checkout dir.
 gulp.task('clean:dist', cleaner(distDir()));
+gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
 
-/**
- * Static non-processable assets.
- */
 gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
 gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
-
 gulp.task('sass', sassCompile('./src/sass/main.sass'));
 gulp.task('sass:structure', sassCompile('./src/sass/structure.scss'), 'structure/css');
 
@@ -76,14 +69,8 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(tmpDir('js')));   // Save file.
 });
 
-/**
- * Creates main index.
- */
-gulp.task('index', ['clean:index'], copier('./src/index.html', tmpDir()));
+gulp.task('index', copier('./src/index.html', tmpDir()));
 
-/**
- * Creates structure index.
- */
 gulp.task('index:structure', ['clean:structure', 'i18n'], function (done) {
   // sequence('clean:structure', ['i18n', 'sass:structure'], function () {
     copyBase(tmpDir('structure')).on('end', function () {
@@ -97,10 +84,7 @@ gulp.task('index:structure', ['clean:structure', 'i18n'], function (done) {
   // });
 });
 
-gulp.task('styleguide', function () {
-  return copier(srcDir('styleguide/**/*'), tmpDir('styleguide'))()
-    .pipe(browserSync.stream());
-});
+gulp.task('styleguide', copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
 
 /**
  * Structure distribution task.
@@ -226,7 +210,7 @@ function sassCompile(entryPoint, endPoint) {
  */
 function copier(from, to) {
   return function () {
-    return gulp.src(from).pipe(gulp.dest(to));
+    return gulp.src(from).pipe(gulp.dest(to)).pipe(browserSync.stream());
   };
 }
 
