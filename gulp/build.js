@@ -1,17 +1,14 @@
 
 var Q = require('q')
   , fs = require('fs')
-  , exec = require('child_process').exec
   , path = require('path')
   , gulp = require('gulp')
   , sass = require('gulp-sass')
   , async = require('async')
   , gutil = require('gulp-util')
-  , spawn = require('child_process').spawn
   , yargs = require('yargs')
   , buffer = require('vinyl-buffer')
   , extend = require('extend')
-  , ignore = require('gulp-ignore')
   , inject = require('gulp-inject')
   , rimraf = require('rimraf')
   , source = require('vinyl-source-stream')
@@ -24,7 +21,7 @@ var Q = require('q')
   , autoprefixer = require('gulp-autoprefixer')
 
   , absolutePath = path.join.bind(null, process.cwd())
-  , dir = function (base) { return function (path) { return (base || './') + (path ? '/' + path : ''); } }
+  , dir = function (base) { return function (path) { return (base || './') + (path ? '/' + path : ''); }; }
 
   , srcDirBase = absolutePath('src')
   , srcDir = dir(srcDirBase)
@@ -263,7 +260,7 @@ function loadTranslations(done) {
 
     done();
   });
-};
+}
 
 /**
  * Helper method to remove path.
