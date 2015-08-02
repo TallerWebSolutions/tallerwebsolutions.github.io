@@ -131,22 +131,6 @@ gulp.task('index:structure:inject', ['index:structure:create', 'sass:structure']
     .pipe(gulp.dest(tmpDir('structure')));
 });
 
-
-/**
- * Creates main index.
- */
-gulp.task('i18n', ['index'], function (done) {
-  loadTranslations(function () {
-    async.each(Object.keys(translations), function (language, next) {
-      gulp.src(tmpDir('index.html'))
-        .pipe(handlebars({ data: translations[language] }))
-        // .pipe(i18n({ messages: translations[language] }))
-        .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
-        .on('end', next);
-    }, done);
-  });
-});
-
 /**
  * Build tmp directory.
  */
@@ -168,7 +152,6 @@ gulp.task('build', function (done) {
 gulp.task('build:structure', function (done) {
   sequence('clean:structure', ['sass:structure', 'index:structure'], done);
 });
-
 gulp.task('build:styleguide', ['clean:styleguide'], copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
 
 gulp.task('deploy', function (done) {

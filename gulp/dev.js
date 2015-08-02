@@ -5,7 +5,7 @@ var gulp = require('gulp')
 
   , watchMaps = [{
       source: ['./src/index.html', './src/i18n/**/*'],
-      tasks: ['index', 'i18n', 'index:structure']
+      tasks: ['index', 'index:structure']
     }, {
       source: './src/sass/**/*',
       tasks: ['sass', 'sass:structure']
