@@ -13,6 +13,7 @@ var Q = require('q')
   , sequence = require('run-sequence')
   , browserify = require('browserify')
   , handlebars = require('gulp-hb')
+  , browserSync = require('browser-sync')
   , autoprefixer = require('gulp-autoprefixer')
 
   , translations = require('require-dir')(path.join(process.cwd(), './i18n'))
@@ -83,7 +84,8 @@ function sassCompile(entryPoint) {
         browsers: ['last 2 versions'],
         cascade: false
       }))
-      .pipe(gulp.dest(tmpDir('css')));
+      .pipe(gulp.dest(tmpDir('css')))
+      .pipe(browserSync.stream());
   };
 }
 
@@ -91,7 +93,7 @@ function sassCompile(entryPoint) {
  * Compile Sass.
  */
 gulp.task('sass', sassCompile('./src/sass/main.sass'));
-gulp.task('sass:structure', ['clean:structure'], sassCompile('./src/sass/structure.scss'));
+gulp.task('sass:structure', sassCompile('./src/sass/structure.scss'));
 
 /**
  * Bundle JavaScripts.
@@ -163,7 +165,7 @@ gulp.task('i18n', ['index'], function (done) {
     gulp.src(tmpDir('index.html'))
       .pipe(handlebars({ data: translations[language] }))
       // .pipe(i18n({ messages: translations[language] }))
-      .pipe(gulp.dest(tmpDir(language == 'pt' ? '' : language)))
+      .pipe(gulp.dest(tmpDir(language == 'pt-br' ? '' : language)))
       .on('end', next);
   }, done);
 });

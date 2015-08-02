@@ -4,10 +4,10 @@ var gulp = require('gulp')
   , browserSync = require('browser-sync')
 
   , watchMap = {
-      './src/index.html': ['index', 'index:structure'],
-      './src/sass/**/*' : 'sass',
+      './src/index.html': ['index', 'i18n', 'index:structure'],
+      './src/sass/**/*' : ['sass', 'sass:structure'],
       './src/js/**/*'   : 'scripts',
-      './src/i18n/**/*' : 'i18n',
+      './i18n/**/*' : 'i18n',
     }
 
   , sources = Object.keys(watchMap)
@@ -16,7 +16,7 @@ var gulp = require('gulp')
     })
   , watchers = sources.map(function (source, index) {
       return function () {
-        gulp.watch(sources, taskGroups[index]);
+        gulp.watch(source, taskGroups[index]);
       };
     });
 
@@ -39,12 +39,14 @@ gulp.task('watch', ['build:tmp'], function () {
 /**
  * Main development task.
  */
-gulp.task('dev', ['watch'], function () {
+gulp.task('serve', ['watch'], function () {
   browserSync.init({
     server: {
       baseDir: '.tmp'
     }
   });
 
-  gulp.watch('.tmp/**/*').on('change', browserSync.reload);
+  gulp.watch(['.tmp/**/*', '!.tmp/**/*.css']).on('change', browserSync.reload);
 });
+
+gulp.task('dev', ['serve']);
