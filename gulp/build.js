@@ -5,9 +5,10 @@ var Q = require('q')
   , path = require('path')
   , gulp = require('gulp')
   , sass = require('gulp-sass')
-  , spawn = require('child_process').spawn
   , async = require('async')
   , gutil = require('gulp-util')
+  , spawn = require('child_process').spawn
+  , yargs = require('yargs')
   , buffer = require('vinyl-buffer')
   , extend = require('extend')
   , ignore = require('gulp-ignore')
@@ -268,12 +269,16 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('deploy', function (done) {
+  var args = yargs.default('force', false).alias('f', 'force').argv
+    , forceCommand = 'git push origin `git subtree split --prefix dist master`:master --force'
+    , defaultCommand = 'git subtree push --prefix dist origin master'
+    , command = args.force ? forceCommand : defaultCommand;
+
   fs.lstat(distDir(), function(err, stats) {
 
     // Safeguard.
     if (err || !stats.isDirectory()) return done('You should run "gulp build" before trying to deploy.');
 
-    var command = 'git push origin `git subtree split --prefix dist master`:master --force';
     gutil.log('Execute:', gutil.colors.cyan('"' + command + '"'));
     exec(command, {
       cwd: absolutePath()
