@@ -5,6 +5,7 @@ var Q = require('q')
   , path = require('path')
   , gulp = require('gulp')
   , sass = require('gulp-sass')
+  , spawn = require('child_process').spawn
   , async = require('async')
   , gutil = require('gulp-util')
   , buffer = require('vinyl-buffer')
@@ -97,6 +98,28 @@ function cleaner(path) {
   };
 }
 
+/**
+ * Helper method to execute command and show logs.
+ */
+function execute(command, args) {
+
+  gutil.log('Execute:', gutil.colors.cyan('"' + command + ' ' + args.join(' ') + '"'));
+
+  var execution = spawn(command, args, {
+    cwd: absolutePath()
+  });
+
+  execution.stdout.on('data', function (data) {
+    gutil.log('Execute stdout:', gutil.colors.cyan('"' + data + '"'));
+  });
+
+  execution.stderr.on('data', function (data) {
+    gutil.log('Execute stderr:', gutil.colors.red('"' + data + '"'));
+  });
+
+  return execution;
+}
+
 gulp.task('clean', ['clean:tmp', 'clean:dist']);
 gulp.task('clean:tmp', cleaner(tmpDir()));
 gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
@@ -105,11 +128,7 @@ gulp.task('clean:index', cleaner(tmpDir('index.html')));
 // Dist clean-up should always checkout dir.
 gulp.task('clean:dist', function (done) {
   cleaner(distDir())(function () {
-    exec('git checkout dist', {
-      cwd: absolutePath()
-    }, function (err, stdout, stderr) {
-      done();
-    });
+    execute('git', ['checkout', 'dist']).on('close', done);
   });
 });
 
@@ -242,4 +261,17 @@ gulp.task('build:dist', ['build:tmp'], function () {
  */
 gulp.task('build', function (done) {
   sequence('clean', 'build:dist', 'clean:tmp', done);
+});
+
+gulp.task('deploy', ['build'], function (done) {
+  var command = 'git push origin `git subtree split --prefix dist master`:master --force';
+  gutil.log('Execute:', gutil.colors.cyan('"' + command + '"'));
+  exec(command, {
+    cwd: absolutePath()
+  }, function (err, stdout, stderr) {
+    if (err) return done(err);
+    if (stderr) gutil.log('Execute stderr:', gutil.colors.cyan('"' + stderr + '"'));
+    if (stdout) gutil.log('Execute stdout:', gutil.colors.cyan('"' + stdout + '"'));
+    done();
+  });
 });
