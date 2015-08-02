@@ -251,13 +251,6 @@ function copier(from, to) {
 }
 
 /**
- * Helper to copy base structure.
- */
-function copyBase(to) {
-  return copier([tmpDir('**/*')].concat(wholeCopyIgnores), to)();
-}
-
-/**
  * Helper method to remove path.
  */
 function remove(path) {
