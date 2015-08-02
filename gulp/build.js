@@ -114,11 +114,26 @@ gulp.task('index:inject', ['sass', 'scripts', 'index:create'], function () {
 
 
 /*
- * Secondary building tasks.
+ * Structure building tasks.
  */
 
 gulp.task('sass:structure', sassCompile('./src/sass/structure.scss', 'structure/css'));
-gulp.task('index:structure', copier(tmpDir('index.html'), tmpDir('structure')));
+gulp.task('index:structure', ['index:structure:create', 'index:structure:inject']);
+
+
+/*
+ * Structure index sub-tasks.
+ */
+
+gulp.task('index:structure:create', ['index'], copier(tmpDir('index.html'), tmpDir('structure')));
+gulp.task('index:structure:inject', ['index:structure:create', 'sass:structure'], function () {
+  var injects = gulp.src(tmpDir('structure/css/**/*'));
+
+  return gulp.src(tmpDir('structure/index.html'))
+    .pipe(inject(injects, { relative: true }))
+    .pipe(gulp.dest(tmpDir('structure')));
+});
+
 
 /**
  * Creates main index.
@@ -150,14 +165,7 @@ gulp.task('build:tmp', [
 ]);
 
 gulp.task('build:structure', function (done) {
-  sequence('clean:structure', 'sass:structure', 'index:structure', function () {
-    var injects = gulp.src(tmpDir('structure/css/structure.css'));
-
-    gulp.src(tmpDir('structure/index.html'))
-      .pipe(inject(injects, { relative: true }))
-      .pipe(gulp.dest(tmpDir('structure')))
-      .on('end', done);
-  });
+  sequence('clean:structure', ['sass:structure', 'index:structure'], done);
 });
 
 gulp.task('build:styleguide', ['clean:styleguide'], copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
