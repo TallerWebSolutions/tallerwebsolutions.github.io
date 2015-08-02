@@ -15,6 +15,7 @@ var Q = require('q')
   , inject = require('gulp-inject')
   , rimraf = require('rimraf')
   , source = require('vinyl-source-stream')
+  , ghPages = require('gh-pages')
   , jsonfile = require('jsonfile')
   , sequence = require('run-sequence')
   , browserify = require('browserify')
@@ -39,6 +40,8 @@ var Q = require('q')
       return filename.match(/\.json$/);
     })
   , translations = {}
+
+  , ghPageBranch = 'master'
 
   , wholeCopyIgnores = [tmpDir('structure')].map(function (source) {
       return '!' + source;
@@ -269,24 +272,16 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('deploy', function (done) {
-  var args = yargs.default('force', false).alias('f', 'force').argv
-    , forceCommand = 'git push origin `git subtree split --prefix dist master`:master --force'
-    , defaultCommand = 'git subtree push --prefix dist origin master'
-    , command = args.force ? forceCommand : defaultCommand;
+  var args = yargs.default('message', false).alias('m', 'message').argv
+    , message = args.message || 'Update website.';
 
   fs.lstat(distDir(), function(err, stats) {
 
     // Safeguard.
     if (err || !stats.isDirectory()) return done('You should run "gulp build" before trying to deploy.');
 
-    gutil.log('Execute:', gutil.colors.cyan('"' + command + '"'));
-    exec(command, {
-      cwd: absolutePath()
-    }, function (err, stdout, stderr) {
-      if (err) return done(err);
-      if (stderr) gutil.log('Execute stderr:', gutil.colors.cyan('"' + stderr + '"'));
-      if (stdout) gutil.log('Execute stdout:', gutil.colors.cyan('"' + stdout + '"'));
-      done();
-    });
+    ghPages.publish(distDir(), {
+      branch: ghPageBranch
+    }, done);
   });
 });
