@@ -33,7 +33,7 @@ var Q = require('q')
   , tmpDir = dir(tmpDirBase)
 
   , defaultLanguage = 'pt-br'
-  , i18nDirBase = absolutePath('i18n')
+  , i18nDirBase = srcDir('i18n')
   , i18nDir = dir(i18nDirBase)
   , i18nFiles = fs.readdirSync(i18nDirBase).filter(function (filename) {
       return filename.match(/\.json$/);

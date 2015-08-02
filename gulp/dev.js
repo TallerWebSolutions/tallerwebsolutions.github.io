@@ -4,7 +4,7 @@ var gulp = require('gulp')
   , browserSync = require('browser-sync')
 
   , watchMaps = [{
-      source: ['./src/index.html', './i18n/**/*'],
+      source: ['./src/index.html', './src/i18n/**/*'],
       tasks: ['index', 'i18n', 'index:structure']
     }, {
       source: './src/sass/**/*',
