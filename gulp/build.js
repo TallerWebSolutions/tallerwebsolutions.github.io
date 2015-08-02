@@ -55,7 +55,7 @@ gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
 gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
 gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
 gulp.task('sass', sassCompile('./src/sass/main.sass'));
-gulp.task('sass:structure', sassCompile('./src/sass/structure.scss'), 'structure/css');
+gulp.task('sass:structure', sassCompile('./src/sass/structure.scss', 'structure/css'));
 
 gulp.task('scripts', function () {
   var browserified = browserify({
@@ -70,21 +70,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('index', copier('./src/index.html', tmpDir()));
-
-gulp.task('index:structure', ['clean:structure', 'i18n'], function (done) {
-  // sequence('clean:structure', ['i18n', 'sass:structure'], function () {
-    copyBase(tmpDir('structure')).on('end', function () {
-      var injects = gulp.src(tmpDir('structure/css/structure.css'));
-
-      gulp.src(tmpDir('structure/index.html'))
-        .pipe(inject(injects, { relative: true }))
-        .pipe(gulp.dest(tmpDir('structure')))
-        .on('end', done);
-    });
-  // });
-});
-
-gulp.task('styleguide', copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
+gulp.task('index:structure', ['index'], copier(tmpDir('index.html'), tmpDir('structure')));
 
 /**
  * Structure distribution task.
@@ -132,17 +118,24 @@ gulp.task('build:tmp', [
 , 'i18n'
 , 'index:structure'
 , 'sass:structure'
-, 'styleguide'
+, 'build:styleguide'
 ]);
 
-/**
- * Build dist directory.
- */
 gulp.task('build:dist', ['build:tmp'], copier(tmpDir('**/*'), distDir()));
 
-/**
- * Main building task.
- */
+gulp.task('build:structure', function (done) {
+  sequence('clean:structure', 'sass:structure', 'index:structure', function () {
+    var injects = gulp.src(tmpDir('structure/css/structure.css'));
+
+    gulp.src(tmpDir('structure/index.html'))
+      .pipe(inject(injects, { relative: true }))
+      .pipe(gulp.dest(tmpDir('structure')))
+      .on('end', done);
+  });
+});
+
+gulp.task('build:styleguide', copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
+
 gulp.task('build', function (done) {
   sequence('clean', 'build:dist', 'clean:tmp', done);
 });

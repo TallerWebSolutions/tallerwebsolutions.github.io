@@ -14,7 +14,7 @@ var gulp = require('gulp')
       tasks: 'scripts'
     }, {
       source: './src/styleguide/**/*',
-      tasks: 'styleguide'
+      tasks: 'build:styleguide'
     }];
 
 watchMaps.forEach(prepareWatcher);
