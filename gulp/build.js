@@ -1,7 +1,9 @@
 
 var Q = require('q')
+  , path = require('path')
   , gulp = require('gulp')
   , sass = require('gulp-sass')
+  , async = require('async')
   , gutil = require('gulp-util')
   , buffer = require('vinyl-buffer')
   , ignore = require('gulp-ignore')
@@ -10,7 +12,11 @@ var Q = require('q')
   , source = require('vinyl-source-stream')
   , sequence = require('run-sequence')
   , browserify = require('browserify')
+  , handlebars = require('gulp-hb')
   , autoprefixer = require('gulp-autoprefixer')
+
+  , translations = require('require-dir')(path.join(process.cwd(), './i18n'))
+  , languages = Object.keys(translations)
 
   , dir = function (base) { return function (path) { return (base || './') + (path ? '/' + path : ''); } }
 
@@ -85,7 +91,7 @@ function sassCompile(entryPoint) {
  * Compile Sass.
  */
 gulp.task('sass', sassCompile('./src/sass/main.sass'));
-gulp.task('sass:structure', sassCompile('./src/sass/structure.scss'))
+gulp.task('sass:structure', ['clean:structure'], sassCompile('./src/sass/structure.scss'));
 
 /**
  * Bundle JavaScripts.
@@ -115,8 +121,8 @@ gulp.task('index', copy.bind(null, './src/index.html', tmpDir()));
 /**
  * Creates structure index.
  */
-gulp.task('index:structure', function (done) {
-  sequence('clean:structure', ['index', 'sass:structure'], function () {
+gulp.task('index:structure', ['clean:structure', 'i18n'], function (done) {
+  // sequence('clean:structure', ['i18n', 'sass:structure'], function () {
     copyBase(tmpDir('structure')).on('end', function () {
       var injects = gulp.src(tmpDir('structure/css/structure.css'));
 
@@ -125,7 +131,7 @@ gulp.task('index:structure', function (done) {
         .pipe(gulp.dest(tmpDir('structure')))
         .on('end', done);
     });
-  });
+  // });
 });
 
 /**
@@ -152,21 +158,38 @@ gulp.task('dist', ['index', 'dist:structure'], function () {
 /**
  * Creates main index.
  */
-gulp.task('i18n', ['index'], function () {
-
+gulp.task('i18n', ['index'], function (done) {
+  async.each(languages, function (language, next) {
+    gulp.src(tmpDir('index.html'))
+      .pipe(handlebars({ data: translations[language] }))
+      // .pipe(i18n({ messages: translations[language] }))
+      .pipe(gulp.dest(tmpDir(language == 'pt' ? '' : language)))
+      .on('end', next);
+  }, done);
 });
 
 /**
  * Build tmp directory.
  */
-gulp.task('build:tmp', function (done) {
-  var main = ['index', 'sass', 'scripts', 'fonts', 'images', 'i18n']
-    , structure = ['index:structure']
+gulp.task('build:tmp', [
+  'index'
+, 'sass'
+, 'scripts'
+, 'fonts'
+, 'images'
+, 'i18n'
+, 'index:structure'
+, 'sass:structure'
+]);
 
-  sequence('clean', main, structure, done);
+/**
+ * Build dist directory.
+ */
+gulp.task('build:dist', ['build:tmp'], function () {
+
 });
 
 /**
  * Main building task.
  */
-gulp.task('build', ['build:tmp']);
+gulp.task('build', ['build:dist']);
