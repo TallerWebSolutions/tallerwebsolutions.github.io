@@ -63,17 +63,19 @@ function loadTranslations(done) {
 };
 
 /**
- * Make a copy of a file/glob to destiny.
+ * Copier generator.
  */
-function copy(from, to) {
-  return gulp.src(from).pipe(gulp.dest(to));
+function copier(from, to) {
+  return function () {
+    return gulp.src(from).pipe(gulp.dest(to));
+  };
 }
 
 /**
  * Helper to copy base structure.
  */
 function copyBase(to) {
-  return copy([tmpDir('**/*')].concat(wholeCopyIgnores), to);
+  return copier([tmpDir('**/*')].concat(wholeCopyIgnores), to)();
 }
 
 /**
@@ -86,26 +88,33 @@ function remove(path) {
 }
 
 /**
+ * Clean generator.
+ */
+function cleaner(path) {
+  return function (done) {
+    remove(path).then(done);
+  };
+}
+
+/**
  * Clean-up task.
  * @todo : should also remove & checkout dist.
  */
-gulp.task('clean', function (done) {
-  remove(tmpDir()).then(done);
+gulp.task('clean', cleaner(tmpDir()));
+
+gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
+
+gulp.task('clean:dist', function (done) {
+
 });
 
-gulp.task('clean:structure', function (done) {
-  remove(tmpDir('structure/**/*')).then(done);
-});
-
-gulp.task('clean:index', function (done) {
-  remove(tmpDir('index.html')).then(done);
-});
+gulp.task('clean:index', cleaner(tmpDir('index.html')));
 
 /**
  * Static non-processable assets.
  */
-gulp.task('fonts', copy.bind(null, './src/fonts/**/*', tmpDir('fonts')));
-gulp.task('images', copy.bind(null, './src/images/**/*', tmpDir('images')));
+gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
+gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
 
 /**
  * Sass compiler generator.
@@ -152,7 +161,7 @@ gulp.task('scripts', function () {
 /**
  * Creates main index.
  */
-gulp.task('index', ['clean:index'], copy.bind(null, './src/index.html', tmpDir()));
+gulp.task('index', ['clean:index'], copier('./src/index.html', tmpDir()));
 
 /**
  * Creates structure index.
@@ -173,9 +182,7 @@ gulp.task('index:structure', ['clean:structure', 'i18n'], function (done) {
 /**
  * Structure distribution task.
  */
-gulp.task('dist:structure', ['index:structure'], function () {
-  return copy(tmpDir('structure/**/*'), distDir('structure'));
-});
+gulp.task('dist:structure', ['index:structure'], copier(tmpDir('structure/**/*'), distDir('structure')));
 
 /**
  * Main distribution task.
