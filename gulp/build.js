@@ -47,61 +47,6 @@ var Q = require('q')
       return '!' + source;
     });
 
-/**
- * Helper method to load translations.
- */
-function loadTranslations(done) {
-  async.each(i18nFiles, function (filename, next) {
-    jsonfile.readFile(i18nDir(filename), function (err, obj) {
-      if (err) gutil.log('i18n error:', gutil.colors.red('"' + err + '"'));
-      else translations[filename.slice(0, -5)] = obj;
-      next();
-    });
-  }, function () {
-    // Inherit pt-br to all translations.
-    if (translations['pt-br']) Object.keys(translations).forEach(function (language) {
-      if (language == 'pt-br') return;
-      translations[language] = extend(true, {}, translations['pt-br'], translations[language]);
-    });
-
-    done();
-  });
-};
-
-/**
- * Copier generator.
- */
-function copier(from, to) {
-  return function () {
-    return gulp.src(from).pipe(gulp.dest(to));
-  };
-}
-
-/**
- * Helper to copy base structure.
- */
-function copyBase(to) {
-  return copier([tmpDir('**/*')].concat(wholeCopyIgnores), to)();
-}
-
-/**
- * Helper method to remove path.
- */
-function remove(path) {
-  return Q.nfcall(rimraf, path).then(function () {
-    gutil.log('Removing', gutil.colors.cyan('\'' + path + '\''));
-  });
-}
-
-/**
- * Clean generator.
- */
-function cleaner(path) {
-  return function (done) {
-    remove(path).then(done);
-  };
-}
-
 gulp.task('clean', ['clean:tmp', 'clean:dist']);
 gulp.task('clean:tmp', cleaner(tmpDir()));
 gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
@@ -119,7 +64,7 @@ gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
 /**
  * Sass compiler generator.
  */
-function sassCompile(entryPoint) {
+function sassCompile(entryPoint, endPoint) {
   return function () {
     return gulp.src(entryPoint)
       .pipe(sass.sync().on('error', sass.logError))
@@ -127,35 +72,24 @@ function sassCompile(entryPoint) {
         browsers: ['last 2 versions'],
         cascade: false
       }))
-      .pipe(gulp.dest(tmpDir('css')))
+      .pipe(gulp.dest(tmpDir(endPoint || 'css')))
       .pipe(browserSync.stream());
   };
 }
 
-/**
- * Compile Sass.
- */
 gulp.task('sass', sassCompile('./src/sass/main.sass'));
-gulp.task('sass:structure', sassCompile('./src/sass/structure.scss'));
+gulp.task('sass:structure', sassCompile('./src/sass/structure.scss'), 'structure/css');
 
-/**
- * Bundle JavaScripts.
- */
 gulp.task('scripts', function () {
   var browserified = browserify({
     entries: './src/js/main.js',
     debug: true
   });
 
-  return browserified.bundle()
-    .pipe(source('taller.js'))
-    .pipe(buffer())
-    // .pipe(sourcemaps.init({loadMaps: true}))
-        // Add transformation tasks to the pipeline here.
-        // .pipe(uglify())
-        // .on('error', gutil.log)
-    // .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(tmpDir('js')));
+  return browserified.bundle()        // Bundle-up files.
+    .pipe(source('taller.js'))        // Rename bundle
+    .pipe(buffer())                   // Split into a stream buffer.
+    .pipe(gulp.dest(tmpDir('js')));   // Save file.
 });
 
 /**
@@ -259,3 +193,64 @@ gulp.task('deploy', function (done) {
     }, done);
   });
 });
+
+
+/*
+ * Helpers
+ * -------
+ */
+
+/**
+ * Helper method to load translations.
+ */
+function loadTranslations(done) {
+  async.each(i18nFiles, function (filename, next) {
+    jsonfile.readFile(i18nDir(filename), function (err, obj) {
+      if (err) gutil.log('i18n error:', gutil.colors.red('"' + err + '"'));
+      else translations[filename.slice(0, -5)] = obj;
+      next();
+    });
+  }, function () {
+    // Inherit pt-br to all translations.
+    if (translations['pt-br']) Object.keys(translations).forEach(function (language) {
+      if (language == 'pt-br') return;
+      translations[language] = extend(true, {}, translations['pt-br'], translations[language]);
+    });
+
+    done();
+  });
+};
+
+/**
+ * Copier generator.
+ */
+function copier(from, to) {
+  return function () {
+    return gulp.src(from).pipe(gulp.dest(to));
+  };
+}
+
+/**
+ * Helper to copy base structure.
+ */
+function copyBase(to) {
+  return copier([tmpDir('**/*')].concat(wholeCopyIgnores), to)();
+}
+
+/**
+ * Helper method to remove path.
+ */
+function remove(path) {
+  return Q.nfcall(rimraf, path).then(function () {
+    gutil.log('Removing', gutil.colors.cyan('\'' + path + '\''));
+  });
+}
+
+/**
+ * Clean generator.
+ */
+function cleaner(path) {
+  return function (done) {
+    remove(path).then(done);
+  };
+}
