@@ -61,22 +61,6 @@ gulp.task('clean:dist', cleaner(distDir()));
 gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
 gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
 
-/**
- * Sass compiler generator.
- */
-function sassCompile(entryPoint, endPoint) {
-  return function () {
-    return gulp.src(entryPoint)
-      .pipe(sass.sync().on('error', sass.logError))
-      .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-      }))
-      .pipe(gulp.dest(tmpDir(endPoint || 'css')))
-      .pipe(browserSync.stream());
-  };
-}
-
 gulp.task('sass', sassCompile('./src/sass/main.sass'));
 gulp.task('sass:structure', sassCompile('./src/sass/structure.scss'), 'structure/css');
 
@@ -220,6 +204,22 @@ function loadTranslations(done) {
     done();
   });
 };
+
+/**
+ * Sass compiler generator.
+ */
+function sassCompile(entryPoint, endPoint) {
+  return function () {
+    return gulp.src(entryPoint)
+      .pipe(sass.sync().on('error', sass.logError))   // Compile.
+      .pipe(autoprefixer({                            // Add browser prefixes.
+        browsers: ['last 2 versions'],
+        cascade: false
+      }))
+      .pipe(gulp.dest(tmpDir(endPoint || 'css')))     // Save CSS.
+      .pipe(browserSync.stream());                    // Update browserSync.
+  };
+}
 
 /**
  * Copier generator.
