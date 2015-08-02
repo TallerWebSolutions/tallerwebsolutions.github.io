@@ -12,6 +12,9 @@ var gulp = require('gulp')
     }, {
       source: './src/js/**/*',
       tasks: 'scripts'
+    }, {
+      source: './src/styleguide/**/*',
+      tasks: 'styleguide'
     }];
 
 watchMaps.forEach(prepareWatcher);
@@ -58,7 +61,10 @@ gulp.task('serve', ['watch'], function () {
     }
   });
 
-  gulp.watch(['.tmp/**/*', '!.tmp/**/*.css']).on('change', browserSync.reload);
+  gulp.watch([
+    '.tmp/**/*',
+    '!.tmp/**/*.css'
+  ]).on('change', browserSync.reload);
 });
 
 gulp.task('dev', ['serve']);

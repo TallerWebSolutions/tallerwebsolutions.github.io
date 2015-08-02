@@ -201,6 +201,11 @@ gulp.task('index:structure', ['clean:structure', 'i18n'], function (done) {
   // });
 });
 
+gulp.task('styleguide', function () {
+  return copier(srcDir('styleguide/**/*'), tmpDir('styleguide'))()
+    .pipe(browserSync.stream());
+});
+
 /**
  * Structure distribution task.
  */
@@ -247,14 +252,13 @@ gulp.task('build:tmp', [
 , 'i18n'
 , 'index:structure'
 , 'sass:structure'
+, 'styleguide'
 ]);
 
 /**
  * Build dist directory.
  */
-gulp.task('build:dist', ['build:tmp'], function () {
-  return copier(tmpDir('**/*'), distDir())();
-});
+gulp.task('build:dist', ['build:tmp'], copier(tmpDir('**/*'), distDir()));
 
 /**
  * Main building task.
@@ -263,15 +267,21 @@ gulp.task('build', function (done) {
   sequence('clean', 'build:dist', 'clean:tmp', done);
 });
 
-gulp.task('deploy', ['build'], function (done) {
-  var command = 'git push origin `git subtree split --prefix dist master`:master --force';
-  gutil.log('Execute:', gutil.colors.cyan('"' + command + '"'));
-  exec(command, {
-    cwd: absolutePath()
-  }, function (err, stdout, stderr) {
-    if (err) return done(err);
-    if (stderr) gutil.log('Execute stderr:', gutil.colors.cyan('"' + stderr + '"'));
-    if (stdout) gutil.log('Execute stdout:', gutil.colors.cyan('"' + stdout + '"'));
-    done();
+gulp.task('deploy', function (done) {
+  fs.lstat(distDir(), function(err, stats) {
+
+    // Safeguard.
+    if (err || !stats.isDirectory()) return done('You should run "gulp build" before trying to deploy.');
+
+    var command = 'git push origin `git subtree split --prefix dist master`:master --force';
+    gutil.log('Execute:', gutil.colors.cyan('"' + command + '"'));
+    exec(command, {
+      cwd: absolutePath()
+    }, function (err, stdout, stderr) {
+      if (err) return done(err);
+      if (stderr) gutil.log('Execute stderr:', gutil.colors.cyan('"' + stderr + '"'));
+      if (stdout) gutil.log('Execute stdout:', gutil.colors.cyan('"' + stdout + '"'));
+      done();
+    });
   });
 });
