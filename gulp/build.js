@@ -53,16 +53,25 @@ var Q = require('q')
  * -----------------
  */
 
+/*
+ * Clean-ups.
+ */
+
 gulp.task('clean', ['clean:tmp', 'clean:dist']);
 gulp.task('clean:tmp', cleaner(tmpDir()));
 gulp.task('clean:dist', cleaner(distDir()));
 gulp.task('clean:structure', cleaner(tmpDir('structure/**/*')));
+gulp.task('clean:styleguide', cleaner(tmpDir('styleguide/**/*')));
 
+
+/*
+ * Core site building tasks.
+ */
+
+gulp.task('index', ['index:create', 'index:i18n', 'index:inject']);
 gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
 gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
 gulp.task('sass', sassCompile('./src/sass/main.sass'));
-gulp.task('sass:structure', sassCompile('./src/sass/structure.scss', 'structure/css'));
-
 gulp.task('scripts', function () {
   var browserified = browserify({
     entries: './src/js/main.js',
@@ -75,8 +84,41 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(tmpDir('js')));   // Save file.
 });
 
-gulp.task('index', copier('./src/index.html', tmpDir()));
-gulp.task('index:structure', ['index'], copier(tmpDir('index.html'), tmpDir('structure')));
+
+/*
+ * Index split-up tasks.
+ */
+
+gulp.task('index:create', copier('./src/index.html', tmpDir()));
+gulp.task('index:i18n', ['index:create'], function (done) {
+  loadTranslations(function () {
+    async.each(Object.keys(translations), function (language, next) {
+      gulp.src(tmpDir('index.html'))
+        .pipe(handlebars({ data: translations[language] }))
+        // .pipe(i18n({ messages: translations[language] }))
+        .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
+        .on('end', next);
+    }, done);
+  });
+});
+gulp.task('index:inject', ['sass', 'scripts', 'index:create'], function () {
+  var sources = gulp.src([
+    tmpDir('**/*.js'),
+    tmpDir('**/*.css'),
+  ], { read: false });
+
+  return gulp.src(tmpDir('index.html'))
+    .pipe(inject(sources), { relative: true })
+    .pipe(gulp.dest(tmpDir()));
+});
+
+
+/*
+ * Secondary building tasks.
+ */
+
+gulp.task('sass:structure', sassCompile('./src/sass/structure.scss', 'structure/css'));
+gulp.task('index:structure', copier(tmpDir('index.html'), tmpDir('structure')));
 
 /**
  * Main distribution task.
@@ -117,12 +159,9 @@ gulp.task('build:tmp', [
 , 'fonts'
 , 'images'
 , 'i18n'
-, 'index:structure'
-, 'sass:structure'
 , 'build:styleguide'
+, 'build:structure'
 ]);
-
-gulp.task('build:dist', ['build:tmp'], copier(tmpDir('**/*'), distDir()));
 
 gulp.task('build:structure', function (done) {
   sequence('clean:structure', 'sass:structure', 'index:structure', function () {
@@ -135,10 +174,10 @@ gulp.task('build:structure', function (done) {
   });
 });
 
-gulp.task('build:styleguide', copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
+gulp.task('build:styleguide', ['clean:styleguide'], copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
 
 gulp.task('build', function (done) {
-  sequence('clean', 'build:dist', 'clean:tmp', done);
+  sequence('clean', 'build:tmp', done);
 });
 
 gulp.task('deploy', function (done) {
