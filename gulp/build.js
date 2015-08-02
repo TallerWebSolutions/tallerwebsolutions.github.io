@@ -86,7 +86,7 @@ gulp.task('scripts', function () {
 
 
 /*
- * Index split-up tasks.
+ * Index sub-tasks.
  */
 
 gulp.task('index:create', copier('./src/index.html', tmpDir()));
@@ -119,20 +119,6 @@ gulp.task('index:inject', ['sass', 'scripts', 'index:create'], function () {
 
 gulp.task('sass:structure', sassCompile('./src/sass/structure.scss', 'structure/css'));
 gulp.task('index:structure', copier(tmpDir('index.html'), tmpDir('structure')));
-
-/**
- * Main distribution task.
- */
-gulp.task('dist', ['index'], function () {
-  var sources = gulp.src([
-    tmpDir('**/*.js'),
-    tmpDir('**/*.css'),
-  ], { read: false });
-
-  return gulp.src(tmpDir('index.html'))
-    .pipe(inject(sources), { relative: true })
-    .pipe(gulp.dest(tmpDir()));
-});
 
 /**
  * Creates main index.
