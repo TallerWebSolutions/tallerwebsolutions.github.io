@@ -1,0 +1,133 @@
+{
+  "site": {
+    "title": "Taller - Soluções Web Inteligentes",
+    "description": "@todo"
+  },
+
+  "menu": {
+    "contact": "Contato"
+  },
+
+  "header": {
+    "hero": "A Taller é um ateliê digital que transforma<br><span>ideias em negócios inovadores</span><br>para a entrega contínua de valor."
+  },
+
+  "section": {
+    "who": {
+      "title": "Quem somos",
+      "main": "A Taller desenvolve produtos digitais que ajudam empresas de todos os tamanhos a atenderem seus objetivos no espaço digital.",
+      "aside": {
+        "title": "Nossa cultura valoriza",
+        "list": [
+          "Colaboração em comunidades de código aberto.",
+          "Participação e organização ativa em eventos.",
+          "Compartilhamento dos nossos aprendizados.",
+          "Acolhimento caloroso dos novos membros.",
+          "Experimentos constantes.",
+          "Decisões orientadas a boas práticas.",
+          "Gestão transparente.",
+          "Iniciativas de auto-organização.",
+          "Redução de desperdícios.",
+          "Fluxo contínuo de entrega de valor."
+        ]
+      },
+      "footer": {
+        "attention": "Quer saber mais sobre a gente?",
+        "call-to-action": "Conheça nossa história a nosso time."
+      }
+    },
+
+    "cases": {
+      "title": "Case de destaque:",
+      "list": {
+        "claro": {
+          "title": "Portal Claro Promoções",
+          "description": "Desenvolvimento de um gerador de campanhas com conteúdo multimídias para o Portal Claro Promoções com a utilização do módulo Panopoly para Drupal 7.",
+          "details": [
+            {
+              "title": "Gestão visual de conteúdo",
+              "description": "Agilidade e autonomia aos conteudistas."
+            }, {
+              "title": "Geolocalização de alta precisão",
+              "description": "Entregas de promoções regionalizadas."
+            }, {
+              "title": "Tecnologias utilizadas",
+              "list": [
+                "Drupal",
+                "Linux",
+                "MySQL",
+                "PHP"
+              ]
+            }
+          ],
+          "read-more": "Detalhes do case"
+        }
+      },
+      "aside": {
+        "attention": "Nós estamos preparados para os mais variados desafios tecnológicos.",
+        "call-to-action": "Começe seu projeto conosco"
+      }
+    },
+
+    "products": {
+      "title": "Nosso produto:",
+      "list": {
+        "el-tracker": {
+          "title": "El Tracker",
+          "description": "Rastreamento de eventos para analytics.<br>Sem código. Poucos cliques.",
+          "read-more": "Conheça o El Tracker"
+        }
+      },
+      "aside": {
+        "attention": "Nós estamos preparados para os mais variados desafios tecnológicos.",
+        "call-to-action": "Começe seu projeto conosco"
+      }
+    },
+
+    "services": {
+      "title": "Nossos serviços",
+      "description": "Estamos preparados para resolver os seus<br>problemas tecnológicos mais cabeludos.<br>Oferecemos:",
+      "list": [
+        "Perceria Tecnológica",
+        "Desenvolvimento",
+        "Serviço de teste",
+        "Consultoria"
+      ],
+      "call-to-action": "Comece seu projeto conosco"
+    },
+
+    "blog": {
+      "title": "Nosso blog",
+      "description": "Somos apaixonados por design e<br>desevonlvimento, mas não só...<br>Também escrevemos sobre:",
+      "list": [
+        "Drupal",
+        "DevOps",
+        "Métricas Lean",
+        "Metodoligias Ágeis"
+      ],
+      "call-to-action": "Visite nosso blog"
+    },
+
+    "newsletter": {
+      "description": "Receba nossas novidades, conteúdos e oportunidades",
+      "placeholder": "Seu E-mail",
+      "subscribe": "Quero receber"
+    }
+  },
+
+  "footer": {
+    "contact": {
+      "title": "Contatos",
+      "address": "Servidão Recanto das Pedras, casa 3.<br>Rio Tavares, Florianópolis - SC - 88066-248"
+    },
+    "extras": {
+      "title": "Extras",
+      "description": "Esse site foi feito de forma ágil.",
+      "read-more": "Veja os bastidores"
+    }
+  },
+
+  "util": {
+    "know-more": "Saiba mais"
+  }
+}
