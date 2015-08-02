@@ -241,5 +241,5 @@ gulp.task('build:dist', ['build:tmp'], function () {
  * Main building task.
  */
 gulp.task('build', function (done) {
-  sequence('clean', 'build:dist', done);
+  sequence('clean', 'build:dist', 'clean:tmp', done);
 });
