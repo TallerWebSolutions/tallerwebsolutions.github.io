@@ -74,8 +74,8 @@ gulp.task('scripts', taskScripts);
  */
 
 gulp.task('index:create', copier('./src/index.html', tmpDir()));
-gulp.task('index:i18n', ['index:create'], taskIndexI18n);
-gulp.task('index:inject', ['index:i18n', 'sass', 'scripts'], taskIndexInject);
+gulp.task('index:inject', ['index:create', 'sass', 'scripts'], taskIndexInject);
+gulp.task('index:i18n', ['index:inject'], taskIndexI18n);
 
 
 /*
@@ -146,12 +146,12 @@ function taskIndexInject() {
   ], { read: false });
 
   return gulp.src(tmpDir('index.html'))
-    .pipe(inject(sources), { relative: true })
+    .pipe(inject(sources, { relative: true }))
     .pipe(gulp.dest(tmpDir()));
 }
 
 function taskIndexStructureInject() {
-  var injects = gulp.src(tmpDir('structure/css/**/*'));
+  var injects = gulp.src(tmpDir('structure/css/**/*'), { read: false });
 
   return gulp.src(tmpDir('structure/index.html'))
     .pipe(inject(injects, { relative: true }))
