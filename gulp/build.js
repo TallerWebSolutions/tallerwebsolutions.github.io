@@ -101,10 +101,10 @@ gulp.task('index:i18n', ['index:create'], function (done) {
     }, done);
   });
 });
-gulp.task('index:inject', ['sass', 'scripts', 'index:create'], function () {
+gulp.task('index:inject', ['index:i18n', 'sass', 'scripts'], function () {
   var sources = gulp.src([
-    tmpDir('**/*.js'),
-    tmpDir('**/*.css'),
+    tmpDir('js/**/*'),
+    tmpDir('css/**/*'),
   ], { read: false });
 
   return gulp.src(tmpDir('index.html'))
@@ -153,26 +153,26 @@ gulp.task('i18n', ['index'], function (done) {
 /**
  * Build tmp directory.
  */
-gulp.task('build:tmp', [
-  'index'
-, 'sass'
-, 'scripts'
-, 'fonts'
-, 'images'
-, 'i18n'
-, 'build:styleguide'
-, 'build:structure'
-]);
+gulp.task('build', function (done) {
+  sequence('clean', [
+    // Core build.
+    'index'
+  , 'sass'
+  , 'scripts'
+  , 'fonts'
+  , 'images'
+  ], [
+    // Secondary builds.
+    'build:styleguide'
+  , 'build:structure'
+  ], done);
+});
 
 gulp.task('build:structure', function (done) {
   sequence('clean:structure', ['sass:structure', 'index:structure'], done);
 });
 
 gulp.task('build:styleguide', ['clean:styleguide'], copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
-
-gulp.task('build', function (done) {
-  sequence('clean', 'build:tmp', done);
-});
 
 gulp.task('deploy', function (done) {
   var args = yargs.default('message', false).alias('m', 'message').argv
