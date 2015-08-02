@@ -69,17 +69,7 @@ gulp.task('index', ['index:create', 'index:i18n', 'index:inject']);
 gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
 gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
 gulp.task('sass', sassCompile('./src/sass/main.sass'));
-gulp.task('scripts', function () {
-  var browserified = browserify({
-    entries: './src/js/main.js',
-    debug: true
-  });
-
-  return browserified.bundle()        // Bundle-up files.
-    .pipe(source('taller.js'))        // Rename bundle
-    .pipe(buffer())                   // Split into a stream buffer.
-    .pipe(gulp.dest(tmpDir('js')));   // Save file.
-});
+gulp.task('scripts', taskScripts);
 
 
 /*
@@ -87,27 +77,8 @@ gulp.task('scripts', function () {
  */
 
 gulp.task('index:create', copier('./src/index.html', tmpDir()));
-gulp.task('index:i18n', ['index:create'], function (done) {
-  loadTranslations(function () {
-    async.each(Object.keys(translations), function (language, next) {
-      gulp.src(tmpDir('index.html'))
-        .pipe(handlebars({ data: translations[language] }))
-        // .pipe(i18n({ messages: translations[language] }))
-        .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
-        .on('end', next);
-    }, done);
-  });
-});
-gulp.task('index:inject', ['index:i18n', 'sass', 'scripts'], function () {
-  var sources = gulp.src([
-    tmpDir('js/**/*'),
-    tmpDir('css/**/*'),
-  ], { read: false });
-
-  return gulp.src(tmpDir('index.html'))
-    .pipe(inject(sources), { relative: true })
-    .pipe(gulp.dest(tmpDir()));
-});
+gulp.task('index:i18n', ['index:create'], taskIndexI18n);
+gulp.task('index:inject', ['index:i18n', 'sass', 'scripts'], taskIndexInject);
 
 
 /*
@@ -123,20 +94,74 @@ gulp.task('index:structure', ['index:structure:create', 'index:structure:inject'
  */
 
 gulp.task('index:structure:create', ['index'], copier(tmpDir('index.html'), tmpDir('structure')));
-gulp.task('index:structure:inject', ['index:structure:create', 'sass:structure'], function () {
-  var injects = gulp.src(tmpDir('structure/css/**/*'));
-
-  return gulp.src(tmpDir('structure/index.html'))
-    .pipe(inject(injects, { relative: true }))
-    .pipe(gulp.dest(tmpDir('structure')));
-});
+gulp.task('index:structure:inject', ['index:structure:create', 'sass:structure'], taskIndexStructureInject);
 
 
 /*
  * Core building tasks.
  */
 
-gulp.task('build', function (done) {
+gulp.task('build', taskBuild);
+gulp.task('build:structure', taskBuildStructure);
+gulp.task('build:styleguide', ['clean:styleguide'], copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
+
+
+/*
+ * Deployment tasks.
+ */
+
+gulp.task('deploy', ['build'], taskDeploy);
+
+
+/*
+ * Task bodies
+ * -----------
+ */
+
+function taskScripts() {
+  var browserified = browserify({
+    entries: './src/js/main.js',
+    debug: true
+  });
+
+  return browserified.bundle()        // Bundle-up files.
+    .pipe(source('taller.js'))        // Rename bundle
+    .pipe(buffer())                   // Split into a stream buffer.
+    .pipe(gulp.dest(tmpDir('js')));   // Save file.
+}
+
+function taskIndexI18n(done) {
+  loadTranslations(function () {
+    async.each(Object.keys(translations), function (language, next) {
+      gulp.src(tmpDir('index.html'))
+        .pipe(handlebars({ data: translations[language] }))
+        // .pipe(i18n({ messages: translations[language] }))
+        .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
+        .on('end', next);
+    }, done);
+  });
+}
+
+function taskIndexInject() {
+  var sources = gulp.src([
+    tmpDir('js/**/*'),
+    tmpDir('css/**/*'),
+  ], { read: false });
+
+  return gulp.src(tmpDir('index.html'))
+    .pipe(inject(sources), { relative: true })
+    .pipe(gulp.dest(tmpDir()));
+}
+
+function taskIndexStructureInject() {
+  var injects = gulp.src(tmpDir('structure/css/**/*'));
+
+  return gulp.src(tmpDir('structure/index.html'))
+    .pipe(inject(injects, { relative: true }))
+    .pipe(gulp.dest(tmpDir('structure')));
+}
+
+function taskBuild(done) {
   sequence('clean', [
     // Core build.
     'index'
@@ -149,21 +174,16 @@ gulp.task('build', function (done) {
     'build:styleguide'
   , 'build:structure'
   ], done);
-});
-gulp.task('build:structure', function (done) {
+}
+
+function taskBuildStructure(done) {
   sequence('clean:structure', [
     'sass:structure',
     'index:structure'
   ], done);
-});
-gulp.task('build:styleguide', ['clean:styleguide'], copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
+}
 
-
-/*
- * Deployment tasks.
- */
-
-gulp.task('deploy', ['build'], function (done) {
+function taskDeploy(done) {
   var args = yargs.default('message', false).alias('m', 'message').argv
     , message = args.message || 'Update website.';
 
@@ -176,7 +196,7 @@ gulp.task('deploy', ['build'], function (done) {
       branch: ghPageBranch
     }, done);
   });
-});
+}
 
 
 /*
