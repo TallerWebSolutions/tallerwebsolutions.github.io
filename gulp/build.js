@@ -68,7 +68,7 @@ gulp.task('clean:styleguide', cleaner(tmpDir('styleguide/**/*')));
 gulp.task('index', ['index:create', 'index:i18n', 'index:inject']);
 gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
 gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
-gulp.task('sass', sassCompile('./src/sass/main.sass'));
+gulp.task('sass', compiler('./src/sass/main.sass'));
 gulp.task('scripts', taskScripts);
 
 
@@ -85,7 +85,7 @@ gulp.task('index:inject', ['index:i18n', 'sass', 'scripts'], taskIndexInject);
  * Structure atomic tasks.
  */
 
-gulp.task('sass:structure', sassCompile('./src/sass/structure.scss', 'structure/css'));
+gulp.task('sass:structure', compiler('./src/sass/structure.scss', 'structure/css'));
 gulp.task('index:structure', ['index:structure:create', 'index:structure:inject']);
 
 
@@ -200,6 +200,46 @@ function taskDeploy(done) {
 
 
 /*
+ * Task body generators
+ * --------------------
+ */
+
+/**
+ * Sass compiler generator.
+ */
+function compiler(entryPoint, endPoint) {
+  return function () {
+    return gulp.src(entryPoint)
+      .pipe(sass.sync().on('error', sass.logError))   // Compile.
+      .pipe(autoprefixer({                            // Add browser prefixes.
+        browsers: ['last 2 versions'],
+        cascade: false
+      }))
+      .pipe(gulp.dest(tmpDir(endPoint || 'css')))     // Save CSS.
+      .pipe(browserSync.stream());                    // Update browserSync.
+  };
+}
+
+/**
+ * Copier generator.
+ */
+function copier(from, to) {
+  return function () {
+    return gulp.src(from).pipe(gulp.dest(to)).pipe(browserSync.stream());
+  };
+}
+
+/**
+ * Clean generator.
+ */
+function cleaner(path) {
+  return function (done) {
+    remove(path).then(done);
+  };
+}
+
+
+/*
  * Helpers
  * -------
  */
@@ -226,44 +266,10 @@ function loadTranslations(done) {
 };
 
 /**
- * Sass compiler generator.
- */
-function sassCompile(entryPoint, endPoint) {
-  return function () {
-    return gulp.src(entryPoint)
-      .pipe(sass.sync().on('error', sass.logError))   // Compile.
-      .pipe(autoprefixer({                            // Add browser prefixes.
-        browsers: ['last 2 versions'],
-        cascade: false
-      }))
-      .pipe(gulp.dest(tmpDir(endPoint || 'css')))     // Save CSS.
-      .pipe(browserSync.stream());                    // Update browserSync.
-  };
-}
-
-/**
- * Copier generator.
- */
-function copier(from, to) {
-  return function () {
-    return gulp.src(from).pipe(gulp.dest(to)).pipe(browserSync.stream());
-  };
-}
-
-/**
  * Helper method to remove path.
  */
 function remove(path) {
   return Q.nfcall(rimraf, path).then(function () {
     gutil.log('Removing', gutil.colors.cyan('\'' + path + '\''));
   });
-}
-
-/**
- * Clean generator.
- */
-function cleaner(path) {
-  return function (done) {
-    remove(path).then(done);
-  };
 }
