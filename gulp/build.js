@@ -6,6 +6,7 @@ var Q = require('q')
   , async = require('async')
   , gutil = require('gulp-util')
   , buffer = require('vinyl-buffer')
+  , extend = require('extend')
   , ignore = require('gulp-ignore')
   , inject = require('gulp-inject')
   , rimraf = require('rimraf')
@@ -18,6 +19,7 @@ var Q = require('q')
 
   , translations = require('require-dir')(path.join(process.cwd(), './i18n'))
   , languages = Object.keys(translations)
+  , defaultLanguage = 'pt-br'
 
   , dir = function (base) { return function (path) { return (base || './') + (path ? '/' + path : ''); } }
 
@@ -31,6 +33,13 @@ var Q = require('q')
   , wholeCopyIgnores = [tmpDir('structure')].map(function (source) {
       return '!' + source;
     });
+
+/**
+ * Make translations inherit from default language, if we have one.
+ */
+translations[defaultLanguage] && languages.forEach(function (language) {
+  extend(true, translations[language], translations[defaultLanguage]);
+});
 
 /**
  * Make a copy of a file/glob to destiny.
@@ -165,7 +174,7 @@ gulp.task('i18n', ['index'], function (done) {
     gulp.src(tmpDir('index.html'))
       .pipe(handlebars({ data: translations[language] }))
       // .pipe(i18n({ messages: translations[language] }))
-      .pipe(gulp.dest(tmpDir(language == 'pt-br' ? '' : language)))
+      .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
       .on('end', next);
   }, done);
 });
