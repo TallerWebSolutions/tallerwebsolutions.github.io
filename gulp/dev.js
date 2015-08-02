@@ -3,37 +3,49 @@ var gulp = require('gulp')
   , sequence = require('run-sequence')
   , browserSync = require('browser-sync')
 
-  , watchMap = {
-      './src/index.html': ['index', 'i18n', 'index:structure'],
-      './src/sass/**/*' : ['sass', 'sass:structure'],
-      './src/js/**/*'   : 'scripts',
-      './i18n/**/*' : 'i18n',
-    }
+  , watchMaps = [{
+      source: ['./src/index.html', './i18n/**/*'],
+      tasks: ['index', 'i18n', 'index:structure']
+    }, {
+      source: './src/sass/**/*',
+      tasks: ['sass', 'sass:structure']
+    }, {
+      source: './src/js/**/*',
+      tasks: 'scripts'
+    }];
 
-  , sources = Object.keys(watchMap)
-  , taskGroups = sources.map(function (source, index) {
-      return Array.isArray(watchMap[source]) ? watchMap[source] : [watchMap[source]];
-    })
-  , watchers = sources.map(function (source, index) {
-      return function () {
-        gulp.watch(source, taskGroups[index]);
-      };
-    });
+watchMaps.forEach(prepareWatcher);
+watchMaps.forEach(createWatchingTasks);
 
 /**
- * Create watching tasks.
+ * Helper method to create watchers.
  */
-taskGroups.forEach(function (tasks, index) {
-  gulp.task('watch:' + tasks.join(':'), tasks, watchers[index]);
-});
+function prepareWatcher(map) {
+  map.tasks = Array.isArray(map.tasks) ? map.tasks : [map.tasks];
+  map.watcher = function () {
+    gulp.watch(map.source, map.tasks);
+  };
+}
+
+/**
+ * Helper method to create watching tasks.
+ */
+function createWatchingTasks(map) {
+  gulp.task('watch:' + map.tasks.join(':'), map.tasks, map.watcher);
+}
+
+/**
+ * Helper method to initiate watchers.
+ */
+function initiateWatcher(map) {
+  map.watcher();
+}
 
 /**
  * Helper task to initiate all watch maps.
  */
 gulp.task('watch', ['build:tmp'], function () {
-  watchers.forEach(function (watcher) {
-    watcher();
-  });
+  watchMaps.forEach(initiateWatcher);
 });
 
 /**

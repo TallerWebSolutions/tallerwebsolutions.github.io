@@ -1,5 +1,6 @@
 
 var Q = require('q')
+  , fs = require('fs')
   , path = require('path')
   , gulp = require('gulp')
   , sass = require('gulp-sass')
@@ -11,35 +12,47 @@ var Q = require('q')
   , inject = require('gulp-inject')
   , rimraf = require('rimraf')
   , source = require('vinyl-source-stream')
+  , jsonfile = require('jsonfile')
   , sequence = require('run-sequence')
   , browserify = require('browserify')
   , handlebars = require('gulp-hb')
   , browserSync = require('browser-sync')
   , autoprefixer = require('gulp-autoprefixer')
 
-  , translations = require('require-dir')(path.join(process.cwd(), './i18n'))
-  , languages = Object.keys(translations)
-  , defaultLanguage = 'pt-br'
-
+  , absolutePath = path.join.bind(null, process.cwd())
   , dir = function (base) { return function (path) { return (base || './') + (path ? '/' + path : ''); } }
 
-  , srcDirBase = 'src'
+  , srcDirBase = absolutePath('src')
   , srcDir = dir(srcDirBase)
-  , distDirBase = 'dist'
+  , distDirBase = absolutePath('dist')
   , distDir = dir(distDirBase)
-  , tmpDirBase = '.tmp'
+  , tmpDirBase = absolutePath('.tmp')
   , tmpDir = dir(tmpDirBase)
+
+  , defaultLanguage = 'pt-br'
+  , i18nDirBase = absolutePath('i18n')
+  , i18nDir = dir(i18nDirBase)
+  , i18nFiles = fs.readdirSync(i18nDirBase).filter(function (filename) {
+      return filename.match(/\.json$/);
+    })
+  , translations = {}
 
   , wholeCopyIgnores = [tmpDir('structure')].map(function (source) {
       return '!' + source;
     });
 
 /**
- * Make translations inherit from default language, if we have one.
+ * Helper method to load translations.
  */
-translations[defaultLanguage] && languages.forEach(function (language) {
-  extend(true, translations[language], translations[defaultLanguage]);
-});
+function loadTranslations(done) {
+  async.each(i18nFiles, function (filename, next) {
+    jsonfile.readFile(i18nDir(filename), function (err, obj) {
+      if (err) gutil.log('i18n error:', gutil.colors.red('"' + err + '"'));
+      else translations[filename.slice(0, -5)] = obj;
+      next();
+    });
+  }, done);
+};
 
 /**
  * Make a copy of a file/glob to destiny.
@@ -74,6 +87,10 @@ gulp.task('clean', function (done) {
 
 gulp.task('clean:structure', function (done) {
   remove(tmpDir('structure/**/*')).then(done);
+});
+
+gulp.task('clean:index', function (done) {
+  remove(tmpDir('index.html')).then(done);
 });
 
 /**
@@ -127,7 +144,7 @@ gulp.task('scripts', function () {
 /**
  * Creates main index.
  */
-gulp.task('index', copy.bind(null, './src/index.html', tmpDir()));
+gulp.task('index', ['clean:index'], copy.bind(null, './src/index.html', tmpDir()));
 
 /**
  * Creates structure index.
@@ -170,13 +187,15 @@ gulp.task('dist', ['index', 'dist:structure'], function () {
  * Creates main index.
  */
 gulp.task('i18n', ['index'], function (done) {
-  async.each(languages, function (language, next) {
-    gulp.src(tmpDir('index.html'))
-      .pipe(handlebars({ data: translations[language] }))
-      // .pipe(i18n({ messages: translations[language] }))
-      .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
-      .on('end', next);
-  }, done);
+  loadTranslations(function () {
+    async.each(Object.keys(translations), function (language, next) {
+      gulp.src(tmpDir('index.html'))
+        .pipe(handlebars({ data: translations[language] }))
+        // .pipe(i18n({ messages: translations[language] }))
+        .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
+        .on('end', next);
+    }, done);
+  });
 });
 
 /**
