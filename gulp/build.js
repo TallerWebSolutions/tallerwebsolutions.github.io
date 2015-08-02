@@ -51,7 +51,15 @@ function loadTranslations(done) {
       else translations[filename.slice(0, -5)] = obj;
       next();
     });
-  }, done);
+  }, function () {
+    // Inherit pt-br to all translations.
+    if (translations['pt-br']) Object.keys(translations).forEach(function (language) {
+      if (language == 'pt-br') return;
+      translations[language] = extend(true, {}, translations['pt-br'], translations[language]);
+    });
+
+    done();
+  });
 };
 
 /**
