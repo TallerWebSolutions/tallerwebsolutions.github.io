@@ -62,7 +62,7 @@ gulp.task('clean:styleguide', cleaner(tmpDir('styleguide/**/*')));
 
 
 /*
- * Core site building tasks.
+ * Atomic tasks.
  */
 
 gulp.task('index', ['index:create', 'index:i18n', 'index:inject']);
@@ -111,7 +111,7 @@ gulp.task('index:inject', ['index:i18n', 'sass', 'scripts'], function () {
 
 
 /*
- * Structure building tasks.
+ * Structure atomic tasks.
  */
 
 gulp.task('sass:structure', sassCompile('./src/sass/structure.scss', 'structure/css'));
@@ -131,9 +131,11 @@ gulp.task('index:structure:inject', ['index:structure:create', 'sass:structure']
     .pipe(gulp.dest(tmpDir('structure')));
 });
 
-/**
- * Build tmp directory.
+
+/*
+ * Core building tasks.
  */
+
 gulp.task('build', function (done) {
   sequence('clean', [
     // Core build.
@@ -148,13 +150,20 @@ gulp.task('build', function (done) {
   , 'build:structure'
   ], done);
 });
-
 gulp.task('build:structure', function (done) {
-  sequence('clean:structure', ['sass:structure', 'index:structure'], done);
+  sequence('clean:structure', [
+    'sass:structure',
+    'index:structure'
+  ], done);
 });
 gulp.task('build:styleguide', ['clean:styleguide'], copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
 
-gulp.task('deploy', function (done) {
+
+/*
+ * Deployment tasks.
+ */
+
+gulp.task('deploy', ['build'], function (done) {
   var args = yargs.default('message', false).alias('m', 'message').argv
     , message = args.message || 'Update website.';
 
