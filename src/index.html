@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Taller</title>
-    <meta name="description" content="">
+    <title>{{site.title}}</title>
+    <meta name="description" content="{{site.description}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Vendor styles -->
@@ -13,7 +13,7 @@
 
     <!-- Custom styles -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <!-- endinject -->
   </head>
   <body>
@@ -28,7 +28,7 @@
         <main>
           <ul>
             <li><a href="http://blog.taller.net.br">Blog</a></li>
-            <li><a href="#section-footer">Contato</a></li>
+            <li><a href="#section-footer">{{{menu.contact}}}</a></li>
           </ul>
         </main>
       </nav>
@@ -36,61 +36,56 @@
       <!-- Hero -->
       <main id="section-hero">
         <p>
-          A Taller é um ateliê digital que transforma<br>
-          <span>ideias em negócios inovadores</span><br>
-          para entrega continua de valor.
+          {{{header.hero}}}
         </p>
       </main>
 
       <footer>
-        <a href="#section-who">Saiba mais</a>
+        <a href="#section-who">{{util.know-more}}</a>
       </footer>
     </header>
 
 
     <!-- Who section -->
     <section id="section-who">
+      {{#with section.who}}
       <header>
-        <h2>Quem somos</h2>
+        <h2>{{title}}</h2>
       </header>
 
       <aside>
-        <h3>Nossa cultura valoriza:</h3>
+        <h3>{{aside.title}}:</h3>
         <ol>
-          <li>Colaboração em comunidades de código aberto.</li>
-          <li>Participação e organização ativa em eventos.</li>
-          <li>Compartilhamento dos nossos aprendizados.</li>
-          <li>Acolhimento caloroso dos novos membros.</li>
-          <li>Experimentos constantes.</li>
-          <li>Decisões orientadas a boas práticas.</li>
-          <li>Gestão transparente.</li>
-          <li>Iniciativas de auto-organização.</li>
-          <li>Redução de desperdícios.</li>
-          <li>Fluxo contínuo de entrega de valor.</li>
+          {{#each aside.list}}
+            <li>{{{this}}}</li>
+          {{/each}}
         </ol>
       </aside>
 
       <main>
-        <p>A Taller desenvolve produtos digitais que ajudam empresas de todos os tamanhos a atenderem seus objetivos no espaço digital.</p>
+        <p>{{{main}}}</p>
       </main>
 
       <footer>
-        <p>Quer saber mais sobre a gente? <a href="">Conheça nossa história a nosso time.</a></p>
+        <p>{{{footer.attention}}} <a href="">{{{footer.call-to-action}}}</a></p>
       </footer>
+      {{/with}}
     </section>
 
 
     <!-- Cases section -->
     <section id="section-cases">
+      {{#with section.cases}}
       <header>
-        <h2>Case de destaque:</h2>
+        <h2>{{{title}}}</h2>
       </header>
 
       <main>
         <article id="case-claro">
+          {{#with list.claro}}
           <header>
-            <h3>Portal Claro Promoções</h3>
-            <p>Desenvolvimento de um gerador de campanhas com conteúdo multimídias para o Portal Claro Promoções com a utilização do módulo Panopoly para Drupal 7.</p>
+            <h3>{{{title}}}</h3>
+            <p>{{{description}}}</p>
           </header>
 
           <aside>
@@ -98,27 +93,27 @@
           </aside>
 
           <main>
-            <h4>Gestão visual de conteúdo</h4>
-            <p>Agilidade e autonomia aos conteudistas.</p>
+            <h4>{{{'details[0].title'}}}</h4>
+            <p>{{{'details[0].description'}}}</p>
 
-            <h4>Geolocalização de alta precisão</h4>
-            <p>Entregas de promoções regionalizadas.</p>
+            <h4>{{{'details[1].title'}}}</h4>
+            <p>{{{'details[1].description'}}}</p>
 
-            <h4>Tecnologias utilizadas</h4>
+            <h4>{{{'details[2].title'}}}</h4>
             <ul>
-              <li>Drupal</li>
-              <li>Linux</li>
-              <li>MySQL</li>
-              <li>PHP</li>
+              {{#each 'details[2].list'}}
+                <li>{{{this}}}</li>
+              {{/each}}
             </ul>
-            <a class="read-more" href="">Detalhes do case</a>
+            <a class="read-more" href="">{{read-more}}</a>
           </main>
+          {{/with}}
         </article>
       </main>
 
       <aside>
-        <p>Nós estamos preparados para os mais variados desafios tecnológicos.</p>
-        <a class="call-to-action" href="">Começe seu projeto conosco</a>
+        <p>{{{aside.attention}}}</p>
+        <a class="call-to-action" href="">{{{aside.call-to-action}}}</a>
       </aside>
 
       <footer>
@@ -133,33 +128,34 @@
           <li><img src="http://placehold.it/60x60" title="Playspot" alt="Playspot"></li>
         </ul>
       </footer>
+      {{/with}}
     </section>
 
 
     <!-- Products section -->
     <section id="section-products">
+      {{#with section.products}}
       <header>
-        <h2>Nosso produto</h2>
+        <h2>{{{title}}}</h2>
       </header>
 
       <main>
         <article id="product-el-tracker">
+          {{#with list.el-tracker}}
           <main>
-            <h3>El Tracker</h3>
+            <h3>{{{title}}}</h3>
 
-            <p>
-              Rastreamento de eventos para analytics.
-              <br>
-              Sem código. Poucos cliques.
-            </p>
-            <a class="read-more" href="#">Conheça o El Tracker</a>
+            <p>{{{description}}}</p>
+            <a class="read-more" href="#">{{{read-more}}}</a>
           </main>
 
           <aside>
             <img src="/images/case_placeholder.png">
           </aside>
+          {{/with}}
         </article>
       </main>
+      {{/with}}
     </section>
 
 
@@ -167,90 +163,80 @@
     <section id="section-call-to-action">
       <!-- Services section -->
       <section id="section-services">
+        {{#with section.services}}
         <header>
-          <h2>Nossos serviços</h2>
+          <h2>{{{title}}}</h2>
         </header>
 
         <main>
           <article id="service-main">
-              <p>
-                Estamos preparados para resolver os seus
-                <br>
-                problemas tecnológicos mais cabeludos.
-                <br>
-                Oferecemos:
-              </p>
+              <p>{{{description}}}</p>
 
               <ul>
-                <li>Perceria Tecnológica</li>
-                <li>Desenvolvimento</li>
-                <li>Serviço de teste</li>
-                <li>Consultoria</li>
+                {{#each list}}
+                  <li>{{{this}}}</li>
+                {{/each}}
               </ul>
 
-              <a href="#">Comece seu projeto conosco</a>
+              <a href="#">{{{call-to-action}}}</a>
           </article>
         </main>
+        {{/with}}
       </section>
 
       <!-- Blog section -->
       <section id="section-blog">
+        {{#with section.blog}}
         <header>
-          <h2>Nosso blog</h2>
+          <h2>{{{title}}}</h2>
         </header>
 
         <main>
           <article id="blog-main">
-            <p>
-              Somos apaixonados por design e
-              <br>
-              desevonlvimento, mas não só...
-              <br>
-              Também escrevemos sobre:
-            </p>
+            <p>{{{description}}}</p>
 
             <ul>
-              <li>Drupal</li>
-              <li>DevOps</li>
-              <li>Métricas Lean</li>
-              <li>Metodoligias Ágeis</li>
+              {{#each list}}
+                <li>{{{this}}}</li>
+              {{/each}}
             </ul>
 
-            <a href="#">Visite nosso blog</a>
+            <a href="#">{{{call-to-action}}}</a>
           </article>
         </main>
+        {{/with}}
       </section>
     </section>
 
 
     <!-- Newsletter section -->
     <section id="section-newsletter">
+      {{#with section.newsletter}}
       <main>
         <article id="news-main">
-          <p>Receba nossas novidades, conteúdos e oportunidades</p>
+          <p>{{{description}}}</p>
           <form action="">
-            <input type="text" placeholder="Seu E-mail">
-            <button>Quero receber</button>
+            <input type="text" placeholder="{{{placeholder}}}">
+            <button>{{{subscribe}}}</button>
           </form>
         </article>
       </main>
+      {{/with}}
     </section>
 
 
     <!-- Footer area -->
     <footer id="section-footer">
+      {{#with footer}}
       <header>
         <h2 data-title="Taller">Taller</h2>
       </header>
       <main>
-        <h3>Contatos</h3>
+        <h3>{{{context.title}}}</h3>
         <p>
-          <a href="tel:+554832384665">+55 (48) 32384665</a>
-          <a href="tel:+554833041032">(48) 33041032</a>
-          <address>
-            Servidão Recanto das Pedras, casa 3.<br>
-            Rio Tavares, Florianópolis - SC - 88066-248
-          </address>
+          <a href="tel:+554832384665">+55 (48) 3238-4665</a>
+          <a href="tel:+554833041032">(48) 3304-1032</a>
+          <address>{{{contact.address}}}</address>
         </p>
         <ul>
           <li><a href="http://twitter.com/tallerws">Twitter</a></li>
@@ -261,19 +247,20 @@
         </ul>
       </main>
       <aside>
-        <h3>Extras</h3>
+        <h3>{{{extras.title}}}</h3>
         <p>
-          Esse site foi feito de forma ágil.
+          {{{extras.description}}}
           <br>
-          <a href="javascript:;">Veja os bastidores</a>
+          <a href="javascript:;">{{{read-more}}}</a>
         </p>
       </aside>
+      {{/with}}
     </footer>
 
 
     <!-- JavaScripts -->
     <!-- inject:scripts -->
-    <script src="js/taller.js"></script>
+    <script src="/js/taller.js"></script>
     <!-- endinject -->
 
     <!-- Analytics snippets -->
