@@ -21,11 +21,13 @@ npm install
 npm run gulp develop
 ```
 
-Or just run `gulp develop` if you have it installed globally. You can also run `npm run gulp build` to run the build script, if you don't wish to have a dev server running.
+Or just run `gulp develop` if you have it installed globally. 
 
-Runs a local HTTP server on port 3000 with live-reload, which will update
+Either runs a local HTTP server on port 3000 with live-reload, which will update
 your browser immediately with content, script, style, or translation changes. Generated assets
 are provided to the `.tmp` directory for publishing.
+
+You can also run `npm run gulp build` to run only the build script if you don't wish to have a dev server running.
 
 ## i18n
 
@@ -37,6 +39,6 @@ All referenced assets from the `ìndex.html` (or it's stylesheets, for that matt
 
 ## Deployment
 
-The website is currently hoster as a [GitHub page](https://pages.github.com/), which serves the code found on this repository's `master` branch. We currently use the [gh-pages](https://github.com/tschaub/gh-pages) module to deploy from the build `.tmp` directory to the `master` branch automatically.
+The website is currently hosted as a [GitHub page](https://pages.github.com/), which serves the code found on this repository's `master` branch. We currently use the [gh-pages](https://github.com/tschaub/gh-pages) module to deploy from the build `.tmp` directory to the `master` branch automatically.
 
-To deploy new changes, run `npm run gulp deploy`, with an optional parameter `-m` (or `--message`) for the commit message. Changes are automatically accessible after the branch has beeing update.
+To deploy new changes, run `npm run gulp deploy`, with an optional parameter `-m` (or `--message`) for the commit message. Changes are automatically accessible at [http://tallerwebsolutions.github.io](http://tallerwebsolutions.github.io)  after the branch has been updated.
