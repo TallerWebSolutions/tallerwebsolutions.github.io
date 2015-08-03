@@ -1,6 +1,5 @@
 
 var gulp = require('gulp')
-  , sequence = require('run-sequence')
   , browserSync = require('browser-sync')
 
   , watchMaps = [{
