@@ -146,7 +146,10 @@ function taskIndexInject() {
   ], { read: false });
 
   return gulp.src(tmpDir('index.html'))
-    .pipe(inject(sources, { relative: true }))
+    .pipe(inject(sources, {
+      relative: true,
+      addRootSlash: true
+    }))
     .pipe(gulp.dest(tmpDir()));
 }
 
