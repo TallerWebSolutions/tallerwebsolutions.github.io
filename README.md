@@ -5,8 +5,8 @@
 ## Project Structure
 
 - *[./src](./src)*: contains everything that is used to make a new build;
-- *[./gulp](./gulp)*: organizes the [Gulp.js](http://gulpjs.com/)-driven build scripts used by the project;
-- *./tmp*: created by the gulp task `build`;
+- *[./gulp](./gulp)*: organizes the [Gulp.js](http://gulpjs.com/)-based tasks used to build the project;
+- *./tmp*: created by the gulp `build` task;
 
 ## Running Locally
 
