@@ -180,8 +180,8 @@ function taskBuild(done) {
   ], done);
 }
 
-function taskBuildMisc(done) {
-  copier(srcDir('README.md'), tmpDir())().on('end', done);
+function taskBuildMisc() {
+  return copier(srcDir('README.md'), tmpDir())();
 }
 
 function taskBuildStructure(done) {
