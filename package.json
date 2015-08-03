@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "./node_modules/.bin/bower install"
+    "install": "./node_modules/.bin/gulp build",
+    "start": "./node_modules/.bin/gulp serve"
   },
   "repository": {
     "type": "git",
@@ -34,7 +35,6 @@
     "async": "^1.4.0",
     "bourbon": "^4.2.3",
     "bourbon-neat": "^1.7.2",
-    "bower": "^1.4.1",
     "breakpoint-sass": "^2.6.1",
     "browser-sync": "^2.8.1",
     "browserify": "^11.0.1",
