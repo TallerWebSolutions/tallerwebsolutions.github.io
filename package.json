@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "./node_modules/.bin/gulp build",
     "start": "./node_modules/.bin/gulp serve"
   },
   "repository": {
