@@ -5,20 +5,65 @@ var gulp = require('gulp')
 
   , watchMaps = [{
       source: ['./src/index.html', './src/i18n/**/*'],
-      tasks: ['index', 'index:structure']
+      tasks: ['index', 'index:structure'],
+      name: 'markup'
     }, {
       source: './src/sass/**/*',
-      tasks: ['sass', 'sass:structure']
+      tasks: ['sass', 'sass:structure'],
+      name: 'styles'
     }, {
       source: './src/js/**/*',
-      tasks: 'scripts'
+      tasks: 'scripts',
+      name: 'scripts'
     }, {
       source: './src/styleguide/**/*',
-      tasks: 'build:styleguide'
+      tasks: 'build:styleguide',
+      name: 'styleguide'
     }];
 
+// Generate watchers.
 watchMaps.forEach(prepareWatcher);
-watchMaps.forEach(createWatchingTasks);
+
+
+/*
+ * Task definitions
+ * ----------------
+ */
+
+watchMaps.forEach(defineWatchingTasks);
+
+gulp.task('watch', ['build'], taskWatch);
+gulp.task('serve', ['watch'], taskServe);
+gulp.task('dev', ['serve']);
+
+
+/*
+ * Task bodies
+ * -----------
+ */
+
+function taskWatch() {
+  watchMaps.forEach(initiateWatcher);
+}
+
+function taskServe() {
+  browserSync.init({
+    server: {
+      baseDir: '.tmp'
+    }
+  });
+
+  gulp.watch([
+    '.tmp/**/*',
+    '!.tmp/**/*.css'
+  ]).on('change', browserSync.reload);
+}
+
+
+/*
+ * Watcher operations
+ * ------------------
+ */
 
 /**
  * Helper method to create watchers.
@@ -33,8 +78,8 @@ function prepareWatcher(map) {
 /**
  * Helper method to create watching tasks.
  */
-function createWatchingTasks(map) {
-  gulp.task('watch:' + map.tasks.join(':'), map.tasks, map.watcher);
+function defineWatchingTasks(map) {
+  gulp.task('watch:' + map.name, map.tasks, map.watcher);
 }
 
 /**
@@ -43,28 +88,3 @@ function createWatchingTasks(map) {
 function initiateWatcher(map) {
   map.watcher();
 }
-
-/**
- * Helper task to initiate all watch maps.
- */
-gulp.task('watch', ['build:tmp'], function () {
-  watchMaps.forEach(initiateWatcher);
-});
-
-/**
- * Main development task.
- */
-gulp.task('serve', ['watch'], function () {
-  browserSync.init({
-    server: {
-      baseDir: '.tmp'
-    }
-  });
-
-  gulp.watch([
-    '.tmp/**/*',
-    '!.tmp/**/*.css'
-  ]).on('change', browserSync.reload);
-});
-
-gulp.task('dev', ['serve']);
