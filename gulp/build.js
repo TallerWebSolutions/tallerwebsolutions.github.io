@@ -99,6 +99,7 @@ gulp.task('index:structure:inject', ['index:structure:create', 'sass:structure']
  */
 
 gulp.task('build', taskBuild);
+gulp.task('build:meta', taskBuildMeta);
 gulp.task('build:structure', taskBuildStructure);
 gulp.task('build:styleguide', ['clean:styleguide'], copier(srcDir('styleguide/**/*'), tmpDir('styleguide')));
 
@@ -173,7 +174,14 @@ function taskBuild(done) {
     // Secondary builds.
     'build:styleguide'
   , 'build:structure'
+  ], [
+    // Other tasks.
+    'build:meta'
   ], done);
+}
+
+function taskBuildStaticAssets(done) {
+  copier(srcDir('README.md'), tmpDir())().on('end', done);
 }
 
 function taskBuildStructure(done) {
