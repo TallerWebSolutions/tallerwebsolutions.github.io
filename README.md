@@ -12,7 +12,7 @@
 
 ### Dependencies
 ```
-git clone https://github.com/nodejs/website.git
+git clone https://github.com/TallerWebSolutions/tallerwebsolutions.github.io.git
 npm install
 ```
 
@@ -26,6 +26,14 @@ Or just run `gulp develop` if you have it installed globally. You can also run `
 Runs a local HTTP server on port 3000 with live-reload, which will update
 your browser immediately with content, script, style, or translation changes. Generated assets
 are provided to the `.tmp` directory for publishing.
+
+## i18n
+
+Translated variations of the website are automatically created by reading all files in *[./src/i18n](./src/i18n)* and creating corresponding index directories for each language during build process. Every language will inherit phrases from `pt-br` language - which is used in the homepage.
+
+To create a new language one can simply add a file to the directory mentioned above, following the pattern `[language-code].json` (e.g. `es.json`, for spanish).
+
+All referenced assets from the `ìndex.html` (or it's stylesheets, for that matter) must be absolute, so that they can be referenced from the translated pages, which will be served, e.g., at [http://tallerwebsolutions.github.io/en](http://tallerwebsolutions.github.io/en) (english version).
 
 ## Deployment
 
