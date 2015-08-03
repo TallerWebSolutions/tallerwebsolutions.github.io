@@ -33,7 +33,7 @@ watchMaps.forEach(defineWatchingTasks);
 
 gulp.task('watch', ['build'], taskWatch);
 gulp.task('serve', ['watch'], taskServe);
-gulp.task('dev', ['serve']);
+gulp.task('develop', ['serve']);
 
 
 /*
