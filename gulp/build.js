@@ -123,6 +123,10 @@ function taskScripts() {
   });
 
   return browserified.bundle()        // Bundle-up files.
+    .on('error', function(err) {
+      gutil.log('Browserify error:', gutil.colors.red('\'' + err.message + '\''));
+      this.emit('end');
+    })
     .pipe(source('taller.js'))        // Rename bundle
     .pipe(buffer())                   // Split into a stream buffer.
     .pipe(gulp.dest(tmpDir('js')));   // Save file.
