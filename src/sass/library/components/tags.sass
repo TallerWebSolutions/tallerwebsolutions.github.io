@@ -1,0 +1,25 @@
+/**
+ * Tag components
+ */
+
+%tag
+  @extend %button-outline
+  margin-top: 0.5em
+  font-size: 0.6em
+  background-color: white
+  border-color: $color-grey-light
+  color: $color-grey
+
+  &:hover, &:focus
+    color: $color-crimson 
+    border-color: $color-crambery
+
+%tags
+  list-style: none
+  padding: 0
+
+  li
+    display: inline-block
+    a
+      @extend %tag
+      display: inline-block
