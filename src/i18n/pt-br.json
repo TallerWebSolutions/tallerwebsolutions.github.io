@@ -57,10 +57,22 @@
             }, {
               "title": "Tecnologias utilizadas",
               "list": [
-                "Drupal",
-                "Linux",
-                "MySQL",
-                "PHP"
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                }, {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                }, {
+                  "url": "http://www.linux.org/",
+                  "text": "Linux"
+                }, {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                }, {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                }
               ]
             }
           ],

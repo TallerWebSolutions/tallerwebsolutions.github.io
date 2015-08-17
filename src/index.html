@@ -95,16 +95,18 @@
           </aside>
 
           <main>
-            <h4>{{{'details[0].title'}}}</h4>
-            <p>{{{'details[0].description'}}}</p>
+            <h4>{{{details.[0].title}}}</h4>
+            <p>{{{details.[0].description}}}</p>
 
-            <h4>{{{'details[1].title'}}}</h4>
-            <p>{{{'details[1].description'}}}</p>
+            <h4>{{{details.[1].title}}}</h4>
+            <p>{{{details.[1].description}}}</p>
 
-            <h4>{{{'details[2].title'}}}</h4>
+            <h4>{{{details.[2].title}}}</h4>
             <ul>
-              {{#each 'details[2].list'}}
-                <li>{{{this}}}</li>
+              {{#each details.[2].list}}
+                <li>
+                  <a href="{{this.url}}" target="_blank">{{{this.text}}}</a>
+                </li>
               {{/each}}
             </ul>
             <a class="read-more" href="">{{read-more}}</a>
