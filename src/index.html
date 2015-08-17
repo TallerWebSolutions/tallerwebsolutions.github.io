@@ -62,7 +62,9 @@
       </aside>
 
       <main>
-        <p>{{{main}}}</p>
+        {{#each main}}
+          <p>{{{this}}}</p>
+        {{/each}}
       </main>
 
       <footer>

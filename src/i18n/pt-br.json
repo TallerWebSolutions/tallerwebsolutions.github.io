@@ -15,7 +15,10 @@
   "section": {
     "who": {
       "title": "Quem somos",
-      "main": "A Taller desenvolve produtos digitais que ajudam empresas de todos os tamanhos a atenderem seus objetivos no espaço digital.",
+      "main": [
+        "Acreditamos que a tecnologia potencializa a capacidade humana",
+        "Desenvolvemos soluções que ajudam parceiros de todos os tamanhos a atenderem seus objetivos de negócios."
+      ],
       "aside": {
         "title": "Nossa cultura valoriza",
         "list": [
