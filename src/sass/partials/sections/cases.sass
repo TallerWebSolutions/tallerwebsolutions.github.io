@@ -42,8 +42,9 @@
           margin-left: -3vw
 
     .read-more
-      @extend %button-outline
-      margin-top: 2em
+      @extend %button-outline-arrow
+      &, &:hover, &:focus
+        margin-top: 2em
 
   > aside
     @extend %clearfix

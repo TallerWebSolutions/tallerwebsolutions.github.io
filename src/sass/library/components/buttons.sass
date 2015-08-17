@@ -58,10 +58,22 @@
 %button-outline
   @extend %button
 
-%button-outline-fulfiled
+  &:hover, &:focus
+    @extend %button-outline-fulfiled-base
+
+%button-outline-fulfiled-base
   @extend %button-box
   color: white
   background-color: $color-primary
+
+%button-outline-fulfiled-hover
+  background-color: $color-bastile
+  border-color: $color-valhalla
+
+%button-outline-fulfiled
+  @extend %button-outline-fulfiled-base
+  &:hover, &:focus
+    @extend %button-outline-fulfiled-hover
 
 %button-outline-fulfiled-arrow
   @extend %button-outline-fulfiled
@@ -77,4 +89,4 @@
   &:after
     margin-left: 1.2em
 
-  margin-top:1rem
+  margin-top: 1rem
