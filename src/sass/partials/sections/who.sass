@@ -25,11 +25,18 @@
 
   > footer
     a
-      display: block
-      margin-top: 0.5em
-      border: none
-      padding: 0
-      font-weight: bold
-      font-family: Alegreya
-      font-style: italic
-      font-size: 1.1em
+      @extend %taller-icon-before-icon-taller
+      &:before
+        float: left
+        margin-right: 0.3em
+        font-size: 1.3em
+
+  > footer a, > aside > a
+    display: block
+    margin-top: 0.5em
+    border: none
+    padding: 0
+    font-weight: bold
+    font-family: Alegreya
+    font-style: italic
+    font-size: 1.1em
