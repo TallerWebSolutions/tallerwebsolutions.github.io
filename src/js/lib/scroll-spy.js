@@ -3,7 +3,6 @@
  */
 
 var jQuery = require('jquery')
-  , sectionParents = ['body', '#section-call-to-action']
   , sections = mapSections()
   , currentSection = null
   , $window = jQuery(window)
@@ -43,17 +42,12 @@ function updateHash() {
  * Retrieve sections.
  */
 function mapSections() {
-  return jQuery(sectionParents.join(','))
-    .find(sectionParents.map(function (parent) {
-      return '> section:not(' + parent + ')';
-    }).join(','))
-    .toArray()
-    .map(function (section) {
-      var $element = jQuery(section);
-      return {
-        element: section,
-        $element: $element,
-        hash: $element.attr('id')
-      };
-    });
+  return jQuery('body > section').toArray().map(function (section) {
+    var $element = jQuery(section);
+    return {
+      element: section,
+      $element: $element,
+      hash: $element.attr('id')
+    };
+  });
 }
