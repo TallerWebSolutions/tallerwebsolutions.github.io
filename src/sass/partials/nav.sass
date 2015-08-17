@@ -6,6 +6,14 @@ nav
     border-bottom: 3px solid $color-primary-dark
     padding-bottom: 0.2em
 
+  li + li
+    @extend %taller-icon-before-dot
+    &:before
+      margin-left: -1rem
+      margin-right: 1rem
+      font-size: 0.4em
+      color: $color-grey-lighter
+
   > aside
     float: left
 
