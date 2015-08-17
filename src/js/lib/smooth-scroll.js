@@ -3,7 +3,7 @@
  */
 
 var jQuery = require('jquery')
-  , config = { easing: 'swing' };
+  , config = { easing: 'swing', preventDefault: false };
 
 require('jquery-smooth-scroll');
 
