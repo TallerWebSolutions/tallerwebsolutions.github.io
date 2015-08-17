@@ -3,6 +3,7 @@
  */
 
 $positions: (before, after)
+$taller-icons: (arrow-down: 'b', dot: 'c', icon-taller: 'd', arrow-right: 'a')
 
 =taller-icon
   font-family: "Taller Icons" !important
@@ -17,22 +18,8 @@ $positions: (before, after)
   %taller-icon-#{$position}:#{$position}
     +taller-icon
 
-  %taller-icon-#{$position}-arrow-down
-    @extend %taller-icon-#{$position}
-    &:#{$position}
-      content: "b"
-
-  %taller-icon-#{$position}-dot
-    @extend %taller-icon-#{$position}
-    &:#{$position}
-      content: "c"
-
-  %taller-icon-#{$position}-icon-taller
-    @extend %taller-icon-#{$position}
-    &:#{$position}
-      content: "d"
-
-  %taller-icon-#{$position}-arrow-right
-    @extend %taller-icon-#{$position}
-    &:#{$position}
-      content: "a"
+  @each $icon, $char in $taller-icons
+    %taller-icon-#{$position}-#{$icon}
+      @extend %taller-icon-#{$position}
+      &:#{$position}
+        content: $char
