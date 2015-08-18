@@ -127,8 +127,8 @@
     },
 
     "newsletter": {
-      "description": "Receba nossas novidades, conteúdos e oportunidades",
-      "placeholder": "Seu E-mail",
+      "description": "Receba nossas novidades e conteúdos:",
+      "placeholder": "Seu e-mail",
       "subscribe": "Quero receber"
     }
   },

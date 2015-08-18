@@ -16,3 +16,20 @@
 
     %in-text-link
       border-bottom-color: map-get($theme, color-link)
+
+
+    /*
+     * Special selectors must be alone.
+     */
+
+    ::-webkit-input-placeholder
+      color: map-get($theme, color-text)
+
+    :-moz-placeholder
+      color: map-get($theme, color-text)
+
+    ::-moz-placeholder
+      color: map-get($theme, color-text)
+
+    :-ms-input-placeholder
+      color: map-get($theme, color-text)
