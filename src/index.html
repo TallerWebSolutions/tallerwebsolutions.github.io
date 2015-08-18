@@ -251,7 +251,7 @@
 
           <label>
             <select name="subject">
-              <option value="" selected="selected">{{subject.label}}</option>
+              <option value="" disabled selected>{{subject.empty}}</option>
               {{#each subject.options}}
                 <option value="{{@key}}">{{this}}</option>
               {{/each}}
@@ -260,14 +260,11 @@
           </label>
 
           <label>
-            <input type="text" name="subject">
-            <span>{{name}}</span>
+            <textarea name="message"></textarea>
+            <span>{{message}}</span>
           </label>
 
-          <label>
-            <input type="text" name="name">
-            <span>{{name}}</span>
-          </label>
+          <button>{{send}}</button>
         </form>
         {{/with}}
       </main>

@@ -4,18 +4,25 @@
 
 var jQuery = require('jquery')
   , remodal = require('remodal')
+  , autosize = require('autosize')
   , $section = jQuery('#contact')
   , $form = $section.find('form')
   , $inputs = $form.find(':input')
   , $textInputs = $inputs.filter('input[type=text]')
-  , $selectInputs = $inputs.filter('select');
+  , $selectInputs = $inputs.filter('select')
+  , $textareas = $inputs.filter('textarea');
 
 
 /*
  * Process elements.
  */
 
-$selectInputs.each(mountSelectMarkup);
+$textareas.each(function () {
+  autosize(this);
+  jQuery(this).outerHeight(40.5);
+}).on('focusout', function () {
+  if (!jQuery(this).val()) jQuery(this).outerHeight(40.5);
+});
 
 
 /*
@@ -30,24 +37,15 @@ $inputs.on('focusin focusout', onFocusChange);
  */
 
 /**
- * Mount a custom markup for selects, to improve styling.
- */
-function mountSelectMarkup() {
-  var $select = jQuery(this)
-    , $options = $select.find('option')
-    , $fakeSelect =   
-}
-
-/**
  * Update states after focus change.
  */
 function onFocusChange(e) {
-  var $textInputs = jQuery(this)
-    , $label = $textInputs.closest('label');
+  var $input = jQuery(this)
+    , $label = $input.closest('label');
 
   // Toggle state.
   $label.toggleClass('focused', e.type == 'focusin');
 
   // Add permanent state, if fulfiled.
-  $label.toggleClass('fulfilled', $textInputs.val() !== '');
+  $label.toggleClass('fulfilled', Boolean($input.val()));
 }

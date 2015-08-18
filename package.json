@@ -25,9 +25,10 @@
   },
   "homepage": "https://github.com/TallerWebSolutions/site-taller#readme",
   "dependencies": {
-    "remodal": "^1.0.2",
+    "autosize": "^3.0.8",
     "jquery": "^2.1.4",
-    "jquery-smooth-scroll": "^1.5.5"
+    "jquery-smooth-scroll": "^1.5.5",
+    "remodal": "^1.0.2"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

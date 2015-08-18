@@ -66,11 +66,49 @@
           top: 0
           height: 100%
 
-    input[type="text"]
+    input, textarea, select
       display: block
+      padding: 0.35em 1em
+      height: 40.5px
       width: 100%
       border: none
       font-size: 1em
+      font-family: inherit
+      text-transform: inherit
+      background-color: transparent
+      outline: none
+      resize: none
+
+    select
+      cursor: pointer
+
+      option
+        opacity: 1
+        color: black
+
+    button
+      @extend %button-outline-fulfiled-arrow
+      background-color: white
+      color: $color-primary
+      font-size: 1em
+      border-color: white
+      float: right
+
+      &:hover, &:focus
+        color: white
+
+//     .select-target
+//       background-color: transparent
+//       color: inherit
+//       border: 0
+//       padding: 0
+//       margin: 0 0 0 1em
+
+//       b
+//         display: none
+
+// .select-element
+//   z-index: 99999
 
 
 /*
