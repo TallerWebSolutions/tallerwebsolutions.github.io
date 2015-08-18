@@ -101,25 +101,27 @@
     },
 
     "services": {
-      "title": "Nossos serviços",
-      "description": "Estamos preparados para resolver os seus<br>problemas tecnológicos mais cabeludos.<br>Oferecemos:",
+      "title": "Somos o que fazemos",
+      "description": "Estamos preparados para tirá-lo da sua zona de conforto.",
       "list": [
-        "Perceria Tecnológica",
-        "Desenvolvimento",
-        "Serviço de teste",
-        "Consultoria"
+        "Negócios digitais",
+        "Serviços em design",
+        "Consultorias",
+        "Treinamentos",
+        "Produto digitais"
       ],
-      "call-to-action": "Comece seu projeto conosco"
+      "call-to-action": "Comece seu projeto com a Taller"
     },
 
     "blog": {
-      "title": "Nosso blog",
-      "description": "Somos apaixonados por design e<br>desevonlvimento, mas não só...<br>Também escrevemos sobre:",
+      "title": "...e o que compartilhamos",
+      "description": "Somos apaixonados pelo que fazemos. Transformamos nossas experiências em conhecimento.",
       "list": [
-        "Drupal",
-        "DevOps",
-        "Métricas Lean",
-        "Metodoligias Ágeis"
+        "Tecnologia",
+        "Filosofia ágil",
+        "Design",
+        "Marketing",
+        "Cultura Taller"
       ],
       "call-to-action": "Visite nosso blog"
     },
