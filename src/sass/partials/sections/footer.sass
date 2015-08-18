@@ -18,14 +18,10 @@
       font-size: 2rem
 
     &:after
+      @extend %taller-typography
       content: attr(data-title)
       display: block
       font-size: 1.2rem
-      font-family: $font-remarkable
-      font-style: italic
-      font-weight: normal
-      text-transform: lowercase
-      letter-spacing: 0.1rem
 
   > main,
   > aside
