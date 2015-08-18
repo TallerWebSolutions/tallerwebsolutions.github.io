@@ -140,7 +140,7 @@
       "email": "Seu e-mail",
       "subject": {
         "label": "Assuntos",
-        "empty": "--Selecione um assunto--"
+        "empty": "--Selecione um assunto--",
         "options": {
           "work-with-us": "Trabalhe conosco",
           "comercial": "Comercial",

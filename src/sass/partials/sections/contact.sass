@@ -80,11 +80,17 @@
       resize: none
 
     select
+      transition: all 250ms
       cursor: pointer
+      opacity: 0
 
       option
+        color: initial
+
+    label.fulfilled,
+    label.focused
+      select
         opacity: 1
-        color: black
 
     button
       @extend %button-outline-fulfiled-arrow
