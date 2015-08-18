@@ -25,12 +25,14 @@
   },
   "homepage": "https://github.com/TallerWebSolutions/site-taller#readme",
   "dependencies": {
+    "remodal": "^1.0.2",
+    "jquery": "^2.1.4",
+    "jquery-smooth-scroll": "^1.5.5"
+  },
+  "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.4",
     "node-sass": "^3.2.0",
-    "require-dir": "^0.3.0"
-  },
-  "devDependencies": {
     "async": "^1.4.0",
     "bourbon": "^4.2.3",
     "bourbon-neat": "^1.7.2",
@@ -44,13 +46,13 @@
     "gulp-inject": "^1.5.0",
     "gulp-util": "^3.0.6",
     "jquery": "^2.1.4",
-    "jquery-smooth-scroll": "^1.5.5",
     "jsonfile": "^2.2.1",
     "q": "^1.4.1",
     "rimraf": "^2.4.2",
     "run-sequence": "^1.1.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "yargs": "^3.17.1"
+    "yargs": "^3.17.1",
+    "require-dir": "^0.3.0"
   }
 }
