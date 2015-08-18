@@ -1,0 +1,204 @@
+/**
+ * Contact section styles.
+ */
+
+#contact
+  @extend %theme-dark
+  background-color: transparent
+  max-width: 54vw
+  width: 100%
+  padding: 35px
+  vertical-align: top
+
+  header h2
+    border-color: white
+
+  form
+    text-transform: uppercase
+    font-family: $font-sans
+    font-weight: bold
+    font-size: 0.75em
+    line-height: 2em
+    text-align: left
+
+    label
+      position: relative
+      display: block
+      margin-bottom: 3em
+      z-index: 0
+
+      span
+        transition: all 250ms
+        position: absolute
+        top: 0.5em
+        margin-left: 1em
+        font-size: 1em
+        z-index: -1
+
+      &:before, &:after
+        transition: all 250ms
+        content: ""
+        position: absolute
+        display: block
+        width: 100%
+        top: 100%
+        z-index: -1
+
+      &:before
+        height: 2px
+        background-color: white
+
+      &:after
+        height: 0
+        background-color: rgba(0, 0, 0, 0.2)
+
+      &.focused, &.fulfilled
+        span
+          top: -2.25em
+          font-size: 0.85em
+
+        &:before
+          margin-top: -2px
+          height: 4px
+          background-color: rgba(0, 0, 0, 0.3)
+
+        &:after
+          top: 0
+          height: 100%
+
+    input[type="text"]
+      display: block
+      width: 100%
+      border: none
+      font-size: 1em
+
+
+/*
+ * Modal styling.
+ */
+
+.remodal-overlay
+  opacity: 0
+
+.remodal-wrapper
+  background-color: rgba($color-crimson, 0.95)
+
+  &:after
+    display: none
+
+.remodal
+  position: relative
+
+.remodal-close
+  position: fixed
+  top: 0
+  right: 15px
+
+  &, &:hover, &:focus
+    background-color: transparent
+    border: none
+    padding: 0
+
+  &:before
+    transition: all 250ms
+    transform: rotate(0)
+    font-family: $font-arial
+    font-size: 3rem
+    line-height: 4rem
+    display: block
+    position: static
+    width: 4rem
+    content: "\00d7"
+    text-align: center
+    color: white
+
+  &:hover, &:focus
+    &:before
+      transform: rotate(180deg)
+
+
+/*
+ * Animating selectors.
+ */
+
+.remodal-overlay.remodal-is-opening,
+.remodal-overlay.remodal-is-closing
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards
+
+.remodal-overlay.remodal-is-opening
+  -webkit-animation: remodal-overlay-opening-keyframes 0.3s;
+  animation: remodal-overlay-opening-keyframes 0.3s
+
+.remodal-overlay.remodal-is-closing
+  -webkit-animation: remodal-overlay-closing-keyframes 0.3s;
+  animation: remodal-overlay-closing-keyframes 0.3s
+
+.remodal.remodal-is-opening,
+.remodal.remodal-is-closing
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards
+
+.remodal.remodal-is-opening
+  -webkit-animation: remodal-opening-keyframes 0.3s;
+  animation: remodal-opening-keyframes 0.3s
+
+.remodal.remodal-is-closing
+  -webkit-animation: remodal-closing-keyframes 0.3s;
+  animation: remodal-closing-keyframes 0.3s
+
+/*
+ * Animating keyframes.
+ */
+
+@-webkit-keyframes remodal-opening-keyframes
+  from
+    opacity: 0
+    top: -50%
+  to
+    opacity: 1
+    top: 0
+
+@keyframes remodal-opening-keyframes
+  from
+    opacity: 0
+    top: -50%
+  to
+    opacity: 1
+    top: 0
+
+@-webkit-keyframes remodal-closing-keyframes
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+@keyframes remodal-closing-keyframes
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+@-webkit-keyframes remodal-overlay-opening-keyframes
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes remodal-overlay-opening-keyframes
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@-webkit-keyframes remodal-overlay-closing-keyframes
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+@keyframes remodal-overlay-closing-keyframes
+  from
+    opacity: 1
+  to
+    opacity: 0

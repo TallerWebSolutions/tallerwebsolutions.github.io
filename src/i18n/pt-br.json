@@ -133,6 +133,28 @@
     }
   },
 
+  "contact": {
+    "title": "Mande uma mensagem:",
+    "form": {
+      "name": "Seu nome",
+      "email": "Seu e-mail",
+      "subject": {
+        "label": "Assuntos",
+        "options": {
+          "work-with-us": "Trabalhe conosco",
+          "comercial": "Comercial",
+          "other": "Outro"
+        }
+      },
+      "message": "Sua mensagem",
+      "send": "Enviar"
+    },
+    "address": {
+      "title": "Nossa rede de contatos:",
+      "content": "Servidão Recanto das Pedras, casa 3 - Rio Tavares<br>Florianópolis - SC - 88066-248"
+    }
+  },
+
   "footer": {
     "contact": {
       "title": "Contatos",
