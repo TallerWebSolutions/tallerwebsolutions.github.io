@@ -1108,10 +1108,14 @@ footer > header {
       outline: none;
       resize: none; }
     #contact form select {
-      cursor: pointer; }
+      transition: all 250ms;
+      cursor: pointer;
+      opacity: 0; }
       #contact form select option {
-        opacity: 1;
-        color: black; }
+        color: initial; }
+    #contact form label.fulfilled select,
+    #contact form label.focused select {
+      opacity: 1; }
     #contact form button {
       background-color: white;
       color: #E02438;
@@ -1328,6 +1332,9 @@ footer > header {
 /**
  * Form element styles.
  */
+button {
+  outline: none; }
+
 input[type="text"] {
   padding-left: 1em;
   padding-right: 1em;
