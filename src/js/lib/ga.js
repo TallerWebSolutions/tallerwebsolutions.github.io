@@ -5,7 +5,8 @@
 var jQuery = require('jquery')
   , gaCode = 'UA-XXXXX-X'
   , $window = jQuery(window)
-  , location = window.location;
+  , location = window.location
+  , sentPages = [], page;
 
 
 /*
@@ -40,8 +41,14 @@ $window.on('hashchange', pageView);
  * section titles.
  */
 function pageView() {
-  ga('send', 'pageview', {
-    page: location.pathname + location.search + location.hash,
-    title: location.hash ? jQuery(location.hash).find('h2').text() : document.title
-  });
+  var page = location.pathname + location.search + location.hash;
+
+  if (sentPages.indexOf(page = location.pathname + location.search + location.hash) == -1) {
+    sentPages.push(page);
+    console.log(page);
+    ga('send', 'pageview', {
+      page: page,
+      title: location.hash ? jQuery(location.hash).find('h2').text() : document.title
+    });
+  }
 }
