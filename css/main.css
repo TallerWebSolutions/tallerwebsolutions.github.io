@@ -1,250 +1,5 @@
 /*
- * Libraries
- */
-/**
- * Main libraries loader.
- */
-html {
-  box-sizing: border-box; }
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit; }
-
-/*------------------------------------------------------------------------------
- * Color Definitions
- *------------------------------------------------------------------------------
- * Use this file to set color variables & functions.
- *
- * Before starting to define your color variables, I'll advice you: colors (
- * maybe more then other kind of variables in Sass) can get really trick and
- * messed up after some time, mostly because then tend to change a lot during
- * development. To help you make better decisions, I would advice you to read
- * the followng articles:
- *
- * - http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/
- * - http://sachagreif.com/sass-color-variables/
- */
-/**
- * Declarative.
- */
-/**
- * Descritive.
- */
-/**
- * Functional
- */
-/*------------------------------------------------------------------------------
- * Typography Definitions
- *------------------------------------------------------------------------------
- * Use this file to set typography variables & functions.
- *
- * Althought this might seem like the place for it, this is not the place for
- * defining custom font sources. To keep this file a non-emitting partial, you
- * you should only set here the font-related variables, such as font sizes,
- * font weights, font families, etc.
- */
-/*------------------------------------------------------------------------------
- * Media Definitions
- *------------------------------------------------------------------------------
- * Use this file to set breakpoint variables & functions.
- */
-/*------------------------------------------------------------------------------
- * Grid Definitions
- *------------------------------------------------------------------------------
- */
-/*!
- * bootstrap-grid v1.1.0
- * Copyright 2015 Santeri Hiltunen
- * Licensed under MIT (https://github.com/Hilzu/bootstrap-grid/blob/master/LICENSE)
- */
-@-ms-viewport {
-  width: device-width; }
-
-nav:before,
-#section-who:before,
-#section-cases > aside:before,
-#section-call-to-action:before,
-#section-footer:before,
-nav:after,
-#section-who:after,
-#section-cases > aside:after,
-#section-call-to-action:after,
-#section-footer:after,
-#section-cases > main > article:before,
-#section-products > main > article:before,
-#section-cases > main > article:after, #section-products > main > article:after {
-  content: " ";
-  display: table; }
-
-nav:after,
-#section-who:after,
-#section-cases > aside:after,
-#section-call-to-action:after,
-#section-footer:after,
-#section-cases > main > article:after, #section-products > main > article:after {
-  clear: both; }
-
-#section-cases > main > article, #section-products > main > article {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-#section-cases > main > article > main,
-#section-cases > main > article > footer, #section-who > aside,
-#section-who > main,
-#section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
-#section-products > main > article > aside, #section-call-to-action #section-services,
-#section-call-to-action #section-blog, #section-footer > main,
-#section-footer > aside, #section-cases > main > article > aside {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px; }
-
-@media (min-width: 992px) {
-  #section-cases > main > article > main,
-  #section-cases > main > article > footer, #section-who > aside,
-  #section-who > main,
-  #section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
-  #section-products > main > article > aside, #section-call-to-action #section-services,
-  #section-call-to-action #section-blog, #section-footer > main,
-  #section-footer > aside, #section-cases > main > article > aside {
-    float: left; }
-  #section-cases > main > article > aside {
-    width: 58.33333333%; }
-  #section-who > aside,
-  #section-who > main,
-  #section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
-  #section-products > main > article > aside, #section-call-to-action #section-services,
-  #section-call-to-action #section-blog, #section-footer > main,
-  #section-footer > aside {
-    width: 50%; }
-  #section-cases > main > article > main,
-  #section-cases > main > article > footer {
-    width: 41.66666667%; }
-  #section-who > main,
-  #section-who > footer {
-    right: 50%; }
-  #section-who > aside {
-    left: 50%; } }
-
-/**
- * Taller icon styles
- */
-#section-heading a[href="#section-who"]:before, #section-heading nav h2:before, #section-footer h2:before {
-  font-family: "Taller Icons" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-#section-heading a[href="#section-who"]:before {
-  content: "b"; }
-
-#section-heading nav h2:before, #section-footer h2:before {
-  content: "d"; }
-
-#section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after, #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
-  font-family: "Taller Icons" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-#section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after, #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
-  content: "a"; }
-
-/**
- * Remarkable component for jumbotron-link styles
- */
-#section-hero {
-  font-size: 2.25rem;
-  font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif; }
-
-/**
- * Button components
- */
-#section-heading a[href="#section-who"], #section-footer h2 {
-  display: inline-block;
-  height: 3.5rem;
-  width: 3.5rem;
-  font-size: 0;
-  text-decoration: none;
-  text-align: center; }
-  #section-heading a[href="#section-who"]:before, #section-footer h2:before {
-    font-size: 1.6rem;
-    line-height: 3.7rem; }
-
-#section-heading a[href="#section-who"], #section-footer h2 {
-  background-color: #E02438;
-  color: white; }
-
-#section-heading a[href="#section-who"] {
-  border-radius: 50%; }
-
-#section-footer h2 {
-  border-radius: .35rem; }
-
-#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, button, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a, #section-cases > main > article .read-more, #section-products .read-more, input[type="text"] {
-  border: 0.2em solid;
-  border-radius: 4px;
-  padding: 0.35em 1.25em;
-  text-transform: uppercase;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: bold;
-  font-size: 0.75em;
-  line-height: 2em; }
-
-#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, button, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a, #section-cases > main > article .read-more, #section-products .read-more {
-  text-decoration: none;
-  display: inline-block; }
-
-#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, button {
-  border: 0.2em solid #E02438;
-  background-color: #E02438;
-  color: white; }
-
-#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a {
-  color: white;
-  background-color: #E02438; }
-
-#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a {
-  margin-top: 1rem; }
-  #section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after {
-    margin-left: 1.2em; }
-
-#section-call-to-action #section-blog > main > article > a, #section-footer > aside a {
-  margin-top: 1rem; }
-  #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
-    margin-left: 1.2em; }
-
-/**
- * Text components
- */
-#section-cases > main > article > header p {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 35em; }
-
-/**
- * Link components
- */
-a[href^="tel:"] {
-  color: inherit !important;
-  text-decoration: none;
-  border-bottom: 2px solid; }
-
-/*
- * Partials
+ * Outputing libraries.
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -600,28 +355,407 @@ td,
 th {
   padding: 0; }
 
+/*
+ *  Remodal - v1.0.2
+ *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+ *  http://vodkabears.github.io/remodal/
+ *
+ *  Made by Ilya Makarov
+ *  Under MIT License
+ */
+/* ==========================================================================
+   Remodal's necessary styles
+   ========================================================================== */
+/* Hide scroll bar */
+html.remodal-is-locked {
+  overflow: hidden; }
+
+/* Anti FOUC */
+.remodal,
+[data-remodal-id] {
+  display: none; }
+
+/* Necessary styles of the overlay */
+.remodal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: -5000px;
+  right: -5000px;
+  bottom: -5000px;
+  left: -5000px;
+  display: none; }
+
+/* Necessary styles of the wrapper */
+.remodal-wrapper {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  overflow: auto;
+  text-align: center;
+  -webkit-overflow-scrolling: touch; }
+
+.remodal-wrapper:after {
+  display: inline-block;
+  height: 100%;
+  margin-left: -0.05em;
+  content: ""; }
+
+/* Fix iPad, iPhone glitches */
+.remodal-overlay,
+.remodal-wrapper {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+/* Necessary styles of the modal dialog */
+.remodal {
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%; }
+
+.remodal-is-initialized {
+  /* Disable Anti-FOUC */
+  display: inline-block; }
+
+/*
+ * Libraries
+ */
+/**
+ * Main libraries loader.
+ */
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+/*------------------------------------------------------------------------------
+ * Color Definitions
+ *------------------------------------------------------------------------------
+ * Use this file to set color variables & functions.
+ *
+ * Before starting to define your color variables, I'll advice you: colors (
+ * maybe more then other kind of variables in Sass) can get really trick and
+ * messed up after some time, mostly because then tend to change a lot during
+ * development. To help you make better decisions, I would advice you to read
+ * the followng articles:
+ *
+ * - http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/
+ * - http://sachagreif.com/sass-color-variables/
+ */
+/**
+ * Declarative.
+ */
+/**
+ * Descritive.
+ */
+/**
+ * Functional
+ */
+/*------------------------------------------------------------------------------
+ * Typography Definitions
+ *------------------------------------------------------------------------------
+ * Use this file to set typography variables & functions.
+ *
+ * Althought this might seem like the place for it, this is not the place for
+ * defining custom font sources. To keep this file a non-emitting partial, you
+ * you should only set here the font-related variables, such as font sizes,
+ * font weights, font families, etc.
+ */
+/*------------------------------------------------------------------------------
+ * Media Definitions
+ *------------------------------------------------------------------------------
+ * Use this file to set breakpoint variables & functions.
+ */
+/**
+ * Brand components
+ */
+#section-heading nav h2, #section-footer h2:after {
+  font-size: 2em;
+  font-style: italic;
+  font-weight: normal;
+  font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+  text-transform: lowercase;
+  letter-spacing: 0.02em; }
+
+/*------------------------------------------------------------------------------
+ * Grid Definitions
+ *------------------------------------------------------------------------------
+ */
+/*!
+ * bootstrap-grid v1.1.0
+ * Copyright 2015 Santeri Hiltunen
+ * Licensed under MIT (https://github.com/Hilzu/bootstrap-grid/blob/master/LICENSE)
+ */
+@-ms-viewport {
+  width: device-width; }
+
+nav:before,
+#section-who:before,
+#section-cases > aside:before,
+#section-call-to-action:before,
+#section-footer:before,
+nav:after,
+#section-who:after,
+#section-cases > aside:after,
+#section-call-to-action:after,
+#section-footer:after,
+#section-cases > main > article:before,
+#section-products > main > article:before,
+#section-cases > main > article:after, #section-products > main > article:after {
+  content: " ";
+  display: table; }
+
+nav:after,
+#section-who:after,
+#section-cases > aside:after,
+#section-call-to-action:after,
+#section-footer:after,
+#section-cases > main > article:after, #section-products > main > article:after {
+  clear: both; }
+
+#section-cases > main > article, #section-products > main > article {
+  margin-left: -15px;
+  margin-right: -15px; }
+
+#section-cases > main > article > main,
+#section-cases > main > article > footer, #section-who > aside,
+#section-who > main,
+#section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
+#section-products > main > article > aside, #section-call-to-action #section-services,
+#section-call-to-action #section-blog, #section-footer > main,
+#section-footer > aside, #section-cases > main > article > aside {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+@media (min-width: 992px) {
+  #section-cases > main > article > main,
+  #section-cases > main > article > footer, #section-who > aside,
+  #section-who > main,
+  #section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
+  #section-products > main > article > aside, #section-call-to-action #section-services,
+  #section-call-to-action #section-blog, #section-footer > main,
+  #section-footer > aside, #section-cases > main > article > aside {
+    float: left; }
+  #section-cases > main > article > aside {
+    width: 58.33333333%; }
+  #section-who > aside,
+  #section-who > main,
+  #section-who > footer, #section-cases > aside > p, #section-products > main > article > main,
+  #section-products > main > article > aside, #section-call-to-action #section-services,
+  #section-call-to-action #section-blog, #section-footer > main,
+  #section-footer > aside {
+    width: 50%; }
+  #section-cases > main > article > main,
+  #section-cases > main > article > footer {
+    width: 41.66666667%; }
+  #section-who > main,
+  #section-who > footer {
+    right: 50%; }
+  #section-who > aside {
+    left: 50%; } }
+
+/**
+ * Taller icon styles
+ */
+#section-heading a[href="#section-who"]:before, nav li + li:before, #section-heading nav h2:before, #section-who > footer a:before, #section-footer h2:before {
+  font-family: "Taller Icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1; }
+
+#section-heading a[href="#section-who"]:before {
+  content: "b"; }
+
+nav li + li:before {
+  content: "c"; }
+
+#section-heading nav h2:before, #section-who > footer a:before, #section-footer h2:before {
+  content: "d"; }
+
+#section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after, #contact form button:after, #section-cases > main > article .read-more:after, #section-products .read-more:after, #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
+  font-family: "Taller Icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1; }
+
+#section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after, #contact form button:after, #section-cases > main > article .read-more:after, #section-products .read-more:after, #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
+  content: "a"; }
+
+/**
+ * Remarkable component for jumbotron-link styles
+ */
+#section-hero {
+  font-size: 2.25rem;
+  font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif; }
+
+/**
+ * Button components
+ */
+#section-heading a[href="#section-who"], #section-footer h2 {
+  display: inline-block;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 0;
+  text-decoration: none;
+  text-align: center; }
+  #section-heading a[href="#section-who"]:before, #section-footer h2:before {
+    font-size: 1.6rem;
+    line-height: 3.7rem; }
+
+#section-heading a[href="#section-who"], #section-footer h2 {
+  background-color: #E02438;
+  color: white; }
+
+#section-heading a[href="#section-who"] {
+  border-radius: 50%; }
+
+#section-footer h2 {
+  border-radius: .35rem; }
+
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, #contact form button, button, #section-cases > main > article .read-more, #section-products .read-more, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a, #section-cases > main > article > main ul li a, input[type="text"] {
+  border: 0.2em solid;
+  border-radius: 4px;
+  padding: 0.35em 2em;
+  text-transform: uppercase;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: bold;
+  font-size: 0.75em;
+  line-height: 2em; }
+
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, #contact form button, button, #section-cases > main > article .read-more, #section-products .read-more, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a, #section-cases > main > article > main ul li a {
+  transition: all 150ms;
+  text-decoration: none;
+  display: inline-block; }
+
+#section-cases > main > article .read-more:hover, #section-products .read-more:hover, #section-call-to-action #section-blog > main > article > a:hover, #section-footer > aside a:hover, #section-cases > main > article .read-more:focus, #section-products .read-more:focus, #section-call-to-action #section-blog > main > article > a:focus, #section-footer > aside a:focus, #section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, #contact form button, button {
+  border: 0.2em solid #E02438;
+  background-color: #E02438;
+  color: white; }
+  #section-cases > main > article .read-more:hover, #section-products .read-more:hover, #section-call-to-action #section-blog > main > article > a:hover, #section-footer > aside a:hover, #section-cases > aside .call-to-action:hover, #section-call-to-action #section-services > main > article > a:hover, #contact form button:hover, button:hover, #section-cases > main > article .read-more:focus, #section-products .read-more:focus, #section-call-to-action #section-blog > main > article > a:focus, #section-footer > aside a:focus, #section-cases > aside .call-to-action:focus, #section-call-to-action #section-services > main > article > a:focus, #contact form button:focus, button:focus {
+    background-color: #2B2C30;
+    border-color: #2B2B32; }
+
+#section-cases > main > article .read-more:hover, #section-products .read-more:hover, #section-call-to-action #section-blog > main > article > a:hover, #section-footer > aside a:hover, #section-cases > main > article .read-more:focus, #section-products .read-more:focus, #section-call-to-action #section-blog > main > article > a:focus, #section-footer > aside a:focus, #section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, #contact form button {
+  color: white;
+  background-color: #E02438;
+  border-color: #E02438; }
+
+#section-cases > aside .call-to-action:hover, #section-call-to-action #section-services > main > article > a:hover, #contact form button:hover, #section-cases > aside .call-to-action:focus, #section-call-to-action #section-services > main > article > a:focus, #contact form button:focus {
+  background-color: #2B2C30;
+  border-color: #2B2B32; }
+
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, #contact form button {
+  margin-top: 1rem;
+  -webkit-clip-path: polygon(0 0, calc(100% - 1em) 0, 100% 48%, 100% 52%, calc(100% - 1em) 100%, 0 100%, 0 95%, 0.6em 52%, 0.6em 48%, 0 5%); }
+  #section-cases > aside .call-to-action:after, #section-call-to-action #section-services > main > article > a:after, #contact form button:after {
+    margin-left: 1.2em; }
+
+#section-cases > main > article .read-more, #section-products .read-more, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a {
+  margin-top: 1rem; }
+  #section-cases > main > article .read-more:after, #section-products .read-more:after, #section-call-to-action #section-blog > main > article > a:after, #section-footer > aside a:after {
+    margin-left: 1.2em; }
+
+/**
+ * Text components
+ */
+#section-cases > main > article > header p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 35em; }
+
+/**
+ * Link components
+ */
+a[href^="tel:"] {
+  color: inherit !important;
+  text-decoration: none;
+  border-bottom: 2px solid; }
+
+/**
+ * Tag components
+ */
+#section-cases > main > article > main ul li a {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  margin-top: 0.5em;
+  font-size: 0.6em;
+  background-color: white;
+  border-color: #CCCCCC;
+  color: #666666; }
+  #section-cases > main > article > main ul li a:hover, #section-cases > main > article > main ul li a:focus {
+    color: #E02438;
+    border-color: #BC3144; }
+
+#section-cases > main > article > main ul {
+  list-style: none;
+  padding: 0; }
+  #section-cases > main > article > main ul li {
+    display: inline-block; }
+    #section-cases > main > article > main ul li a {
+      display: inline-block; }
+
+/*
+ * Partials
+ */
 /**
  * Theme based styles
  */
-#section-heading, #section-newsletter, #section-footer {
+#section-heading, #section-newsletter, #contact, #section-footer {
   background-color: #29292f;
-  color: white; }
-  #section-heading a, #section-newsletter a, #section-footer a {
+  color: white;
+  /*
+     * Special selectors must be alone.
+     */ }
+  #section-heading a, #section-newsletter a, #contact a, #section-footer a {
     color: #E02438; }
-  #section-heading > header h2, #section-newsletter > header h2, #section-footer > header h2 {
+  #section-heading > header h2, #section-newsletter > header h2, #contact > header h2, #section-footer > header h2 {
     border-bottom-color: #E02438; }
-  #section-heading a[href^="tel:"], #section-newsletter a[href^="tel:"], #section-footer a[href^="tel:"] {
+  #section-heading a[href^="tel:"], #section-newsletter a[href^="tel:"], #contact a[href^="tel:"], #section-footer a[href^="tel:"] {
     border-bottom-color: #E02438; }
+  #section-heading ::-webkit-input-placeholder, #section-newsletter ::-webkit-input-placeholder, #contact ::-webkit-input-placeholder, #section-footer ::-webkit-input-placeholder {
+    color: white; }
+  #section-heading :-moz-placeholder, #section-newsletter :-moz-placeholder, #contact :-moz-placeholder, #section-footer :-moz-placeholder {
+    color: white; }
+  #section-heading ::-moz-placeholder, #section-newsletter ::-moz-placeholder, #contact ::-moz-placeholder, #section-footer ::-moz-placeholder {
+    color: white; }
+  #section-heading :-ms-input-placeholder, #section-newsletter :-ms-input-placeholder, #contact :-ms-input-placeholder, #section-footer :-ms-input-placeholder {
+    color: white; }
 
 #section-who, #section-cases, #section-products, #section-call-to-action {
   background-color: white;
-  color: #2B2B32; }
+  color: #2B2B32;
+  /*
+     * Special selectors must be alone.
+     */ }
   #section-who a, #section-cases a, #section-products a, #section-call-to-action a {
     color: #BC3144; }
   #section-who > header h2, #section-cases > header h2, #section-products > header h2, #section-call-to-action > header h2 {
     border-bottom-color: #BC3144; }
   #section-who a[href^="tel:"], #section-cases a[href^="tel:"], #section-products a[href^="tel:"], #section-call-to-action a[href^="tel:"] {
     border-bottom-color: #BC3144; }
+  #section-who ::-webkit-input-placeholder, #section-cases ::-webkit-input-placeholder, #section-products ::-webkit-input-placeholder, #section-call-to-action ::-webkit-input-placeholder {
+    color: #2B2B32; }
+  #section-who :-moz-placeholder, #section-cases :-moz-placeholder, #section-products :-moz-placeholder, #section-call-to-action :-moz-placeholder {
+    color: #2B2B32; }
+  #section-who ::-moz-placeholder, #section-cases ::-moz-placeholder, #section-products ::-moz-placeholder, #section-call-to-action ::-moz-placeholder {
+    color: #2B2B32; }
+  #section-who :-ms-input-placeholder, #section-cases :-ms-input-placeholder, #section-products :-ms-input-placeholder, #section-call-to-action :-ms-input-placeholder {
+    color: #2B2B32; }
 
 /**
  * Default element styles.
@@ -631,7 +765,9 @@ html {
 
 body {
   font-family: "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 p {
   font-size: 1em;
@@ -657,7 +793,14 @@ address {
 nav a {
   color: white !important;
   text-decoration: none;
-  border-bottom: 2px solid #BC3144; }
+  border-bottom: 3px solid #BC3144;
+  padding-bottom: 0.2em; }
+
+nav li + li:before {
+  margin-left: -1rem;
+  margin-right: 1rem;
+  font-size: 0.4em;
+  color: #98989E; }
 
 nav > aside {
   float: left; }
@@ -721,12 +864,6 @@ footer > header {
   #section-heading nav aside {
     padding-left: 0; }
   #section-heading nav h2 {
-    font-size: 2em;
-    font-style: italic;
-    font-weight: normal;
-    font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
-    text-transform: lowercase;
-    letter-spacing: 0.02em;
     margin: 0.2em 0 0; }
     #section-heading nav h2:before {
       color: #E02438;
@@ -755,6 +892,8 @@ footer > header {
     z-index: 1;
     -webkit-transform: translate3d(-50%, 50%, 0);
     transform: translate3d(-50%, 50%, 0); }
+    #section-heading a[href="#section-who"]:before {
+      font-size: 1rem; }
 
 /**
  * Who section styles.
@@ -767,7 +906,12 @@ footer > header {
   color: #666666;
   font-size: 1.25em; }
 
-#section-who > footer a {
+#section-who > footer a:before {
+  float: left;
+  margin-right: 0.3em;
+  font-size: 1.3em; }
+
+#section-who > footer a, #section-who > aside > a {
   display: block;
   margin-top: 0.5em;
   border: none;
@@ -792,24 +936,17 @@ footer > header {
     margin-top: 0.5em;
     font-size: 0.9em;
     line-height: 1.75em; }
-  #section-cases > main > article > main ul {
-    list-style: none;
-    padding: 0; }
-    #section-cases > main > article > main ul li {
-      display: inline; }
-      #section-cases > main > article > main ul li:not(:last-child):after {
-        content: ","; }
   #section-cases > main > article > aside img {
     width: 100%; }
     @media (min-width: 992px) {
       #section-cases > main > article > aside img {
         margin-left: -3vw; } }
-  #section-cases > main > article .read-more {
+  #section-cases > main > article .read-more, #section-cases > main > article .read-more:hover, #section-cases > main > article .read-more:focus {
     margin-top: 2em; }
   #section-cases > aside {
     margin: 3em 0 2em 10%;
-    border: 3px dashed #CCC;
-    border-width: 3px 0;
+    border: 1px dashed #666666;
+    border-width: 1px 0;
     padding: 2em 0;
     color: #666666;
     font-size: 1.25em; }
@@ -905,6 +1042,209 @@ footer > header {
     width: 17em; }
 
 /**
+ * Contact section styles.
+ */
+#contact {
+  background-color: transparent;
+  max-width: 54vw;
+  width: 100%;
+  padding: 35px;
+  vertical-align: top; }
+  #contact header h2 {
+    border-color: white; }
+  #contact form {
+    text-transform: uppercase;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: bold;
+    font-size: 0.75em;
+    line-height: 2em;
+    text-align: left; }
+    #contact form label {
+      position: relative;
+      display: block;
+      margin-bottom: 3em;
+      z-index: 0; }
+      #contact form label span {
+        transition: all 250ms;
+        position: absolute;
+        top: 0.5em;
+        margin-left: 1em;
+        font-size: 1em;
+        z-index: -1; }
+      #contact form label:before, #contact form label:after {
+        transition: all 250ms;
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 100%;
+        z-index: -1; }
+      #contact form label:before {
+        height: 2px;
+        background-color: white; }
+      #contact form label:after {
+        height: 0;
+        background-color: rgba(0, 0, 0, 0.2); }
+      #contact form label.focused span, #contact form label.fulfilled span {
+        top: -2.25em;
+        font-size: 0.85em; }
+      #contact form label.focused:before, #contact form label.fulfilled:before {
+        margin-top: -2px;
+        height: 4px;
+        background-color: rgba(0, 0, 0, 0.3); }
+      #contact form label.focused:after, #contact form label.fulfilled:after {
+        top: 0;
+        height: 100%; }
+    #contact form input, #contact form textarea, #contact form select {
+      display: block;
+      padding: 0.35em 1em;
+      height: 40.5px;
+      width: 100%;
+      border: none;
+      font-size: 1em;
+      font-family: inherit;
+      text-transform: inherit;
+      background-color: transparent;
+      outline: none;
+      resize: none; }
+    #contact form select {
+      cursor: pointer; }
+      #contact form select option {
+        opacity: 1;
+        color: black; }
+    #contact form button {
+      background-color: white;
+      color: #E02438;
+      font-size: 1em;
+      border-color: white;
+      float: right; }
+      #contact form button:hover, #contact form button:focus {
+        color: white; }
+
+/*
+ * Modal styling.
+ */
+.remodal-overlay {
+  opacity: 0; }
+
+.remodal-wrapper {
+  background-color: rgba(224, 36, 56, 0.95); }
+  .remodal-wrapper:after {
+    display: none; }
+
+.remodal {
+  position: relative; }
+
+.remodal-close {
+  position: fixed;
+  top: 0;
+  right: 15px; }
+  .remodal-close, .remodal-close:hover, .remodal-close:focus {
+    background-color: transparent;
+    border: none;
+    padding: 0; }
+  .remodal-close:before {
+    transition: all 250ms;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
+    font-size: 3rem;
+    line-height: 4rem;
+    display: block;
+    position: static;
+    width: 4rem;
+    content: "\00d7";
+    text-align: center;
+    color: white; }
+  .remodal-close:hover:before, .remodal-close:focus:before {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+
+/*
+ * Animating selectors.
+ */
+.remodal-overlay.remodal-is-opening,
+.remodal-overlay.remodal-is-closing {
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.remodal-overlay.remodal-is-opening {
+  -webkit-animation: remodal-overlay-opening-keyframes 0.3s;
+  animation: remodal-overlay-opening-keyframes 0.3s; }
+
+.remodal-overlay.remodal-is-closing {
+  -webkit-animation: remodal-overlay-closing-keyframes 0.3s;
+  animation: remodal-overlay-closing-keyframes 0.3s; }
+
+.remodal.remodal-is-opening,
+.remodal.remodal-is-closing {
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.remodal.remodal-is-opening {
+  -webkit-animation: remodal-opening-keyframes 0.3s;
+  animation: remodal-opening-keyframes 0.3s; }
+
+.remodal.remodal-is-closing {
+  -webkit-animation: remodal-closing-keyframes 0.3s;
+  animation: remodal-closing-keyframes 0.3s; }
+
+/*
+ * Animating keyframes.
+ */
+@-webkit-keyframes remodal-opening-keyframes {
+  from {
+    opacity: 0;
+    top: -50%; }
+  to {
+    opacity: 1;
+    top: 0; } }
+
+@keyframes remodal-opening-keyframes {
+  from {
+    opacity: 0;
+    top: -50%; }
+  to {
+    opacity: 1;
+    top: 0; } }
+
+@-webkit-keyframes remodal-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes remodal-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/**
  * Footer section styles.
  */
 #section-footer h2 {
@@ -918,19 +1258,14 @@ footer > header {
   #section-footer h2:after {
     content: attr(data-title);
     display: block;
-    font-size: 1.2rem;
-    font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
-    font-style: italic;
-    font-weight: normal;
-    text-transform: lowercase;
-    letter-spacing: 0.1rem; }
+    font-size: 1.2rem; }
 
 #section-footer > main,
 #section-footer > aside {
   font-size: .8em; }
   #section-footer > main h3,
   #section-footer > aside h3 {
-    color: #666666; }
+    color: #98989E; }
 
 #section-footer > main p a {
   margin-right: .2em; }
@@ -994,6 +1329,8 @@ footer > header {
  * Form element styles.
  */
 input[type="text"] {
+  padding-left: 1em;
+  padding-right: 1em;
   border-width: 2px;
   background-color: transparent;
   outline: none; }
