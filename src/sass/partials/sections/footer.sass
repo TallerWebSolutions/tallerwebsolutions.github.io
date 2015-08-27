@@ -36,21 +36,7 @@
       %in-text-link
       margin-right: .2em
     ul
-      padding: 0
-      li
-        list-style: none
-        display: inline-block
-        padding: .2em
-        &:before
-          content: ""
-          border-left: 1px solid $color-grey
-          margin-right: .6em
-        &:first-child:before
-          border: none
-          padding: 0
-          margin: 0
-        a
-          text-decoration: none
+      @extend %tag-list-link
 
   > aside
     a
