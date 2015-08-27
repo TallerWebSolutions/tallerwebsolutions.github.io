@@ -628,7 +628,7 @@ nav li + li:before {
 #section-footer h2 {
   border-radius: .35rem; }
 
-#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, #contact form button, button, #section-cases > main > article .read-more, #section-products .read-more, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a, #section-cases > main > article > main ul li a, input[type="text"] {
+#section-cases > aside .call-to-action, #section-call-to-action #section-services > main > article > a, #contact form button, button, #section-cases > main > article .read-more, #section-products .read-more, #section-call-to-action #section-blog > main > article > a, #section-footer > aside a, #section-cases > main > article > main ul li a, input[type="text"], input[type="email"] {
   border: 0.2em solid;
   border-radius: 4px;
   padding: 0.35em 2em;
@@ -1359,9 +1359,17 @@ footer > header {
 button {
   outline: none; }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
   padding-left: 1em;
   padding-right: 1em;
   border-width: 2px;
   background-color: transparent;
   outline: none; }
+
+.mce_inline_error {
+  border-color: #E02438 !important; }
+
+#mce-responses {
+  margin-top: 0.5em; }
+  #mce-responses .response {
+    width: 80%; }
