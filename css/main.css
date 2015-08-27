@@ -1372,4 +1372,5 @@ input[type="text"], input[type="email"] {
 #mce-responses {
   margin-top: 0.5em; }
   #mce-responses .response {
-    width: 80%; }
+    width: 80%;
+    margin: 0 auto; }
