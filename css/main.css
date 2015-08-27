@@ -988,9 +988,6 @@ footer > header {
   @media (min-width: 992px) {
     #section-products {
       text-align: left; } }
-  @media (min-width: 0) {
-    #section-products aside {
-      display: none; } }
 
 /**
  * Call-to-action section styles.
