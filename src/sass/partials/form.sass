@@ -6,10 +6,20 @@ button
   @extend %button-box
   outline: none
 
-input[type="text"]
+input[type="text"], input[type="email"]
   @extend %box
   padding-left: 1em
   padding-right: 1em
   border-width: 2px
   background-color: transparent
   outline: none
+
+// Mailchimp styles
+
+.mce_inline_error
+  border-color: $color-crimson !important
+
+#mce-responses
+  margin-top: 0.5em
+  .response
+    width: 80%
