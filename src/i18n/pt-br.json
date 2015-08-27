@@ -45,7 +45,7 @@
       "list": {
         "claro": {
           "title": "Portal Claro Promoções",
-          "description": "Desenvolvimento de um gerador de campanhas com conteúdo multimídia para o Portal Claro Promoções com a utilização do módulo Panopoly para Drupal 7.",
+          "description": "Gerador de campanhas com conteúdo multimídia.",
           "details": [
             {
               "title": "Gestão visual de conteúdo",
