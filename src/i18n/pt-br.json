@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Taller - Soluções Web Inteligentes",
-    "description": "@todo"
+    "title": "Taller - Ateliê de negócios digitais.",
+    "description": "Acreditamos que a tecnologia potencializa a capacidade humana."
   },
 
   "menu": {
@@ -9,39 +9,39 @@
   },
 
   "header": {
-    "hero": "Somos um ateliê digital que transforma<br><span>ideias em negócios inovadores</span><br>para a entrega contínua de valor."
+    "hero": "Somos um ateliê de negócios digitais que transforma<br><span>ideias em negócios inovadores.</span>"
   },
 
   "section": {
     "who": {
       "title": "Quem somos",
       "main": [
-        "Acreditamos que a tecnologia potencializa a capacidade humana",
-        "Desenvolvemos soluções que ajudam parceiros de todos os tamanhos a atenderem seus objetivos de negócios."
+        "Acreditamos que a tecnologia potencializa a capacidade humana.",
+        "Desenvolvemos soluções que ajudam empresas de todos os tamanhos a atenderem seus objetivos de negócios."
       ],
       "aside": {
         "title": "Nossa cultura valoriza",
         "list": [
-          "Colaboração em comunidades de código aberto.",
-          "Participação e organização ativa em eventos.",
-          "Compartilhamento dos nossos aprendizados.",
-          "Acolhimento caloroso dos novos membros.",
-          "Experimentos constantes.",
+          "Pessoas em primeiro lugar.",
           "Decisões orientadas a boas práticas.",
           "Gestão transparente.",
+          "Fluxo contínuo de entrega de valor.",
+          "Métricas Lean para validação de hipóteses.",
           "Iniciativas de auto-organização.",
           "Redução de desperdícios.",
-          "Fluxo contínuo de entrega de valor."
+          "Compartilhamento dos nossos aprendizados.",
+          "Participação e organização ativa em eventos.",
+          "Colaboração em comunidades de código aberto."
         ],
         "call-to-action": "<a href='http://google.com'>Veja nossa cultura na prática</a>"
       },
       "footer": {
-        "call-to-action": "Conheça nossa história a nosso time."
+        "call-to-action": "Conheça nossa história e nosso time."
       }
     },
 
     "cases": {
-      "title": "Case de destaque:",
+      "title": "Case de destaque",
       "list": {
         "claro": {
           "title": "Portal Claro Promoções",
@@ -54,7 +54,7 @@
               "title": "Geolocalização de alta precisão",
               "description": "Entregas de promoções regionalizadas."
             }, {
-              "title": "Tecnologias utilizadas",
+              "title": "Tecnologias utilizadas:",
               "list": [
                 {
                   "url": "http://www.drupal.org/",
@@ -79,7 +79,7 @@
         }
       },
       "aside": {
-        "attention": "Nós estamos preparados para os mais variados desafios tecnológicos.",
+        "attention": "Estamos preparados para os mais variados desafios tecnológicos.",
         "call-to-action": "Vamos conversar"
       }
     },
@@ -109,7 +109,7 @@
         "Treinamentos",
         "Produto digitais"
       ],
-      "call-to-action": "Comece seu projeto com a Taller"
+      "call-to-action": "Entre em contato"
     },
 
     "blog": {
