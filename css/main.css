@@ -710,6 +710,23 @@ a[href^="tel:"] {
     #section-cases > main > article > main ul li a {
       display: inline-block; }
 
+#contact-form-success ul, #section-footer > main ul {
+  padding: 0; }
+  #contact-form-success ul li, #section-footer > main ul li {
+    list-style: none;
+    display: inline-block;
+    padding: .2em; }
+    #contact-form-success ul li:before, #section-footer > main ul li:before {
+      content: "";
+      border-left: 1px solid #666666;
+      margin-right: .6em; }
+    #contact-form-success ul li:first-child:before, #section-footer > main ul li:first-child:before {
+      border: none;
+      padding: 0;
+      margin: 0; }
+    #contact-form-success ul li a, #section-footer > main ul li a {
+      text-decoration: none; }
+
 /*
  * Partials
  */
@@ -904,8 +921,9 @@ footer > header {
   padding-right: 100px; }
 
 #section-who > main {
-  color: #666666;
   font-size: 1.25em; }
+  #section-who > main p:last-child {
+    font-size: 0.85em; }
 
 #section-who > footer a:before {
   float: left;
@@ -969,8 +987,9 @@ footer > header {
     text-align: center; }
     #section-cases > footer ul li {
       list-style: none;
-      display: inline;
-      padding: 1rem; }
+      display: inline-block;
+      padding: 1rem;
+      vertical-align: middle; }
 
 /**
  * Products section styles.
@@ -1050,6 +1069,8 @@ footer > header {
   vertical-align: top; }
   #contact header h2 {
     border-color: white; }
+  #contact a {
+    color: white; }
   #contact form {
     text-transform: uppercase;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -1101,7 +1122,7 @@ footer > header {
       border: none;
       font-size: 1em;
       font-family: inherit;
-      text-transform: inherit;
+      text-transform: none;
       background-color: transparent;
       outline: none;
       resize: none; }
@@ -1121,7 +1142,27 @@ footer > header {
       border-color: white;
       float: right; }
       #contact form button:hover, #contact form button:focus {
-        color: white; }
+        color: white;
+        background-color: #E02438;
+        border-color: #E02438; }
+
+#contact-form-success {
+  text-align: center;
+  display: none; }
+  #contact-form-success h2 {
+    font-size: 2em;
+    margin-bottom: 0.75em; }
+    #contact-form-success h2 small {
+      margin-top: 1em;
+      font-size: 0.65em;
+      display: block; }
+  #contact-form-success p:first-child {
+    font-weight: bold;
+    font-size: 1.85em; }
+  #contact-form-success ul {
+    font-size: 0.8em; }
+    #contact-form-success ul li:before {
+      border-left-color: white; }
 
 /*
  * Modal styling.
@@ -1130,7 +1171,7 @@ footer > header {
   opacity: 0; }
 
 .remodal-wrapper {
-  background-color: rgba(224, 36, 56, 0.95); }
+  background-color: rgba(41, 41, 47, 0.965); }
   .remodal-wrapper:after {
     display: none; }
 
@@ -1271,23 +1312,6 @@ footer > header {
 
 #section-footer > main p a {
   margin-right: .2em; }
-
-#section-footer > main ul {
-  padding: 0; }
-  #section-footer > main ul li {
-    list-style: none;
-    display: inline-block;
-    padding: .2em; }
-    #section-footer > main ul li:before {
-      content: "";
-      border-left: 1px solid #666666;
-      margin-right: .6em; }
-    #section-footer > main ul li:first-child:before {
-      border: none;
-      padding: 0;
-      margin: 0; }
-    #section-footer > main ul li a {
-      text-decoration: none; }
 
 /**
  * Font familities loading.
