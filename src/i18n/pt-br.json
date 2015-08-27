@@ -100,7 +100,7 @@
     },
 
     "services": {
-      "title": "Somos o que fazemos...",
+      "title": "Nossos serviços",
       "description": "Estamos preparados para tirá-lo da sua zona de conforto.<br>Oferecemos:",
       "list": [
         "Negócios digitais",
@@ -113,7 +113,7 @@
     },
 
     "blog": {
-      "title": "...e o que compartilhamos",
+      "title": "Nosso blog",
       "description": "Somos apaixonados pelo que fazemos. Transformamos nossas experiências em conhecimento.",
       "list": [
         "Tecnologia",
