@@ -1007,6 +1007,8 @@ footer > header {
   @media (min-width: 992px) {
     #section-products {
       text-align: left; } }
+  #section-products img {
+    width: 100%; }
 
 /**
  * Call-to-action section styles.
