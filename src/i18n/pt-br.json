@@ -89,7 +89,7 @@
       "list": {
         "el-tracker": {
           "title": "El Tracker",
-          "description": "Rastreamento de eventos para analytics.<br>Sem código. Poucos cliques.",
+          "description": "Métricas Lean para web analytics.<br>Rastreamento de eventos.<br/>Sem código, poucos cliques.",
           "read-more": "Conheça o El Tracker"
         }
       },
@@ -101,13 +101,13 @@
 
     "services": {
       "title": "Nossos serviços",
-      "description": "Estamos preparados para tirá-lo da sua zona de conforto.<br>Oferecemos:",
+      "description": "Estamos preparados para tirá-lo da sua zona de conforto. Oferecemos: ",
       "list": [
         "Negócios digitais",
+        "Serviços em desenvolvimento",
         "Serviços em design",
         "Consultorias",
-        "Treinamentos",
-        "Produto digitais"
+        "Treinamentos"
       ],
       "call-to-action": "Entre em contato"
     },
@@ -126,19 +126,19 @@
     },
 
     "newsletter": {
-      "description": "Receba nossas novidades e conteúdos:",
+      "description": "Somos o que fazemos e o que compartilhamos.<br/>Receba nossas novidades e conteúdos:",
       "placeholder": "Seu e-mail",
       "subscribe": "Quero receber"
     }
   },
 
   "contact": {
-    "title": "Mande uma mensagem:",
+    "title": "Mande uma mensagem",
     "form": {
-      "name": "Seu nome",
-      "email": "Seu e-mail",
+      "name": "Seu nome:",
+      "email": "Seu e-mail:",
       "subject": {
-        "label": "Assuntos",
+        "label": "Assunto:",
         "empty": "--Selecione um assunto--",
         "options": {
           "Trabalhe Conosco": "Trabalhe conosco",
@@ -146,7 +146,7 @@
           "Outro": "Outro"
         }
       },
-      "message": "Sua mensagem",
+      "message": "Sua mensagem:",
       "send": "Enviar"
     },
     "address": {
