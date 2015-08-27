@@ -6,11 +6,14 @@ var jQuery = require('jquery')
   , remodal = require('remodal')
   , autosize = require('autosize')
   , $section = jQuery('#contact')
+  , $header = $section.find('header h2')
   , $form = $section.find('form')
   , $inputs = $form.find(':input')
   , $textInputs = $inputs.filter('input[type=text]')
   , $selectInputs = $inputs.filter('select')
-  , $textareas = $inputs.filter('textarea');
+  , $textareas = $inputs.filter('textarea')
+  , contactFormAction = $form.attr('action')
+  , $contactFormSuccess = $section.find('#contact-form-success');
 
 
 /*
@@ -30,11 +33,42 @@ $textareas.each(function () {
  */
 
 $inputs.on('focusin focusout', onFocusChange);
+$form.on('submit', onContactSubmit);
 
 
 /*
  * Methods.
  */
+
+/**
+ * Submit form via AJAX.
+ */
+function onContactSubmit(e) {
+  e.preventDefault();
+
+  jQuery.ajax({
+    url: contactFormAction,
+    data: $form.serialize(),
+    type: "POST",
+    // google always return an error
+    error: showErrorMessage
+  });
+
+  return false;
+}
+
+/**
+ * Replace form with submition message.
+ */
+function showErrorMessage() {
+  $header.animate({
+    opacity: 0
+  }, 250);
+
+  $form.fadeOut(250, function() {
+    $contactFormSuccess.fadeIn(250);
+  });
+}
 
 /**
  * Update states after focus change.

@@ -13,7 +13,7 @@
   color: $color-grey
 
   &:hover, &:focus
-    color: $color-crimson 
+    color: $color-crimson
     border-color: $color-crambery
 
 %tags
@@ -25,3 +25,20 @@
     a
       @extend %tag
       display: inline-block
+
+%tag-list-link
+  padding: 0
+  li
+    list-style: none
+    display: inline-block
+    padding: .2em
+    &:before
+      content: ""
+      border-left: 1px solid $color-grey
+      margin-right: .6em
+    &:first-child:before
+      border: none
+      padding: 0
+      margin: 0
+    a
+      text-decoration: none

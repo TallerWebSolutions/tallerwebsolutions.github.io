@@ -69,7 +69,7 @@
       </main>
 
       <footer>
-        <p>{{{footer.attention}}} <a href="http://blog.taller.net.br/a-historia-da-taller-2-0/">{{{footer.call-to-action}}}</a></p>
+        <p><a href="http://blog.taller.net.br/a-historia-da-taller-2-0/">{{{footer.call-to-action}}}</a></p>
       </footer>
       {{/with}}
     </section>
@@ -238,19 +238,21 @@
 
       <main>
         {{#with form}}
-        <form action="">
+        <form action="https://docs.google.com/forms/d/1BA5mbBLz2q-KVPdfmeLgx-jlTGfnq3uiJv9wXPC9iSM/formResponse" method="POST">
+          <input type="hidden" name="fvv" value="0">
+          <input type="hidden" name="fbzx" value="-5268979544709068581">
           <label>
-            <input type="text" name="name">
+            <input type="text" value="" name="entry.1224954245">
             <span>{{name}}</span>
           </label>
 
           <label>
-            <input type="text" name="email">
+            <input type="email" value="" name="entry.1626142284" required>
             <span>{{email}}</span>
           </label>
 
           <label>
-            <select name="subject">
+            <select name="entry.381148537">
               <option disabled selected>{{subject.empty}}</option>
               {{#each subject.options}}
                 <option value="{{@key}}">{{this}}</option>
@@ -260,12 +262,24 @@
           </label>
 
           <label>
-            <textarea name="message"></textarea>
+            <textarea name="entry.1141391684" required></textarea>
             <span>{{message}}</span>
           </label>
 
-          <button>{{send}}</button>
+          <button name="submit" value="Enviar">{{send}}</button>
         </form>
+        <div id="contact-form-success">
+          <h2>Mensagem enviada!<small>Entraremos em contato em breve.</small></h2>
+          <p>Enquanto isso, visite nosso blog e nossas redes sociais.</p>
+
+          <ul>
+            <li><a href="http://blog.taller.net.br/">Blog</a></li>
+            <li><a href="http://twitter.com/tallerws" target="_blank">Twitter</a></li>
+            <li><a href="http://facebook.com/tallerwebsolutions" target="_blank">Facebook</a></li>
+          </ul>
+
+          <p>Grande abraço,<br><i>Tallerbot</i></p>
+        </div>
         {{/with}}
       </main>
 
@@ -306,7 +320,6 @@
       </aside>
       {{/with}}
     </footer>
-
 
     <!-- JavaScripts -->
     <!-- inject:js -->

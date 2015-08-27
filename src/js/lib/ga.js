@@ -3,7 +3,7 @@
  */
 
 var jQuery = require('jquery')
-  , gaCode = 'UA-XXXXX-X'
+  , gaCode = 'UA-32561539-1'
   , $window = jQuery(window)
   , location = window.location
   , sentPages = [], page;

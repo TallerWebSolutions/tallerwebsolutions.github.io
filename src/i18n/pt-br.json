@@ -36,7 +36,6 @@
         "call-to-action": "<a href='http://google.com'>Veja nossa cultura na prática</a>"
       },
       "footer": {
-        "attention": "Quer saber mais sobre a gente?",
         "call-to-action": "Conheça nossa história a nosso time."
       }
     },
@@ -142,9 +141,9 @@
         "label": "Assuntos",
         "empty": "--Selecione um assunto--",
         "options": {
-          "work-with-us": "Trabalhe conosco",
-          "comercial": "Comercial",
-          "other": "Outro"
+          "Trabalhe Conosco": "Trabalhe conosco",
+          "Comercial": "Comercial",
+          "Outro": "Outro"
         }
       },
       "message": "Sua mensagem",
