@@ -77,6 +77,10 @@ gulp.task('index:create', copier('./src/index.html', tmpDir()));
 gulp.task('index:inject', ['index:create', 'sass', 'scripts'], taskIndexInject);
 gulp.task('index:i18n', ['index:inject'], taskIndexI18n);
 
+/*
+ * Static files copy
+ */
+gulp.task('static:cname', copier('./src/CNAME', tmpDir()));
 
 /*
  * Structure atomic tasks.
@@ -170,6 +174,7 @@ function taskBuild(done) {
   sequence('clean', [
     // Core build.
     'index'
+  , 'static:cname'
   , 'sass'
   , 'scripts'
   , 'fonts'
