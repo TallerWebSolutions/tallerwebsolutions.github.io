@@ -17,7 +17,7 @@
       "title": "Quem somos",
       "main": [
         "Acreditamos que a tecnologia potencializa a capacidade humana.",
-        "Desenvolvemos soluções que ajudam empresas de todos os tamanhos a atenderem seus objetivos de negócios."
+        "Desenvolvemos soluções que ajudam empresas de todos os tamanhos a atender seus objetivos de negócio."
       ],
       "aside": {
         "title": "Nossa cultura valoriza",
@@ -26,7 +26,7 @@
           "Decisões orientadas a boas práticas.",
           "Gestão transparente.",
           "Fluxo contínuo de entrega de valor.",
-          "Métricas Lean para validação de hipóteses.",
+          "<i>Métricas Lean</i> para validação de hipóteses.",
           "Iniciativas de auto-organização.",
           "Redução de desperdícios.",
           "Compartilhamento dos nossos aprendizados.",
@@ -45,7 +45,7 @@
       "list": {
         "claro": {
           "title": "Portal Claro Promoções",
-          "description": "Desenvolvimento de um gerador de campanhas com conteúdo multimídias para o Portal Claro Promoções com a utilização do módulo Panopoly para Drupal 7.",
+          "description": "Desenvolvimento de um gerador de campanhas com conteúdo multimídia para o Portal Claro Promoções com a utilização do módulo Panopoly para Drupal 7.",
           "details": [
             {
               "title": "Gestão visual de conteúdo",
@@ -89,7 +89,7 @@
       "list": {
         "el-tracker": {
           "title": "El Tracker",
-          "description": "Métricas Lean para web analytics.<br>Rastreamento de eventos.<br/>Sem código, poucos cliques.",
+          "description": "Métricas Lean para <i>web analytics</i>.<br>Rastreamento de eventos.<br/>Sem código, poucos cliques.",
           "read-more": "Conheça o El Tracker"
         }
       },
