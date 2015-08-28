@@ -7,6 +7,7 @@ var jQuery = require('jquery')
   , autosize = require('autosize')
   , parsley = require('parsleyjs')
 
+  , $document = jQuery(document)
   , $section = jQuery('#contact')
   , $header = $section.find('header h2')
   , $form = $section.find('form')
@@ -39,7 +40,7 @@ $textareas.each(function () {
 
 $inputs.on('focusin focusout', onFocusChange);
 $form.on('submit', onContactSubmit);
-
+$document.on('opened', '.remodal', onEnterContactModal);
 
 /*
  * Methods.
@@ -87,4 +88,13 @@ function onFocusChange(e) {
 
   // Add permanent state, if fulfiled.
   $label.toggleClass('fulfilled', Boolean($input.val()));
+}
+
+/**
+ * Executed everytime we enter the contact form modal.
+ */
+function onEnterContactModal(e) {
+  if ($section.is(this)) {
+    $inputs.filter(':visible').eq(0).focus();
+  }
 }
