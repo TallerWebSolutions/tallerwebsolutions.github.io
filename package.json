@@ -28,6 +28,7 @@
     "autosize": "^3.0.8",
     "jquery": "^2.1.4",
     "jquery-smooth-scroll": "^1.5.5",
+    "parsleyjs": "^2.1.2",
     "remodal": "^1.0.2"
   },
   "devDependencies": {
