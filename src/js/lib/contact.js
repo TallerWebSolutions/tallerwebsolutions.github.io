@@ -17,6 +17,9 @@ var jQuery = require('jquery')
   , contactFormAction = $form.attr('action')
   , $contactFormSuccess = $section.find('#contact-form-success');
 
+// Initiate form validator.
+$form.parsley();
+
 
 /*
  * Process elements.
@@ -35,7 +38,7 @@ $textareas.each(function () {
  */
 
 $inputs.on('focusin focusout', onFocusChange);
-$form.parsley().on('submit', onContactSubmit);
+$form.on('submit', onContactSubmit);
 
 
 /*
