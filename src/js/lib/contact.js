@@ -5,6 +5,8 @@
 var jQuery = require('jquery')
   , remodal = require('remodal')
   , autosize = require('autosize')
+  , parsley = require('parsleyjs')
+
   , $section = jQuery('#contact')
   , $header = $section.find('header h2')
   , $form = $section.find('form')
@@ -33,7 +35,7 @@ $textareas.each(function () {
  */
 
 $inputs.on('focusin focusout', onFocusChange);
-$form.on('submit', onContactSubmit);
+$form.parsley().on('submit', onContactSubmit);
 
 
 /*

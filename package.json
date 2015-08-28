@@ -28,7 +28,7 @@
     "autosize": "^3.0.8",
     "jquery": "^2.1.4",
     "jquery-smooth-scroll": "^1.5.5",
-    "parsleyjs": "^2.1.2",
+    "parsleyjs": "git://github.com/larsonjj/Parsley.js.git#patch-1",
     "remodal": "^1.0.2"
   },
   "devDependencies": {

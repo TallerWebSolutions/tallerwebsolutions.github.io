@@ -24,3 +24,36 @@ input[type="text"], input[type="email"]
   .response
     width: 80%
     margin: 0 auto
+
+.parsley-errors-list
+  transition: all 250ms
+  background-color: $color-crimson
+  position: absolute
+  bottom: -5px
+  margin: 0
+  padding: 0
+  right: 0
+  transform: translate3d(0, 100%, 0)
+  list-style: none
+  font-size: 0.85em
+  text-transform: none
+  opacity: 0
+
+  &:before
+    transition: all 250ms
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    right: 1em
+    border: 10px solid transparent
+    border-bottom-color: $color-crimson
+    transform: translate3d(0, -100%, 0)
+    opacity: 0
+
+  &.filled
+    &, &:before
+      opacity: 1
+
+  li
+    padding: 0.5em 1em
