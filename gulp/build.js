@@ -174,7 +174,7 @@ function taskBuild(done) {
   sequence('clean', [
     // Core build.
     'index'
-  , 'static:cname'
+  //, 'static:cname'
   , 'sass'
   , 'scripts'
   , 'fonts'
