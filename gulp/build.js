@@ -80,7 +80,7 @@ gulp.task('index:i18n', ['index:inject'], taskIndexI18n);
 /*
  * Static files copy
  */
-gulp.task('static:cname', copier('./src/CNAME', tmpDir()));
+//gulp.task('static:cname', copier('./src/CNAME', tmpDir()));
 
 /*
  * Structure atomic tasks.
