@@ -726,6 +726,8 @@ a[href^="tel:"] {
       margin: 0; }
     #contact-form-success ul li a, #section-footer > main ul li a {
       text-decoration: none; }
+      #contact-form-success ul li a:hover, #section-footer > main ul li a:hover, #contact-form-success ul li a:active, #section-footer > main ul li a:active {
+        text-decoration: underline; }
 
 /*
  * Partials
@@ -1373,3 +1375,34 @@ input[type="text"], input[type="email"] {
   #mce-responses .response {
     width: 80%;
     margin: 0 auto; }
+
+.parsley-errors-list {
+  transition: all 250ms;
+  background-color: #E02438;
+  position: absolute;
+  bottom: -5px;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  list-style: none;
+  font-size: 0.85em;
+  text-transform: none;
+  opacity: 0; }
+  .parsley-errors-list:before {
+    transition: all 250ms;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 1em;
+    border: 10px solid transparent;
+    border-bottom-color: #E02438;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    opacity: 0; }
+  .parsley-errors-list.filled, .parsley-errors-list.filled:before {
+    opacity: 1; }
+  .parsley-errors-list li {
+    padding: 0.5em 1em; }
