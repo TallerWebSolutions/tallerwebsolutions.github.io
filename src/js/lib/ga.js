@@ -3,7 +3,6 @@
  */
 
 var jQuery = require('jquery')
-  , gaCode = 'UA-32561539-1'
   , $window = jQuery(window)
   , location = window.location
   , sentPages = [], page;
@@ -15,7 +14,7 @@ var jQuery = require('jquery')
 
  var _gaq = _gaq || [];
  _gaq.push(['_setAccount', 'UA-48708413-2']);
- _gaq.push(['_setDomainName’,’taller.net.br']);
+ _gaq.push(['_setDomainName', 'taller.net.br']);
 
  _gaq.push(['_trackPageview']);
 
