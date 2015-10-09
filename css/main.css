@@ -889,7 +889,7 @@ footer > header {
       display: inline-block;
       margin-right: 0.05em;
       font-size: 1.0em;
-      vertical-align: text-bottom;
+      vertical-align: middle;
       -webkit-transform: translate3d(0%, -5%, 0px);
       transform: translate3d(0%, -5%, 0px); }
   #section-heading:after {
