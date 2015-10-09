@@ -480,10 +480,10 @@ html {
 #section-heading nav h2, #section-footer h2:after {
   font-size: 2em;
   font-style: italic;
-  font-weight: normal;
+  font-weight: bold;
   font-family: "Alegreya", "aleo", Georgia, "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
   text-transform: lowercase;
-  letter-spacing: 0.02em; }
+  letter-spacing: -0.01em; }
 
 /*------------------------------------------------------------------------------
  * Grid Definitions
@@ -888,7 +888,7 @@ footer > header {
       color: #E02438;
       display: inline-block;
       margin-right: 0.05em;
-      font-size: 1.5em;
+      font-size: 1.0em;
       vertical-align: text-bottom;
       -webkit-transform: translate3d(0%, -5%, 0px);
       transform: translate3d(0%, -5%, 0px); }
