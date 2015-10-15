@@ -267,7 +267,10 @@ function cleaner(path) {
 function loadTranslations(done) {
   async.each(i18nFiles, function (filename, next) {
     jsonfile.readFile(i18nDir(filename), function (err, obj) {
-      if (err) gutil.log('i18n error:', gutil.colors.red('"' + err + '"'));
+      if (err) {
+        gutil.log('i18n error:', gutil.colors.red('"' + err + '"'));
+        done(err);
+      }
       else translations[filename.slice(0, -5)] = obj;
       next();
     });

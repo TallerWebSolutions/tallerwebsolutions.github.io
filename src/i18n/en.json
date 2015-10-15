@@ -1,5 +1,173 @@
 {
+  "site": {
+    "title": "Taller - Digital Business.",
+    "description": "We believe technology increases human capacity."
+  },
+
   "menu": {
-    "contact": "Contact"
+    "contact": "Contact Us"
+  },
+
+  "header": {
+    "hero": "We are a digital business studio that turns<br><span>ideas into innovative business.</span>"
+  },
+
+  "section": {
+    "who": {
+      "title": "About",
+      "main": [
+        "We believe technology increases human capacity.",
+        "We develop solutions that help companies of all sizes meet their business goals."
+      ],
+      "aside": {
+        "title": "Our culture values",
+        "list": [
+          "People first.",
+          "Best practices oriented decision making.",
+          "Transparent management.",
+          "Continuous value delivery.",
+          "<i>Lean Metrics</i> for hypothesis validation.",
+          "Self-organizing initiatives.",
+          "Reducing waste.",
+          "Sharing our learnings.",
+          "Active participation and organization of events.",
+          "Collaboration in open source communities."
+        ],
+        "call-to-action": "<a href='http://google.com'>Take a look at our culture in practice</a>"
+      },
+      "footer": {
+        "call-to-action": "Get to know our team and more about our history."
+      }
+    },
+
+    "cases": {
+      "title": "Featured case",
+      "list": {
+        "claro": {
+          "title": "Portal Claro Promoções",
+          "description": "Campaign generator with multimedia content.",
+          "details": [
+            {
+              "title": "Visual content management",
+              "description": "Agility and autonomy to content managers."
+            }, {
+              "title": "High precision geolocation",
+              "description": "Promotions delivered per region."
+            }, {
+              "title": "Technologies used:",
+              "list": [
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                }, {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                }, {
+                  "url": "http://www.linux.org/",
+                  "text": "Linux"
+                }, {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                }, {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                }
+              ]
+            }
+          ],
+          "read-more": "Case's details"
+        }
+      },
+      "aside": {
+        "attention": "We are prepared for a whole variety of technological challenges.",
+        "call-to-action": "Let's talk"
+      }
+    },
+
+    "products": {
+      "title": "Our product:",
+      "list": {
+        "el-tracker": {
+          "title": "El Tracker",
+          "description": "Lean metrics for <i>web analytics</i>.<br>Event tracking.<br/>No code, few clicks.",
+          "read-more": "Meet El Tracker"
+        }
+      },
+      "aside": {
+        "attention": "We are prepared for a whole variety of technological challenges.",
+        "call-to-action": "Get your project started"
+      }
+    },
+
+    "services": {
+      "title": "Our services",
+      "description": "We are prepared to take you out of your comfort zone. We offer: ",
+      "list": [
+        "Digital business",
+        "Development services",
+        "Design services",
+        "Consultancy",
+        "Coaching"
+      ],
+      "call-to-action": "Contact us"
+    },
+
+    "blog": {
+      "title": "Our blog",
+      "description": "We are passionate about what we do. And we write about our passions:",
+      "list": [
+        "Technology",
+        "Agile/Lean Philosophy",
+        "Design",
+        "Marketing",
+        "Taller Culture"
+      ],
+      "call-to-action": "Visit our blog"
+    },
+
+    "newsletter": {
+      "description": "We are what we do and what we share.<br/>Subscribe to our newsletter:",
+      "placeholder": "Your best e-mail",
+      "subscribe": "Subscribe"
+    }
+  },
+
+  "contact": {
+    "title": "Send us a message",
+    "form": {
+      "name": "Your name:",
+      "email": "Your e-mail:",
+      "subject": {
+        "label": "Subject:",
+        "empty": "--Select a subject--",
+        "options": {
+          "Trabalhe Conosco": "Work with us",
+          "Comercial": "Comercial",
+          "Outro": "Other"
+        }
+      },
+      "message": "Your message:",
+      "send": "Send"
+    },
+    "address": {
+      "title": "Our network:",
+      "content": "Servidão Recanto das Pedras, casa 3 - Rio Tavares<br>Florianópolis - SC - Brazil - 88066-248"
+    }
+  },
+
+  "footer": {
+    "contact": {
+      "title": "Contact",
+      "address": "Servidão Recanto das Pedras, casa 3 - Rio Tavares<br>Florianópolis - SC - Brazil - 88066-248"
+    },
+    "extras": {
+      "title": "Extras",
+      "description": "This site was made in an agile way.",
+      "read-more": "Go behind the scenes"
+    }
+  },
+
+  "util": {
+    "know-more": "Read more"
   }
 }

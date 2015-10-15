@@ -1,0 +1,173 @@
+{
+  "site": {
+    "title": "Taller - Negocios Digitales.",
+    "description": "Creemos que la tecnología mejora la capacidad humana."
+  },
+
+  "menu": {
+    "contact": "Contacto"
+  },
+
+  "header": {
+    "hero": "Somos un estudio de negocios digitales que convierte<br><span>las ideas en negocios innovadores.</span>"
+  },
+
+  "section": {
+    "who": {
+      "title": "Sobre",
+      "main": [
+        "Creemos que la tecnología mejora la capacidad humana.",
+        "Desarrollamos soluciones que ayudan a las empresas de todos los tamaños a alcanzar sus objetivos de negocio."
+      ],
+      "aside": {
+        "title": "Nuestros valores de cultura",
+        "list": [
+          "La gente primero.",
+          "Decisiones orientadas según las buenas prácticas.",
+          "Gestión transparente.",
+          "Flujo contínuo de entrega de valor.",
+          "<i>Métricas Lean</i> para validación de hipótesis.",
+          "Iniciativas de auto-organización.",
+          "Reducción de desperdicios.",
+          "Compartir nuestros aprendizajes.",
+          "Participación y organización activa de eventos.",
+          "Colaboración en las comunidades de código abierto."
+        ],
+        "call-to-action": "<a href='http://google.com'>Mira nuestra cultura en la práctica</a>"
+      },
+      "footer": {
+        "call-to-action": "Conoce a nuestro equipo y nuestra historia."
+      }
+    },
+
+    "cases": {
+      "title": "Caso de éxito",
+      "list": {
+        "claro": {
+          "title": "Portal Claro Promociones",
+          "description": "Generador de campañas con contenido multimedia:",
+          "details": [
+            {
+              "title": "Gestión de contenido visual",
+              "description": "Agilidad y autonomía de publicación de contenido."
+            }, {
+              "title": "Geolocalización de alta precisión",
+              "description": "Entregas de promociones regionalizadas."
+            }, {
+              "title": "Tecnologías usadas:",
+              "list": [
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                }, {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                }, {
+                  "url": "http://www.linux.org/",
+                  "text": "Linux"
+                }, {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                }, {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                }
+              ]
+            }
+          ],
+          "read-more": "Más detalles"
+        }
+      },
+      "aside": {
+        "attention": "Estamos preparados para diversos desafios tecnológicos.",
+        "call-to-action": "Hablemos"
+      }
+    },
+
+    "products": {
+      "title": "Nuestro producto:",
+      "list": {
+        "el-tracker": {
+          "title": "El Tracker",
+          "description": "Métricas Lean para <i>web analytics</i>.<br>Rastreo de eventos.<br/>Sin código, pocos clicks.",
+          "read-more": "Conoce El Tracker"
+        }
+      },
+      "aside": {
+              "attention": "We are prepared for a whole variety of technological challenges.",
+              "call-to-action": "Get your project started"
+            }
+          },
+
+      "services": {
+        "title": "Our services",
+        "description": "Estamos preparados para sacarle de su zona de confort. Ofrecemos: ",
+        "list": [
+          "Negócios digitales",
+          "Servicios en desarrollo",
+          "Servicios en diseño",
+          "Consultorias",
+          "Entrenamientos"
+        ],
+        "call-to-action": "Póngase en contacto"
+      },
+
+      "blog": {
+        "title": "Nuestro blog",
+        "description": "Nos apasiona lo que hacemos. Y escribimos sobre nuestras pasiones:",
+        "list": [
+          "Tecnología",
+          "Filosofía ágil",
+          "Diseño",
+          "Marketing",
+          "Cultura Taller"
+        ],
+        "call-to-action": "Visita nuestro blog"
+      },
+
+      "newsletter": {
+        "description": "Somos lo que hacemos y lo que compartimos.<br/>Reciba nuestras novedades y contenidos:",
+        "placeholder": "Su e-mail",
+        "subscribe": "Quiero recibir"
+      }
+    },
+
+    "contact": {
+      "title": "Envie un mensaje",
+      "form": {
+        "name": "Su nombre:",
+        "email": "Su e-mail:",
+        "subject": {
+          "label": "Asunto:",
+          "empty": "--Seleccione um asunto--",
+        "options": {
+          "Trabalhe Conosco": "Trabaje con nosotros",
+          "Comercial": "Comercial",
+          "Outro": "Otros"
+        }
+      },
+      "message": "Su mensaje:",
+      "send": "Enviar"
+    },
+    "address": {
+      "title": "Nuestra red de contactos:",
+      "content": "Servidão Recanto das Pedras, casa 3 - Rio Tavares<br>Florianópolis - SC - Brasil - 88066-248"
+    }
+  },
+
+  "footer": {
+    "contact": {
+      "title": "Contacto",
+      "address": "Servidão Recanto das Pedras, casa 3 - Rio Tavares<br>Florianópolis - SC - Brazil - 88066-248"
+    },
+    "extras": {
+      "title": "Extras",
+      "description": "Este sitio fue hecho de forma ágil.",
+      "read-more": "Detrás de la escena"
+    }
+  },
+
+  "util": {
+    "know-more": "Sepa más"
+  }
+}
