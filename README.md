@@ -1,4 +1,4 @@
-# Taller's cool [new website](http://tallerwebsolutions.github.io/)
+# Taller's awesome [new website](http://tallerwebsolutions.github.io/)
 
 > This branch holds website's building code. Check out the latest build released at [master branch](https://github.com/TallerWebSolutions/tallerwebsolutions.github.io/tree/master).
 
