@@ -248,21 +248,22 @@
 
       <main>
         {{#with form}}
-        <form action="https://docs.google.com/forms/d/1BA5mbBLz2q-KVPdfmeLgx-jlTGfnq3uiJv9wXPC9iSM/formResponse" method="POST">
-          <input type="hidden" name="fvv" value="0">
-          <input type="hidden" name="fbzx" value="-5268979544709068581">
+        <form id="form-contact" action="#rd-contact" method="POST" target="_blank">
+          <input type="hidden" id="identificador" name="identificador" value="site_contact" >
+          <input type="hidden" id="token_rdstation" name="token_rdstation" value="6e0b0b2ec757b35ac11962ed0f72ce1e" >
+
           <label>
-            <input type="text" value="" name="entry.1224954245">
+            <input type="text" value="" name="nome">
             <span>{{name}}</span>
           </label>
 
           <label>
-            <input type="email" value="" name="entry.1626142284" required>
+            <input type="email" value="" name="email" required>
             <span>{{email}}</span>
           </label>
 
           <label>
-            <select name="entry.381148537">
+            <select name="assunto">
               <option disabled selected>{{subject.empty}}</option>
               {{#each subject.options}}
                 <option value="{{@key}}">{{this}}</option>
@@ -272,7 +273,7 @@
           </label>
 
           <label>
-            <textarea name="entry.1141391684" required></textarea>
+            <textarea name="mensagem" required></textarea>
             <span>{{message}}</span>
           </label>
 

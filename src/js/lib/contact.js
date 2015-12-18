@@ -52,13 +52,11 @@ $document.on('opened', '.remodal', onEnterContactModal);
 function onContactSubmit(e) {
   e.preventDefault();
 
-  jQuery.ajax({
-    url: contactFormAction,
-    data: $form.serialize(),
-    type: "POST",
-    // google always return an error
-    error: showErrorMessage
+  var inputs = $form.find(':input').serializeArray();
+  RdIntegration.post(inputs, function (res, message) {
+    showErrorMessage();
   });
+
 
   return false;
 }
