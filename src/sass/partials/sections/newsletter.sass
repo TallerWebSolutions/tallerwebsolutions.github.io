@@ -12,3 +12,37 @@
 
   input
     width: 17em
+
+  form, #news-main > p
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear
+
+  .status-success,
+  .status-error
+    form, > p
+      opacity: 0
+      visibility: hidden
+
+  .success,
+  .error
+    transition: visibility 0s, opacity 0.5s linear, transform 0.5s linear
+    font-size: 1.2em
+    position: absolute
+    left: 0
+    right: 0
+    top: 50%
+    transform: translate3d(0, -30%, 0)
+    opacity: 0
+    visibility: hidden
+
+    strong
+      display: block
+
+  .status-success .form-response > .success
+    opacity: 1
+    visibility: visible
+    transform: translate3d(0, -50%, 0)
+
+  .status-error .form-response > .error
+    opacity: 1
+    visibility: visible
+    transform: translate3d(0, -50%, 0)

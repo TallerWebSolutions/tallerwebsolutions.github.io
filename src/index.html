@@ -222,14 +222,17 @@
       <main>
         <article id="news-main">
           <p>{{{description}}}</p>
-          <form action="//taller.us6.list-manage.com/subscribe/post?u=c55db0c2cd6d76bd24c33e342&amp;id=41a3e6925a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <input type="email" value="" name="EMAIL"  placeholder="{{{placeholder}}}">
+          <form id="form-newsletter" action="#rd-subscribe" method="post" target="_blank">
+            <input type="email" value="" name="email"  placeholder="{{{placeholder}}}">
             <button name="subscribe" id="mc-embedded-subscribe" >{{{subscribe}}}</button>
+
+            <input type="hidden" id="identificador" name="identificador" value="site_newsletter" >
+            <input type="hidden" id="token_rdstation" name="token_rdstation" value="6e0b0b2ec757b35ac11962ed0f72ce1e" >
           </form>
-          <div id="mce-responses" class="clear">
-        		<div class="response" id="mce-error-response" style="display:none"></div>
-        		<div class="response" id="mce-success-response" style="display:none"></div>
-        	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div class="form-response">
+            <div class="success"><strong>Cadastro efetuado!</strong> Prometemos enviar apenas os conteúdos e informações que também gostaríamos de receber.</div>
+            <div class="error"><strong>Ops!</strong> Comportamento não previsto.</div>
+          </div>
         </article>
       </main>
       {{/with}}
