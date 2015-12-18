@@ -46,7 +46,6 @@ function pageView() {
 
   if (sentPages.indexOf(page = location.pathname + location.search + location.hash) == -1) {
     sentPages.push(page);
-    console.log(page);
     ga('send', 'pageview', {
       page: page,
       title: location.hash ? jQuery(location.hash).find('h2').text() : document.title
