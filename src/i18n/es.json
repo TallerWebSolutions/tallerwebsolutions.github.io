@@ -128,7 +128,18 @@
       "newsletter": {
         "description": "Somos lo que hacemos y lo que compartimos.<br/>Reciba nuestras novedades y contenidos:",
         "placeholder": "Su e-mail",
-        "subscribe": "Quiero recibir"
+        "subscribe": "Quiero recibir",
+
+        "form": {
+          "success": {
+            "head": "Cadastro efetuado!",
+            "compliment": "Prometemos enviar apenas os conteúdos e informações que também gostaríamos de receber."
+          },
+          "error": {
+            "head": "Ops!",
+            "compliment": "Comportamento não previsto."
+          }
+        }
       }
     },
 

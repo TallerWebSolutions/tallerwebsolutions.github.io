@@ -128,7 +128,18 @@
     "newsletter": {
       "description": "We are what we do and what we share.<br/>Subscribe to our newsletter:",
       "placeholder": "Your best e-mail",
-      "subscribe": "Subscribe"
+      "subscribe": "Subscribe",
+
+      "form": {
+        "success": {
+          "head": "Cadastro efetuado!",
+          "compliment": "Prometemos enviar apenas os conteúdos e informações que também gostaríamos de receber."
+        },
+        "error": {
+          "head": "Ops!",
+          "compliment": "Comportamento não previsto."
+        }
+      }
     }
   },
 
