@@ -91,18 +91,46 @@
       </header>
 
       <main>
-        <article id="case-claro">
-          {{#with list.claro}}
-          <header>
+        <article id="case-natura">
+          {{#with list.natura}}
+
+          <main>
             <h3>{{{title}}}</h3>
             <p>{{{description}}}</p>
-          </header>
 
+            <h4>{{{details.[0].title}}}</h4>
+            <p>{{{details.[0].description}}}</p>
+
+            <h4>{{{details.[1].title}}}</h4>
+            <p>{{{details.[1].description}}}</p>
+
+            <h4>{{{details.[2].title}}}</h4>
+            <ul>
+              {{#each details.[2].list}}
+                <li>
+                  <a href="{{this.url}}" target="_blank">{{{this.text}}}</a>
+                </li>
+              {{/each}}
+            </ul>
+            <a class="read-more" href="https://www.drupal.org/node/2330069" target="_blank">{{read-more}}</a>
+          </main>
           <aside>
-            <img src="/images/mockup_claro.png">
+            <img src="/images/mockup_natura.png">
+          </aside>
+
+          {{/with}}
+        </article>
+
+        <article id="case-fiesc">
+          {{#with list.fiesc}}
+          <aside>
+            <img src="/images/mockup_fiesc.png">
           </aside>
 
           <main>
+            <h3>{{{title}}}</h3>
+            <p>{{{description}}}</p>
+
             <h4>{{{details.[0].title}}}</h4>
             <p>{{{details.[0].description}}}</p>
 
@@ -121,6 +149,36 @@
           </main>
           {{/with}}
         </article>
+
+        <article id="case-claro">
+          {{#with list.claro}}
+
+          <main>
+            <h3>{{{title}}}</h3>
+            <p>{{{description}}}</p>
+
+            <h4>{{{details.[0].title}}}</h4>
+            <p>{{{details.[0].description}}}</p>
+
+            <h4>{{{details.[1].title}}}</h4>
+            <p>{{{details.[1].description}}}</p>
+
+            <h4>{{{details.[2].title}}}</h4>
+            <ul>
+              {{#each details.[2].list}}
+                <li>
+                  <a href="{{this.url}}" target="_blank">{{{this.text}}}</a>
+                </li>
+              {{/each}}
+            </ul>
+            <a class="read-more" href="https://www.drupal.org/node/2330069" target="_blank">{{read-more}}</a>
+          </main>
+          <aside>
+            <img src="/images/mockup_claro.png">
+          </aside>
+          {{/with}}
+        </article>
+
       </main>
 
       <aside>

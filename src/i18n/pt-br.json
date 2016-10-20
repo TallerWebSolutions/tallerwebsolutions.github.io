@@ -44,7 +44,7 @@
       "title": "Case de destaque",
       "list": {
         "claro": {
-          "title": "Portal Claro Promoções",
+          "title": "Sistema Claro Promoções",
           "description": "Gerador de campanhas com conteúdo multimídia.",
           "details": [
             {
@@ -76,7 +76,76 @@
             }
           ],
           "read-more": "Detalhes do case"
+        },
+        "natura": {
+          "title": "Portal Natura",
+          "description": "Sistema de Gestão de Conteúdo.",
+          "details": [
+            {
+              "title": "Gestão visual de conteúdo",
+              "description": "Autonomia para geração d."
+            }, {
+              "title": "Geolocalização de alta precisão",
+              "description": "Entregas de promoções regionalizadas."
+            }, {
+              "title": "Tecnologias utilizadas:",
+              "list": [
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                }, {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                }, {
+                  "url": "http://www.linux.org/",
+                  "text": "ReactJS"
+                }, {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                }, {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                }
+              ]
+            }
+          ],
+          "read-more": "Visitar o site"
+        },
+        "fiesc": {
+          "title": "Portal FIESC",
+          "description": "Sistema de geração de campanhas.",
+          "details": [
+            {
+              "title": "Gestão visual de conteúdo",
+              "description": "Autonomia para geração d."
+            }, {
+              "title": "Geolocalização de alta precisão",
+              "description": "Entregas de promoções regionalizadas."
+            }, {
+              "title": "Tecnologias utilizadas:",
+              "list": [
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                }, {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                }, {
+                  "url": "http://www.linux.org/",
+                  "text": "ReactJS"
+                }, {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                }, {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                }
+              ]
+            }
+          ],
+          "read-more": "Detalhes do case"
         }
+
       },
       "aside": {
         "attention": "Estamos preparados para os mais variados desafios tecnológicos.",
