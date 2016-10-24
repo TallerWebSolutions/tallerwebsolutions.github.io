@@ -957,7 +957,7 @@ footer > header {
       font-size: 0.9em;
       line-height: 1.75em; }
     #section-cases > main > article > main ul {
-      padding-right: 15em; }
+      padding-right: 50px; }
       @media (max-width: 991px) {
         #section-cases > main > article > main ul {
           padding-right: 0; } }
