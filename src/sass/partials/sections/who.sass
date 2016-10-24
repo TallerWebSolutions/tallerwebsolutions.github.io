@@ -14,7 +14,8 @@
   > main,
   > footer
     @extend %col-md-pull-6
-    padding-right: 100px
+    +breakpoint($breakpoint-min-md)
+      padding-right: 100px
 
   > aside
     @extend %col-md-push-6

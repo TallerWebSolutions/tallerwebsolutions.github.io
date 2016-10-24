@@ -43,6 +43,74 @@
     "cases": {
       "title": "Featured case",
       "list": {
+        "natura": {
+          "title": "Natura Website",
+          "description": "Content Management System.",
+          "details": [
+            {
+              "title": "Content visual management",
+              "description": "Autonomy for marketing teams."
+            }, {
+              "title": "Cost reduction",
+              "description": ""
+            }, {
+              "title": "Technologies:",
+              "list": [
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                }, {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                }, {
+                  "url": "http://www.reactjs.org/",
+                  "text": "ReactJS"
+                }, {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                }, {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                }
+              ]
+            }
+          ],
+          "read-more": "Go to Website"
+        },
+        "fiesc": {
+          "title": "FIESC Website",
+          "description": "Content Management System.",
+          "details": [
+            {
+              "title": "Content visual management",
+              "description": "Autonomy for marketing teams."
+            }, {
+              "title": "Entity sites integration",
+              "description": "Five websites become one: FIESC, SESI/SC, SENAI/SC, CIESC and IEL."
+            }, {
+              "title": "Technologies:",
+              "list": [
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                }, {
+                  "url": "http://www.linux.org/",
+                  "text": "ReactJS"
+                }, {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                }, {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                }, {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                }
+              ]
+            }
+          ],
+          "read-more": "Go to website"
+        },
         "claro": {
           "title": "Portal Claro Promoções",
           "description": "Campaign generator with multimedia content.",
@@ -54,7 +122,7 @@
               "title": "High precision geolocation",
               "description": "Promotions delivered per region."
             }, {
-              "title": "Technologies used:",
+              "title": "Technologies:",
               "list": [
                 {
                   "url": "http://www.drupal.org/",
