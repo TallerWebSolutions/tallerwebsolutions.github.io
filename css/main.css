@@ -357,7 +357,7 @@ th {
   padding: 0; }
 
 /*
- *  Remodal - v1.1.0
+ *  Remodal - v1.0.3
  *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
  *  http://vodkabears.github.io/remodal/
  *
@@ -369,9 +369,7 @@ th {
    ========================================================================== */
 /* Hide scroll bar */
 html.remodal-is-locked {
-  overflow: hidden;
-  -ms-touch-action: none;
-  touch-action: none; }
+  overflow: hidden; }
 
 /* Anti FOUC */
 .remodal,
@@ -410,6 +408,7 @@ html.remodal-is-locked {
 /* Fix iPad, iPhone glitches */
 .remodal-overlay,
 .remodal-wrapper {
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 /* Necessary styles of the modal dialog */
@@ -884,6 +883,7 @@ footer > header {
       margin-right: 0.05em;
       font-size: 1.0em;
       vertical-align: middle;
+      -webkit-transform: translate3d(0%, -5%, 0px);
       transform: translate3d(0%, -5%, 0px); }
   #section-heading:after {
     content: "";
@@ -902,6 +902,7 @@ footer > header {
     bottom: 0;
     right: 20%;
     z-index: 1;
+    -webkit-transform: translate3d(-50%, 50%, 0);
     transform: translate3d(-50%, 50%, 0); }
     #section-heading a[href="#section-who"]:before {
       font-size: 1rem; }
@@ -955,6 +956,11 @@ footer > header {
       margin-top: 0.5em;
       font-size: 0.9em;
       line-height: 1.75em; }
+    #section-cases > main > article > main ul {
+      padding-right: 15em; }
+      @media (max-width: 991px) {
+        #section-cases > main > article > main ul {
+          padding-right: 0; } }
     #section-cases > main > article > aside img {
       width: 100%; }
     #section-cases > main > article .read-more, #section-cases > main > article .read-more:hover, #section-cases > main > article .read-more:focus {
@@ -1067,12 +1073,14 @@ footer > header {
     visibility: hidden; }
   #section-newsletter .success,
   #section-newsletter .error {
+    transition: visibility 0s, opacity 0.5s linear, -webkit-transform 0.5s linear;
     transition: visibility 0s, opacity 0.5s linear, transform 0.5s linear;
     font-size: 1.2em;
     position: absolute;
     left: 0;
     right: 0;
     top: 50%;
+    -webkit-transform: translate3d(0, -30%, 0);
     transform: translate3d(0, -30%, 0);
     opacity: 0;
     visibility: hidden; }
@@ -1082,10 +1090,12 @@ footer > header {
   #section-newsletter .status-success .form-response > .success {
     opacity: 1;
     visibility: visible;
+    -webkit-transform: translate3d(0, -50%, 0);
     transform: translate3d(0, -50%, 0); }
   #section-newsletter .status-error .form-response > .error {
     opacity: 1;
     visibility: visible;
+    -webkit-transform: translate3d(0, -50%, 0);
     transform: translate3d(0, -50%, 0); }
 
 /**
@@ -1218,6 +1228,7 @@ footer > header {
     padding: 0; }
   .remodal-close:before {
     transition: all 250ms;
+    -webkit-transform: rotate(0);
     transform: rotate(0);
     font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
     font-size: 3rem;
@@ -1229,6 +1240,7 @@ footer > header {
     text-align: center;
     color: white; }
   .remodal-close:hover:before, .remodal-close:focus:before {
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
 
 /*
@@ -1236,27 +1248,40 @@ footer > header {
  */
 .remodal-overlay.remodal-is-opening,
 .remodal-overlay.remodal-is-closing {
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards; }
 
 .remodal-overlay.remodal-is-opening {
+  -webkit-animation: remodal-overlay-opening-keyframes 0.3s;
   animation: remodal-overlay-opening-keyframes 0.3s; }
 
 .remodal-overlay.remodal-is-closing {
+  -webkit-animation: remodal-overlay-closing-keyframes 0.3s;
   animation: remodal-overlay-closing-keyframes 0.3s; }
 
 .remodal.remodal-is-opening,
 .remodal.remodal-is-closing {
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards; }
 
 .remodal.remodal-is-opening {
+  -webkit-animation: remodal-opening-keyframes 0.3s;
   animation: remodal-opening-keyframes 0.3s; }
 
 .remodal.remodal-is-closing {
+  -webkit-animation: remodal-closing-keyframes 0.3s;
   animation: remodal-closing-keyframes 0.3s; }
 
 /*
  * Animating keyframes.
  */
+@-webkit-keyframes remodal-opening-keyframes {
+  from {
+    opacity: 0;
+    top: -50%; }
+  to {
+    opacity: 1;
+    top: 0; } }
 
 @keyframes remodal-opening-keyframes {
   from {
@@ -1266,17 +1291,35 @@ footer > header {
     opacity: 1;
     top: 0; } }
 
+@-webkit-keyframes remodal-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
 @keyframes remodal-closing-keyframes {
   from {
     opacity: 1; }
   to {
     opacity: 0; } }
 
+@-webkit-keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 @keyframes remodal-overlay-opening-keyframes {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+@-webkit-keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
 
 @keyframes remodal-overlay-closing-keyframes {
   from {
@@ -1291,6 +1334,7 @@ footer > header {
   position: absolute;
   top: 0;
   left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0); }
   #section-footer h2:before {
     font-size: 2rem; }
@@ -1368,6 +1412,7 @@ input[type="text"], input[type="email"] {
   margin: 0;
   padding: 0;
   right: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
   list-style: none;
   font-size: 0.85em;
@@ -1382,6 +1427,7 @@ input[type="text"], input[type="email"] {
     right: 1em;
     border: 10px solid transparent;
     border-bottom-color: #E02438;
+    -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
     opacity: 0; }
   .parsley-errors-list.filled, .parsley-errors-list.filled:before {
