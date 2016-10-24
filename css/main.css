@@ -560,7 +560,7 @@ nav:after, #section-who:after, #section-cases > aside:after, #section-call-to-ac
 /**
  * Taller icon styles
  */
-#section-heading a[href="#section-who"]:before, nav li + li:before, #section-heading nav h2:before, #section-who > footer a:before, #section-footer h2:before {
+#section-heading a.know-more:before, nav li + li:before, #section-heading nav h2:before, #section-who > footer a:before, #section-footer h2:before {
   font-family: "Taller Icons" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -569,7 +569,7 @@ nav:after, #section-who:after, #section-cases > aside:after, #section-call-to-ac
   speak: none;
   line-height: 1; }
 
-#section-heading a[href="#section-who"]:before {
+#section-heading a.know-more:before {
   content: "b"; }
 
 nav li + li:before {
@@ -600,22 +600,22 @@ nav li + li:before {
 /**
  * Button components
  */
-#section-heading a[href="#section-who"], #section-footer h2 {
+#section-heading a.know-more, #section-footer h2 {
   display: inline-block;
   height: 3.5rem;
   width: 3.5rem;
   font-size: 0;
   text-decoration: none;
   text-align: center; }
-  #section-heading a[href="#section-who"]:before, #section-footer h2:before {
+  #section-heading a.know-more:before, #section-footer h2:before {
     font-size: 1.6rem;
     line-height: 3.7rem; }
 
-#section-heading a[href="#section-who"], #section-footer h2 {
+#section-heading a.know-more, #section-footer h2 {
   background-color: #E02438;
   color: white; }
 
-#section-heading a[href="#section-who"] {
+#section-heading a.know-more {
   border-radius: 50%; }
 
 #section-footer h2 {
@@ -897,14 +897,14 @@ footer > header {
     background-position: center center;
     background-size: cover;
     box-shadow: inset 0 0px 10vh rgba(0, 0, 0, 0.5); }
-  #section-heading a[href="#section-who"] {
+  #section-heading a.know-more {
     position: absolute;
     bottom: 0;
     right: 20%;
     z-index: 1;
     -webkit-transform: translate3d(-50%, 50%, 0);
     transform: translate3d(-50%, 50%, 0); }
-    #section-heading a[href="#section-who"]:before {
+    #section-heading a.know-more:before {
       font-size: 1rem; }
 
 @media (max-width: 991px) {
@@ -948,7 +948,7 @@ footer > header {
     #section-cases {
       text-align: center; } }
   #section-cases > main > article {
-    margin-bottom: 8em; }
+    margin-bottom: 120px; }
     #section-cases > main > article > header {
       text-align: center; }
     #section-cases > main > article > main p, #section-cases > main > article > main ul {
