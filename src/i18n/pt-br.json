@@ -41,36 +41,50 @@
     },
 
     "cases": {
-      "title": "Case de destaque",
+      "title": "Cases de destaque",
       "list": {
         "natura": {
           "title": "Portal Natura",
-          "description": "Sistema de Gestão de Conteúdo.",
+          "description": "Sistema de Gestão de Conteúdo com suporte a multi idioma.",
           "details": [
             {
               "title": "Gestão visual de conteúdo",
-              "description": "Autonomia para equipe de marketing."
+              "description": "Autonomia para equipe de marketing.<br />Edição das páginas <i>In-line</i> e <i>Drag & Drop</i>."
             }, {
               "title": "Redução de custos",
-              "description": "Redução no custo total de operação."
+              "description": "Redução no custo total de operação e remoção de licenças proprietárias."
             }, {
               "title": "Tecnologias utilizadas:",
               "list": [
+                {
+                  "url": "https://www.acquia.com/products-services/acquia-cloud",
+                  "text": "Acquia Cloud"
+                },
                 {
                   "url": "http://www.drupal.org/",
                   "text": "Drupal"
                 }, {
                   "url": "https://www.drupal.org/project/panopoly",
                   "text": "Panopoly"
-                }, {
+                },
+                {
                   "url": "http://www.reactjs.org/",
                   "text": "ReactJS"
-                }, {
+                },
+                {
+                  "url": "http://redux.js.org/",
+                  "text": "Redux"
+                },
+                {
                   "url": "https://www.mysql.com/",
                   "text": "MySQL"
                 }, {
                   "url": "http://php.net/",
                   "text": "PHP"
+                },
+                {
+                  "url": "http://lucene.apache.org/solr/",
+                  "text": "Apache Solr"
                 }
               ]
             }
@@ -93,18 +107,25 @@
                 {
                   "url": "http://www.drupal.org/",
                   "text": "Drupal"
-                }, {
-                  "url": "http://www.linux.org/",
-                  "text": "ReactJS"
-                }, {
+                },
+                {
                   "url": "https://www.drupal.org/project/panopoly",
                   "text": "Panopoly"
                 }, {
                   "url": "https://www.mysql.com/",
                   "text": "MySQL"
-                }, {
+                },
+                {
                   "url": "http://php.net/",
                   "text": "PHP"
+                },
+                {
+                  "url": "https://nodejs.org/",
+                  "text": "NodeJS"
+                },
+                {
+                  "url": "http://lucene.apache.org/solr/",
+                  "text": "Apache Solr"
                 }
               ]
             }
@@ -136,9 +157,14 @@
                 }, {
                   "url": "https://www.mysql.com/",
                   "text": "MySQL"
-                }, {
+                },
+                {
                   "url": "http://php.net/",
                   "text": "PHP"
+                },
+                {
+                  "url": "http://lucene.apache.org/solr/",
+                  "text": "Apache Solr"
                 }
               ]
             }
@@ -149,6 +175,9 @@
       "aside": {
         "attention": "Estamos preparados para os mais variados desafios tecnológicos.",
         "call-to-action": "Vamos conversar"
+      },
+      "clientLogos": {
+        "header": "Levamos inovação e qualidade para as empresas de todos os tamanhos:"
       }
     },
 

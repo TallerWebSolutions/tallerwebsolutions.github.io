@@ -41,7 +41,7 @@
     },
 
     "cases": {
-      "title": "Featured case",
+      "title": "Featured cases",
       "list": {
         "natura": {
           "title": "Natura Website",
@@ -49,28 +49,42 @@
           "details": [
             {
               "title": "Content visual management",
-              "description": "Autonomy for marketing teams."
+              "description": "Autonomy for marketing teams.<br />Editing pages <i>In-line</i> and <i>Drag & Drop</i>."
             }, {
               "title": "Cost reduction",
-              "description": ""
+              "description": "Reduction in total cost of operation and removal of proprietary licenses."
             }, {
               "title": "Technologies:",
               "list": [
+                {
+                  "url": "https://www.acquia.com/products-services/acquia-cloud",
+                  "text": "Acquia Cloud"
+                },
                 {
                   "url": "http://www.drupal.org/",
                   "text": "Drupal"
                 }, {
                   "url": "https://www.drupal.org/project/panopoly",
                   "text": "Panopoly"
-                }, {
+                },
+                {
                   "url": "http://www.reactjs.org/",
                   "text": "ReactJS"
-                }, {
+                },
+                {
+                  "url": "http://redux.js.org/",
+                  "text": "Redux"
+                },
+                {
                   "url": "https://www.mysql.com/",
                   "text": "MySQL"
                 }, {
                   "url": "http://php.net/",
                   "text": "PHP"
+                },
+                {
+                  "url": "http://lucene.apache.org/solr/",
+                  "text": "Apache Solr"
                 }
               ]
             }
@@ -83,7 +97,7 @@
           "details": [
             {
               "title": "Content visual management",
-              "description": "Autonomy for marketing teams."
+              "description": "Autonomy for marketing teams.<br />Editing pages <i>In-line</i> and <i>Drag & Drop</i>."
             }, {
               "title": "Entity sites integration",
               "description": "Five websites become one: FIESC, SESI/SC, SENAI/SC, CIESC and IEL."
@@ -93,18 +107,25 @@
                 {
                   "url": "http://www.drupal.org/",
                   "text": "Drupal"
-                }, {
-                  "url": "http://www.linux.org/",
-                  "text": "ReactJS"
-                }, {
+                },
+                {
                   "url": "https://www.drupal.org/project/panopoly",
                   "text": "Panopoly"
                 }, {
                   "url": "https://www.mysql.com/",
                   "text": "MySQL"
-                }, {
+                },
+                {
                   "url": "http://php.net/",
                   "text": "PHP"
+                },
+                {
+                  "url": "https://nodejs.org/",
+                  "text": "NodeJS"
+                },
+                {
+                  "url": "http://lucene.apache.org/solr/",
+                  "text": "Apache Solr"
                 }
               ]
             }
@@ -149,6 +170,9 @@
       "aside": {
         "attention": "We are prepared for a whole variety of technological challenges.",
         "call-to-action": "Let's talk"
+      },
+      "clientLogos": {
+        "header": "We take innovation and quality for companies of all sizes:"
       }
     },
 
