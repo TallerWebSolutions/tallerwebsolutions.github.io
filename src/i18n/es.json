@@ -41,11 +41,100 @@
     },
 
     "cases": {
-      "title": "Caso de éxito",
+      "title": "Casos de éxito",
       "list": {
+        "natura": {
+          "title": "Portal Natura",
+          "description": "Sistema de Gestión de Contenido con soporte a multi idioma.",
+          "details": [
+            {
+              "title": "Gestión visual de contenido",
+              "description": "Autonomia para el equipo de marketing.<br />Edición de las páginas <i>In-line</i> y <i>Drag & Drop</i>."
+            }, {
+              "title": "Reducción de costos",
+              "description": "Reducción del costo total de operación y remoción de licencias proprietaria."
+            }, {
+              "title": "Tecnologias usadas:",
+              "list": [
+                {
+                  "url": "https://www.acquia.com/products-services/acquia-cloud",
+                  "text": "Acquia Cloud"
+                },
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                }, {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                },
+                {
+                  "url": "http://www.reactjs.org/",
+                  "text": "ReactJS"
+                },
+                {
+                  "url": "http://redux.js.org/",
+                  "text": "Redux"
+                },
+                {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                }, {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                },
+                {
+                  "url": "http://lucene.apache.org/solr/",
+                  "text": "Apache Solr"
+                }
+              ]
+            }
+          ],
+          "read-more": "Visite o site"
+        },
+        "fiesc": {
+          "title": "Portal FIESC",
+          "description": "Sistema de Gestión de contenido segmentado.",
+          "details": [
+            {
+              "title": "Gestión visual de contenido",
+              "description": "Autonomia para el equipo de marketing."
+            }, {
+              "title": "Integração dos sites das entidades",
+              "description": "Un único punto para gestionar el contenido del sistema FIESC y entidades SESI/SC, SENAI/SC, CIESC E IEL."
+            }, {
+              "title": "Tecnologias usadas:",
+              "list": [
+                {
+                  "url": "http://www.drupal.org/",
+                  "text": "Drupal"
+                },
+                {
+                  "url": "https://www.drupal.org/project/panopoly",
+                  "text": "Panopoly"
+                }, {
+                  "url": "https://www.mysql.com/",
+                  "text": "MySQL"
+                },
+                {
+                  "url": "http://php.net/",
+                  "text": "PHP"
+                },
+                {
+                  "url": "https://nodejs.org/",
+                  "text": "NodeJS"
+                },
+                {
+                  "url": "http://lucene.apache.org/solr/",
+                  "text": "Apache Solr"
+                }
+              ]
+            }
+          ],
+          "read-more": "Detalhes do case"
+        },
         "claro": {
           "title": "Portal Claro Promociones",
-          "description": "Generador de campañas con contenido multimedia:",
+          "description": "Generador de campañas con contenido multimedia.",
           "details": [
             {
               "title": "Gestión de contenido visual",
@@ -81,6 +170,9 @@
       "aside": {
         "attention": "Estamos preparados para diversos desafios tecnológicos.",
         "call-to-action": "Hablemos"
+      },
+      "clientLogos": {
+        "header": "LLevamos innovación y calidad para las empresas de todos los tamaños:"
       }
     },
 
@@ -132,25 +224,25 @@
 
         "form": {
           "success": {
-            "head": "Cadastro efetuado!",
-            "compliment": "Prometemos enviar apenas os conteúdos e informações que também gostaríamos de receber."
+            "head": "Registrado!",
+            "compliment": "Prometemos enviar contenidos y informaciones que también nos gustaría receber."
           },
           "error": {
             "head": "Ops!",
-            "compliment": "Comportamento não previsto."
+            "compliment": "Comportamiento no esperado."
           }
         }
       }
     },
 
     "contact": {
-      "title": "Envie un mensaje",
+      "title": "Envíenos un mensaje",
       "form": {
         "name": "Su nombre:",
         "email": "Su e-mail:",
         "subject": {
           "label": "Asunto:",
-          "empty": "--Seleccione um asunto--",
+          "empty": "--Seleccione un asunto--",
         "options": {
           "Trabalhe Conosco": "Trabaje con nosotros",
           "Comercial": "Comercial",
