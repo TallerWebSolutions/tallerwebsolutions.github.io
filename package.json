@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/gulp build",
-    "start": "./node_modules/.bin/gulp serve",
-    "deploy": "./node_modules/.bin/gulp deploy"
+    "start": "./node_modules/.bin/gulp serve"
   },
   "repository": {
     "type": "git",
