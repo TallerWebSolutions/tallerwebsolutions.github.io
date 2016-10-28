@@ -273,6 +273,13 @@
       "title": "Extras",
       "description": "Esse site foi feito de forma ágil.",
       "read-more": "Veja os bastidores"
+    },
+    "menu": {
+      "contact": "Contato",
+      "blog": "Blog",
+      "services": "Serviços",
+      "team": "Time",
+      "works": "Portfólio"
     }
   },
 
