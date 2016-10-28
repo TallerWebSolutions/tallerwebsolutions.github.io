@@ -1,0 +1,19 @@
+.img-slide
+  aside
+    overflow-x: hidden
+
+  img
+    position: relative
+    transition: all 600ms
+
+.img-slide-right img
+  right: -200%
+
+.img-slide-left img
+  left: -200%
+
+.img-slide-right.img-slide-visible img
+  right: 0
+
+.img-slide-left.img-slide-visible img
+  left: 0
