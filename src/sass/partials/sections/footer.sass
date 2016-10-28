@@ -22,13 +22,78 @@
       content: attr(data-title)
       display: block
       font-size: 1.2rem
+  >  main,
+  >  aside
+      @extend %col-md-6
+      h3
+        color: $color-grey-lighter
+      font-size: .8em
+  > footer
+    clear: both
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    nav
+      text-align: center
+      ul
+        list-style-type: none
+        li
+          &::before
+            content: ''
 
-  > main,
-  > aside
-    @extend %col-md-6
-    h3
-      color: $color-grey-lighter
-    font-size: .8em
+    +breakpoint($breakpoint-min-sm)
+      height: auto
+      nav
+        text-align: center
+        ul
+          li
+            display: inline
+
+        // &.current a
+        //   color: #d94f5c
+        //   overflow: visible
+
+        //   &::before,
+        //   &::after
+        //     width: 80%
+        //     height: 80%
+        //     opacity: 1
+        //     -webkit-transform: translate3d(0, 0, 0) rotate(0deg)
+        //     transform: translate3d(0, 0, 0) rotate(0deg)
+        //
+        // a::before
+        //   top: 0
+        //   left: 0
+        //   border-width: 2px 0 0 2px
+        //   -webkit-transform: translate3d(-150%, 70%, 0) rotate(-30deg)
+        //   transform: translate3d(-150%, 70%, 0) rotate(-30deg)
+        //
+        // a::after
+        //   right: 0
+        //   bottom: 0
+        //   border-width: 0 2px 2px 0
+        //   -webkit-transform: translate3d(150%, -70%, 0) rotate(-30deg)
+        //   transform: translate3d(150%, -70%, 0) rotate(-30deg)
+
+      // a
+      // 	position: relative
+      // 	overflow: hidden
+      // 	-webkit-transition: color .4s ease-in
+      // 	transition: color .4s ease-in
+
+      //   &::before,
+      //   &::after
+      //     content: ''
+      //     position: absolute
+      //     width: 100px
+      //     height: 100px
+      //     opacity: 0
+      //     border: 2px solid #d94f5c
+      //     -webkit-transition: -webkit-transform 0.4s, opacity 0.3s, width 0.4s
+      //     transition: transform .4s, opacity 0.3s, width .4s
+      //     -webkit-transition-timing-function: linear
+      //     transition-timing-function: linear
 
   > main
     p
