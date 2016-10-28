@@ -16,8 +16,8 @@ services:
     hostname: taller
     working_dir: /taller/site
     container_name: taller-site
-    links:
-      - selenium
+    # links:
+    #   - selenium
     volumes:
       - $HOME/.ssh:/taller/.ssh
       - $HOME/.gitconfig:/taller/.gitconfig
