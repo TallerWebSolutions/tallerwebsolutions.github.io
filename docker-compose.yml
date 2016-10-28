@@ -1,0 +1,34 @@
+version: '2'
+
+networks:
+  taller_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 166.36.46.0/24
+        gateway: 166.36.46.1
+
+services:
+  site:
+    build:
+      context: ./docker/
+    hostname: taller
+    working_dir: /taller/site
+    container_name: taller-site
+    links:
+      - selenium
+    volumes:
+      - $HOME/.ssh:/taller/.ssh
+      - $HOME/.gitconfig:/taller/.gitconfig
+      - $PWD:/taller/site
+    networks:
+      taller_network:
+        ipv4_address: 166.36.46.30
+
+  selenium:
+    image: selenium/standalone-chrome
+    container_name: taller-selenium
+    networks:
+      taller_network:
+        ipv4_address: 166.36.46.20
