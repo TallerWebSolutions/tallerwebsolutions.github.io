@@ -9,7 +9,8 @@
   },
 
   "header": {
-    "hero": "Somos um ateliê de negócios digitais que transforma<br><span>ideias em projetos inovadores.</span>"
+    "hero": "Somos um time que desenvolve software de qualidade <br><span>para inovações tecnológicas de alta complexidade.</span>",
+    "subhero":"Especialista em Drupal e Javascript (NodeJS e ReactJS), e referência na comunidade ágil do Brasil, com atuação em projetos sob-medida de médio e grande porte para clientes como a Natura, FIESC, Claro, Kickante, Ogilvy, Editora Abril, USP, entre outros."
   },
 
   "section": {
