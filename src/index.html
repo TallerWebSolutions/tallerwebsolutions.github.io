@@ -54,7 +54,7 @@
         <a class="know-more smooth-scroll" href="#section-cases">{{util.know-more}}</a>
       </footer>
     </header>
-    
+
     <img src="/images/header-background.jpg" class="header-background">
 
     <!-- Cases section -->
@@ -338,7 +338,7 @@
             <span>{{message}}</span>
           </label>
 
-          <button name="submit" value="Enviar">{{send}}</button>
+          <button name="submit" value="Enviar" onclick="ga('send', 'event', 'formulario', 'cadastro-em-newsletter', 'Newsletter Site Taller')">{{send}}</button>
         </form>
         <div id="contact-form-success">
           <h2>Mensagem enviada!<small>Entraremos em contato em breve.</small></h2>
