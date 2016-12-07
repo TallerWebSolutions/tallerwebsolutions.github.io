@@ -9,7 +9,8 @@
   },
 
   "header": {
-    "hero": "Somos un estudio de negocios digitales que convierte<br><span>las ideas en negocios innovadores.</span>"
+    "hero": "Somos un estudio de negocios digitales que convierte<br><span>las ideas en negocios innovadores.</span>",
+    "subhero":""
   },
 
   "section": {

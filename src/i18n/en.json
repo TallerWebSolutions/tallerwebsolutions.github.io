@@ -9,7 +9,8 @@
   },
 
   "header": {
-    "hero": "We are a digital business studio that turns<br><span>ideas into innovative business.</span>"
+    "hero": "We are a digital business studio that turns<br><span>ideas into innovative business.</span>",
+    "subhero":""
   },
 
   "section": {
