@@ -198,6 +198,36 @@
       {{/with}}
     </section>
 
+    <!-- Who section -->
+    <section id="section-who">
+      {{#with section.who}}
+      <header>
+        <h2>{{title}}</h2>
+      </header>
+
+      <aside>
+        <h3>{{aside.title}}:</h3>
+        <ol>
+          {{#each aside.list}}
+          <li>{{{this}}}</li>
+          {{/each}}
+        </ol>
+        <!--{{{aside.call-to-action}}}-->
+      </aside>
+
+      <main>
+        {{#each main}}
+        <p>{{{this}}}</p>
+        {{/each}}
+      </main>
+
+      <footer>
+        <p><a href="http://blog.taller.net.br/a-historia-da-taller-2-0/">{{{footer.call-to-action}}}</a></p>
+      </footer>
+      {{/with}}
+    </section>
+
+
 
     <!-- Call-to-action section -->
     <section id="section-call-to-action">
@@ -246,35 +276,6 @@
         </main>
         {{/with}}
       </section>
-    </section>
-
-    <!-- Who section -->
-    <section id="section-who">
-      {{#with section.who}}
-      <header>
-        <h2>{{title}}</h2>
-      </header>
-
-      <aside>
-        <h3>{{aside.title}}:</h3>
-        <ol>
-          {{#each aside.list}}
-          <li>{{{this}}}</li>
-          {{/each}}
-        </ol>
-        <!--{{{aside.call-to-action}}}-->
-      </aside>
-
-      <main>
-        {{#each main}}
-        <p>{{{this}}}</p>
-        {{/each}}
-      </main>
-
-      <footer>
-        <p><a href="http://blog.taller.net.br/a-historia-da-taller-2-0/">{{{footer.call-to-action}}}</a></p>
-      </footer>
-      {{/with}}
     </section>
 
     <!-- Newsletter section -->
