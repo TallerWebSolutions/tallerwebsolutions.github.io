@@ -1,0 +1,49 @@
+#section-studio
+  @extend %theme-light
+  @extend %clearfix
+  background-color: $color-grey-lighten
+
+  > main
+    @extend %col-md-8
+    ul
+      @extend %col-md-6
+    a
+      @extend %button-outline-fulfiled
+      @extend %taller-icon-after-arrow-right
+      &:after
+          margin-left: 1.2em
+
+  > aside
+    @extend %col-md-4
+    @extend %theme-light
+    background-color: white
+    padding: 1em 2em
+    transform: rotate(3deg)
+    border-radius: 8px
+    ul
+      @extend %tags
+      a
+        @extend %tag
+
+
+#section-services
+    clear: both
+    @extend %clearfix
+    aside, main
+      @extend %col-md-4
+      padding: 1em 3em
+      h3
+        &::before
+          content: " "
+          width: 22px
+          height: 22px
+          background: url("/images/icons/icon_treinameto.png")
+          display: block
+          position: absolute
+          top: 2em
+          left: 20px
+      p
+        color: $color-grey
+      a
+        @extend %button-outline-arrow
+        color: $color-grey

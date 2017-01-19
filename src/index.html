@@ -172,6 +172,74 @@
       {{/with}}
     </section>
 
+    <!-- Services section -->
+    <section id="section-studio">
+      <header>
+        <h2>O que a Taller oferece?</h2>
+      </header>
+
+      <main>
+        <h3>Ateliê de desenvolvimento de software</h3>
+        <p>
+          Gostamos muito de resolver problemas complexos dos seus negócios.
+          Desenvolvemos soluções digitais customizadas para automatizar seus
+          processos e te ajudar a ser mais eficiênte.
+        </p>
+        <article class="what">
+          <ul class="services-list-first">
+            <li>Grandes portais de conteúdo</li>
+            <li>Aplicativos mobile</li>
+            <li>Sistemas Web</li>
+          </ul>
+          <ul class="services-list-second">
+            <li>Intranet e Extranet</li>
+            <li>Integração entre sistemas</li>
+            <li>API's sob-medida</li>
+          </ul>
+        </article>
+        <a class="call-to-action" href="#contact">Solicite uma Proposta</a>
+      </main>
+
+      <aside class="services-stack">
+        <h3>Nosso stack tecnologico</h3>
+        <p>
+          Drupal, NodeJS e ReactJS estão na nossa veia. Mas nossa expertize
+          tecnologica vai muito além:
+        </p>
+        <ul>
+          <li><a target="_blank" href="http://drupal.org">Drupal 8</a></li>
+          <li><a target="_blank" href="https://facebook.github.io/react">ReactJS</a></li>
+          <li><a target="_blank" href="http://nodejs.org">NodeJS</a></li>
+          <li><a target="_blank" href="http://mongodb.com">MongoDB</a></li>
+          <li><a target="_blank" href="http://graphql.org">GraphQL</a></li>
+          <li><a target="_blank" href="http://mysql.com">mySQL</a></li>
+          <li><a target="_blank" href="http://lucene.apache.org/solr">Apache Solr</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="section-services">
+      <aside class="services-training">
+        <h3>Treinamentos</h3>
+        <p>Queremos compartilhar as nossas práticas de gestão e know how tecnológico que adquirimos trabalhando com grandes projetos.</p>
+        <a class="call-to-action" href="#contact">Cursos</a>
+      </aside>
+
+      <main class="services-consulting">
+        <h3>Consultoria</h3>
+        <p>Quando um curso é pouco para o desafio do seu projeto, nosso time pode orientar de perto as suas decisões tecnológicas e de gestão.</p>
+        <a class="call-to-action" href="#contact">Consultorias</a>
+      </main>
+
+      <aside class="services-content">
+        <h3>Conteúdo</h3>
+        <p>Nós somos o que fazemos e o que compartilhamos. Estamos sempre retribuindo nossa gratidão com a comunidade.</p>
+        <a class="call-to-action" href="#contact">Leia nosso Blog</a>
+      </aside>
+
+    </section>
+
+
 
     <!-- Products section -->
     <section id="section-products">
@@ -230,54 +298,6 @@
 
 
 
-    <!-- Call-to-action section -->
-    <section id="section-call-to-action">
-      <!-- Services section -->
-      <section id="section-services">
-        {{#with section.services}}
-        <header>
-          <h2>{{{title}}}</h2>
-        </header>
-
-        <main>
-          <article id="service-main">
-              <p>{{{description}}}</p>
-
-              <ul>
-                {{#each list}}
-                  <li>{{{this}}}</li>
-                {{/each}}
-              </ul>
-
-              <a href="#contact">{{{call-to-action}}}</a>
-          </article>
-        </main>
-        {{/with}}
-      </section>
-
-      <!-- Blog section -->
-      <section id="section-blog">
-        {{#with section.blog}}
-        <header>
-          <h2>{{{title}}}</h2>
-        </header>
-
-        <main>
-          <article id="blog-main">
-            <p>{{{description}}}</p>
-
-            <ul>
-              {{#each list}}
-                <li>{{{this}}}</li>
-              {{/each}}
-            </ul>
-
-            <a href="http://blog.taller.net.br">{{{call-to-action}}}</a>
-          </article>
-        </main>
-        {{/with}}
-      </section>
-    </section>
 
     <!-- Newsletter section -->
     <section id="section-newsletter">
