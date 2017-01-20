@@ -2,6 +2,23 @@
  * Cases section styles.
  */
 
+#section-clients
+  @extend %theme-light
+  background-color: white
+  > main
+    text-align: center
+    h4
+      font-family: $font-aleo
+      font-size: 1.25em
+      margin-bottom: 2em
+    ul
+      li
+        list-style: none
+        display: inline-block
+        padding: 1rem
+        vertical-align: middle
+
+
 #section-cases
   @extend %theme-light
   background-color: $color-grey-lightest
@@ -77,12 +94,3 @@
 
       +breakpoint($breakpoint-min-md)
         float: right
-
-  > footer
-    text-align: center
-    ul
-      li
-        list-style: none
-        display: inline-block
-        padding: 1rem
-        vertical-align: middle

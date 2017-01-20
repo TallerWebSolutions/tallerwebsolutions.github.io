@@ -59,6 +59,91 @@
     <img src="/images/header-background.jpg" class="header-background">
 
     <!-- Cases section -->
+    <section id="section-clients">
+      {{#with section.cases}}
+      <main>
+        <h4>{{{clientLogos.header}}}</h4>
+        <ul>
+          <li><img src="/images/parceiros/natura.svg" title="Natura" alt="Natura"></li>
+          <li><img src="/images/parceiros/ogilvy.svg" title="Ogilvy" alt="Ogilvy"></li>
+          <li><img src="/images/parceiros/claro.svg" title="Claro" alt="Claro"></li>
+          <li><img src="/images/parceiros/fiesc.svg" title="FIESC" alt="FIESC"></li>
+          <li><img src="/images/parceiros/usp.svg" title="USP" alt="USP"></li>
+          <li><img src="/images/parceiros/abril.svg" title="Editora Abril" alt="Editora Abril"></li>
+        </ul>
+      </main>
+      {{/with}}
+    </section>
+
+    <!-- Services section -->
+    <section id="section-studio">
+      <header>
+        <h2>O que a Taller oferece?</h2>
+      </header>
+
+      <main>
+        <h3>Ateliê de desenvolvimento de software</h3>
+        <p>
+          Gostamos muito de resolver problemas complexos dos seus negócios.
+          Desenvolvemos soluções digitais customizadas para automatizar seus
+          processos e te ajudar a ser mais eficiênte.
+        </p>
+        <article class="what">
+          <ul class="services-list-first">
+            <li>Grandes portais de conteúdo</li>
+            <li>Aplicativos mobile</li>
+            <li>Sistemas Web</li>
+          </ul>
+          <ul class="services-list-second">
+            <li>Intranet e Extranet</li>
+            <li>Integração entre sistemas</li>
+            <li>API's sob-medida</li>
+          </ul>
+        </article>
+        <a class="call-to-action" href="#contact">Solicite uma Proposta</a>
+      </main>
+
+      <aside class="services-stack">
+        <h3>Nosso stack tecnologico</h3>
+        <p>
+          Drupal, NodeJS e ReactJS estão na nossa veia. Mas nossa expertize
+          tecnologica vai muito além:
+        </p>
+        <ul>
+          <li><a target="_blank" href="http://drupal.org">Drupal 8</a></li>
+          <li><a target="_blank" href="https://facebook.github.io/react">ReactJS</a></li>
+          <li><a target="_blank" href="http://nodejs.org">NodeJS</a></li>
+          <li><a target="_blank" href="http://mongodb.com">MongoDB</a></li>
+          <li><a target="_blank" href="http://graphql.org">GraphQL</a></li>
+          <li><a target="_blank" href="http://mysql.com">mySQL</a></li>
+          <li><a target="_blank" href="http://lucene.apache.org/solr">Apache Solr</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="section-services">
+      <aside class="services-training">
+        <h3>Treinamentos</h3>
+        <p>Queremos compartilhar as nossas práticas de gestão e know how tecnológico que adquirimos trabalhando com grandes projetos.</p>
+        <a class="call-to-action" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSf8UWmFYOTHI60na5oI9Dp-1cs3n5UCU3Dab5n9I5WZ0jLuHw/viewform?c=0&w=1">Cursos</a>
+      </aside>
+
+      <main class="services-consulting">
+        <h3>Consultoria</h3>
+        <p>Quando um curso é pouco para o desafio do seu projeto, nosso time pode orientar de perto as suas decisões tecnológicas e de gestão.</p>
+        <a class="call-to-action" href="#contact">Consultorias</a>
+      </main>
+
+      <aside class="services-content">
+        <h3>Conteúdo</h3>
+        <p>Nós somos o que fazemos e o que compartilhamos. Estamos sempre retribuindo nossa gratidão com a comunidade.</p>
+        <a class="call-to-action" target="_blank" href="http://blog.taller.net.br">Blog</a>
+      </aside>
+
+    </section>
+
+
+      <!-- Cases section -->
     <section id="section-cases">
       {{#with section.cases}}
       <header>
@@ -158,87 +243,9 @@
         <a class="call-to-action" href="#contact">{{{aside.call-to-action}}}</a>
       </aside>
 
-      <footer>
-        <p>{{{clientLogos.header}}}</p>
-        <ul>
-          <li><img src="/images/parceiros/natura.svg" title="Natura" alt="Natura"></li>
-          <li><img src="/images/parceiros/ogilvy.svg" title="Ogilvy" alt="Ogilvy"></li>
-          <li><img src="/images/parceiros/claro.svg" title="Claro" alt="Claro"></li>
-          <li><img src="/images/parceiros/fiesc.svg" title="FIESC" alt="FIESC"></li>
-          <li><img src="/images/parceiros/usp.svg" title="USP" alt="USP"></li>
-          <li><img src="/images/parceiros/abril.svg" title="Editora Abril" alt="Editora Abril"></li>
-        </ul>
-      </footer>
+
       {{/with}}
     </section>
-
-    <!-- Services section -->
-    <section id="section-studio">
-      <header>
-        <h2>O que a Taller oferece?</h2>
-      </header>
-
-      <main>
-        <h3>Ateliê de desenvolvimento de software</h3>
-        <p>
-          Gostamos muito de resolver problemas complexos dos seus negócios.
-          Desenvolvemos soluções digitais customizadas para automatizar seus
-          processos e te ajudar a ser mais eficiênte.
-        </p>
-        <article class="what">
-          <ul class="services-list-first">
-            <li>Grandes portais de conteúdo</li>
-            <li>Aplicativos mobile</li>
-            <li>Sistemas Web</li>
-          </ul>
-          <ul class="services-list-second">
-            <li>Intranet e Extranet</li>
-            <li>Integração entre sistemas</li>
-            <li>API's sob-medida</li>
-          </ul>
-        </article>
-        <a class="call-to-action" href="#contact">Solicite uma Proposta</a>
-      </main>
-
-      <aside class="services-stack">
-        <h3>Nosso stack tecnologico</h3>
-        <p>
-          Drupal, NodeJS e ReactJS estão na nossa veia. Mas nossa expertize
-          tecnologica vai muito além:
-        </p>
-        <ul>
-          <li><a target="_blank" href="http://drupal.org">Drupal 8</a></li>
-          <li><a target="_blank" href="https://facebook.github.io/react">ReactJS</a></li>
-          <li><a target="_blank" href="http://nodejs.org">NodeJS</a></li>
-          <li><a target="_blank" href="http://mongodb.com">MongoDB</a></li>
-          <li><a target="_blank" href="http://graphql.org">GraphQL</a></li>
-          <li><a target="_blank" href="http://mysql.com">mySQL</a></li>
-          <li><a target="_blank" href="http://lucene.apache.org/solr">Apache Solr</a></li>
-        </ul>
-      </aside>
-    </section>
-
-    <section id="section-services">
-      <aside class="services-training">
-        <h3>Treinamentos</h3>
-        <p>Queremos compartilhar as nossas práticas de gestão e know how tecnológico que adquirimos trabalhando com grandes projetos.</p>
-        <a class="call-to-action" href="#contact">Cursos</a>
-      </aside>
-
-      <main class="services-consulting">
-        <h3>Consultoria</h3>
-        <p>Quando um curso é pouco para o desafio do seu projeto, nosso time pode orientar de perto as suas decisões tecnológicas e de gestão.</p>
-        <a class="call-to-action" href="#contact">Consultorias</a>
-      </main>
-
-      <aside class="services-content">
-        <h3>Conteúdo</h3>
-        <p>Nós somos o que fazemos e o que compartilhamos. Estamos sempre retribuindo nossa gratidão com a comunidade.</p>
-        <a class="call-to-action" href="#contact">Leia nosso Blog</a>
-      </aside>
-
-    </section>
-
 
 
     <!-- Products section -->
