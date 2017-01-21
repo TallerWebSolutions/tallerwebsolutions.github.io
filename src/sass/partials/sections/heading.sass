@@ -36,10 +36,6 @@
     &:before
       font-size: 1rem
 
-.header-background
-  width: 100%
-
-
 #section-hero
   @extend %remarkable
   +breakpoint($breakpoint-max-sm)
@@ -49,3 +45,28 @@
   .sub-hero
     font-size: 0.5em
     font-family: $font-sans
+
+#section-members
+  padding: 0
+
+  ul
+    display: flex
+    flex-wrap: wrap
+    margin: 0
+    padding: 0
+    list-style: none
+
+  li
+    width: 12.5%
+    display: block
+
+    > div
+      padding-top: 135%
+      position: relative
+
+      img
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
