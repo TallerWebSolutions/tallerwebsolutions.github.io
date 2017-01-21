@@ -57,8 +57,23 @@
     list-style: none
 
   li
-    width: 12.5%
+    width: 25%
     display: block
+
+    +breakpoint(min-width 476px)
+      width: 20%
+      &#member-ban
+        display: none
+
+    +breakpoint($breakpoint-sm)
+      width: 20%
+      &#member-ban
+        display: none
+
+    +breakpoint($breakpoint-min-sm)
+      width: 12.5%
+      &#member-ban
+        display: block
 
     > div
       padding-top: 135%
