@@ -32,7 +32,8 @@
     "jquery-inview": "^1.1.2",
     "jquery-smooth-scroll": "^1.5.5",
     "parsleyjs": "git://github.com/larsonjj/Parsley.js.git#patch-1",
-    "remodal": "^1.0.2"
+    "remodal": "^1.0.2",
+    "scrollreveal": "^3.3.2"
   },
   "devDependencies": {
     "async": "^1.4.0",

@@ -11,11 +11,11 @@ jQuery(function () {
     }
   });
 
-  $servicesStack.on('inview', function(event, isInView) {
-    if (isInView) {
-      jQuery(this).addClass('rotate');
-    }
-  });
+  // $servicesStack.on('inview', function(event, isInView) {
+  //   if (isInView) {
+  //     jQuery(this).addClass('rotate');
+  //   }
+  // });
 });
 
 require('jquery-inview');
