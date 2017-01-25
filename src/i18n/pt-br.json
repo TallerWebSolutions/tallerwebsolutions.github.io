@@ -198,16 +198,21 @@
     },
 
     "services": {
-      "title": "Nossos serviços",
-      "description": "Estamos preparados para tirá-lo da sua zona de conforto. Oferecemos: ",
-      "list": [
-        "Negócios digitais",
-        "Serviços em desenvolvimento",
-        "Serviços em design",
-        "Consultorias",
-        "Treinamentos"
-      ],
-      "call-to-action": "Entre em contato"
+      "training": {
+        "title": "Treinamentos",
+        "description": "Queremos compartilhar as nossas práticas de gestão e know how tecnológico que adquirimos trabalhando com grandes projetos.",
+        "read-more": "Cursos"
+      },
+      "consulting": {
+        "title": "Consultoria",
+        "description": "Quando um curso é pouco para o desafio do seu projeto, nosso time pode orientar de perto as suas decisões tecnológicas e de gestão.",
+        "read-more": "Consultorias"
+      },
+      "content": {
+        "title": "Conteúdo",
+        "description": "Nós somos o que fazemos e o que compartilhamos. Estamos sempre retribuindo nossa gratidão com a comunidade.",
+        "read-more": "Blog"
+      }
     },
 
     "blog": {

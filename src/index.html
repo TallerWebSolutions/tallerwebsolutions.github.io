@@ -141,24 +141,25 @@
     </section>
 
     <section id="section-services">
+      {{#with section.services}}
       <aside class="services-training">
-        <h3>Treinamentos</h3>
-        <p>Queremos compartilhar as nossas práticas de gestão e know how tecnológico que adquirimos trabalhando com grandes projetos.</p>
-        <a class="call-to-action" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSf8UWmFYOTHI60na5oI9Dp-1cs3n5UCU3Dab5n9I5WZ0jLuHw/viewform?c=0&w=1">Cursos</a>
+        <h3>{{training.title}}</h3>
+        <p>{{training.description}}</p>
+        <a class="call-to-action" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSf8UWmFYOTHI60na5oI9Dp-1cs3n5UCU3Dab5n9I5WZ0jLuHw/viewform?c=0&w=1">{{training.read-more}}</a>
       </aside>
 
       <main class="services-consulting">
-        <h3>Consultoria</h3>
-        <p>Quando um curso é pouco para o desafio do seu projeto, nosso time pode orientar de perto as suas decisões tecnológicas e de gestão.</p>
-        <a class="call-to-action" href="#contact">Consultorias</a>
+        <h3>{{consulting.title}}</h3>
+        <p>{{consulting.description}}</p>
+        <a class="call-to-action" href="#contact">{{consulting.read-more}}</a>
       </main>
 
       <aside class="services-content">
-        <h3>Conteúdo</h3>
-        <p>Nós somos o que fazemos e o que compartilhamos. Estamos sempre retribuindo nossa gratidão com a comunidade.</p>
-        <a class="call-to-action" target="_blank" href="http://blog.taller.net.br">Blog</a>
+        <h3>{{content.title}}</h3>
+        <p>{{content.description}}</p>
+        <a class="call-to-action" target="_blank" href="http://blog.taller.net.br">{{content.read-more}}</a>
       </aside>
-
+      {{/with}}
     </section>
 
 
