@@ -116,23 +116,16 @@
             {{/each}}
           </ul>
         </article>
-        <a class="call-to-action" href="#contact">Solicite uma Proposta</a>
+        <a class="call-to-action" href="#contact">{{{main.call-to-action}}}</a>
       </main>
 
       <aside class="services-stack">
-        <h3>Nosso stack tecnologico</h3>
-        <p>
-          Drupal, NodeJS e ReactJS estão na nossa veia. Mas nossa expertise
-          tecnológica vai muito além:
-        </p>
+        <h3>{{{aside.title}}}</h3>
+        <p>{{{aside.description}}}</p>
         <ul>
-          <li><a target="_blank" href="http://drupal.org">Drupal</a></li>
-          <li><a target="_blank" href="https://facebook.github.io/react">ReactJS</a></li>
-          <li><a target="_blank" href="http://nodejs.org">NodeJS</a></li>
-          <li><a target="_blank" href="http://mongodb.com">MongoDB</a></li>
-          <li><a target="_blank" href="http://graphql.org">GraphQL</a></li>
-          <li><a target="_blank" href="http://mysql.com">mySQL</a></li>
-          <li><a target="_blank" href="http://lucene.apache.org/solr">Apache Solr</a></li>
+          {{#each aside.list}}
+          <li><a target="_blank" href="{{{this.url}}}">{{{this.text}}}</a></li>
+          {{/each}}
         </ul>
       </aside>
       {{/with}}

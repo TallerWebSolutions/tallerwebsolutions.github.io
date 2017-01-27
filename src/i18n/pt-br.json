@@ -209,7 +209,34 @@
           "Integração entre sistemas",
           "API's sob medida"
         ],
-        "call-to-action": "Visite nosso blog"
+        "call-to-action": "Solicite uma proposta"
+      },
+      "aside": {
+        "title": "Nosso stack tecnológico",
+        "description": "Drupal, NodeJS e ReactJS estão na nossa veia. Mas nossa expertise tecnológica vai muito além:",
+        "list": [
+          {
+            "url": "http://www.drupal.org/",
+            "text": "Drupal"
+          }, {
+            "url": "https://facebook.github.io/react",
+            "text": "ReactJS"
+          }, {
+            "url": "http://nodejs.org",
+            "text": "NodeJS"
+          }, {
+            "url": "http://mongodb.com",
+            "text": "MongoDB"
+          },
+          {
+            "url": "http://graphql.org",
+            "text": "GraphQL"
+          },
+          {
+            "url": "http://lucene.apache.org/solr/",
+            "text": "Apache Solr"
+          }
+        ]
       }
     },
 
