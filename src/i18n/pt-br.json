@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Taller Negócios Digitais: empresa especializada em Drupal e ReactJS.",
-    "description": "Somos um time de desenvolvimento de software especializada em Drupal e ReactJS. Também oferecemos consultorias e treinamentos."
+    "description": "Somos um time de desenvolvimento de software especializado em Drupal e ReactJS. Também oferecemos consultorias e treinamentos."
   },
 
   "menu": {
@@ -23,16 +23,13 @@
       "aside": {
         "title": "Nossa cultura valoriza",
         "list": [
-          "Pessoas em primeiro lugar.",
-          "Decisões orientadas a boas práticas.",
-          "Gestão transparente.",
-          "Fluxo contínuo de entrega de valor.",
-          "<i>Métricas Lean</i> para validação de hipóteses.",
-          "Iniciativas de auto-organização.",
-          "Redução de desperdícios.",
-          "Compartilhamento dos nossos aprendizados.",
-          "Participação e organização ativa em eventos.",
-          "Colaboração em comunidades de código aberto."
+          "Pessoas",
+          "Transparência",
+          "Auto-organização",
+          "Compartilhamento conteúdo",
+          "Fluxo continuo de entrega de valor",
+          "Participação e organização de eventos",
+          "Colaboração em comunidades de código aberto"
         ],
         "call-to-action": "<a href='http://google.com'>Veja nossa cultura na prática</a>"
       },
@@ -197,6 +194,25 @@
       }
     },
 
+    "studio": {
+      "title": "O que a Taller faz",
+      "main": {
+        "title": "Ateliê de desenvolvimento de software",
+        "description": "Gostamos muito de resolver problemas complexos dos seus negócios. Desenvolvemos soluções digitais customizadas para automatizar seus processos e ajudar sua empresa a ser mais eficiente.",
+        "what-first": [
+          "Grandes portais de conteúdo",
+          "Aplicativos mobile",
+          "Sistemas Web"
+        ],
+        "what-second": [
+          "Intranet e Extranet",
+          "Integração entre sistemas",
+          "API's sob medida"
+        ],
+        "call-to-action": "Visite nosso blog"
+      }
+    },
+
     "services": {
       "training": {
         "title": "Treinamentos",
@@ -231,7 +247,7 @@
     "newsletter": {
       "description": "Somos o que fazemos e o que compartilhamos.<br/>Receba nossas novidades e conteúdos:",
       "placeholder": "Seu e-mail",
-      "subscribe": "Quero receber",
+      "subscribe": "Receber novidades",
 
       "form": {
         "success": {

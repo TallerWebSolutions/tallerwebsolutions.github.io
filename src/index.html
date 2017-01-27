@@ -96,27 +96,24 @@
 
     <!-- Services section -->
     <section id="section-studio">
+      {{#with section.studio}}
       <header>
-        <h2>O que a Taller oferece?</h2>
+        <h2>{{{title}}}</h2>
       </header>
 
       <main>
-        <h3>Ateliê de desenvolvimento de software</h3>
-        <p>
-          Gostamos muito de resolver problemas complexos dos seus negócios.
-          Desenvolvemos soluções digitais customizadas para automatizar seus
-          processos e te ajudar a ser mais eficiênte.
-        </p>
+        <h3>{{{main.title}}}</h3>
+        <p>{{{main.description}}}</p>
         <article class="what">
           <ul class="services-list-first">
-            <li>Grandes portais de conteúdo</li>
-            <li>Aplicativos mobile</li>
-            <li>Sistemas Web</li>
+            {{#each main.what-first}}
+              <li>{{{this}}}</li>
+            {{/each}}
           </ul>
           <ul class="services-list-second">
-            <li>Intranet e Extranet</li>
-            <li>Integração entre sistemas</li>
-            <li>API's sob-medida</li>
+            {{#each main.what-second}}
+              <li>{{{this}}}</li>
+            {{/each}}
           </ul>
         </article>
         <a class="call-to-action" href="#contact">Solicite uma Proposta</a>
@@ -125,8 +122,8 @@
       <aside class="services-stack">
         <h3>Nosso stack tecnologico</h3>
         <p>
-          Drupal, NodeJS e ReactJS estão na nossa veia. Mas nossa expertize
-          tecnologica vai muito além:
+          Drupal, NodeJS e ReactJS estão na nossa veia. Mas nossa expertise
+          tecnológica vai muito além:
         </p>
         <ul>
           <li><a target="_blank" href="http://drupal.org">Drupal</a></li>
@@ -138,6 +135,7 @@
           <li><a target="_blank" href="http://lucene.apache.org/solr">Apache Solr</a></li>
         </ul>
       </aside>
+      {{/with}}
     </section>
 
     <section id="section-services">
@@ -162,8 +160,7 @@
       {{/with}}
     </section>
 
-
-      <!-- Cases section -->
+    <!-- Cases section -->
     <section id="section-cases">
       {{#with section.cases}}
       <header>
@@ -322,8 +319,6 @@
       </footer>
       {{/with}}
     </section>
-
-
 
 
     <!-- Newsletter section -->
