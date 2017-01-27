@@ -199,12 +199,12 @@
       "main": {
         "title": "Ateliê de desenvolvimento de software",
         "description": "Gostamos muito de resolver problemas complexos dos seus negócios. Desenvolvemos soluções digitais customizadas para automatizar seus processos e ajudar sua empresa a ser mais eficiente.",
-        "what-first": [
+        "list-first": [
           "Grandes portais de conteúdo",
           "Aplicativos mobile",
           "Sistemas Web"
         ],
-        "what-second": [
+        "list-second": [
           "Intranet e Extranet",
           "Integração entre sistemas",
           "API's sob medida"
