@@ -192,17 +192,68 @@
       }
     },
 
+    "studio": {
+      "title": "What Taller do",
+      "main": {
+        "title": "Software Development Studio",
+        "description": "We love to help solve complex problems of your business. We develop custom digital solutions to automate your process and help your company to be more efficient.",        
+        "list-first": [
+          "Big content websites",
+          "Mobile Apps",
+          "Web Apps"
+        ],
+        "list-second": [
+          "Intranet and Extranet",
+          "System integration",
+          "Custom API's"
+        ],
+        "call-to-action": "Request a proposal"
+      },
+      "aside": {
+        "title": "Our technological stack",
+        "description": "Drupal, NodeJS and ReactJS are in our vein. But our expertise go beyond:",
+        "list": [
+          {
+            "url": "http://www.drupal.org/",
+            "text": "Drupal"
+          }, {
+            "url": "https://facebook.github.io/react",
+            "text": "ReactJS"
+          }, {
+            "url": "http://nodejs.org",
+            "text": "NodeJS"
+          }, {
+            "url": "http://mongodb.com",
+            "text": "MongoDB"
+          },
+          {
+            "url": "http://graphql.org",
+            "text": "GraphQL"
+          },
+          {
+            "url": "http://lucene.apache.org/solr/",
+            "text": "Apache Solr"
+          }
+        ]
+      }
+    },
+
     "services": {
-      "title": "Our services",
-      "description": "We are prepared to take you out of your comfort zone. We offer: ",
-      "list": [
-        "Digital business",
-        "Development services",
-        "Design services",
-        "Consultancy",
-        "Coaching"
-      ],
-      "call-to-action": "Contact us"
+      "training": {
+        "title": "Training",
+        "description": "We want to share the management practices and technology know how we acquire working on big projects",
+        "read-more": "Courses"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "When a training is not enoutgh to yours challenges, our team can help to orient your tech and management decisions",
+        "read-more": "Consulting"
+      },
+      "content": {
+        "title": "Content",
+        "description": "We are what we do and what we share. We are always given back to the community.",
+        "read-more": "Blog"
+      }
     },
 
     "blog": {
