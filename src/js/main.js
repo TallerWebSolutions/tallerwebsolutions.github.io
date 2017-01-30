@@ -2,6 +2,7 @@
  * @file Main Taller website script.
  */
 
+require('./lib/photo-swipe')
 require('./lib/img-slide');
 require('./lib/smooth-scroll');
 require('./lib/scrollreveal');
