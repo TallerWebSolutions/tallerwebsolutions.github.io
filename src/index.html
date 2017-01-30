@@ -58,22 +58,32 @@
 
     <section id="section-members">
       <ul>
-        <li><div><img src="/images/members/1.jpg" /></div></li>
-        <li><div><img src="/images/members/2.jpg" /></div></li>
-        <li><div><img src="/images/members/3.jpg" /></div></li>
-        <li><div><img src="/images/members/4.jpg" /></div></li>
-        <li><div><img src="/images/members/5.jpg" /></div></li>
-        <li><div><img src="/images/members/6.jpg" /></div></li>
-        <li><div><img src="/images/members/7.jpg" /></div></li>
-        <li><div><img src="/images/members/8.jpg" /></div></li>
-        <li><div><img src="/images/members/9.jpg" /></div></li>
-        <li><div><img src="/images/members/10.jpg" /></div></li>
-        <li><div><img src="/images/members/11.jpg" /></div></li>
-        <li><div><img src="/images/members/12.jpg" /></div></li>
-        <li id="member-ban"><div><img src="/images/members/13.jpg" /></div></li>
-        <li><div><img src="/images/members/14.jpg" /></div></li>
-        <li><div><img src="/images/members/15.jpg" /></div></li>
-        <li><div><img src="/images/members/16.jpg" /></div></li>
+        <li
+          v-for="member in members"
+          v-bind:id="'member-' + member.name"
+          v-on:click="swipe(member)"
+        >
+          <div>
+            <img v-bind:src="member.image" />
+          </div>
+        </li>
+
+        <li v-if="!started"><div><img src="/images/members/1.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/2.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/3.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/4.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/5.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/6.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/7.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/8.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/9.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/10.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/11.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/12.jpg" /></div></li>
+        <li v-if="!started" id="member-ban"><div><img src="/images/members/13.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/14.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/15.jpg" /></div></li>
+        <li v-if="!started"><div><img src="/images/members/16.jpg" /></div></li>
       </ul>
     </section>
 
