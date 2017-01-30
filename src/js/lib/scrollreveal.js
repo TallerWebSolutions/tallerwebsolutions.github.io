@@ -12,3 +12,13 @@ sr.reveal('.services-stack', {
     jQuery(el).addClass('rotate');
   }
 }, 50)
+
+sr.reveal('#section-clients ul')
+
+sr.reveal('.img-slide main', {
+  rotate: { x: 10, y: 0, z: 0 },
+})
+
+sr.reveal('.img-slide aside', {
+  rotate: { x: 0, y: 10, z: 0 },
+})
