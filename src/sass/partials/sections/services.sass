@@ -1,3 +1,15 @@
+%icon-decorated-title
+  position: relative
+
+  &::before
+    content: " "
+    width: 22px
+    height: 22px
+    display: block
+    position: absolute
+    top: 0.05em
+    left: -1.6em
+
 #section-studio
   @extend %theme-light
   @extend %clearfix
@@ -8,14 +20,8 @@
     ul
       @extend %col-md-6
     h3
+      @extend %icon-decorated-title
       &::before
-        content: " "
-        width: 22px
-        height: 22px
-        display: block
-        position: absolute
-        top: 1.2em
-        left: -0.7em
         background: url(/images/icons/icon_taller.png) no-repeat center center
     a
       @extend %button-outline-fulfiled
@@ -53,14 +59,7 @@
       @extend %col-md-4
       padding: 1em 2em
       h3
-        &::before
-          content: " "
-          width: 22px
-          height: 22px
-          display: block
-          position: absolute
-          top: 2em
-          left: 0
+        @extend %icon-decorated-title
 
       p
         color: $color-grey
@@ -68,13 +67,11 @@
         @extend %button-outline-arrow
         color: $color-grey
 
-    .services-training
-      h3
-        &::before
-          background: url("/images/icons/icon_treinameto.png") no-repeat center center
-    .services-consulting
-      h3::before
-        background: url("/images/icons/icon_consultoria.png") no-repeat center center
-    .services-content
-      h3::before
-        background: url("/images/icons/icon_conteudo.png") no-repeat center center
+    .services-training h3::before
+      background: url("/images/icons/icon_treinameto.png") no-repeat center center
+
+    .services-consulting h3::before
+      background: url("/images/icons/icon_consultoria.png") no-repeat center center
+
+    .services-content h3::before
+      background: url("/images/icons/icon_conteudo.png") no-repeat center center
