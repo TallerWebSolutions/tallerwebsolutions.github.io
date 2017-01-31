@@ -1,55 +1,6 @@
-%icon-decorated-title
-  position: relative
-
-  &::before
-    content: " "
-    width: 22px
-    height: 22px
-    display: block
-    position: absolute
-    top: 0.05em
-    left: -1.6em
-
-#section-studio
-  @extend %theme-light
-  @extend %clearfix
-  background-color: #eaf1f9
-
-  > main
-    @extend %col-md-8
-    ul
-      @extend %col-md-6
-    h3
-      @extend %icon-decorated-title
-      &::before
-        background: url(/images/icons/icon_taller.png) no-repeat center center
-    a
-      @extend %button-outline-fulfiled
-      @extend %taller-icon-after-arrow-right
-      &:after
-          margin-left: 1.2em
-
-  > aside
-    @extend %col-md-4
-    @extend %theme-light
-    background-color: white
-    padding: 1em 2em
-    margin-top: 2em
-    +breakpoint($breakpoint-min-md)
-      margin-top: 1em
-    border-radius: 8px
-    ul
-      @extend %tags
-      a
-        @extend %tag
-
-  > aside.rotate
-    +breakpoint($breakpoint-min-md)
-      transform: rotate(3deg) !important
-      box-shadow: 7px 10px 27px rgba(0, 0, 0, 0.1)
-      margin-top: 0
-      transition: all 0.5s ease-out !important
-
+/**
+ * Services section styles.
+ */
 
 #section-services
     clear: both

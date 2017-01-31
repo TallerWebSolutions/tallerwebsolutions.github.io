@@ -23,3 +23,18 @@ $taller-icons: (arrow-down: 'b', dot: 'c', icon-taller: 'd', arrow-right: 'a')
       @extend %taller-icon-#{$position}
       &:#{$position}
         content: $char
+
+// Helper components.
+// ------------------
+
+%icon-decorated-title
+  position: relative
+
+  &::before
+    content: " "
+    width: 22px
+    height: 22px
+    display: block
+    position: absolute
+    top: 0.05em
+    left: -1.6em
