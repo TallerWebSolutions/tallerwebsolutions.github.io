@@ -1,5 +1,8 @@
 nav
-  @extend %clearfix
+  display: flex
+  justify-content: space-between
+  align-items: center
+
   a
     color: white !important
     text-decoration: none
@@ -19,10 +22,11 @@ nav
 
   > main
     float: right
-    margin-right: 15px
 
     ul
       text-align: right
+      margin: 0
+
     li
       display: inline
       list-style: none
