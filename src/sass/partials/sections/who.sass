@@ -4,46 +4,63 @@
 
 #section-who
   @extend %theme-dark
-  @extend %clearfix
-
-  > aside,
-  > main,
-  > footer
-    @extend %col-md-6
-
-  > main,
-  > footer
-    @extend %col-md-pull-6
+  padding: 6rem 10%
+  article
+    @extend %theme-light
+    @extend %clearfix
+    border-radius: 10px
     +breakpoint($breakpoint-min-md)
-      padding-right: 100px
+      padding: 2em 2em
 
-  > aside
-    @extend %col-md-push-6
+    > aside,
+    > main
+      @extend %col-md-6
+      margin: 1em 0
 
-    ol li
-      line-height: 1.25em
-      margin-bottom: 0.55em
+    > main
+      @extend %col-md-pull-6
+      text-align: center
+      img
+        width: 100%
+      a
+        @extend %button-outline-fulfiled
+        @extend %taller-icon-after-arrow-right
+        &:after
+            margin-left: 1.2em
+      +breakpoint($breakpoint-min-md)
+        text-align: left
+        padding-right: 100px
+        img
+          width: 140%
+          margin-left: -20%
+          margin-top: -30%
 
-  > main
-    font-size: 1.25em
+    > aside
+      @extend %col-md-push-6
+      +breakpoint($breakpoint-min-md)
+        padding-left: 2em
 
-    p:last-child
-      font-size: 0.85em
+      ul
+        list-style-type: none
+        padding: 0
+        li
+          font-size: 0.8rem
+          color: $color-grey
 
-  > footer
-    a
-      @extend %taller-icon-before-icon-taller
-      &:before
-        float: left
-        margin-right: 0.3em
-        font-size: 1.3em
+      a
+        @extend %taller-icon-before-icon-taller
+        &:before
+          float: left
+          margin-right: 0.3em
+          font-size: 1.3em
 
-  > footer a, > aside > a
-    display: block
-    margin-top: 0.5em
-    border: none
-    padding: 0
-    font-weight: bold
-    font-family: Alegreya
-    font-style: italic
-    font-size: 1.1em
+
+    > footer a, > aside > a
+      display: block
+      margin-top: 0.5em
+      border: none
+      padding: 0
+      font-weight: bold
+      font-family: Alegreya
+      font-style: italic
+      font-size: 1.1em

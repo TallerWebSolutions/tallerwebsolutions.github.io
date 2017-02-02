@@ -268,32 +268,6 @@
     </section>
 
 
-    <!-- Products section -->
-    <section id="section-products">
-      {{#with section.products}}
-      <header>
-        <h2>{{{title}}}</h2>
-      </header>
-
-      <main>
-        <article id="product-el-tracker" class="img-slide img-slide-right">
-          {{#with list.el-tracker}}
-          <main>
-            <h3>{{{title}}}</h3>
-
-            <p>{{{description}}}</p>
-            <a class="read-more" href="http://eltracker.io/">{{{read-more}}}</a>
-          </main>
-
-          <aside>
-            <img src="/images/mockup_eltracker.png">
-          </aside>
-          {{/with}}
-        </article>
-      </main>
-      {{/with}}
-    </section>
-
     <!-- Who section -->
     <section id="section-who">
       {{#with section.who}}
@@ -301,25 +275,22 @@
         <h2>{{title}}</h2>
       </header>
 
-      <aside>
-        <h3>{{aside.title}}:</h3>
-        <ol>
-          {{#each aside.list}}
-          <li>{{{this}}}</li>
-          {{/each}}
-        </ol>
-        <!--{{{aside.call-to-action}}}-->
-      </aside>
-
-      <main>
-        {{#each main}}
-        <p>{{{this}}}</p>
-        {{/each}}
-      </main>
-
-      <footer>
-        <p><a href="http://blog.taller.net.br/a-historia-da-taller-2-0/">{{{footer.call-to-action}}}</a></p>
-      </footer>
+      <article>
+        <aside>
+          <h3>{{aside.title}}:</h3>
+          <ul>
+            {{#each aside.list}}
+            <li>{{{this}}}</li>
+            {{/each}}
+          </ul>
+          {{{aside.call-to-action}}}
+        </aside>
+        <main>
+          <img src="/images/galera.png" alt="Taller Team">
+          <p>{{{main.description}}}</p>
+          <a class="call-to-action" href="#contact">{{{main.call-to-action}}}</a>
+        </main>
+      </article>
       {{/with}}
     </section>
 
