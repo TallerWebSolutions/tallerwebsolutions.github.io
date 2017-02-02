@@ -15,26 +15,23 @@
 
   "section": {
     "who": {
-      "title": "Quem somos",
-      "main": [
-        "Acreditamos que a tecnologia potencializa a capacidade humana.",
-        "Desenvolvemos soluções que ajudam empresas de todos os tamanhos a atender seus objetivos de negócio."
-      ],
+      "title": "Sobre a Taller",
+      "main": {
+        "description": "Gostaria de fazer parte do nosso time?",
+        "call-to-action": "Envie seu currículo"
+      },
       "aside": {
         "title": "Nossa cultura valoriza",
         "list": [
-          "Pessoas",
-          "Transparência",
-          "Auto-organização",
-          "Compartilhamento conteúdo",
-          "Fluxo continuo de entrega de valor",
-          "Participação e organização de eventos",
-          "Colaboração em comunidades de código aberto"
+          "#Pessoas",
+          "#Transparência",
+          "#Auto-organização",
+          "#Compartilhar conhecimento",
+          "#Fluxo continuo de entrega de valor",
+          "#Participação e organização de eventos",
+          "#Colaboração em comunidades de código aberto"
         ],
-        "call-to-action": "<a href='http://google.com'>Veja nossa cultura na prática</a>"
-      },
-      "footer": {
-        "call-to-action": "Conheça nosso time e nossa história."
+        "call-to-action": "<a target='_blank' href='http://blog.taller.net.br/a-historia-da-taller-2-0/'>Conheça nosso time e nossa história.</a>"
       }
     },
 
