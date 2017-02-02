@@ -10,7 +10,10 @@
   article
     @extend %theme-light
     @extend %clearfix
+    max-width: 1080px
+    margin: 0 auto
     border-radius: 10px
+
     +breakpoint($breakpoint-min-md)
       padding: 2em 2em
 
@@ -22,6 +25,14 @@
       @extend %col-md-pull-6
       text-align: center
       margin: 1em 0 2em
+      img
+        width: 100%
+      a
+        @extend %button-outline-fulfiled
+        @extend %taller-icon-after-arrow-right
+        &:after
+            margin-left: 1.2em
+
       +breakpoint($breakpoint-min-md)
         text-align: left
         padding-right: 100px
@@ -34,16 +45,6 @@
           width: 130%
           margin-left: -15%
           margin-top: -20%
-          
-      img
-        width: 100%
-      a
-        @extend %button-outline-fulfiled
-        @extend %taller-icon-after-arrow-right
-        &:after
-            margin-left: 1.2em
-
-
 
     > aside
       @extend %col-md-push-6
