@@ -4,7 +4,9 @@
 
 #section-who
   @extend %theme-dark
-  padding: 6rem 10%
+  padding: 3rem 5% 5rem
+  +breakpoint($breakpoint-min-md)
+    padding: 6rem 10%
   article
     @extend %theme-light
     @extend %clearfix
@@ -15,18 +17,11 @@
     > aside,
     > main
       @extend %col-md-6
-      margin: 1em 0
 
     > main
       @extend %col-md-pull-6
       text-align: center
-      img
-        width: 100%
-      a
-        @extend %button-outline-fulfiled
-        @extend %taller-icon-after-arrow-right
-        &:after
-            margin-left: 1.2em
+      margin: 1em 0 2em
       +breakpoint($breakpoint-min-md)
         text-align: left
         padding-right: 100px
@@ -39,9 +34,21 @@
           width: 130%
           margin-left: -15%
           margin-top: -20%
+          
+      img
+        width: 100%
+      a
+        @extend %button-outline-fulfiled
+        @extend %taller-icon-after-arrow-right
+        &:after
+            margin-left: 1.2em
+
+
 
     > aside
       @extend %col-md-push-6
+      margin: 1em 0
+
       +breakpoint($breakpoint-min-md)
         padding-left: 2em
 
@@ -49,7 +56,10 @@
         list-style-type: none
         padding: 0
         li
-          font-size: 0.8rem
+          font-size: 0.9em
+          +breakpoint($breakpoint-min-md)
+            font-size: 1em
+
           color: $color-grey
 
       a
