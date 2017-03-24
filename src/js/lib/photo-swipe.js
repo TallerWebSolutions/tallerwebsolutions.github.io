@@ -11,7 +11,6 @@ const members = new Vue({
     started: true,
     members: [
       { name: 'recidive', image: '/images/members/1.jpg' },
-      { name: 'handrus', image: '/images/members/2.jpg' },
       { name: 'italo', image: '/images/members/3.jpg' },
       { name: 'anderson', image: '/images/members/4.jpg' },
       { name: 'mari', image: '/images/members/5.jpg' },
@@ -20,12 +19,13 @@ const members = new Vue({
       { name: 'joseph', image: '/images/members/8.jpg' },
       { name: 'celso', image: '/images/members/9.jpg' },
       { name: 'becker', image: '/images/members/10.jpg' },
-      { name: 'mario', image: '/images/members/11.jpg' },
       { name: 'sebas', image: '/images/members/12.jpg' },
       { name: 'ban', image: '/images/members/13.jpg' },
       { name: 'rafa', image: '/images/members/14.jpg' },
-      { name: 'denis', image: '/images/members/15.jpg' },
       { name: 'helal', image: '/images/members/16.jpg' },
+      { name: 'marcos', image: '/images/members/17.jpg' },
+      { name: 'recidive', image: '/images/members/1.jpg' },
+      { name: 'italo', image: '/images/members/3.jpg' },
     ]
   },
   methods: {
