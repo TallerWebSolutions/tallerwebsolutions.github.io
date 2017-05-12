@@ -3,6 +3,7 @@
  */
 
 require('./lib/photo-swipe')
+require('./lib/tilt-effect')
 require('./lib/img-slide');
 require('./lib/smooth-scroll');
 require('./lib/scrollreveal');
