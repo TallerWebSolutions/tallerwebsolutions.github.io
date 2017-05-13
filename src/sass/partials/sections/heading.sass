@@ -28,7 +28,7 @@
     position: absolute
     bottom: 0
     right: 20%
-    z-index: 1
+    z-index: 3
     transform: translate3d(-50%, 50%, 0)
     +breakpoint($breakpoint-max-sm)
       display: none
@@ -59,10 +59,15 @@
   li
     width: 14.28%
     display: block
+    z-index: 1
 
     &:hover
-      z-index: 9
-      box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.7), 0 50px 100px 0 rgba(51, 51, 51, 0.2)
+      z-index: 2
+      // Fixes a bug in Safari: https://github.com/gijsroge/tilt.js/issues/4.
+      transform: translateZ(10px)
+      -webkit-box-shadow: 0px 27px 115px -21px rgba(0,0,0,0.75)
+      -moz-box-shadow: 0px 27px 115px -21px rgba(0,0,0,0.75)
+      box-shadow: 0px 27px 115px -21px rgba(0,0,0,0.75)
 
     &[v-for]
       display: none
