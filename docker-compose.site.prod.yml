@@ -6,10 +6,6 @@ networks:
       name: dockerproxy_service-tier
 
 services:
-  meta:
-    image: busybox
-    env_file:
-      - .env
   site:
     build:
       context: ./docker/
