@@ -4,24 +4,19 @@ networks:
   default:
     external:
       name: dockerproxy_service-tier
-  taller_network:
-    driver: bridge
-    ipam:
-      driver: default
 
 services:
+  meta:
+    image: busybox
+    env_file:
+      - .env
   site:
     build:
       context: ./docker/
     hostname: taller-site
     environment:
       # Add this server to the proxy.
-      - VIRTUAL_HOST=dev-site.taller.net.br,taller.net.br,cursos.taller.net.br
-    cap_add:
-      - ALL
-    links:
-      - database:database-host
-      # - selenium
+      - VIRTUAL_HOST=taller.net.br,cursos.taller.net.br
     working_dir: /taller/site
     container_name: taller-site
     volumes:
