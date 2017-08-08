@@ -1,0 +1,55 @@
+version: '2'
+
+networks:
+  default:
+    external:
+      name: dockerproxy_service-tier
+  taller_network:
+    driver: bridge
+    ipam:
+      driver: default
+
+services:
+  # This container is used only for reusing configuration.
+  meta:
+    image: busybox
+    environment:
+      - MYSQL_USER=drupal
+      - MYSQL_DATABASE=drupal
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+
+  blog:
+    extends: meta
+    image: fiesc-fsi-app
+    container_name: taller-blog
+    build:
+      context: ./docker/
+      args:
+        USER_ID: "$USER_ID"
+        GROUP_ID: "$GROUP_ID"
+    hostname: blog
+    environment:
+      # Add this server to the proxy.
+      - VIRTUAL_HOST=blog.taller.net.br
+    cap_add:
+      - ALL
+    links:
+      - database:database-host
+    volumes:
+      - $HOME/.ssh:/drupal/.ssh
+      - $HOME/.gitconfig:/drupal/.gitconfig
+      - $PWD:/taller/blog
+      - /mnt/volume-baleia-prod/taller-blog:/taller/blog
+    command: tail -f /dev/null
+
+  database:
+    extends: meta
+    image: mysql:5.6
+    container_name: taller-blog-db
+    volumes:
+      - $PWD/.mysql/:/var/lib/mysql
+
+  #selenium:
+  #  image: selenium/standalone-chrome
+  #  container_name: taller-selenium
