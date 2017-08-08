@@ -65,6 +65,6 @@ PATH="$PWD/node_modules/.bin:$PATH"
 
 echo ""
 echo "-----------------------------"
-echo "Virtual Machine ready to work"
+echo "    Machine ready to work"
 echo "-----------------------------"
 echo ""
