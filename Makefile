@@ -1,4 +1,4 @@
-.PHONY: run in stop clean ci-build build default
+.PHONY: run in stop clean ci-build build prod default
 
 # Task declarations.
 # ------------------
@@ -17,5 +17,8 @@ clean:
 
 build:
 	docker-compose build
+
+prod:
+	docker-compose -f docker-compose.site.prod.yml up -d
 
 default: run
