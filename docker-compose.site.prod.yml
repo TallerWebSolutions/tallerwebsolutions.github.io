@@ -7,17 +7,14 @@ networks:
 
 services:
   site:
+    image: taller-site-prod
     build:
       context: ./docker/
-    hostname: taller-site
+    hostname: taller-site-prod
     environment:
       # Add this server to the proxy.
       - VIRTUAL_HOST=taller.net.br,cursos.taller.net.br
-    working_dir: /taller/site
-    container_name: taller-site
+    container_name: taller-site-prod
     volumes:
-      - $HOME/.ssh:/taller/.ssh
-      - $HOME/.gitconfig:/taller/.gitconfig
-      - $PWD:/taller/site
-      - /mnt/volume-baleia-prod/taller-site:/taller/site
-    command: tail -f /dev/null
+      - /mnt/volume-baleia-prod/taller-site/.tmp:/usr/share/nginx/html:ro
+    # command: tail -f /dev/null
