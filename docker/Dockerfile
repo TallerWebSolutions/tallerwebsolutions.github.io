@@ -1,4 +1,4 @@
-FROM taller/node
+FROM nginx
 
 # Build-time configuration.
 # -------------------------
