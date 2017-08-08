@@ -3,6 +3,7 @@
 
 # TEAM
 
+    Reva -- Full Stack Dev -- @revagomes
     <name> -- <role> -- <twitter>
 
 # THANKS
