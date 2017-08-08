@@ -63,11 +63,11 @@ gulp.task('clean:styleguide', cleaner(tmpDir('styleguide/**/*')));
  */
 
 gulp.task('index', ['index:create', 'index:i18n', 'index:inject']);
+gulp.task('consulting', ['consulting:create', 'consulting:i18n', 'consulting:inject']);
 gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
 gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
 gulp.task('sass', compiler('./src/sass/main.sass'));
 gulp.task('scripts', taskScripts);
-
 
 /*
  * Index sub-tasks.
@@ -76,6 +76,14 @@ gulp.task('scripts', taskScripts);
 gulp.task('index:create', copier('./src/index.html', tmpDir()));
 gulp.task('index:inject', ['index:create', 'sass', 'scripts'], taskIndexInject);
 gulp.task('index:i18n', ['index:inject'], taskIndexI18n);
+
+/*
+ * Consulting sub-tasks.
+ */
+
+gulp.task('consulting:create', copier('./src/consulting.html', tmpDir()));
+gulp.task('consulting:inject', ['consulting:create', 'sass', 'scripts'], taskConsultingInject);
+gulp.task('consulting:i18n', ['consulting:inject'], taskConsultingI18n);
 
 /*
  * Static files copy
@@ -148,6 +156,18 @@ function taskIndexI18n(done) {
   });
 }
 
+function taskConsultingI18n(done) {
+  loadTranslations(function () {
+    async.each(Object.keys(translations), function (language, next) {
+      gulp.src(tmpDir('consulting.html'))
+        .pipe(handlebars({ data: translations[language] }))
+        // .pipe(i18n({ messages: translations[language] }))
+        .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
+        .on('end', next);
+    }, done);
+  });
+}
+
 function taskIndexInject() {
   var sources = gulp.src([
     tmpDir('js/**/*'),
@@ -155,6 +175,20 @@ function taskIndexInject() {
   ], { read: false });
 
   return gulp.src(tmpDir('index.html'))
+    .pipe(inject(sources, {
+      relative: true,
+      addRootSlash: true
+    }))
+    .pipe(gulp.dest(tmpDir()));
+}
+
+function taskConsultingInject() {
+  var sources = gulp.src([
+    tmpDir('js/**/*'),
+    tmpDir('css/**/*'),
+  ], { read: false });
+
+  return gulp.src(tmpDir('consulting.html'))
     .pipe(inject(sources, {
       relative: true,
       addRootSlash: true
