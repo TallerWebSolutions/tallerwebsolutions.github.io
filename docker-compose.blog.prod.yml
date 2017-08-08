@@ -13,11 +13,13 @@ services:
   # This container is used only for reusing configuration.
   meta:
     image: busybox
-    environment:
-      - MYSQL_USER=drupal
-      - MYSQL_DATABASE=drupal
-      - MYSQL_PASSWORD=password
-      - MYSQL_ROOT_PASSWORD=password
+    env_file:
+      - .env
+    # environment:
+    #   - MYSQL_USER=drupal
+    #   - MYSQL_DATABASE=drupal
+    #   - MYSQL_PASSWORD=password
+    #   - MYSQL_ROOT_PASSWORD=password
 
   blog:
     extends: meta
