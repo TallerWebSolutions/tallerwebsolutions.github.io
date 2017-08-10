@@ -323,5 +323,98 @@
 
   "util": {
     "know-more": "Saiba mais"
+  },
+
+  "consulting": {
+    "main-title": "Programa de Otimização da <br><strong>Gestão Ágil</strong>",
+    "main-sub-title": "Levando a gestão da sua empresa para o próximo nível",
+    "info": {
+      "title": "O Programa",
+      "description": "Com atividades bem detalhadas e adaptáveis, nossos profissionais guiarão suavemente a organização nos passos necessários para obter a visão sistêmica da do portfólio e caminhar em direção a uma gestão de projetos incrível,  e mais:",
+      "details": [
+        "Diminua o custo de coordenação.",
+        "Auxilie a organização na busca pela melhoria contínua.",
+        "Tome decisões de gestão com base em números e estatísticas.",
+        "Reduza os impactos da variabilidade e aumente a robustez."
+      ]
+    },
+    "why": {
+      "title": "Por que levar o programa para sua empresa",
+      "description": "Com experiência de anos aplicando agilidade e melhoria contínua nas principais áreas do desenvolvimento de software, a Taller uniu a experiência do soft e hard skills e preparou o Programa para otimizar os seguintes pontos:",
+      "details": [
+        "Previsibilidade e visibilidade dos projetos da organização.",
+        "Redução dos impactos econômicos dessa variabilidade.",
+        "Priorização de projetos e demandas.",
+        "Quando contratar.",
+        "Como gerenciar o conhecimento de diversos times para que a informação não se perca na organização."
+      ],
+      "conclusion": "O programa possui suas bases no Método Kanban, e nos conceitos mais modernos desenvolvidos em torno dele, como o conceito de fitness for purpose e alguns elementos do STATIK."
+    },
+    "how": {
+      "title": "Como funciona o Programa",
+      "description": "O Programa de Otimização da Gestão Ágil foi concebido para ser aplicado de forma 100% remota, facilitando o fluxo de trabalho.",
+      "picture": "link",
+      "steps": [
+        {
+          "index": "Etapa 1",
+          "title": "Ler o Sistema",
+          "description": "Nesta leitura levantamos dados e comportamento essenciais para o entendimento da dinâmica do contexto e aplicação do programa. Todo o sistema de métricas, assim como todos os artefatos serão levantados e mapeados."
+        },
+        {
+          "index": "Etapa 2",
+          "title": "Estabelecer um Plano",
+          "description": "Planos de ação e de rollback para iniciar as mudanças desejadas. Este passo possui atividades que resultarão em relatórios,  cadência e estratégia de reuniões e \"proto-planos\" que nada mais são que o resultado de análises de assimetrias e SWOT."
+        },
+        {
+          "index": "Etapa 3",
+          "title": "Girar a Roda",
+          "description": "Acompanharemos as cadências de preenchimento e análise das planilhas, as políticas de fluxo e preenchimento de apresentações. Também teremos a execução do plano de comunicação para mudanças maiores, olhando o que foi definido nos passos anteriores."
+        }
+      ]
+    },
+    "extra": {
+      "title": "Extra",
+      "description": "Além de todas as atividades desenvolvidas ao longo do Programa, contamos com o Plano de Mentoria em Gestão Enxuta com Alisson Vale, Rodrigo Yoshima e Luiz Parzianello desenvolvido exclusivamente para este programa.",
+      "people": [
+        {
+          "name": "<a href='https://www.linkedin.com/in/rodrigoy/'>Rodrigo Yoshima</a>",
+          "job": "Fundador da Aspercom"
+        },
+        {
+          "name": "<a href='https://www.linkedin.com/in/alissonvale/'>Alisson Vale</a>",
+          "job": "Fundador do Software Zen"
+        },
+        {
+          "name": "<a href='https://www.linkedin.com/in/luizparzianello/'>Luiz Parzianello</a>",
+          "job": "Autor do Lean Business Analysis"
+        }
+      ]
+    },
+    "contents": {
+      "title": "Conteúdos que darão suporte ao Programa",
+      "items": [
+        {
+          "icon": "",
+          "title": "<a href='http://blog.taller.net.br/do-caos-ao-custo-medio-por-demanda/'>Ebook - Do caos ou custo médio por demanda</a>"
+        },
+        {
+          "icon": "",
+          "title": "<a href='http://blog.taller.net.br/ebook-equilibrio-portfolio-projeto/'>Ebook - O equilíbrio do Portfólio de Projeto.</a>"
+        },
+        {
+          "icon": "",
+          "title": "<a href='http://blog.taller.net.br/taverna-taller-8-fluxo-unificado-celso-martins/'>Podcast - As bases do fluxo unificado.</a>"
+        }
+      ]
+    },
+    "footer": {
+      "title": "Se sua empresa busca ir para próximo nível de gestão entre em contato.",
+      "description": "Agende uma conversa com um nossos consultores, tire suas dúvidas e obtenha as informações necessárias para começar o Programa de Otimização da Gestão Ágil.",
+      "contact": {
+        "label": "É só enviar um email para:",
+        "email": "<script language='JavaScript'> var username = 'rafael'; var hostname = 'taller.net.br'; var linktext = username + '@' + hostname ; document.write(\"<a href='\" + \"mail\" + \"to:\" + username + \"@\" + hostname + \"'>\" + linktext + \"</a>\"); </script>",
+        "phone": "ou ligue para:<br> (48) XXXXX-XXXX"
+      }
+    }
   }
 }
