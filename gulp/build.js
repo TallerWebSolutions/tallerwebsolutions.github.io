@@ -96,15 +96,19 @@ gulp.task('consulting:i18n', ['consulting:inject'], taskConsultingI18n);
 
 gulp.task('sass:structure', compiler('./src/sass/structure.scss', 'structure/css'));
 gulp.task('index:structure', ['index:structure:create', 'index:structure:inject']);
-
+gulp.task('consulting:structure', ['consulting:structure:create', 'consulting:structure:inject']);
 
 /*
  * Structure index sub-tasks.
  */
-
 gulp.task('index:structure:create', ['index'], copier(tmpDir('index.html'), tmpDir('structure')));
 gulp.task('index:structure:inject', ['index:structure:create', 'sass:structure'], taskIndexStructureInject);
 
+/*
+ * Structure consulting sub-tasks.
+ */
+gulp.task('consulting:structure:create', ['consulting'], copier(tmpDir('consulting.html'), tmpDir('structure')));
+gulp.task('consulting:structure:inject', ['consulting:structure:create', 'sass:structure'], taskIndexStructureInject);
 
 /*
  * Core building tasks.
@@ -204,10 +208,19 @@ function taskIndexStructureInject() {
     .pipe(gulp.dest(tmpDir('structure')));
 }
 
+function taskConsultingStructureInject() {
+  var injects = gulp.src(tmpDir('structure/css/**/*'), { read: false });
+
+  return gulp.src(tmpDir('structure/consulting.html'))
+    .pipe(inject(injects, { relative: true }))
+    .pipe(gulp.dest(tmpDir('structure')));
+}
+
 function taskBuild(done) {
   sequence('clean', [
     // Core build.
     'index'
+  , 'consulting'
   //, 'static:cname'
   , 'sass'
   , 'scripts'
@@ -230,7 +243,8 @@ function taskBuildMisc() {
 function taskBuildStructure(done) {
   sequence('clean:structure', [
     'sass:structure',
-    'index:structure'
+    'index:structure',
+    'consulting:structure'
   ], done);
 }
 
