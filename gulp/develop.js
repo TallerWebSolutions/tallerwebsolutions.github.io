@@ -6,6 +6,10 @@ var gulp = require('gulp')
       source: ['./src/index.html', './src/i18n/**/*'],
       tasks: ['index', 'index:structure'],
       name: 'markup'
+    },{
+      source: ['./src/consulting.html', './src/i18n/**/*'],
+      tasks: ['consulting', 'consulting:structure'],
+      name: 'markup'
     }, {
       source: './src/sass/**/*',
       tasks: ['sass', 'sass:structure'],
