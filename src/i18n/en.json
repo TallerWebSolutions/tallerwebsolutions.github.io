@@ -196,7 +196,7 @@
       "title": "What Taller do",
       "main": {
         "title": "Software Development Studio",
-        "description": "We love to help solve complex problems of your business. We develop custom digital solutions to automate your process and help your company to be more efficient.",        
+        "description": "We love to help solve complex problems of your business. We develop custom digital solutions to automate your process and help your company to be more efficient.",
         "list-first": [
           "Big content websites",
           "Mobile Apps",
@@ -324,5 +324,98 @@
 
   "util": {
     "know-more": "Read more"
+  },
+
+  "consulting": {
+    "main-title": "<strong>Agile Management</strong><br>Otimization Program",
+    "main-sub-title": "Bringing your company's management to the next level",
+    "info": {
+      "title": "The Program",
+      "description": "With well detailed and adaptable activities, our professionals will smoothly guide the organization in the necessary steps to obtain the sistemic vision of the portfolio and walk towards an incredible project management, and more:",
+      "details": [
+        "Decrease the coordination cost.",
+        "Help the organization in the pursuit of continuous improvement.",
+        "Make management decisions based in numbers and statistics.",
+        "Decrease the impacts of variability and increase the robustness."
+      ]
+    },
+    "why": {
+      "title": "Why take the program to your company",
+      "description": "With years of experience applying agility and continuous improvement in the main areas of software development, Taller has brought together the experience of soft and hard skills and prepared the program to optimize the following matters:",
+      "details": [
+        "Previsibility and visibility of the organization's projects.",
+        "Decrease of the economical impacts of this variability",
+        "Priorization of projects and tasks.",
+        "When to hire.",
+        "How to manage the knowledge of multiple teams so the information will not get lost in the organization."
+      ],
+      "conclusion": "The program has it's bases in the Kanban method, and in the most modern concepts developed within it, like the concept of fitness for purpose and some elements from STATIK."
+    },
+    "how": {
+      "title": "How does the program work",
+      "description": "The Agile Management Otimization Program was conceived to be applied in a 100% remote way, easying the workflow.",
+      "picture": "link",
+      "steps": [
+        {
+          "index": "Step 1",
+          "title": "Read the system",
+          "description": "In this reading we raise the essencial data and behaviors to the understanding of the context's dinamyc and application of the program. All the system of metrics, such as every artifact will be raised and mapped."
+        },
+        {
+          "index": "Step 2",
+          "title": "Establish a Plan",
+          "description": "Action and rollback plans to start the desired changes. This step includes activities which will result in reports, meetings' cadency and strategy and \"proto-plans\" that are not more than the result of assimetric and SWOT analysis."
+        },
+        {
+          "index": "Step 3",
+          "title": "Spin the Wheel",
+          "description": "We will follow the cadency of boards' filling and analysis, the flow politics and presentations filling. We will also have the execution of the comunication's plan for bigger changes, looking what was defined in the previous steps."
+        }
+      ]
+    },
+    "extra": {
+      "title": "Extra",
+      "description": "Beyond all the activities developed along the Program, we count on the Lean Management Mentoring Plan with Alisson Vale, Rodrigo Yoshima and Luiz Parzianello developed exclusively to this program.",
+      "people": [
+        {
+          "name": "<a href='https://www.linkedin.com/in/rodrigoy/'>Rodrigo Yoshima</a>",
+          "job": "Founder at Aspercom"
+        },
+        {
+          "name": "<a href='https://www.linkedin.com/in/alissonvale/'>Alisson Vale</a>",
+          "job": "Founder at Software Zen"
+        },
+        {
+          "name": "<a href='https://www.linkedin.com/in/luizparzianello/'>Luiz Parzianello</a>",
+          "job": "Author of Lean Business Analysis"
+        }
+      ]
+    },
+    "contents": {
+      "title": "Contents that will support the Program",
+      "items": [
+        {
+          "icon": "",
+          "title": "<a href='http://blog.taller.net.br/do-caos-ao-custo-medio-por-demanda/'>Ebook - From chaos to average cost per demand (pt-br)</a>"
+        },
+        {
+          "icon": "",
+          "title": "<a href='http://blog.taller.net.br/ebook-equilibrio-portfolio-projeto/'>Ebook - The Balance of the Project Portfolio (pt-br)</a>"
+        },
+        {
+          "icon": "",
+          "title": "<a href='http://blog.taller.net.br/taverna-taller-8-fluxo-unificado-celso-martins/'>Podcast - The Basis of Unified Flow (pt-br)</a>"
+        }
+      ]
+    },
+    "footer": {
+      "title": "Get in touch if your company seeks to go to next level of management.",
+      "description": "Schedule a talk with one of ours consultants, take your doubts and obtain the needed informations to begin the Agile Management Otimization Program.",
+      "contact": {
+        "label": "Just send an email to:",
+        "email": "<script language='JavaScript'> var username = 'rafael'; var hostname = 'taller.net.br'; var linktext = username + '@' + hostname ; document.write(\"<a href='\" + \"mail\" + \"to:\" + username + \"@\" + hostname + \"'>\" + linktext + \"</a>\");</script>",
+        "phone": "or call:<br> +55 48 XXXXX-XXXX"
+      }
+    }
   }
 }
