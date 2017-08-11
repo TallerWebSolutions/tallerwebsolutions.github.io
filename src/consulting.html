@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js consulting-page" lang="">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -24,7 +24,7 @@
     <!-- endinject -->
     <script src="//load.sumome.com/" data-sumo-site-id="56c09898a94f9af92b38521b1d99ec4ab207b8aa5f29630441ab84cf2f80a8f6" async="async"></script>
   </head>
-  <body>
+  <body class="consulting-page">
 
     <!-- Heading section -->
     <header id="section-heading" class="consulting-header">
@@ -52,395 +52,118 @@
       </footer>
     </header>
 
-    <section id="section-members">
-      <ul>
-        <li
-          v-for="member in members"
-          v-bind:id="'member-' + member.name"
-          v-on:click="swipe(member)"
-        >
-          <div>
-            <img v-bind:src="member.image" />
-          </div>
-        </li>
-
-        <li v-if="!started"><div><img src="/images/members/1.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/2.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/3.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/4.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/5.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/6.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/7.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/8.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/9.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/10.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/11.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/12.jpg" /></div></li>
-        <li v-if="!started" id="member-ban"><div><img src="/images/members/13.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/14.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/15.jpg" /></div></li>
-        <li v-if="!started"><div><img src="/images/members/16.jpg" /></div></li>
-      </ul>
-    </section>
-
-    <!-- Cases section -->
-    <section id="section-clients">
-      {{#with section.cases}}
-      <main>
-        <h4>{{{clientLogos.header}}}</h4>
-        <ul>
-          <li><img src="/images/parceiros/natura.svg" title="Natura" alt="Natura"></li>
-          <li><img src="/images/parceiros/ogilvy.svg" title="Ogilvy" alt="Ogilvy"></li>
-          <li><img src="/images/parceiros/claro.svg" title="Claro" alt="Claro"></li>
-          <li><img src="/images/parceiros/fiesc.svg" title="FIESC" alt="FIESC"></li>
-          <li><img src="/images/parceiros/usp.svg" title="USP" alt="USP"></li>
-          <li><img src="/images/parceiros/abril.svg" title="Editora Abril" alt="Editora Abril"></li>
-        </ul>
-      </main>
-      {{/with}}
-    </section>
-
-    <!-- Services section -->
-    <section id="section-studio">
-      {{#with section.studio}}
-      <header>
-        <h2>{{{title}}}</h2>
-      </header>
-
-      <main>
-        <h3>{{{main.title}}}</h3>
-        <p>{{{main.description}}}</p>
-        <article class="what">
-          <ul class="services-list-first">
-            {{#each main.list-first}}
-              <li>{{{this}}}</li>
+    <section id="the-program">
+      {{#with consulting.info}}
+        <main>
+          <h2>{{{title}}}</h2>
+          <p>{{{description}}}</p>
+          <ul>
+            {{#each details}}
+              <span><li>{{{this}}}</li></span>
             {{/each}}
           </ul>
-          <ul class="services-list-second">
-            {{#each main.list-second}}
-              <li>{{{this}}}</li>
+        </main>
+      {{/with}}
+    </section>
+
+    <section id="consultants">
+      {{#with consulting.consultants}}
+        <main>
+          <h2>{{{title}}}</h2>
+          <ul>
+            {{#each consultants}}
+              <li>
+                <div class="wrapper">
+                  <img src="{{{picture.url}}}" alt="{{{picture.alt}}}">
+                  <div class="info">
+                    <h3>{{{name}}}</h3>
+                    <span>{{{job}}}</span>
+                  </div>
+                </div>
+              </li>
             {{/each}}
           </ul>
-        </article>
-        <a class="call-to-action" href="#contact">{{{main.call-to-action}}}</a>
-      </main>
-
-      <aside class="services-stack">
-        <h3>{{{aside.title}}}</h3>
-        <p>{{{aside.description}}}</p>
-        <ul>
-          {{#each aside.list}}
-          <li><a target="_blank" href="{{{this.url}}}">{{{this.text}}}</a></li>
-          {{/each}}
-        </ul>
-      </aside>
+        </main>
       {{/with}}
     </section>
 
-    <section id="section-services">
-      {{#with section.services}}
-      <aside class="services-training">
-        <h3>{{training.title}}</h3>
-        <p>{{training.description}}</p>
-        <a class="call-to-action" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSf8UWmFYOTHI60na5oI9Dp-1cs3n5UCU3Dab5n9I5WZ0jLuHw/viewform?c=0&w=1">{{training.read-more}}</a>
-      </aside>
-
-      <main class="services-consulting">
-        <h3>{{consulting.title}}</h3>
-        <p>{{consulting.description}}</p>
-        <a class="call-to-action" href="#contact">{{consulting.read-more}}</a>
-      </main>
-
-      <aside class="services-content">
-        <h3>{{content.title}}</h3>
-        <p>{{content.description}}</p>
-        <a class="call-to-action" target="_blank" href="http://blog.taller.net.br">{{content.read-more}}</a>
-      </aside>
-      {{/with}}
-    </section>
-
-    <!-- Cases section -->
-    <section id="section-cases">
-      {{#with section.cases}}
-      <header>
+    <section id="section-why">
+      {{#with consulting.why}}
         <h2>{{{title}}}</h2>
-      </header>
-
-      <main>
-        <article id="case-natura" class="img-slide img-slide-left">
-          {{#with list.natura}}
-          <aside>
-            <img src="/images/mockup_natura.png">
-          </aside>
-          <main>
-            <h3>{{{title}}}</h3>
-            <p>{{{description}}}</p>
-
-            <h4>{{{details.[0].title}}}</h4>
-            <p>{{{details.[0].description}}}</p>
-
-            <h4>{{{details.[1].title}}}</h4>
-            <p>{{{details.[1].description}}}</p>
-
-            <h4>{{{details.[2].title}}}</h4>
-            <ul>
-              {{#each details.[2].list}}
-                <li>
-                  <a href="{{this.url}}" target="_blank">{{{this.text}}}</a>
-                </li>
-              {{/each}}
-            </ul>
-            <a class="read-more" href="http://natura.com.br" target="_blank">{{read-more}}</a>
-          </main>
-          {{/with}}
-        </article>
-
-        <article id="case-fiesc" class="img-slide img-slide-right">
-          {{#with list.fiesc}}
-          <aside>
-            <img src="/images/mockup_fiesc.png">
-          </aside>
-          <main>
-            <h3>{{{title}}}</h3>
-            <p>{{{description}}}</p>
-
-            <h4>{{{details.[0].title}}}</h4>
-            <p>{{{details.[0].description}}}</p>
-
-            <h4>{{{details.[1].title}}}</h4>
-            <p>{{{details.[1].description}}}</p>
-
-            <h4>{{{details.[2].title}}}</h4>
-            <ul>
-              {{#each details.[2].list}}
-                <li>
-                  <a href="{{this.url}}" target="_blank">{{{this.text}}}</a>
-                </li>
-              {{/each}}
-            </ul>
-            <a class="read-more" href="http://fiesc.com.br" target="_blank">{{read-more}}</a>
-          </main>
-          {{/with}}
-        </article>
-
-        <article id="case-claro" class="img-slide img-slide-left">
-          {{#with list.claro}}
-          <aside>
-            <img src="/images/mockup_claro.png">
-          </aside>
-          <main>
-            <h3>{{{title}}}</h3>
-            <p>{{{description}}}</p>
-
-            <h4>{{{details.[0].title}}}</h4>
-            <p>{{{details.[0].description}}}</p>
-
-            <h4>{{{details.[1].title}}}</h4>
-            <p>{{{details.[1].description}}}</p>
-
-            <h4>{{{details.[2].title}}}</h4>
-            <ul>
-              {{#each details.[2].list}}
-                <li>
-                  <a href="{{this.url}}" target="_blank">{{{this.text}}}</a>
-                </li>
-              {{/each}}
-            </ul>
-            <a class="read-more" href="https://www.drupal.org/node/2330069" target="_blank">{{read-more}}</a>
-          </main>
-
-          {{/with}}
-        </article>
-
-      </main>
-
-      <aside>
-        <p>{{{aside.attention}}}</p>
-        <a class="call-to-action" href="#contact">{{{aside.call-to-action}}}</a>
-      </aside>
-
-
-      {{/with}}
-    </section>
-
-
-    <!-- Products section -->
-    <section id="section-products">
-      {{#with section.products}}
-      <header>
-        <h2>{{{title}}}</h2>
-      </header>
-
-      <main>
-        <article id="product-el-tracker" class="img-slide img-slide-right">
-          {{#with list.el-tracker}}
-          <main>
-            <h3>{{{title}}}</h3>
-
-            <p>{{{description}}}</p>
-            <a class="read-more" href="http://eltracker.io/">{{{read-more}}}</a>
-          </main>
-
-          <aside>
-            <img src="/images/mockup_eltracker.png">
-          </aside>
-          {{/with}}
-        </article>
-      </main>
-      {{/with}}
-    </section>
-
-    <!-- Who section -->
-    <section id="section-who">
-      {{#with section.who}}
-      <header>
-        <h2>{{title}}</h2>
-      </header>
-
-      <aside>
-        <h3>{{aside.title}}:</h3>
+        <p>{{{description}}}</p>
         <ol>
-          {{#each aside.list}}
-          <li>{{{this}}}</li>
+          {{#each details}}
+            <li>{{{this}}}</li>
           {{/each}}
         </ol>
-        <!--{{{aside.call-to-action}}}-->
-      </aside>
-
-      <main>
-        {{#each main}}
-        <p>{{{this}}}</p>
-        {{/each}}
-      </main>
-
-      <footer>
-        <p><a href="http://blog.taller.net.br/a-historia-da-taller-2-0/">{{{footer.call-to-action}}}</a></p>
-      </footer>
+        <p>{{{conclusion}}}</p>
       {{/with}}
     </section>
 
-
-    <!-- Newsletter section -->
-    <section id="section-newsletter">
-      {{#with section.newsletter}}
-      <main>
-        <article id="news-main">
-          <p>{{{description}}}</p>
-          <form id="form-newsletter" action="#rd-subscribe" method="post" target="_blank">
-            <input type="email" value="" name="email"  placeholder="{{{placeholder}}}">
-            <button name="subscribe" id="mc-embedded-subscribe" >{{{subscribe}}}</button>
-
-            <input type="hidden" id="identificador" name="identificador" value="Inscrição na newsletter do site" >
-            <input type="hidden" id="token_rdstation" name="token_rdstation" value="6e0b0b2ec757b35ac11962ed0f72ce1e" >
-          </form>
-          <div class="form-response">
-            <div class="success"><strong>{{{form.success.head}}}</strong> {{{form.success.compliment}}}</div>
-            <div class="error"><strong>{{{form.error.head}}}</strong> {{{form.error.compliment}}}</div>
-          </div>
-        </article>
-      </main>
-      {{/with}}
-    </section>
-
-
-    <!-- Contact section -->
-    <section id="contact" data-remodal-id="contact" data-remodal-options="closeOnOutsideClick: false" class="remodal">
-      {{#with contact}}
-      <header>
+    <section id="section-how">
+      {{#with consulting.how}}
         <h2>{{{title}}}</h2>
-      </header>
-
-      <main>
-        {{#with form}}
-        <form id="form-contact" action="#rd-contact" method="POST" target="_blank">
-          <input type="hidden" id="identificador" name="identificador" value="Contato via formulário do site" >
-          <input type="hidden" id="token_rdstation" name="token_rdstation" value="6e0b0b2ec757b35ac11962ed0f72ce1e" >
-
-          <label>
-            <input type="text" value="" name="nome">
-            <span>{{name}}</span>
-          </label>
-
-          <label>
-            <input type="email" value="" name="email" required>
-            <span>{{email}}</span>
-          </label>
-
-          <label>
-            <select name="assunto">
-              <option disabled selected>{{subject.empty}}</option>
-              {{#each subject.options}}
-                <option value="{{@key}}">{{this}}</option>
-              {{/each}}
-            </select>
-            <span>{{subject.label}}</span>
-          </label>
-
-          <label>
-            <textarea name="mensagem" required></textarea>
-            <span>{{message}}</span>
-          </label>
-
-          <button name="submit" value="Enviar" onclick="ga('send', 'event', 'formulario', 'cadastro-em-newsletter', 'Newsletter Site Taller')">{{send}}</button>
-        </form>
-        <div id="contact-form-success">
-          <h2>Mensagem enviada!<small>Entraremos em contato em breve.</small></h2>
-          <p>Enquanto isso, visite nosso blog e nossas redes sociais.</p>
-
-          <ul>
-            <li><a href="http://blog.taller.net.br/">Blog</a></li>
-            <li><a href="http://twitter.com/tallerws" target="_blank">Twitter</a></li>
-            <li><a href="http://facebook.com/tallerwebsolutions" target="_blank">Facebook</a></li>
-          </ul>
-
-          <p>Grande abraço,<br><i>Tallerbot</i></p>
-        </div>
-        {{/with}}
-      </main>
-
-      <button data-remodal-action="close" class="remodal-close"></button>
+        <p>{{{description}}}</p>
+        <img src="{{{picture.url}}}" alt="{{{picture.alt}}}">
+        <ul>
+          {{#each steps}}
+            <li>
+              <legend>{{{index}}}</legend>
+              <h3>{{{title}}}</h3>
+              <p>{{{description}}}</p>
+            </li>
+          {{/each}}
+        </ul>
+        <p>{{{conclusion}}}</p>
       {{/with}}
     </section>
 
+    <section id="section-invited">
+      {{#with consulting.invited}}
+        <h2>{{{title}}}</h2>
+        <p>{{{description}}}</p>
+        <ul>
+          {{#each people}}
+            <li>
+              <div class="wrapper">
+                <img src="{{{img.url}}}" alt="{{{img.alt}}}">
+                <div class="info">
+                  <h3>{{{name}}}</h3>
+                  <span>{{{job}}}</span>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+        <p>{{{conclusion}}}</p>
+      {{/with}}
+    </section>
 
-    <!-- Footer area -->
-    <footer id="section-footer">
-      {{#with footer}}
-      <header>
-        <h2 data-title="Taller">Taller</h2>
-      </header>
-      <main>
-        <h3>{{{contact.title}}}</h3>
-        <p>
-          <a href="tel:+554832384665">+55 (48) 3238-4665</a><br/>
-          <a href="tel:+554833041032">+55 (48) 3304-1032</a>
-          <!--<address>{{{contact.address}}}</address>-->
-        </p>
-        <p>
-            contato@taller.net.br
-        </p>
+    <section id="section-contents">
+      {{#with consulting.contents}}
+        <h2>{{{title}}}</h2>
         <ul>
-          <li><a href="http://blog.taller.net.br/">Blog</a></li>
-          <li><a href="http://twitter.com/tallerws" target="_blank">Twitter</a></li>
-          <li><a href="http://facebook.com/tallerwebsolutions" target="_blank">Facebook</a></li>
-          <li><a href="http://instagram.com/instadataller" target="_blank">Instagram</a></li>
-          <li><a href="http://linkedin.com/company/taller-solu-es-web-inteligentes" target="_blank">Linkedin</a></li>
-          <!--<li><a href="http://slideshare.net/tallerws/" target="_blank">Slideshare</a></li>-->
+          {{#each items}}
+            <li>
+              <img src="{{{icon.url}}}" alt="{{{icon.alt}}}">
+              <h3>{{{title}}}</h3>
+            </li>
+          {{/each}}
         </ul>
+        <p>{{{conclusion}}}</p>
+      {{/with}}
+    </section>
+
+    <footer id="consulting-footer">
+      {{#with consulting.footer}}
+        <h2>{{{title}}}</h2>
+        <p>{{{description}}}</p>
         <ul>
-          <li><a href="http://taller.net.br">Português</a></li>
-          <li><a href="http://taller.net.br/en">English</a></li>
-          <li><a href="http://taller.net.br/es">Español</a></li>
+          <span>{{{contact.label}}}</span>
+          <span id="contact-email">{{{contact.email}}}</span>
+          <span>{{{contact.phone}}}</span>
         </ul>
-      </main>
-      <aside>
-        <h3>{{{extras.title}}}</h3>
-        <p>
-          {{{extras.description}}}
-          <br>
-          <a href="http://blog.taller.net.br/serie-lean-ui-redesign-taller-case">{{{extras.read-more}}}</a>
-        </p>
-      </aside>
+        <p>{{{conclusion}}}</p>
       {{/with}}
     </footer>
 
@@ -450,4 +173,5 @@
 
     <!-- RD Integration scripts. -->
     <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/integration/stable/rd-js-integration.min.js"></script>
-    </body>
+  </body>
+</html>
