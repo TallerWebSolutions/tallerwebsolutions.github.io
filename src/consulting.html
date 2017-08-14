@@ -167,6 +167,65 @@
       {{/with}}
     </footer>
 
+    <!-- Contact section -->
+    <section id="contact" data-remodal-id="contact" data-remodal-options="closeOnOutsideClick: false" class="remodal">
+      {{#with contact}}
+      <header>
+        <h2>{{{title}}}</h2>
+      </header>
+
+      <main>
+        {{#with form}}
+        <form id="form-contact" action="#rd-contact" method="POST" target="_blank">
+          <input type="hidden" id="identificador" name="identificador" value="Contato via formulário do site" >
+          <input type="hidden" id="token_rdstation" name="token_rdstation" value="6e0b0b2ec757b35ac11962ed0f72ce1e" >
+
+          <label>
+            <input type="text" value="" name="nome">
+            <span>{{name}}</span>
+          </label>
+
+          <label>
+            <input type="email" value="" name="email" required>
+            <span>{{email}}</span>
+          </label>
+
+          <label>
+            <select name="assunto">
+              <option disabled selected>{{subject.empty}}</option>
+              {{#each subject.options}}
+                <option value="{{@key}}">{{this}}</option>
+              {{/each}}
+            </select>
+            <span>{{subject.label}}</span>
+          </label>
+
+          <label>
+            <textarea name="mensagem" required></textarea>
+            <span>{{message}}</span>
+          </label>
+
+          <button name="submit" value="Enviar" onclick="ga('send', 'event', 'formulario', 'cadastro-em-newsletter', 'Newsletter Site Taller')">{{send}}</button>
+        </form>
+        <div id="contact-form-success">
+          <h2>Mensagem enviada!<small>Entraremos em contato em breve.</small></h2>
+          <p>Enquanto isso, visite nosso blog e nossas redes sociais.</p>
+
+          <ul>
+            <li><a href="http://blog.taller.net.br/">Blog</a></li>
+            <li><a href="http://twitter.com/tallerws" target="_blank">Twitter</a></li>
+            <li><a href="http://facebook.com/tallerwebsolutions" target="_blank">Facebook</a></li>
+          </ul>
+
+          <p>Grande abraço,<br><i>Tallerbot</i></p>
+        </div>
+        {{/with}}
+      </main>
+
+      <button data-remodal-action="close" class="remodal-close"></button>
+      {{/with}}
+    </section>
+
     <!-- JavaScripts -->
     <!-- inject:js -->
     <!-- endinject -->
