@@ -420,7 +420,7 @@
       "contact": {
         "label": "Envía un e-mail a:",
         "email": "<script language=‘JavaScript’> var username = ‘rafael’; var hostname = ‘taller.net.br’; var linktext = username + ‘@’ + hostname ; document.write(\"<a href=‘\" + \"mail\" + \"to:\" + username + \"@\" + hostname + \"‘>\" + linktext + \"</a>\"); </script>",
-        "phone": "o llame al:<br> (48) XXXXX-XXXX"
+        "phone": "o llame al:<br> +55 48 999 330 297"
       }
     }
   }

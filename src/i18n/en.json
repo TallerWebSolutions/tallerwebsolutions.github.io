@@ -471,7 +471,7 @@
       "contact": {
         "label": "Just send an email to:",
         "email": "<script language='JavaScript'> var username = 'rafael'; var hostname = 'taller.net.br'; var linktext = username + '@' + hostname ; document.write(\"<a href='\" + \"mail\" + \"to:\" + username + \"@\" + hostname + \"'>\" + linktext + \"</a>\");</script>",
-        "phone": "or call:<br> +55 48 XXXXX-XXXX"
+        "phone": "or call:<br> +55 48 999 330 297"
       }
     }
   }
