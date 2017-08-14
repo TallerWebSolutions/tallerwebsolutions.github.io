@@ -339,6 +339,35 @@
         "Decrease the impacts of variability and increase the robustness."
       ]
     },
+    "consultants": {
+      "title": "Our consultants team",
+      "consultants": [
+        {
+          "name": "<a href='https://www.linkedin.com/in/rafaelcaceres/'>Rafael Caceres</a>",
+          "job": "Co-founder at Taller",
+          "picture": {
+            "url": "./images/rafael.png",
+            "alt": "Picture of Rafael Caceres"
+          }
+        },
+        {
+          "name": "<a href='https://www.linkedin.com/in/marianagraf/'>Mariana Graf</a>",
+          "job": "Facilitator",
+          "picture": {
+            "url": "./images/mariana.png",
+            "alt": "Picture of Mariana Graf"
+          }
+        },
+        {
+          "name": "<a href='https://www.linkedin.com/in/celsoavmartins/'>Celso Martins</a>",
+          "job": "Agile Coach at Taller",
+          "picture": {
+            "url": "./images/celso.png",
+            "alt": "Picture of Celso Martins"
+          }
+        }
+      ]
+    },
     "why": {
       "title": "Why take the program to your company",
       "description": "With years of experience applying agility and continuous improvement in the main areas of software development, Taller has brought together the experience of soft and hard skills and prepared the program to optimize the following matters:",
@@ -354,7 +383,14 @@
     "how": {
       "title": "How does the program work",
       "description": "The Agile Management Otimization Program was conceived to be applied in a 100% remote way, easying the workflow.",
-      "picture": "link",
+      "picture": {
+        "url": "../images/comofuncionathumb.jpg",
+        "alt": "How it works"
+      },
+      "modal-picture": {
+        "url": "../images/comofunciona.jpg",
+        "alt": "How it works"
+      },
       "steps": [
         {
           "index": "Step 1",
@@ -373,37 +409,58 @@
         }
       ]
     },
-    "extra": {
-      "title": "Extra",
+    "invited": {
+      "title": "Special guests",
       "description": "Beyond all the activities developed along the Program, we count on the Lean Management Mentoring Plan with Alisson Vale, Rodrigo Yoshima and Luiz Parzianello developed exclusively to this program.",
       "people": [
         {
+          "img": {
+            "url": "./images/yoshima.png",
+            "alt": "Picture of Rodrigo Yoshima"
+          },
           "name": "<a href='https://www.linkedin.com/in/rodrigoy/'>Rodrigo Yoshima</a>",
           "job": "Founder at Aspercom"
         },
         {
+          "img": {
+            "url": "./images/alisson.png",
+            "alt": "Picture of Alisson Vale"
+          },
           "name": "<a href='https://www.linkedin.com/in/alissonvale/'>Alisson Vale</a>",
           "job": "Founder at Software Zen"
         },
         {
+          "img": {
+            "url": "./images/luiz.png",
+            "alt": "Picture of Luiz Parzianello"
+          },
           "name": "<a href='https://www.linkedin.com/in/luizparzianello/'>Luiz Parzianello</a>",
           "job": "Author of Lean Business Analysis"
         }
       ]
     },
     "contents": {
-      "title": "Contents that will support the Program",
+      "title": "Support content",
       "items": [
         {
-          "icon": "",
+          "icon": {
+            "url": "./images/sheets.png",
+            "alt": "E-book icon"
+          },
           "title": "<a href='http://blog.taller.net.br/do-caos-ao-custo-medio-por-demanda/'>Ebook - From chaos to average cost per demand (pt-br)</a>"
         },
         {
-          "icon": "",
+          "icon": {
+            "url": "./images/sheets.png",
+            "alt": "E-book icon"
+          },
           "title": "<a href='http://blog.taller.net.br/ebook-equilibrio-portfolio-projeto/'>Ebook - The Balance of the Project Portfolio (pt-br)</a>"
         },
         {
-          "icon": "",
+          "icon": {
+            "url": "./images/phones.png",
+            "alt": "Podcast icon"
+          },
           "title": "<a href='http://blog.taller.net.br/taverna-taller-8-fluxo-unificado-celso-martins/'>Podcast - The Basis of Unified Flow (pt-br)</a>"
         }
       ]

@@ -273,5 +273,155 @@
 
   "util": {
     "know-more": "Sepa más"
+  },
+
+  "consulting": {
+    "main-title": "Programa de Optimizazión de la <br><strong>Gestión Ágil</strong>",
+    "main-sub-title": "Llevando la gestión de su empresa al siguiente nivel",
+    "info": {
+      "title": "El Programa",
+      "description": "Con actividades bien detalladas y adaptables, nuestros profesionales guiarán suavemente la organización por los pasos necesarios para obtener la visión sistémica del portfolio hacia una gestión de proyectos increíble, y más:",
+      "details": [
+        "Reduzca el costo de coordinación.",
+        "Ayudar a la organización en la búsqueda de la mejora continua.",
+        "Tome decisiones de gestión basadas en cifras y estadísticas.",
+        "Reduzca los impactos de la variabilidad y aumente la robustez."
+      ]
+    },
+    "consultants": {
+      "title": "Nuestro equipo de consultores",
+      "consultants": [
+        {
+          "name": "<a href='https://www.linkedin.com/in/rafaelcaceres/'>Rafael Caceres</a>",
+          "job": "Co-fundador en Taller",
+          "picture": {
+            "url": "./images/rafael.png",
+            "alt": "Foto de Rafael Caceres"
+          }
+        },
+        {
+          "name": "<a href='https://www.linkedin.com/in/marianagraf/'>Mariana Graf</a>",
+          "job": "Facilitadora",
+          "picture": {
+            "url": "./images/mariana.png",
+            "alt": "Foto de Mariana Graf"
+          }
+        },
+        {
+          "name": "<a href='https://www.linkedin.com/in/celsoavmartins/'>Celso Martins</a>",
+          "job": "Agile Coach en Taller",
+          "picture": {
+            "url": "./images/celso.png",
+            "alt": "Foto de Celso Martins"
+          }
+        }
+      ]
+    },
+    "why": {
+      "title": "¿Por qué llevar el programa a su empresa?",
+      "description": "Con experiencia de años aplicando agilidad y mejora continua en las principales áreas del desarrollo de software, Taller unió la experiencia del soft y hard skills y preparó el Programa para optimizar los siguientes puntos:",
+      "details": [
+        "Previsibilidad y visibilidad de los proyectos de la organización.",
+        "Reducción de los impactos económicos de la variabilidad.",
+        "Priorización de proyectos y demandas.",
+        "Cuándo contratar.",
+        "Como gestionar el conocimiento de diversos equipos para que la información no se pierda en la organización."
+      ],
+      "conclusion": "El programa tiene sus bases en el Método Kanban, y en los conceptos más modernos desarrollados alrededor de él, como el concepto de <i>fitness for purpose</i> y algunos elementos del STATIK."
+    },
+    "how": {
+      "title": "Cómo funciona el Programa",
+      "description": "El Programa de Optimización de la Gestión Ágil ha sido diseñado para ser aplicado de forma 100% remota, facilitando el flujo de trabajo.",
+      "picture": {
+        "url": "../images/comofuncionathumb.jpg",
+        "alt": "Como funciona"
+      },
+      "modal-picture": {
+        "url": "../images/comofunciona.jpg",
+        "alt": "Como funciona"
+      },
+      "steps": [
+        {
+          "index": "Paso 1",
+          "title": "Leer el Sistema",
+          "description": "En esta lectura recogemos datos y comportamientos esenciales para la comprensión de la dinámica del contexto y aplicación del Programa. Todo el sistema de métricas, así como todos los artefactos serán levantados y mapeados."
+        },
+        {
+          "index": "Paso 2",
+          "title": "Establecer um Plan",
+          "description": "Planes de acción y de rollback para iniciar los cambios deseados. Este paso tiene actividades que resultarán en informes, cadencia y estrategia de reuniones y \"proto-planes\" que no son más que el resultado de análisis de asimetrías y SWOT."
+        },
+        {
+          "index": "Paso 3",
+          "title": "Girar la Rueda",
+          "description": "Seguiremos las cadencias de relleno y análisis de las hojas de cálculo, las políticas de flujo y relleno de presentaciones. También tendremos la ejecución del plan de comunicación para cambios mayores, mirando lo que fue definido en los pasos anteriores."
+        }
+      ]
+    },
+    "invited": {
+      "title": "Invitados especiales",
+      "description": "Además de todas las actividades desarrolladas a lo largo del Programa, contamos con el Plan de Mentoria en Gestión Enxuta con Alisson Vale, Rodrigo Yoshima y Luiz Parzianello desarrollado exclusivamente para este programa.",
+      "people": [
+        {
+          "img": {
+            "url": "./images/yoshima.png",
+            "alt": "Foto de Rodrigo Yoshima"
+          },
+          "name": "<a href='https://www.linkedin.com/in/rodrigoy/'>Rodrigo Yoshima</a>",
+          "job": "Fundador de Aspercom"
+        },
+        {
+          "img": {
+            "url": "./images/alisson.png",
+            "alt": "Foto de Alisson Vale"
+          },
+          "name": "<a href='https://www.linkedin.com/in/alissonvale/'>Alisson Vale</a>",
+          "job": "Fundador del Software Zen"
+        },
+        {
+          "img": {
+            "url": "./images/luiz.png",
+            "alt": "Foto de Luiz Parzianello"
+          },
+          "name": "<a href='https://www.linkedin.com/in/luizparzianello/'>Luiz Parzianello</a>",
+          "job": "Autor de Lean Business Analysis"
+        }
+      ]
+    },
+    "contents": {
+      "title": "Contenidos de apoyo al Programa",
+      "items": [
+        {
+          "icon": {
+            "url": "./images/sheets.png",
+            "alt": "Icono del e-book"
+          },
+          "title": "<a href='http://blog.taller.net.br/do-caos-ao-custo-medio-por-demanda/'>Ebook - Do caos ou custo médio por demanda</a>"
+        },
+        {
+          "icon": {
+            "url": "./images/sheets.png",
+            "alt": "Icono del e-book"
+          },
+          "title": "<a href='http://blog.taller.net.br/ebook-equilibrio-portfolio-projeto/'>Ebook - O equilíbrio do Portfólio de Projeto.</a>"
+        },
+        {
+          "icon": {
+            "url": "./images/phones.png",
+            "alt": "Icono del podcast"
+          },
+          "title": "<a href='http://blog.taller.net.br/taverna-taller-8-fluxo-unificado-celso-martins/'>Podcast - As bases do fluxo unificado.</a>"
+        }
+      ]
+    },
+    "footer": {
+      "title": "Si su empresa busca ir al siguiente nivel de gestión entre en contacto.",
+      "description": "Programe una conversación con nuestros consultores, soluciona tus dudas y obtenga la información necesaria para comenzar el Programa de Optimización de la Gestión Ágil.",
+      "contact": {
+        "label": "Envía un correo electronico a:",
+        "email": "<script language='JavaScript'> var username = 'rafael'; var hostname = 'taller.net.br'; var linktext = username + '@' + hostname ; document.write(\"<a href='\" + \"mail\" + \"to:\" + username + \"@\" + hostname + \"'>\" + linktext + \"</a>\"); </script>",
+        "phone": "o llame al:<br> (48) XXXXX-XXXX"
+      }
+    }
   }
 }
