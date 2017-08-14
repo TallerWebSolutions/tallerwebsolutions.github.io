@@ -276,15 +276,15 @@
   },
 
   "consulting": {
-    "main-title": "Programa de Optimizazión de la <br><strong>Gestión Ágil</strong>",
+    "main-title": "Programa de Optimización de la <br><strong>Gestión Ágil</strong>",
     "main-sub-title": "Llevando la gestión de su empresa al siguiente nivel",
     "info": {
       "title": "El Programa",
-      "description": "Con actividades bien detalladas y adaptables, nuestros profesionales guiarán suavemente la organización por los pasos necesarios para obtener la visión sistémica del portfolio hacia una gestión de proyectos increíble, y más:",
+      "description": "Con actividades bien detalladas y adaptables, nuestros profesionales guiarán suavemente la organización por los pasos necesarios para obtener una visión sistémica del portfolio hacia una gestión de proyectos increíble, y más:",
       "details": [
         "Reduzca el costo de coordinación.",
         "Ayudar a la organización en la búsqueda de la mejora continua.",
-        "Tome decisiones de gestión basadas en cifras y estadísticas.",
+        "Tome decisiones de gestión basadas en números y estadísticas.",
         "Reduzca los impactos de la variabilidad y aumente la robustez."
       ]
     },
@@ -327,7 +327,7 @@
         "Cuándo contratar.",
         "Como gestionar el conocimiento de diversos equipos para que la información no se pierda en la organización."
       ],
-      "conclusion": "El programa tiene sus bases en el Método Kanban, y en los conceptos más modernos desarrollados alrededor de él, como el concepto de <i>fitness for purpose</i> y algunos elementos del STATIK."
+      "conclusion": "El programa tiene sus bases en el Método Kanban, y en los conceptos más modernos desarrollados alrededor del mismo, como el concepto de <i>fitness for purpose</i> y algunos elementos del STATIK."
     },
     "how": {
       "title": "Cómo funciona el Programa",
@@ -348,7 +348,7 @@
         },
         {
           "index": "Paso 2",
-          "title": "Establecer um Plan",
+          "title": "Establecer un Plan",
           "description": "Planes de acción y de rollback para iniciar los cambios deseados. Este paso tiene actividades que resultarán en informes, cadencia y estrategia de reuniones y \"proto-planes\" que no son más que el resultado de análisis de asimetrías y SWOT."
         },
         {
@@ -360,7 +360,7 @@
     },
     "invited": {
       "title": "Invitados especiales",
-      "description": "Además de todas las actividades desarrolladas a lo largo del Programa, contamos con el Plan de Mentoria en Gestión Enxuta con Alisson Vale, Rodrigo Yoshima y Luiz Parzianello desarrollado exclusivamente para este programa.",
+      "description": "Además de todas las actividades desarrolladas a lo largo del Programa, contamos con el Plan de Mentoria en Gestión Lean con Alisson Vale, Rodrigo Yoshima y Luiz Parzianello desarrollado exclusivamente para este programa.",
       "people": [
         {
           "img": {
@@ -418,8 +418,8 @@
       "title": "Si su empresa busca ir al siguiente nivel de gestión entre en contacto.",
       "description": "Programe una conversación con nuestros consultores, soluciona tus dudas y obtenga la información necesaria para comenzar el Programa de Optimización de la Gestión Ágil.",
       "contact": {
-        "label": "Envía un correo electronico a:",
-        "email": "<script language='JavaScript'> var username = 'rafael'; var hostname = 'taller.net.br'; var linktext = username + '@' + hostname ; document.write(\"<a href='\" + \"mail\" + \"to:\" + username + \"@\" + hostname + \"'>\" + linktext + \"</a>\"); </script>",
+        "label": "Envía un e-mail a:",
+        "email": "<script language=‘JavaScript’> var username = ‘rafael’; var hostname = ‘taller.net.br’; var linktext = username + ‘@’ + hostname ; document.write(\"<a href=‘\" + \"mail\" + \"to:\" + username + \"@\" + hostname + \"‘>\" + linktext + \"</a>\"); </script>",
         "phone": "o llame al:<br> (48) XXXXX-XXXX"
       }
     }
