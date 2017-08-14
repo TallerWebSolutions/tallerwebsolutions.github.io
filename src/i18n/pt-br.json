@@ -392,17 +392,17 @@
       },
       "steps": [
         {
-          "index": "Etapa 1",
+          "index": "Etapa 1:",
           "title": "Ler o Sistema",
           "description": "Nesta leitura levantamos dados e comportamento essenciais para o entendimento da dinâmica do contexto e aplicação do programa. Todo o sistema de métricas, assim como todos os artefatos serão levantados e mapeados."
         },
         {
-          "index": "Etapa 2",
+          "index": "Etapa 2:",
           "title": "Estabelecer um Plano",
           "description": "Planos de ação e de rollback para iniciar as mudanças desejadas. Este passo possui atividades que resultarão em relatórios,  cadência e estratégia de reuniões e \"proto-planos\" que nada mais são que o resultado de análises de assimetrias e SWOT."
         },
         {
-          "index": "Etapa 3",
+          "index": "Etapa 3:",
           "title": "Girar a Roda",
           "description": "Acompanharemos as cadências de preenchimento e análise das planilhas, as políticas de fluxo e preenchimento de apresentações. Também teremos a execução do plano de comunicação para mudanças maiores, olhando o que foi definido nos passos anteriores."
         }

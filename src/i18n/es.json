@@ -342,17 +342,17 @@
       },
       "steps": [
         {
-          "index": "Paso 1",
+          "index": "Paso 1:",
           "title": "Leer el Sistema",
           "description": "En esta lectura recogemos datos y comportamientos esenciales para la comprensión de la dinámica del contexto y aplicación del Programa. Todo el sistema de métricas, así como todos los artefactos serán levantados y mapeados."
         },
         {
-          "index": "Paso 2",
+          "index": "Paso 2:",
           "title": "Establecer un Plan",
           "description": "Planes de acción y de rollback para iniciar los cambios deseados. Este paso tiene actividades que resultarán en informes, cadencia y estrategia de reuniones y \"proto-planes\" que no son más que el resultado de análisis de asimetrías y SWOT."
         },
         {
-          "index": "Paso 3",
+          "index": "Paso 3:",
           "title": "Girar la Rueda",
           "description": "Seguiremos las cadencias de relleno y análisis de las hojas de cálculo, las políticas de flujo y relleno de presentaciones. También tendremos la ejecución del plan de comunicación para cambios mayores, mirando lo que fue definido en los pasos anteriores."
         }

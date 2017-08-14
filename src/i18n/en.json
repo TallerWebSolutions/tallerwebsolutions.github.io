@@ -393,17 +393,17 @@
       },
       "steps": [
         {
-          "index": "Step 1",
+          "index": "Step 1:",
           "title": "Read the system",
           "description": "In this reading we raise the essencial data and behaviors to the understanding of the context's dinamyc and application of the program. All the system of metrics, such as every artifact will be raised and mapped."
         },
         {
-          "index": "Step 2",
+          "index": "Step 2:",
           "title": "Establish a Plan",
           "description": "Action and rollback plans to start the desired changes. This step includes activities which will result in reports, meetings' cadency and strategy and \"proto-plans\" that are not more than the result of assimetric and SWOT analysis."
         },
         {
-          "index": "Step 3",
+          "index": "Step 3:",
           "title": "Spin the Wheel",
           "description": "We will follow the cadency of boards' filling and analysis, the flow politics and presentations filling. We will also have the execution of the comunication's plan for bigger changes, looking what was defined in the previous steps."
         }
