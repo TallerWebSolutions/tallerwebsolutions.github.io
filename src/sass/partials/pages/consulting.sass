@@ -5,6 +5,9 @@ body, html
     +breakpoint($breakpoint-max-xs)
       font-size: 14px
 
+    +breakpoint($breakpoint-lg)
+      font-size: 18px
+
 
 .consulting-header
   background-image: url('../images/people.jpg')
@@ -139,6 +142,10 @@ body, html
   h2, > p, legend, h3
     text-align: center
 
+  > p
+    width: 50%
+    margin: 0 auto
+
   legend, h3
     text-transform: uppercase
     width: 100%
@@ -160,6 +167,18 @@ body, html
     border-radius: 2px
     margin: .5rem
     padding: 1rem
+
+  .picture-link-wrapper
+    text-align: center
+
+  a
+    display: inline-block
+    position: relative
+    margin: 3rem
+
+  img
+    width: 250px
+    display: block
 
 #section-contents
   @extend %theme-light
