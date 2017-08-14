@@ -7,8 +7,8 @@ var gulp = require('gulp')
       tasks: ['index', 'index:structure'],
       name: 'markup'
     },{
-      source: ['./src/consulting.html', './src/i18n/**/*'],
-      tasks: ['consulting', 'consulting:structure'],
+      source: ['./src/consultoria.html', './src/i18n/**/*'],
+      tasks: ['consultoria', 'consultoria:structure'],
       name: 'markup'
     }, {
       source: './src/sass/**/*',
