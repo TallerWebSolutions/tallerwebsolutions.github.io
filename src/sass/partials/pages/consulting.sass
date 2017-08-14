@@ -12,6 +12,7 @@ body, html
 .consulting-header
   background-image: url('../images/people.jpg')
   background-size: cover
+  background-position: bottom
   padding: 0
 
   h1
@@ -79,10 +80,17 @@ body, html
       border: solid 1px rgba(151, 151, 151, 0.16)
       border-radius: 2px
 
+      +breakpoint($breakpoint-max-xs)
+        width: 100%
+
 #consultants, #section-invited
   @extend %theme-light
+
   h2
     text-align: center
+
+    +breakpoint($breakpoint-max-xs)
+      margin-top: 0
 
   h3
     font-size: 1rem
@@ -123,6 +131,9 @@ body, html
     width: 50%
     margin: 3rem auto
 
+    +breakpoint($breakpoint-max-xs)
+      width: 80%
+
   li::before
     color: $color-jaguar
     background-color: white
@@ -145,6 +156,9 @@ body, html
   > p
     width: 50%
     margin: 0 auto
+
+    +breakpoint($breakpoint-max-xs)
+      width: 80%
 
   legend, h3
     text-transform: uppercase
@@ -174,7 +188,7 @@ body, html
   a
     display: inline-block
     position: relative
-    margin: 3rem
+    margin: 3rem 0
 
   img
     width: 250px
