@@ -63,7 +63,7 @@ gulp.task('clean:styleguide', cleaner(tmpDir('styleguide/**/*')));
  */
 
 gulp.task('index', ['index:create', 'index:i18n', 'index:inject']);
-gulp.task('consulting', ['consulting:create', 'consulting:i18n', 'consulting:inject']);
+gulp.task('consultoria', ['consultoria:create', 'consultoria:i18n', 'consultoria:inject']);
 gulp.task('fonts', copier('./src/fonts/**/*', tmpDir('fonts')));
 gulp.task('images', copier('./src/images/**/*', tmpDir('images')));
 gulp.task('sass', compiler('./src/sass/main.sass'));
@@ -78,12 +78,12 @@ gulp.task('index:inject', ['index:create', 'sass', 'scripts'], taskIndexInject);
 gulp.task('index:i18n', ['index:inject'], taskIndexI18n);
 
 /*
- * Consulting sub-tasks.
+ * consultoria sub-tasks.
  */
 
-gulp.task('consulting:create', copier('./src/consulting.html', tmpDir()));
-gulp.task('consulting:inject', ['consulting:create', 'sass', 'scripts'], taskConsultingInject);
-gulp.task('consulting:i18n', ['consulting:inject'], taskConsultingI18n);
+gulp.task('consultoria:create', copier('./src/consultoria.html', tmpDir()));
+gulp.task('consultoria:inject', ['consultoria:create', 'sass', 'scripts'], taskconsultoriaInject);
+gulp.task('consultoria:i18n', ['consultoria:inject'], taskconsultoriaI18n);
 
 /*
  * Static files copy
@@ -96,7 +96,7 @@ gulp.task('consulting:i18n', ['consulting:inject'], taskConsultingI18n);
 
 gulp.task('sass:structure', compiler('./src/sass/structure.scss', 'structure/css'));
 gulp.task('index:structure', ['index:structure:create', 'index:structure:inject']);
-gulp.task('consulting:structure', ['consulting:structure:create', 'consulting:structure:inject']);
+gulp.task('consultoria:structure', ['consultoria:structure:create', 'consultoria:structure:inject']);
 
 /*
  * Structure index sub-tasks.
@@ -105,10 +105,10 @@ gulp.task('index:structure:create', ['index'], copier(tmpDir('index.html'), tmpD
 gulp.task('index:structure:inject', ['index:structure:create', 'sass:structure'], taskIndexStructureInject);
 
 /*
- * Structure consulting sub-tasks.
+ * Structure consultoria sub-tasks.
  */
-gulp.task('consulting:structure:create', ['consulting'], copier(tmpDir('consulting.html'), tmpDir('structure')));
-gulp.task('consulting:structure:inject', ['consulting:structure:create', 'sass:structure'], taskIndexStructureInject);
+gulp.task('consultoria:structure:create', ['consultoria'], copier(tmpDir('consultoria.html'), tmpDir('structure')));
+gulp.task('consultoria:structure:inject', ['consultoria:structure:create', 'sass:structure'], taskIndexStructureInject);
 
 /*
  * Core building tasks.
@@ -160,10 +160,10 @@ function taskIndexI18n(done) {
   });
 }
 
-function taskConsultingI18n(done) {
+function taskconsultoriaI18n(done) {
   loadTranslations(function () {
     async.each(Object.keys(translations), function (language, next) {
-      gulp.src(tmpDir('consulting.html'))
+      gulp.src(tmpDir('consultoria.html'))
         .pipe(handlebars({ data: translations[language] }))
         // .pipe(i18n({ messages: translations[language] }))
         .pipe(gulp.dest(tmpDir(language == defaultLanguage ? '' : language)))
@@ -186,13 +186,13 @@ function taskIndexInject() {
     .pipe(gulp.dest(tmpDir()));
 }
 
-function taskConsultingInject() {
+function taskconsultoriaInject() {
   var sources = gulp.src([
     tmpDir('js/**/*'),
     tmpDir('css/**/*'),
   ], { read: false });
 
-  return gulp.src(tmpDir('consulting.html'))
+  return gulp.src(tmpDir('consultoria.html'))
     .pipe(inject(sources, {
       relative: true,
       addRootSlash: true
@@ -208,10 +208,10 @@ function taskIndexStructureInject() {
     .pipe(gulp.dest(tmpDir('structure')));
 }
 
-function taskConsultingStructureInject() {
+function taskconsultoriaStructureInject() {
   var injects = gulp.src(tmpDir('structure/css/**/*'), { read: false });
 
-  return gulp.src(tmpDir('structure/consulting.html'))
+  return gulp.src(tmpDir('structure/consultoria.html'))
     .pipe(inject(injects, { relative: true }))
     .pipe(gulp.dest(tmpDir('structure')));
 }
@@ -220,7 +220,7 @@ function taskBuild(done) {
   sequence('clean', [
     // Core build.
     'index'
-  , 'consulting'
+  , 'consultoria'
   //, 'static:cname'
   , 'sass'
   , 'scripts'
@@ -244,7 +244,7 @@ function taskBuildStructure(done) {
   sequence('clean:structure', [
     'sass:structure',
     'index:structure',
-    'consulting:structure'
+    'consultoria:structure'
   ], done);
 }
 
