@@ -383,6 +383,10 @@
       "title": "Como funciona o Programa",
       "description": "O Programa de Otimização da Gestão Ágil foi concebido para ser aplicado de forma 100% remota, facilitando o fluxo de trabalho.",
       "picture": {
+        "url": "../images/comofuncionathumb.jpg",
+        "alt": "Como funciona"
+      },
+      "modal-picture": {
         "url": "../images/comofunciona.jpg",
         "alt": "Como funciona"
       },

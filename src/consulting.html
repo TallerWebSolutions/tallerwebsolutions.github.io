@@ -104,7 +104,16 @@
       {{#with consulting.how}}
         <h2>{{{title}}}</h2>
         <p>{{{description}}}</p>
-        <img src="{{{picture.url}}}" alt="{{{picture.alt}}}">
+        <div class="picture-link-wrapper">
+          <a href="#consulting-how">
+            <img src="{{{picture.url}}}" alt="{{{picture.alt}}}">
+          </a>
+        </div>
+
+        <div id="consulting-how" data-remodal-id="consulting-how" class="remodal">
+          <img src="{{{modal-picture.url}}}" alt="{{{modal-picture.alt}}}">
+        </div>
+
         <ul>
           {{#each steps}}
             <li>
