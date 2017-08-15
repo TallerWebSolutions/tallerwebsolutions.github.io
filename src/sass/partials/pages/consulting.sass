@@ -11,10 +11,12 @@ body, html
     h2
       font-weight: lighter
 
+    section
+      max-width: 960px
+      margin: 0 auto
+      box-sizing: content-box
+
 .consulting-header
-  background-image: url('../images/people.jpg')
-  background-size: cover
-  background-position: bottom
   padding: 0
 
   h1
@@ -28,6 +30,9 @@ body, html
     padding: 3rem 10%
 
   > main
+    background-image: url('../images/people.jpg')
+    background-size: cover
+    background-position: top
     padding: 3rem 10%
 
 #the-program,
@@ -43,6 +48,9 @@ body, html
 
   h2
     margin: 2em 0
+
+  li
+    line-height: 1.35em
 
 #the-program
   @extend %theme-light
@@ -125,6 +133,7 @@ body, html
 
 #section-why
   @extend %theme-dark
+  max-width: 100%
 
   ol
     counter-reset: item
