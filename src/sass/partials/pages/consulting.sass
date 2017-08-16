@@ -141,6 +141,16 @@ body, html
   @extend %theme-dark
   max-width: 100%
 
+  h2
+    text-align: center
+
+  p
+    width: 60%
+    margin: 0 auto
+
+    +breakpoint($breakpoint-max-xs)
+      width: 90%
+
   ol
     counter-reset: item
     list-style: none
