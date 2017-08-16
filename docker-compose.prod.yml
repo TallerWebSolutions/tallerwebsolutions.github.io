@@ -9,3 +9,8 @@ services:
     environment:
       # Add this server to the proxy.
       - VIRTUAL_HOST=taller.net.br
+
+networks:
+  default:
+    external:
+      name: dockerproxy_service-tier

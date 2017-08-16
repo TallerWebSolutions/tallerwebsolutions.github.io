@@ -9,3 +9,8 @@ services:
     environment:
       # Add this server to the proxy.
       - VIRTUAL_HOST=taller-site.dropit.in
+
+networks:
+  default:
+    external:
+      name: dockerproxy_service-tier
