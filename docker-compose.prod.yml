@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  site:
+    image: nginx
+    container_name: taller-site
+    volumes:
+      - $PWD/build:/usr/share/nginx/html
+    environment:
+      # Add this server to the proxy.
+      - VIRTUAL_HOST=taller.net.br
