@@ -25,7 +25,7 @@ var Q = require('q')
 
   , srcDirBase = absolutePath('src')
   , srcDir = dir(srcDirBase)
-  , tmpDirBase = absolutePath('.tmp')
+  , tmpDirBase = absolutePath('build')
   , tmpDir = dir(tmpDirBase)
 
   , defaultLanguage = 'pt-br'
