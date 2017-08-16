@@ -52,13 +52,13 @@ function taskWatch() {
 function taskServe() {
   browserSync.init({
     server: {
-      baseDir: '.tmp'
+      baseDir: 'build'
     }
   });
 
   gulp.watch([
-    '.tmp/**/*',
-    '!.tmp/**/*.css'
+    'build/**/*',
+    '!build/**/*.css'
   ]).on('change', browserSync.reload);
 }
 
