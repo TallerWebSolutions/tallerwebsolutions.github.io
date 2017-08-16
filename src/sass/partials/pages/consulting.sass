@@ -95,6 +95,7 @@ body, html
 
 #consultants, #section-invited
   @extend %theme-light
+  padding: 3rem 5%
 
   h2
     text-align: center
@@ -121,8 +122,13 @@ body, html
     display: inline-block
     padding: 1rem
 
+    +breakpoint($breakpoint-max-sm)
+      display: block
+
   .wrapper
     display: flex
+    max-width: 300px
+    margin: auto
 
   .info
     text-align: left
