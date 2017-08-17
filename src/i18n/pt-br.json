@@ -330,7 +330,7 @@
     "main-sub-title": "Levando a gestão da sua empresa para o próximo nível",
     "info": {
       "title": "O Programa",
-      "description": "Com atividades bem detalhadas e adaptáveis, nossos profissionais guiarão suavemente a organização nos passos necessários para obter a visão sistêmica da do portfólio e caminhar em direção a uma gestão de projetos incrível,  e mais:",
+      "description": "Com atividades bem detalhadas e adaptáveis, nossos profissionais guiarão suavemente a organização nos passos necessários para obter a visão sistêmica do portfólio e caminhar em direção a uma gestão de projetos incrível.  E mais:",
       "details": [
         "Diminua o custo de coordenação.",
         "Auxilie a organização na busca pela melhoria contínua.",
@@ -446,27 +446,27 @@
             "url": "./images/sheets.png",
             "alt": "Ícone do e-book"
           },
-          "title": "<a href='http://blog.taller.net.br/do-caos-ao-custo-medio-por-demanda/'>Ebook - Do caos ou custo médio por demanda</a>"
+          "title": "<a href='http://blog.taller.net.br/do-caos-ao-custo-medio-por-demanda/'>Ebook - Do caos ao custo médio por demanda</a>"
         },
         {
           "icon": {
             "url": "./images/sheets.png",
             "alt": "Ícone do e-book"
           },
-          "title": "<a href='http://blog.taller.net.br/ebook-equilibrio-portfolio-projeto/'>Ebook - O equilíbrio do Portfólio de Projeto.</a>"
+          "title": "<a href='http://biblioteca.taller.net.br/equilibrio_portfolio_projetos/'>Ebook - O equilíbrio do Portfólio de Projetos</a>"
         },
         {
           "icon": {
             "url": "./images/phones.png",
             "alt": "Ícone do podcast"
           },
-          "title": "<a href='http://blog.taller.net.br/taverna-taller-8-fluxo-unificado-celso-martins/'>Podcast - As bases do fluxo unificado.</a>"
+          "title": "<a href='http://blog.taller.net.br/taverna-taller-8-fluxo-unificado-celso-martins/'>Podcast - As bases do fluxo unificado</a>"
         }
       ]
     },
     "footer": {
       "title": "Se sua empresa busca ir para próximo nível de gestão entre em contato.",
-      "description": "Agende uma conversa com um nossos consultores, tire suas dúvidas e obtenha as informações necessárias para começar o Programa de Otimização da Gestão Ágil.",
+      "description": "Agende uma conversa com um dos nossos consultores, tire suas dúvidas e obtenha as informações necessárias para começar o Programa de Otimização da Gestão Ágil.",
       "contact": {
         "label": "É só enviar um email para:",
         "email": "<script language='JavaScript'> var username = 'rafael'; var hostname = 'taller.net.br'; var linktext = username + '@' + hostname ; document.write(\"<a href='\" + \"mail\" + \"to:\" + username + \"@\" + hostname + \"'>\" + linktext + \"</a>\"); </script>",
