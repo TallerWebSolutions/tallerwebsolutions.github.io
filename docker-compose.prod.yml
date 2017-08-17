@@ -6,9 +6,10 @@ services:
     container_name: taller-site
     volumes:
       - ./build:/usr/share/nginx/html
+      - ./redirect.conf:/etc/nginx/conf.d/redirect.conf
     environment:
       # Add this server to the proxy.
-      - VIRTUAL_HOST=taller.net.br
+      - VIRTUAL_HOST=taller.net.br,www.taller.net.br
 
 networks:
   default:
