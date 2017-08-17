@@ -8,7 +8,7 @@ services:
       - ./build:/usr/share/nginx/html
     environment:
       # Add this server to the proxy.
-      - VIRTUAL_HOST=taller-site.dropit.in
+      - VIRTUAL_HOST=taller-site.dropit.in,stage.taller.net.br
 
 networks:
   default:
