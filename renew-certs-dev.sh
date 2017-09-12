@@ -3,7 +3,8 @@
 set -e
 
 # Renew certs.
-certbot renew --quite --noninteractive
+certbot renew --quite --noninteractive \
+--post-hook "docker exec -i docker-proxy service nginx reload"
 
 # Copy blog certs.
 cp /etc/letsencrypt/live/taller-blog.dropit.in/fullchain.pem \
