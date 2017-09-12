@@ -3,7 +3,7 @@
 set -e
 
 # Renew certs.
-certbot renew --quite --noninteractive \
+certbot renew -q --noninteractive \
 --post-hook "docker exec -i docker-proxy service nginx reload"
 
 # Copy blog certs.
