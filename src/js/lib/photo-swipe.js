@@ -24,6 +24,8 @@ const members = new Vue({
       { name: 'rafa', image: '/images/members/14.jpg' },
       { name: 'helal', image: '/images/members/16.jpg' },
       { name: 'marcos', image: '/images/members/17.jpg' },
+      { name: 'raquel', image: '/images/members/18.jpg' },
+      { name: 'will', image: '/images/members/19.jpg' },
     ]
   },
   methods: {
