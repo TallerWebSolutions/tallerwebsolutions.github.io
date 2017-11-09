@@ -1,5 +1,7 @@
 nav
   display: flex
+  +breakpoint($breakpoint-max-sm)
+    display: block
   justify-content: space-between
   align-items: center
 
@@ -19,18 +21,29 @@ nav
 
   > aside
     float: left
+    +breakpoint($breakpoint-max-sm)
+      float: none
 
   > main
     float: right
+    +breakpoint($breakpoint-max-sm)
+      float: none
 
     ul
       text-align: right
       margin: 0
+      +breakpoint($breakpoint-max-sm)
+        padding-left: .2em
+        padding-top: 1em
+        text-align: left
 
     li
       display: inline
       list-style: none
       padding: 1rem
+      +breakpoint($breakpoint-max-sm)
+        &:first-child
+          padding-left: 0
       &:nth-child
         padding-left: 1.2em
         &:after
