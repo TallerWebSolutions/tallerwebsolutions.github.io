@@ -64,5 +64,8 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^3.17.1"
+  },
+  "engines": {
+    "node": "5.x.x"
   }
 }
