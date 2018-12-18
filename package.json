@@ -10,8 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/gulp build",
     "start": "./node_modules/.bin/gulp serve",
-    "deploy": "./node_modules/.bin/gulp deploy",
-    "now-build": "npm run build"
+    "deploy": "now build"
   },
   "repository": {
     "type": "git",
@@ -56,6 +55,7 @@
     "gulp-util": "^3.0.6",
     "jquery": "^2.1.4",
     "jsonfile": "^2.2.1",
+    "now": "^12.1.12",
     "process-nextick-args": "^1.0.3",
     "q": "^1.4.1",
     "require-dir": "^0.3.0",

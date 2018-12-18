@@ -1,11 +1,5 @@
 {
-  "version": 2,
+  "version": 1,
   "name": "taller-site",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "build" }
-    }
-  ]
+  "type": "static"
 }
