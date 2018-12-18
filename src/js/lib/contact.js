@@ -5,7 +5,7 @@
 var jQuery = require('jquery')
   , remodal = require('remodal')
   , autosize = require('autosize')
-  , parsley = require('parsleyjs')
+  , parsley = require('../vendor/parsleyjs')
 
   , $document = jQuery(document)
   , $section = jQuery('#contact')
