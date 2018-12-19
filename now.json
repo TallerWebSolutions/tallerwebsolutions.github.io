@@ -1,5 +1,6 @@
 {
   "version": 1,
   "name": "taller-site",
-  "type": "static"
+  "type": "static",
+  "alias": "www.taller.net.br"
 }
